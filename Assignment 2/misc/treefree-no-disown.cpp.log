@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting treefree-no-disown.cpp
+checksource treefree-no-disown.cpp
+ident treefree-no-disown.cpp
+treefree-no-disown.cpp:
+     $Id: treefree-no-disown.cpp,v 1.1 2019-07-15 15:48:38-07 - - $
+cpplint.py.perl treefree-no-disown.cpp
+Done processing treefree-no-disown.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 treefree-no-disown.cpp -o treefree-no-disown -lm
+rm -f treefree-no-disown.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished treefree-no-disown.cpp

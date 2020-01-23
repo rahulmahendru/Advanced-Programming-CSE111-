@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting inherit.cpp
+checksource inherit.cpp
+ident inherit.cpp
+inherit.cpp:
+     $Id: inherit.cpp,v 1.7 2018-07-11 13:45:06-07 - - $
+cpplint.py.perl inherit.cpp
+Done processing inherit.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 inherit.cpp -o inherit -lm
+rm -f inherit.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished inherit.cpp

@@ -1,0 +1,45 @@
+[0]0x5a240b0->tree::tree(tree_ptr)(nullptr)
+[1]0x5a241c0->tree::tree(tree_ptr)([0]0x5a240b0)
+[2]0x5a243b0->tree::tree(tree_ptr)([0]0x5a240b0)
+[3]0x5a24600->tree::tree(tree_ptr)([2]0x5a243b0)
+[4]0x5a24850->tree::tree(tree_ptr)([2]0x5a243b0)
+[5]0x5a24aa0->tree::tree(tree_ptr)([2]0x5a243b0)
+[6]0x5a24c90->tree::tree(tree_ptr)([1]0x5a241c0)
+[7]0x5a24ee0->tree::tree(tree_ptr)([1]0x5a241c0)
+[8]0x5a25130->tree::tree(tree_ptr)([1]0x5a241c0)
+[seq]address: key -> value (use count)
+void tree::print(size_t): [0]0x5a240b0: ".." -> [0]0x5a240b0 (5)
+void tree::print(size_t): [0]0x5a240b0: "bar" -> [2]0x5a243b0 (5)
+void tree::print(size_t):    [2]0x5a243b0: ".." -> [0]0x5a240b0 (5)
+void tree::print(size_t):    [2]0x5a243b0: "quuux" -> [5]0x5a24aa0 (2)
+void tree::print(size_t):       [5]0x5a24aa0: ".." -> [2]0x5a243b0 (6)
+void tree::print(size_t):    [2]0x5a243b0: "quux" -> [4]0x5a24850 (2)
+void tree::print(size_t):       [4]0x5a24850: ".." -> [2]0x5a243b0 (6)
+void tree::print(size_t):    [2]0x5a243b0: "qux" -> [3]0x5a24600 (2)
+void tree::print(size_t):       [3]0x5a24600: ".." -> [2]0x5a243b0 (6)
+void tree::print(size_t): [0]0x5a240b0: "foo" -> [1]0x5a241c0 (5)
+void tree::print(size_t):    [1]0x5a241c0: ".." -> [0]0x5a240b0 (5)
+void tree::print(size_t):    [1]0x5a241c0: "quuux" -> [8]0x5a25130 (2)
+void tree::print(size_t):       [8]0x5a25130: ".." -> [1]0x5a241c0 (6)
+void tree::print(size_t):    [1]0x5a241c0: "quux" -> [7]0x5a24ee0 (2)
+void tree::print(size_t):       [7]0x5a24ee0: ".." -> [1]0x5a241c0 (6)
+void tree::print(size_t):    [1]0x5a241c0: "qux" -> [6]0x5a24c90 (2)
+void tree::print(size_t):       [6]0x5a24c90: ".." -> [1]0x5a241c0 (6)
+void tree::disown(size_t): [0]0x5a240b0
+void tree::disown(size_t):    [2]0x5a243b0
+void tree::disown(size_t):       [5]0x5a24aa0
+void tree::disown(size_t):       [4]0x5a24850
+void tree::disown(size_t):       [3]0x5a24600
+void tree::disown(size_t):    [1]0x5a241c0
+void tree::disown(size_t):       [8]0x5a25130
+void tree::disown(size_t):       [7]0x5a24ee0
+void tree::disown(size_t):       [6]0x5a24c90
+[0]0x5a240b0->tree::~tree()()
+[1]0x5a241c0->tree::~tree()()
+[6]0x5a24c90->tree::~tree()()
+[7]0x5a24ee0->tree::~tree()()
+[8]0x5a25130->tree::~tree()()
+[2]0x5a243b0->tree::~tree()()
+[3]0x5a24600->tree::~tree()()
+[4]0x5a24850->tree::~tree()()
+[5]0x5a24aa0->tree::~tree()()
