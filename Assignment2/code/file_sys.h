@@ -42,6 +42,9 @@ class inode_state {
       inode_state& operator= (const inode_state&) = delete; // op=
       inode_state();
       const string& prompt() const;
+      // Self functions
+      inode_ptr inode_state::getCwd();
+      inode_ptr inode_state::getParentDir(inode_ptr dirname);
 };
 
 // class inode -
@@ -66,6 +69,7 @@ class inode {
    public:
       inode (file_type);
       int get_inode_nr() const;
+      base_file_ptr getContents()
 };
 
 
@@ -82,7 +86,7 @@ class file_error: public runtime_error {
 class base_file {
    protected:
       base_file() = default;
-      virtual const string error_file_type() const = 0;
+      virtual const string& error_file_type() const = 0;
    public:
       virtual ~base_file() = default;
       base_file (const base_file&) = delete;
@@ -93,6 +97,9 @@ class base_file {
       virtual void remove (const string& filename);
       virtual inode_ptr mkdir (const string& dirname);
       virtual inode_ptr mkfile (const string& filename);
+
+      // Self functions
+      virtual map<string,inode_ptr> getDirents(const string& dirname) ;
 };
 
 // class plain_file -
@@ -107,13 +114,14 @@ class base_file {
 class plain_file: public base_file {
    private:
       wordvec data;
-      virtual const string error_file_type() const override {
+      virtual const string& error_file_type() const override {
          return "plain file";
       }
    public:
       virtual size_t size() const override;
       virtual const wordvec& readfile() const override;
       virtual void writefile (const wordvec& newdata) override;
+      virtual map<string, inode_ptr> getDirents(const string& dirname) override;
 };
 
 // class directory -
@@ -138,7 +146,7 @@ class directory: public base_file {
    private:
       // Must be a map, not unordered_map, so printing is lexicographic
       map<string,inode_ptr> dirents;
-      virtual const string error_file_type() const override {
+      virtual const string& error_file_type() const override {
          return "directory";
       }
    public:
@@ -146,6 +154,7 @@ class directory: public base_file {
       virtual void remove (const string& filename) override;
       virtual inode_ptr mkdir (const string& dirname) override;
       virtual inode_ptr mkfile (const string& filename) override;
+      virtual map<string, inode_ptr> getDirents(const string& dirname) override;
 };
 
 #endif
