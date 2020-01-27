@@ -42,6 +42,11 @@ int exit_status_message() {
 void fn_cat (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   if ( words.size == 1 ) {
+      throw command_error("No files specified");
+   }
+   string filename = words[1] ;
+   
 }
 
 void fn_cd (inode_state& state, const wordvec& words){

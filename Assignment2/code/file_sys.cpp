@@ -28,6 +28,11 @@ ostream& operator<< (ostream& out, file_type type) {
 inode_state::inode_state() {
    DEBUGF ('i', "root = " << root << ", cwd = " << cwd
           << ", prompt = \"" << prompt() << "\"");
+   root->inode_nr = inode::next_inode_nr ;
+   root->contents = make_shared<directory>();
+   root->contents->mkdir(".");
+   root->contents->mkdir("..");
+   cwd = root;
 }
 
 const string& inode_state::prompt() const { return prompt_; }
@@ -54,7 +59,6 @@ int inode::get_inode_nr() const {
    DEBUGF ('i', "inode = " << inode_nr);
    return inode_nr;
 }
-
 
 file_error::file_error (const string& what):
             runtime_error (what) {
@@ -82,7 +86,7 @@ inode_ptr base_file::mkfile (const string&) {
 
 
 size_t plain_file::size() const {
-   size_t size {0};
+   size_t size {data.size()};
    DEBUGF ('i', "size = " << size);
    return size;
 }
@@ -94,25 +98,75 @@ const wordvec& plain_file::readfile() const {
 
 void plain_file::writefile (const wordvec& words) {
    DEBUGF ('i', words);
+   data.erase(data.begin(), data.end());
+   vector<const string>::iterator index;
+   for ( index = words.begin(); index != words.end(); index++ ) {
+      data.push_back(*index);
+   }
 }
 
 size_t directory::size() const {
-   size_t size {0};
+   size_t size {dirents.size()};
    DEBUGF ('i', "size = " << size);
    return size;
 }
 
 void directory::remove (const string& filename) {
    DEBUGF ('i', filename);
+   bool check = false ;
+   map<string, inode_ptr>::iterator index;
+   for (index = dirents.begin(); index != dirents.end; index++){
+      if (index->first == filename){
+         dirents.erase(filename);
+         check = true;
+      }
+   }
+   if (!check) {
+      throw file_error("is a " + error_file_type() ) ;
+   }
 }
 
 inode_ptr directory::mkdir (const string& dirname) {
    DEBUGF ('i', dirname);
-   return nullptr;
+   const auto result = dirents.find ( dirname ) ;
+
+   if ( result != dirents.end() ) {
+      throw file_error("is a " + error_file_type() ) ;
+   }
+
+   inode_ptr newDirectoryPtr = make_shared<inode>(file_type::DIRECTORY_TYPE) ;
+
+   dirents.insert({dirname, newDirectoryPtr});
+   return newDirectoryPtr;
 }
 
 inode_ptr directory::mkfile (const string& filename) {
    DEBUGF ('i', filename);
-   return nullptr;
+   inode_ptr newFilePtr = make_shared<inode>(file_type::PLAIN_TYPE) ;
+   dirents.insert({filename, newFilePtr}) ;
+   return newFilePtr;
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// Self functions
+
+inode_ptr inode_state::getCwd() {
+   return cwd;
+}
+
+inode_ptr inode_state::getParentDir(inode_ptr dirname) {
+   if ( cwd == root ) {
+      return root ;
+   }
+   else {
+
+   }
+}
+
+map<string,inode_ptr> plain_file::getDirents(const string& dirname) {
+   throw file_error ( "is a " + error_file_type() ); 
+}
+
+map<string,inode_ptr> directory::getDirents(const string& dirname) {
+   return dirents;
+}
