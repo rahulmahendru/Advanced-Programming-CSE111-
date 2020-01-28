@@ -157,8 +157,6 @@ inode_ptr directory::mkdir(const string &dirname)
    }
 
    inode_ptr newDirectoryPtr = make_shared<inode>(file_type::DIRECTORY_TYPE);
-   newDirectoryPtr->getContents(file_type::DIRECTORY_TYPE)->getDirents().insert({"..", getParentDir()});
-   newDirectoryPtr->getContents(file_type::DIRECTORY_TYPE)->getDirents().insert({".", newDirectoryPtr});
 
    dirents.insert({dirname, newDirectoryPtr});
    return newDirectoryPtr;
@@ -171,12 +169,12 @@ inode_ptr directory::mkfile(const string &filename)
    dirents.insert({filename, newFilePtr});
    return newFilePtr;
 }
-
+//
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Self functions
 
 
-void inode_state::initializeRoot(){
+void directory::initializeRoot( inode_ptr root){
    dirents.insert({"..",root});
    dirents.insert({".",root});
 } 
