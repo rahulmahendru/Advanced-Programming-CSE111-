@@ -175,6 +175,12 @@ inode_ptr directory::mkfile(const string &filename)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Self functions
 
+
+void inode_state::initializeRoot(){
+   dirents.insert({"..",root});
+   dirents.insert({".",root});
+} 
+
 base_file_ptr inode::getContents(file_type type)
 {
    switch (type)
@@ -187,3 +193,4 @@ base_file_ptr inode::getContents(file_type type)
       break;
    }
 }
+

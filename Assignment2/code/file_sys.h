@@ -101,9 +101,9 @@ class base_file {
       virtual inode_ptr mkfile (const string& filename);
 
       // Self functions
-      virtual map<string,inode_ptr> getDirents() ;
+      virtual void initializeRoot(inode_ptr root);
 };
-
+
 // class plain_file -
 // Used to hold data.
 // synthesized default ctor -
@@ -158,7 +158,8 @@ class directory: public base_file {
       virtual inode_ptr mkdir (const string& dirname) override;
       virtual inode_ptr mkfile (const string& filename) override;
       //
-      virtual map<string, inode_ptr> getDirents() override;
+      virtual void initializeRoot(inode_ptr root) override;
+
 };
 
 #endif
