@@ -66,12 +66,14 @@ class inode {
       static int next_inode_nr;
       int inode_nr;
       base_file_ptr contents;
+      file_type type;
    public:
       inode (file_type);
       int get_inode_nr() const;
       //
       base_file_ptr getContents(file_type type) ;
       void initializeDirectory();
+      file_type getFileType();
 };
 
 
@@ -102,6 +104,8 @@ class base_file {
 
       // Self functions
       virtual void initializeRoot(inode_ptr root);
+      virtual void initializeDirectory(inode_ptr parent, inode_ptr current);
+      virtual map<string,inode_ptr> getDirents();
 };
 
 // class plain_file -
@@ -124,6 +128,7 @@ class plain_file: public base_file {
       virtual const wordvec& readfile() const override;
       virtual void writefile (const wordvec& newdata) override;
       //
+      virtual map<string,inode_ptr> getDirents() override;
 };
 
 // class directory -
@@ -158,7 +163,8 @@ class directory: public base_file {
       virtual inode_ptr mkfile (const string& filename) override;
       //
       virtual void initializeRoot(inode_ptr root) override;
-
+      virtual void initializeDirectory(inode_ptr parent, inode_ptr current) override;
+      virtual map<string,inode_ptr> getDirents() override;
 };
 
 #endif
