@@ -44,7 +44,7 @@ class inode_state {
       const string& prompt() const;
       // Self functions
       inode_ptr inode_state::getCwd();
-      inode_ptr inode_state::getParentDir(inode_ptr dirname);
+      inode_ptr inode_state::getParentDir(const string& dirname);
 };
 
 // class inode -
@@ -69,7 +69,9 @@ class inode {
    public:
       inode (file_type);
       int get_inode_nr() const;
-      base_file_ptr getContents()
+      //
+      base_file_ptr getContents(file_type type) ;
+      void initializeDirectory();
 };
 
 
@@ -99,7 +101,7 @@ class base_file {
       virtual inode_ptr mkfile (const string& filename);
 
       // Self functions
-      virtual map<string,inode_ptr> getDirents(const string& dirname) ;
+      virtual map<string,inode_ptr> getDirents() ;
 };
 
 // class plain_file -
@@ -121,7 +123,8 @@ class plain_file: public base_file {
       virtual size_t size() const override;
       virtual const wordvec& readfile() const override;
       virtual void writefile (const wordvec& newdata) override;
-      virtual map<string, inode_ptr> getDirents(const string& dirname) override;
+      //
+      virtual map<string, inode_ptr> getDirents() override;
 };
 
 // class directory -
@@ -154,7 +157,8 @@ class directory: public base_file {
       virtual void remove (const string& filename) override;
       virtual inode_ptr mkdir (const string& dirname) override;
       virtual inode_ptr mkfile (const string& filename) override;
-      virtual map<string, inode_ptr> getDirents(const string& dirname) override;
+      //
+      virtual map<string, inode_ptr> getDirents() override;
 };
 
 #endif
