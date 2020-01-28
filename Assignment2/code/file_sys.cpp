@@ -159,7 +159,9 @@ inode_ptr inode_state::getParentDir(inode_ptr dirname) {
       return root ;
    }
    else {
-
+      for(int icnt = 0; icnt < root.size(); icnt++){
+         
+      }
    }
 }
 
@@ -170,3 +172,10 @@ map<string,inode_ptr> plain_file::getDirents(const string& dirname) {
 map<string,inode_ptr> directory::getDirents(const string& dirname) {
    return dirents;
 }
+//int directory::numSubdirectories(){
+//   for(int icnt = 0; icnt< 
+//}
+void inode_state::initializeRoot(){
+   dirents.insert({"..",root});
+   dirents.insert({".",root});
+} 

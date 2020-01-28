@@ -45,6 +45,7 @@ class inode_state {
       // Self functions
       inode_ptr inode_state::getCwd();
       inode_ptr inode_state::getParentDir(inode_ptr dirname);
+      
 };
 
 // class inode -
@@ -99,7 +100,8 @@ class base_file {
       virtual inode_ptr mkfile (const string& filename);
 
       // Self functions
-      virtual map<string,inode_ptr> getDirents(const string& dirname) ;
+      virtual map<string,inode_ptr> getDirents(const string& dirname);
+      virtual void initializeRoot(inode_ptr root);
 };
 
 // class plain_file -
@@ -155,6 +157,7 @@ class directory: public base_file {
       virtual inode_ptr mkdir (const string& dirname) override;
       virtual inode_ptr mkfile (const string& filename) override;
       virtual map<string, inode_ptr> getDirents(const string& dirname) override;
+      virtual void initializeRoot(inode_ptr root) override;
 };
 
 #endif
