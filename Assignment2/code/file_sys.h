@@ -124,7 +124,6 @@ class plain_file: public base_file {
       virtual const wordvec& readfile() const override;
       virtual void writefile (const wordvec& newdata) override;
       //
-      virtual map<string, inode_ptr> getDirents() override;
 };
 
 // class directory -

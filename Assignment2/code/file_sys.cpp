@@ -176,7 +176,7 @@ inode_ptr directory::mkfile(const string &filename)
 // Self functions
 
 
-void inode_state::initializeRoot(){
+void directory::initializeRoot( inode_ptr root){
    dirents.insert({"..",root});
    dirents.insert({".",root});
 } 
