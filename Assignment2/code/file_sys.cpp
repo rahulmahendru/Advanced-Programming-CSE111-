@@ -157,8 +157,6 @@ inode_ptr directory::mkdir(const string &dirname)
    }
 
    inode_ptr newDirectoryPtr = make_shared<inode>(file_type::DIRECTORY_TYPE);
-   newDirectoryPtr->getContents(file_type::DIRECTORY_TYPE)->getDirents().insert({"..", getParentDir()});
-   newDirectoryPtr->getContents(file_type::DIRECTORY_TYPE)->getDirents().insert({".", newDirectoryPtr});
 
    dirents.insert({dirname, newDirectoryPtr});
    return newDirectoryPtr;
