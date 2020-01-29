@@ -44,12 +44,13 @@ class inode_state {
       const string& prompt() const;
       // Self functions
 
-      void printList(inode_ptr currentDir);
       inode_ptr getCwd();
       void setCwd(inode_ptr path);
       inode_ptr getRoot();
       void setPrompt(const wordvec &words);
       string getPath(inode_ptr current);
+      void printList(inode_ptr currentDir);
+      void printListRecursive(string filename, inode_ptr currentDir);
 };
 
 // class inode -

@@ -240,6 +240,26 @@ void inode_state::printList(inode_ptr currentDir){
    }
 }
 
+void inode_state::printListRecursive(string filename, inode_ptr currentDir){
+   if (filename == "." || filename== ".."){
+      cout << filename << ":" << "\n" ;
+   }
+   else{
+      cout << "/" << filename << ":" << "\n" ;
+   }
+   printList(currentDir);
+   map<string, inode_ptr> checkDir = currentDir->getContents(file_type::DIRECTORY_TYPE)->getDirents();
+   map<string, inode_ptr>::iterator index = checkDir.begin();
+   index++; 
+   index++;
+   while (index != checkDir.end()){
+      if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
+         printListRecursive(index->first, index->second);
+      }
+      index++;
+   }
+}
+
 string inode_state::getPath(inode_ptr current) {
    string path {""};
    if (current == root) {
