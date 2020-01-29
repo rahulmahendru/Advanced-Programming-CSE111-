@@ -3,6 +3,7 @@
 #include "commands.h"
 #include "debug.h"
 
+
 command_hash cmd_hash{
     {"cat", fn_cat},
     {"cd", fn_cd},
