@@ -211,6 +211,13 @@ base_file_ptr inode::getContents(file_type fType)
    }
 }
 
+void inode_state::printList(inode_ptr currentDir){
+   if (currentDir)
+   map<string, inode_ptr> printDir = currentDir->getContents(file_type::DIRECTORY_TYPE)->getDirents();
+   map<string, inode_ptr>::iterator index
+   for(index = print)
+}
+
 void directory::initializeRoot(inode_ptr root)
 {
    dirents.insert({"..", root});

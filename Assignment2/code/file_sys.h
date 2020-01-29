@@ -43,6 +43,8 @@ class inode_state {
       inode_state();
       const string& prompt() const;
       // Self functions
+
+      void printList(inode_ptr currentDir);
       inode_ptr getCwd();
       void setCwd(inode_ptr path);
       inode_ptr getRoot();
@@ -75,6 +77,7 @@ class inode {
       base_file_ptr getContents(file_type fType) ;
       void initializeDirectory();
       file_type getFileType();
+      
 };
 
 
