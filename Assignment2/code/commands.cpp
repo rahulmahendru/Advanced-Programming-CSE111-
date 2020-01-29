@@ -166,6 +166,28 @@ void fn_lsr(inode_state &state, const wordvec &words)
 {
    DEBUGF('c', state);
    DEBUGF('c', words);
+   if (words.size() == 1)
+   {
+      inode_ptr currentDir = state.getCwd();
+      if (currentDir == state.getRoot())
+      {
+         state.printListRecursive("/", currentDir);
+      }
+      else
+      {
+         state.printListRecursive(".", currentDir);
+      }
+   }
+   else
+   {
+      inode_ptr currentDir = state.getCwd();
+      if ( words[1] == "/"){
+         state.printListRecursive("/", currentDir);
+      }
+      else{
+         state.printListRecursive("/" + words[1] , currentDir);
+      }
+   }
 }
 
 void fn_make(inode_state &state, const wordvec &words)
