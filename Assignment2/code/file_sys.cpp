@@ -139,11 +139,15 @@ void directory::remove(const string &filename)
       {
          file_type type = index->second->getFileType;
          if ( type == file_type::PLAIN_TYPE){
-            removeFile();
+            dirents.erase(filename);
          }
          else{
-            removeDir();
+            if ( dirents.size() > 2 ) {
+               throw file_error ( " is not empty.");
+            }
+            dirents.erase(filename);
          }
+         
          check = true;
       }
    }
@@ -182,6 +186,18 @@ inode_ptr directory::mkfile(const string &filename)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Self functions
 
+inode_ptr inode_state::getCwd() {
+   return cwd;
+}
+
+void inode_state::setCwd(inode_ptr path){
+   cwd = path;
+}
+
+inode_ptr inode_state::getRoot() {
+   return root;
+}
+
 base_file_ptr inode::getContents(file_type type)
 {
    switch (type)
@@ -219,4 +235,12 @@ map<string, inode_ptr> directory::getDirents()
 
 file_type inode::getFileType() {
    return type;
+}
+
+wordvec directory::getData() {
+   throw file_error("is a " + error_file_type());
+}
+
+wordvec plain_file::getData() {
+   return data;
 }
