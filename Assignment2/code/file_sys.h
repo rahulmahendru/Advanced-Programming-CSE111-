@@ -46,6 +46,7 @@ class inode_state {
       inode_ptr inode_state::getCwd();
       void inode_state::setCwd(inode_ptr path);
       inode_ptr inode_state::getRoot();
+      void printList(inode_ptr currentDir);
 };
 
 // class inode -
@@ -75,6 +76,7 @@ class inode {
       base_file_ptr getContents(file_type type) ;
       void initializeDirectory();
       file_type getFileType();
+      
 };
 
 
