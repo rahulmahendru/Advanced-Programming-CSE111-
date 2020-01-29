@@ -133,11 +133,11 @@ void directory::remove(const string &filename)
    DEBUGF('i', filename);
    bool check = false;
    map<string, inode_ptr>::iterator index;
-   for (index = dirents.begin(); index != dirents.end; index++)
+   for (index = dirents.begin(); index != dirents.end(); index++)
    {
       if (index->first == filename)
       {
-         file_type type = index->second->getFileType;
+         file_type type = index->second->getFileType();
          if ( type == file_type::PLAIN_TYPE){
             dirents.erase(filename);
          }
@@ -198,9 +198,9 @@ inode_ptr inode_state::getRoot() {
    return root;
 }
 
-base_file_ptr inode::getContents(file_type type)
+base_file_ptr inode::getContents(file_type fType)
 {
-   switch (type)
+   switch (fType)
    {
    case file_type::PLAIN_TYPE:
       return dynamic_pointer_cast<plain_file>(contents);

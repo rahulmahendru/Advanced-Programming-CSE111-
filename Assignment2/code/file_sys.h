@@ -43,10 +43,11 @@ class inode_state {
       inode_state();
       const string& prompt() const;
       // Self functions
-      inode_ptr inode_state::getCwd();
-      void inode_state::setCwd(inode_ptr path);
-      inode_ptr inode_state::getRoot();
+
       void printList(inode_ptr currentDir);
+      inode_ptr getCwd();
+      void setCwd(inode_ptr path);
+      inode_ptr getRoot();
 };
 
 // class inode -
@@ -73,7 +74,7 @@ class inode {
       inode (file_type);
       int get_inode_nr() const;
       //
-      base_file_ptr getContents(file_type type) ;
+      base_file_ptr getContents(file_type fType) ;
       void initializeDirectory();
       file_type getFileType();
       
@@ -125,12 +126,15 @@ class plain_file: public base_file {
    private:
       wordvec data;
       virtual const string& error_file_type() const override {
-         return "plain file";
+         static const string result = "plain file";
+         return result;
+         
       }
    public:
       virtual size_t size() const override;
       virtual const wordvec& readfile() const override;
       virtual void writefile (const wordvec& newdata) override;
+       
       //
       virtual map<string,inode_ptr> getDirents() override;
       virtual wordvec getData() override;
@@ -159,7 +163,9 @@ class directory: public base_file {
       // Must be a map, not unordered_map, so printing is lexicographic
       map<string,inode_ptr> dirents;
       virtual const string& error_file_type() const override {
-         return "directory";
+       static const string result = "directory";
+         return result;
+       //  return "directory";
       }
    public:
       virtual size_t size() const override;
