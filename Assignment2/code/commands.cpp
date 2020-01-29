@@ -45,13 +45,48 @@ void fn_cat (inode_state& state, const wordvec& words){
    if ( words.size == 1 ) {
       throw command_error("No files specified");
    }
-   string filename = words[1] ;
-   
+
+   map<string, inode_ptr> check = state.getCwd()->getContents(file_type::DIRECTORY_TYPE)->getDirents();
+   for ( int loopIndex = 1; loopIndex < check.size() ; loopIndex++ ) {
+      const auto ptr = check.find(words[loopIndex]);
+      if (ptr == check.end()){
+         throw command_error("File not found");
+      }
+      else{
+         if (ptr->second->getFileType() == file_type::PLAIN_TYPE) {
+            cout << ptr->second->getContents(file_type::PLAIN_TYPE)->getData() ; << '\n';
+         }
+         else {
+            throw command_error("Directory specified");
+         }
+      }
+   }
 }
 
 void fn_cd (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   if ( words.size == 1 ) {
+      throw command_error("No files specified");
+   }
+
+   if ( words[1] == "/" ) {
+      state.setCwd(state.getRoot());
+   }
+
+   map<string, inode_ptr> check = state.getCwd()->getContents(file_type::DIRECTORY_TYPE)->getDirents();
+   const auto ptr = check.find(words[1]);
+   if (ptr == check.end()){
+      throw command_error("File not found");
+   }
+   else{
+      if (ptr->second->getFileType() == file_type::DIRECTORY_TYPE) {
+         state.setCwd(ptr->second);
+      }
+      else {
+         throw command_error("File specified");
+      }
+   }
 }
 
 void fn_echo (inode_state& state, const wordvec& words){
@@ -70,6 +105,12 @@ void fn_exit (inode_state& state, const wordvec& words){
 void fn_ls (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   if ( words.size == 1 ) {
+      throw command_error("No files specified");
+   }
+   
+   map<string, inode_ptr> check = state.getCwd()->getContents(file_type::DIRECTORY_TYPE)->getDirents();
+
 }
 
 void fn_lsr (inode_state& state, const wordvec& words){

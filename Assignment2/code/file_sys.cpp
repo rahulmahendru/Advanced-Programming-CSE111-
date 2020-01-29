@@ -34,7 +34,7 @@ inode_state::inode_state()
                          << ", prompt = \"" << prompt() << "\"");
    root->inode_nr = inode::next_inode_nr;
    root->contents = make_shared<directory>();
-     
+   root->contents->initializeRoot(root);
    cwd = root;
 }
 
@@ -49,6 +49,7 @@ ostream &operator<<(ostream &out, const inode_state &state)
 
 inode::inode(file_type type) : inode_nr(next_inode_nr++)
 {
+   this->type = type;
    switch (type)
    {
    case file_type::PLAIN_TYPE:
@@ -136,7 +137,17 @@ void directory::remove(const string &filename)
    {
       if (index->first == filename)
       {
-         dirents.erase(filename);
+         file_type type = index->second->getFileType;
+         if ( type == file_type::PLAIN_TYPE){
+            dirents.erase(filename);
+         }
+         else{
+            if ( dirents.size() > 2 ) {
+               throw file_error ( " is not empty.");
+            }
+            dirents.erase(filename);
+         }
+         
          check = true;
       }
    }
@@ -155,9 +166,11 @@ inode_ptr directory::mkdir(const string &dirname)
    {
       throw file_error("is a " + error_file_type());
    }
-
    inode_ptr newDirectoryPtr = make_shared<inode>(file_type::DIRECTORY_TYPE);
-
+   map<string, inode_ptr>::iterator index = dirents.begin();
+   index++;
+   inode_ptr parent_ptr = index->second;
+   newDirectoryPtr->getContents(file_type::DIRECTORY_TYPE)->initializeDirectory(parent_ptr, newDirectoryPtr);
    dirents.insert({dirname, newDirectoryPtr});
    return newDirectoryPtr;
 }
@@ -173,11 +186,17 @@ inode_ptr directory::mkfile(const string &filename)
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Self functions
 
+inode_ptr inode_state::getCwd() {
+   return cwd;
+}
 
-void directory::initializeRoot( inode_ptr root){
-   dirents.insert({"..",root});
-   dirents.insert({".",root});
-} 
+void inode_state::setCwd(inode_ptr path){
+   cwd = path;
+}
+
+inode_ptr inode_state::getRoot() {
+   return root;
+}
 
 base_file_ptr inode::getContents(file_type type)
 {
@@ -192,3 +211,36 @@ base_file_ptr inode::getContents(file_type type)
    }
 }
 
+void directory::initializeRoot(inode_ptr root)
+{
+   dirents.insert({"..", root});
+   dirents.insert({".", root});
+}
+
+void directory::initializeDirectory(inode_ptr parent, inode_ptr current)
+{
+   dirents.insert({"..", parent});
+   dirents.insert({".", current});
+}
+
+map<string, inode_ptr> plain_file::getDirents()
+{
+   throw file_error(" is a " + error_file_type());
+}
+
+map<string, inode_ptr> directory::getDirents()
+{
+   return dirents;
+}
+
+file_type inode::getFileType() {
+   return type;
+}
+
+wordvec directory::getData() {
+   throw file_error("is a " + error_file_type());
+}
+
+wordvec plain_file::getData() {
+   return data;
+}
