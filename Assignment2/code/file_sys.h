@@ -123,6 +123,7 @@ class plain_file: public base_file {
       virtual size_t size() const override;
       virtual const wordvec& readfile() const override;
       virtual void writefile (const wordvec& newdata) override;
+       
       //
 };
 
