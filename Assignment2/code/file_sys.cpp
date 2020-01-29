@@ -113,9 +113,13 @@ const wordvec &plain_file::readfile() const
 void plain_file::writefile(const wordvec &words)
 {
    DEBUGF('i', words);
+   if (words.size() == 0){
+      data.push_back("");
+      return;
+   }
    data.erase(data.begin(), data.end());
    vector<const string>::iterator index;
-   for (index = words.begin(); index != words.end(); index++)
+   for (index = words.begin() + 2; index != words.end(); index++)
    {
       data.push_back(*index);
    }
@@ -198,6 +202,12 @@ inode_ptr inode_state::getRoot() {
    return root;
 }
 
+void inode_state::setPrompt(const wordvec &words){
+   for ( int loopIndex = 0 ; loopIndex < words.size() ; loopIndex++) {
+      prompt_ = prompt_ + words[loopIndex];
+   }
+}
+
 base_file_ptr inode::getContents(file_type fType)
 {
    switch (fType)
@@ -212,10 +222,42 @@ base_file_ptr inode::getContents(file_type fType)
 }
 
 void inode_state::printList(inode_ptr currentDir){
-   if (currentDir)
    map<string, inode_ptr> printDir = currentDir->getContents(file_type::DIRECTORY_TYPE)->getDirents();
-   map<string, inode_ptr>::iterator index
-   for(index = print)
+   map<string, inode_ptr>::iterator index;
+   for(index = printDir.begin(); index != printDir.end(); index++ ) {
+      if (index->first == ".." || index->first == "."){
+         cout << "     " << index->second->inode_nr << "       " << index->second->getContents(file_type::DIRECTORY_TYPE)->size() 
+         << "  " << index->first << "\n";
+      }
+      else if (index->second->getFileType() == file_type::PLAIN_TYPE) {
+         cout << "     " << index->second->inode_nr << "       " << index->second->getContents(file_type::PLAIN_TYPE)->size() 
+         << "  " << index->first << "\n" ;
+      }
+      else if (index->second->getFileType() == file_type::DIRECTORY_TYPE) {
+         cout << "     " << index->second->inode_nr << "       " << index->second->getContents(file_type::PLAIN_TYPE)->size() 
+         << "  " << index->first << "/" << "\n" ;
+      }
+   }
+}
+
+string inode_state::getPath(inode_ptr current) {
+   string path {""};
+   if (current == root) {
+      path = "/" ;
+   }
+   else {
+      while ( current != root){
+         current = current->getContents(file_type::DIRECTORY_TYPE)->getDirents().find("..")->second;
+         map<string, inode_ptr> check = current->getContents(file_type::DIRECTORY_TYPE)->getDirents();
+         map<string, inode_ptr>::iterator index;
+         for(index = check.begin(); index != check.end(); index++ ) {
+            if (index->second == current){
+               path = "/" + index->first + path ;
+            }
+         }
+      }
+   }
+   return path;
 }
 
 void directory::initializeRoot(inode_ptr root)

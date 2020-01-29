@@ -48,6 +48,8 @@ class inode_state {
       inode_ptr getCwd();
       void setCwd(inode_ptr path);
       inode_ptr getRoot();
+      void setPrompt(const wordvec &words);
+      string getPath(inode_ptr current);
 };
 
 // class inode -
@@ -77,7 +79,6 @@ class inode {
       base_file_ptr getContents(file_type fType) ;
       void initializeDirectory();
       file_type getFileType();
-      
 };
 
 
