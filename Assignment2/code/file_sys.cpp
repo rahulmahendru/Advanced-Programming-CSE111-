@@ -32,8 +32,7 @@ inode_state::inode_state()
 {
    DEBUGF('i', "root = " << root << ", cwd = " << cwd
                          << ", prompt = \"" << prompt() << "\"");
-   root->inode_nr = inode::next_inode_nr;
-   root->contents = make_shared<directory>();
+   root = make_shared<inode>(file_type::DIRECTORY_TYPE);
    root->contents->initializeRoot(root);
    cwd = root;
 }
