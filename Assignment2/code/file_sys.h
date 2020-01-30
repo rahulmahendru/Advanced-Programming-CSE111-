@@ -177,4 +177,3 @@ class directory: public base_file {
 };
 
 #endif
-

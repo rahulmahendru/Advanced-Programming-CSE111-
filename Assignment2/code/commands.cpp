@@ -105,9 +105,7 @@ void fn_exit (inode_state& state, const wordvec& words){
 void fn_ls (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
-   if ( words.size() == 1 ) {
-      throw command_error("No files specified");
-   }
+   
    
    map<string, inode_ptr> check = state.getCwd()->getContents(file_type::DIRECTORY_TYPE)->getDirents();
 
