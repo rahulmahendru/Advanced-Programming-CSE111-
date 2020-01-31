@@ -267,7 +267,7 @@ void fn_rm(inode_state &state, const wordvec &words)
    }
    state.getCwd()->getContents(file_type::DIRECTORY_TYPE)->remove(words[1]);
 }
-
+ 
 void fn_rmr(inode_state &state, const wordvec &words)
 {
    DEBUGF('c', state);

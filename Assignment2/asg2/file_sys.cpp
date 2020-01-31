@@ -89,7 +89,11 @@ inode_ptr base_file::mkfile (const string&) {
 size_t plain_file::size() const {
    size_t size {data.size()};
    DEBUGF ('i', "size = " << size);
-   return size;
+   int loopsize = data.size();
+   for (int loopIndex = 0; loopIndex < loopsize; loopIndex++){
+      size = size + data[loopIndex].length();
+   }
+   return size - 1;
 }
 
 const wordvec& plain_file::readfile() const {
@@ -154,14 +158,14 @@ inode_ptr directory::mkdir (const string& dirname) {
    inode_ptr parentPtr = dirents.find(".")->second;
    newDirectoryPtr->getContentsAsDirectory()->initializeDirectory(parentPtr, newDirectoryPtr);
    dirents.insert({dirname+"/", newDirectoryPtr});
-   return nullptr;
+   return newDirectoryPtr;
 }
 
 inode_ptr directory::mkfile (const string& filename) {
    DEBUGF ('i', filename);
    inode_ptr newFilePtr = make_shared<inode>(file_type::PLAIN_TYPE);
    dirents.insert({filename, newFilePtr});
-   return nullptr;
+   return newFilePtr;
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -171,6 +175,10 @@ inode_ptr directory::mkfile (const string& filename) {
 //-------------- Inode_state ---------------
 inode_ptr inode_state::getCwd() {
    return cwd;
+}
+
+inode_ptr inode_state::getRoot() {
+   return root;
 }
 
 string inode_state::getPath(inode_ptr current){
@@ -222,6 +230,39 @@ void inode_state::printDirectory(inode_ptr current) {
    }
 }
 
+inode_ptr inode_state::resolveInputPtr(const string& words, const inode_ptr& current, const int check) {
+   inode_ptr currentDir = nullptr;
+   if (words[0] == '/'){
+      currentDir = root;
+   }
+   else {
+      currentDir = current;
+   }
+   wordvec path = split(words,"/");
+   int loopSize = path.size() - check;
+   if (loopSize < 1){
+      return currentDir;
+   }
+   //
+   for (int loopIndex = 0; loopIndex < loopSize; loopIndex++){
+      map<string, inode_ptr> currentDirPtr = currentDir->getContentsAsDirectory()->getDirents();
+      map<string, inode_ptr>::iterator checkPtr = currentDirPtr.find(path[loopIndex]);
+      if (checkPtr == currentDirPtr.end()){
+         return nullptr;
+      }
+      currentDir = checkPtr->second;
+      if (currentDir->getFileType() == file_type::PLAIN_TYPE){
+         return nullptr;
+      }
+   }
+   return currentDir;
+}
+
+string inode_state::resolveInputString(const string& words) {
+   wordvec path = split(words,"/");
+   return path[path.size() - 1];
+}
+
 //-------------- Inode ---------------------
 shared_ptr<directory> inode::getContentsAsDirectory() {
    return dynamic_pointer_cast<directory>(contents) ;
@@ -244,6 +285,10 @@ map<string, inode_ptr> plain_file::getDirents() {
    throw file_error ("is a " + error_file_type());
 }
 
+wordvec plain_file::getData() {
+   return data;
+}
+
 //--------------- Directory ----------------
 void directory::initializeDirectory(const inode_ptr& parent, const inode_ptr& current)
 {
@@ -255,3 +300,6 @@ map<string, inode_ptr> directory::getDirents() {
    return dirents;
 }
 
+wordvec directory::getData() {
+   throw file_error ("is a " + error_file_type());
+}
