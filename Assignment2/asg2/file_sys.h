@@ -78,7 +78,6 @@ class inode {
       shared_ptr<directory> getContentsAsDirectory() ;
       shared_ptr<plain_file> getContentsAsPlainFile() ;
       file_type getFileType() ;
-      vector
 };
 
 
