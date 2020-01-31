@@ -46,7 +46,23 @@ void fn_cat (inode_state& state, const wordvec& words){
    {
       throw command_error("No files specified");
    }
-   cout << "Hello";
+   inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
+   if (current == nullptr){
+      throw command_error("Path does not exist");
+   }
+   string filename = state.resolveInputString(words[1]);
+   map<string, inode_ptr> currentPtr = current->getContentsAsDirectory()->getDirents();
+   map<string, inode_ptr>::iterator checkPtr = currentPtr.find(filename);
+   if (checkPtr == currentPtr.end()){
+      throw command_error("File not found");
+   }
+   else {
+      if (checkPtr->second->getFileType() == file_type::DIRECTORY_TYPE){
+         throw command_error("Directory exists with the name");
+      }
+      //cout << filename << "\n";
+      cout << checkPtr->second->getContentsAsPlainFile()->getData() << "\n" ;
+   }
 }
 
 void fn_cd (inode_state& state, const wordvec& words){
@@ -75,8 +91,19 @@ void fn_ls (inode_state& state, const wordvec& words){
    {
       current = state.getCwd();
    }
-   
-   state.printDirectory(state.getCwd());
+   else if(words[1] == "/") {
+      current = state.getRoot();
+   }
+   else{
+      current = state.resolveInputPtr(words[1], state.getCwd(), 0) ;
+   }
+   if (current == nullptr) {
+      throw command_error ("Path does not exist");
+   }
+   if (current->getFileType() == file_type::PLAIN_TYPE){
+      throw command_error ("Not a directory");
+   }
+   state.printDirectory(current);
 }
 
 void fn_lsr (inode_state& state, const wordvec& words){
@@ -87,6 +114,31 @@ void fn_lsr (inode_state& state, const wordvec& words){
 void fn_make (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   if (words.size() == 1)
+   {
+      throw command_error("No files specified");
+   }
+   inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
+   if (current == nullptr){
+      throw command_error("Path does not exist");
+   }
+   string filename = state.resolveInputString(words[1]);
+   map<string, inode_ptr> currentPtr = current->getContentsAsDirectory()->getDirents();
+   map<string, inode_ptr>::iterator checkPtr = currentPtr.find(filename);
+   if (checkPtr == currentPtr.end()){
+      
+      inode_ptr newFile = current->getContentsAsDirectory()->mkfile(filename);
+      if (words.size() > 2){
+         newFile->getContentsAsPlainFile()->writefile(words);
+      }
+   }
+   else {
+      if (checkPtr->second->getFileType() == file_type::DIRECTORY_TYPE){
+         throw command_error("Directory exists with the name");
+      }
+      //cout << filename << "\n";
+      checkPtr->second->getContentsAsPlainFile()->writefile(words);
+   }
 }
 
 void fn_mkdir (inode_state& state, const wordvec& words){
