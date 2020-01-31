@@ -44,6 +44,10 @@ class inode_state {
       const string& prompt() const;
 
       // Self Functions
+      inode_ptr getCwd();
+      string getPath(inode_ptr current);
+      void printDirectory(inode_ptr current);
+
 };
 
 // class inode -
@@ -72,6 +76,7 @@ class inode {
 
       // Self Functions
       shared_ptr<directory> getContentsAsDirectory() ;
+      shared_ptr<plain_file> getContentsAsPlainFile() ;
       file_type getFileType() ;
 };
 
@@ -103,6 +108,7 @@ class base_file {
 
       //
       virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) = 0 ;
+      virtual map<string, inode_ptr> getDirents() = 0 ;
 };
 
 // class plain_file -
@@ -127,6 +133,7 @@ class plain_file: public base_file {
 
       //
       virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) override ;
+      virtual map<string, inode_ptr> getDirents() override ;
 };
 
 // class directory -
@@ -162,6 +169,7 @@ class directory: public base_file {
 
       // Self Functions
       virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) override ;
+      virtual map<string, inode_ptr> getDirents() override ;
 };
 
 #endif
