@@ -168,9 +168,67 @@ inode_ptr directory::mkfile (const string& filename) {
 // Self Functions
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
+//-------------- Inode_state ---------------
+inode_ptr inode_state::getCwd() {
+   return cwd;
+}
+
+string inode_state::getPath(inode_ptr current){
+   string path {""};
+   if ( current == root ) {
+      return "/";
+   }
+   else {
+      while (current != root){
+         current = current->getContentsAsDirectory()->getDirents().find("..")->second;
+         map<string, inode_ptr> currentDir = current->getContentsAsDirectory()->getDirents();
+         map<string, inode_ptr>::iterator index;
+         for(index = currentDir.begin(); index != currentDir.end(); index++ ) {
+            if (index->second == current){
+               path = index->first + path ;
+            }
+         }
+      }
+      path = "/" + path;
+   }
+   return path;
+}
+
+void inode_state::printDirectory(inode_ptr current) {
+   cout << getPath(current) << ":" << "\n" ;
+   map<string, inode_ptr> printDir = current->getContentsAsDirectory()->getDirents();
+   map<string, inode_ptr>::iterator index;
+   for(index = printDir.begin(); index != printDir.end(); index++ ) {
+      if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
+         cout << "     " 
+              << index->second->inode_nr 
+              << "  "
+              << "     "
+              << index->second->getContentsAsDirectory()->size() 
+              << "  " 
+              << index->first 
+              << "\n";
+      }
+      else if (index->second->getFileType() == file_type::PLAIN_TYPE) {
+         cout << "     " 
+              << index->second->inode_nr 
+              << "  " 
+              << "     "
+              << index->second->getContentsAsPlainFile()->size() 
+              << "  " 
+              << index->first 
+              << "\n" ;
+      }
+   }
+}
+
 //-------------- Inode ---------------------
 shared_ptr<directory> inode::getContentsAsDirectory() {
    return dynamic_pointer_cast<directory>(contents) ;
+}
+
+shared_ptr<plain_file> inode::getContentsAsPlainFile() {
+   return dynamic_pointer_cast<plain_file>(contents) ;
 }
 
 file_type inode::getFileType() {
@@ -182,10 +240,18 @@ void plain_file::initializeDirectory(const inode_ptr&, const inode_ptr&) {
    throw file_error ("is a " + error_file_type());
 }
 
+map<string, inode_ptr> plain_file::getDirents() {
+   throw file_error ("is a " + error_file_type());
+}
+
 //--------------- Directory ----------------
 void directory::initializeDirectory(const inode_ptr& parent, const inode_ptr& current)
 {
    dirents.insert({"..", parent});
    dirents.insert({".", current});
+}
+
+map<string, inode_ptr> directory::getDirents() {
+   return dirents;
 }
 
