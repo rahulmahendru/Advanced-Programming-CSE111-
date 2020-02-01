@@ -87,12 +87,16 @@ inode_ptr base_file::mkfile (const string&) {
 
 
 size_t plain_file::size() const {
-   size_t size {data.size()};
+   size_t size {0};
    DEBUGF ('i', "size = " << size);
+   if (data.empty()){
+      return size;
+   }
    int loopsize = data.size();
    for (int loopIndex = 0; loopIndex < loopsize; loopIndex++){
       size = size + data[loopIndex].length();
    }
+   size = size + data.size();
    return size - 1;
 }
 
@@ -118,29 +122,24 @@ size_t directory::size() const {
 
 void directory::remove (const string& filename) {
    DEBUGF ('i', filename);
-   const auto index = dirents.find(filename) ;
-   if ( index == dirents.end()) {
-      throw file_error ("No such file or directory");
-   }
-   else {
-      file_type filenameType = index->second->getFileType();
+   map<string, inode_ptr>::iterator index = dirents.find(filename) ;
+   file_type filenameType = index->second->getFileType();
 
-      // Try to make functions out of these as removeFile and removeDirectory
-      if ( filenameType == file_type::PLAIN_TYPE) {
+   // Try to make functions out of these as removeFile and removeDirectory
+   if ( filenameType == file_type::PLAIN_TYPE) {
+      index->second = nullptr;
+      dirents.erase(filename) ;
+    }
+   else if (filenameType == file_type::DIRECTORY_TYPE){
+      if ( index->second->getContentsAsDirectory()->dirents.size() > 2) {
+         throw file_error ("Directory is not empty") ;
+      }
+      else {
+         index->second->getContentsAsDirectory()->dirents.find("..")->second = nullptr;
+         index->second->getContentsAsDirectory()->dirents.find(".")->second = nullptr;
+         index->second->getContentsAsDirectory()->dirents.clear();
          index->second = nullptr;
          dirents.erase(filename) ;
-      }
-      else if (filenameType == file_type::DIRECTORY_TYPE){
-         if ( index->second->getContentsAsDirectory()->dirents.size() > 2) {
-            throw file_error ("Directory is not empty") ;
-         }
-         else {
-            index->second->getContentsAsDirectory()->dirents.find("..")->second = nullptr;
-            index->second->getContentsAsDirectory()->dirents.find(".")->second = nullptr;
-            index->second->getContentsAsDirectory()->dirents.clear();
-            index->second = nullptr;
-            dirents.erase(filename) ;
-         }
       }
    }
 }
@@ -148,16 +147,10 @@ void directory::remove (const string& filename) {
 inode_ptr directory::mkdir (const string& dirname) {
    DEBUGF ('i', dirname);
 
-   const auto result = dirents.find(dirname);
-   if (result != dirents.end())
-   {
-      throw file_error("is a " + error_file_type());
-   }
-
    inode_ptr newDirectoryPtr = make_shared<inode>(file_type::DIRECTORY_TYPE);
    inode_ptr parentPtr = dirents.find(".")->second;
    newDirectoryPtr->getContentsAsDirectory()->initializeDirectory(parentPtr, newDirectoryPtr);
-   dirents.insert({dirname+"/", newDirectoryPtr});
+   dirents.insert({dirname, newDirectoryPtr});
    return newDirectoryPtr;
 }
 
@@ -188,15 +181,19 @@ string inode_state::getPath(inode_ptr current){
    }
    else {
       while (current != root){
-         current = current->getContentsAsDirectory()->getDirents().find("..")->second;
-         map<string, inode_ptr> currentDir = current->getContentsAsDirectory()->getDirents();
+         inode_ptr parent = current->getContentsAsDirectory()->getDirents().find("..")->second;
+         map<string, inode_ptr> currentDir = parent->getContentsAsDirectory()->getDirents();
          map<string, inode_ptr>::iterator index;
          for(index = currentDir.begin(); index != currentDir.end(); index++ ) {
-            if (index->second == current){
-               path = index->first + path ;
+            if (index->first=="." || index->first==".."){
+            }
+            else if (index->second == current){
+               path = index->first + "/" + path ;
             }
          }
+         current = parent;
       }
+      path.pop_back();
       path = "/" + path;
    }
    return path;
@@ -207,7 +204,17 @@ void inode_state::printDirectory(inode_ptr current) {
    map<string, inode_ptr> printDir = current->getContentsAsDirectory()->getDirents();
    map<string, inode_ptr>::iterator index;
    for(index = printDir.begin(); index != printDir.end(); index++ ) {
-      if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
+      if (index->first == ".." || index->first == "."){
+         cout << "     " 
+              << index->second->inode_nr 
+              << "  " 
+              << "     "
+              << index->second->getContentsAsDirectory()->size() 
+              << "  " 
+              << index->first 
+              << "\n" ;
+      }
+      else if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
          cout << "     " 
               << index->second->inode_nr 
               << "  "
@@ -215,6 +222,7 @@ void inode_state::printDirectory(inode_ptr current) {
               << index->second->getContentsAsDirectory()->size() 
               << "  " 
               << index->first 
+              << "/"
               << "\n";
       }
       else if (index->second->getFileType() == file_type::PLAIN_TYPE) {
@@ -243,7 +251,6 @@ inode_ptr inode_state::resolveInputPtr(const string& words, const inode_ptr& cur
    if (loopSize < 1){
       return currentDir;
    }
-   //
    for (int loopIndex = 0; loopIndex < loopSize; loopIndex++){
       map<string, inode_ptr> currentDirPtr = currentDir->getContentsAsDirectory()->getDirents();
       map<string, inode_ptr>::iterator checkPtr = currentDirPtr.find(path[loopIndex]);
@@ -261,6 +268,14 @@ inode_ptr inode_state::resolveInputPtr(const string& words, const inode_ptr& cur
 string inode_state::resolveInputString(const string& words) {
    wordvec path = split(words,"/");
    return path[path.size() - 1];
+}
+
+void inode_state::setPrompt(const string& words) {
+   prompt_ = words + " ";
+}
+
+void inode_state::setCwd(inode_ptr current) {
+   cwd = current;
 }
 
 //-------------- Inode ---------------------

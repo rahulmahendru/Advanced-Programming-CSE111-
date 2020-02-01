@@ -68,6 +68,16 @@ void fn_cat (inode_state& state, const wordvec& words){
 void fn_cd (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   if (words.size() ==1 || words[1] == "/"){
+      state.setCwd(state.getRoot());
+   }
+   else{
+      inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 0);
+      if (current == nullptr){
+         throw command_error("Invalid path");
+      }
+      state.setCwd(current);
+   }
 }
 
 void fn_echo (inode_state& state, const wordvec& words){
@@ -144,11 +154,27 @@ void fn_make (inode_state& state, const wordvec& words){
 void fn_mkdir (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   if (words.size() == 1)
+   {
+      throw command_error("No files specified");
+   }
+   inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
+   if (current == nullptr){
+      throw command_error("Path does not exist");
+   }
+   string filename = state.resolveInputString(words[1]);
+   map<string, inode_ptr> currentPtr = current->getContentsAsDirectory()->getDirents();
+   map<string, inode_ptr>::iterator checkPtr = currentPtr.find(filename);
+   if (checkPtr != currentPtr.end()){
+      throw command_error("File or directory already exists");
+   }
+   current->getContentsAsDirectory()->mkdir(filename);
 }
 
 void fn_prompt (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   state.setPrompt(words[1]);
 }
 
 void fn_pwd (inode_state& state, const wordvec& words){
@@ -161,6 +187,21 @@ void fn_pwd (inode_state& state, const wordvec& words){
 void fn_rm (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   if (words.size() == 1)
+   {
+      throw command_error("No files specified");
+   }
+   inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
+   if (current == nullptr){
+      throw command_error("Path does not exist");
+   }
+   string filename = state.resolveInputString(words[1]);
+   map<string, inode_ptr> currentPtr = current->getContentsAsDirectory()->getDirents();
+   map<string, inode_ptr>::iterator checkPtr = currentPtr.find(filename);
+   if (checkPtr == currentPtr.end()){
+      throw command_error("No such file or directory");
+   }
+   current->getContentsAsDirectory()->remove(filename);
 }
 
 void fn_rmr (inode_state& state, const wordvec& words){
