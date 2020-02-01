@@ -284,8 +284,14 @@ string inode_state::resolveInputString(const string& words) {
    return path[path.size() - 1];
 }
 
-void inode_state::setPrompt(const string& words) {
-   prompt_ = words + " ";
+void inode_state::setPrompt(const wordvec& words) {
+   int loopSize = words.size() ;
+   int loopIndex = 1 ;
+   prompt_ = "";
+   while ( loopIndex < loopSize ) {
+      prompt_ = prompt_ + words[loopIndex] + " ";
+      loopIndex++;
+   }
 }
 
 void inode_state::setCwd(inode_ptr current) {

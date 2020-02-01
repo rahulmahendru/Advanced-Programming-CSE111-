@@ -51,7 +51,7 @@ class inode_state {
       void printDirectoryRecursive(inode_ptr current);
       inode_ptr resolveInputPtr(const string& words, const inode_ptr& current, const int check);
       string resolveInputString(const string& words);
-      void setPrompt(const string& words);
+      void setPrompt(const wordvec& words);
       void setCwd(inode_ptr current);
       void removeRecursive(inode_ptr current);
 };
