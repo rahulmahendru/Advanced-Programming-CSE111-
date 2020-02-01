@@ -48,10 +48,12 @@ class inode_state {
       inode_ptr getRoot();
       string getPath(inode_ptr current);
       void printDirectory(inode_ptr current);
+      void printDirectoryRecursive(inode_ptr current);
       inode_ptr resolveInputPtr(const string& words, const inode_ptr& current, const int check);
       string resolveInputString(const string& words);
       void setPrompt(const string& words);
       void setCwd(inode_ptr current);
+      void removeRecursive(inode_ptr current);
 };
 
 // class inode -
