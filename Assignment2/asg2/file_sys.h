@@ -50,6 +50,8 @@ class inode_state {
       void printDirectory(inode_ptr current);
       inode_ptr resolveInputPtr(const string& words, const inode_ptr& current, const int check);
       string resolveInputString(const string& words);
+      void setPrompt(const string& words);
+      void setCwd(inode_ptr current);
 };
 
 // class inode -
