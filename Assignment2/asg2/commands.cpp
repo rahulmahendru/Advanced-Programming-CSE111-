@@ -4,17 +4,19 @@
 #include "debug.h"
 
 command_hash cmd_hash {
-   {"cat"   , fn_cat   },
-   {"cd"    , fn_cd    },
-   {"echo"  , fn_echo  },
-   {"exit"  , fn_exit  },
-   {"ls"    , fn_ls    },
-   {"lsr"   , fn_lsr   },
-   {"make"  , fn_make  },
-   {"mkdir" , fn_mkdir },
-   {"prompt", fn_prompt},
-   {"pwd"   , fn_pwd   },
-   {"rm"    , fn_rm    },
+   {"cat"   , fn_cat    },
+   {"cd"    , fn_cd     },
+   {"echo"  , fn_echo   },
+   {"exit"  , fn_exit   },
+   {"ls"    , fn_ls     },
+   {"lsr"   , fn_lsr    },
+   {"make"  , fn_make   },
+   {"mkdir" , fn_mkdir  },
+   {"prompt", fn_prompt },
+   {"pwd"   , fn_pwd    },
+   {"rm"    , fn_rm     },
+   {"rmr"   , fn_rmr    },
+   {"#"     , fn_comment},
 };
 
 command_fn find_command_fn (const string& cmd) {
@@ -97,7 +99,7 @@ void fn_ls (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
    inode_ptr current;
-   if (words.size() == 1)
+   if (words.size() == 1 || words[1] == ".")
    {
       current = state.getCwd();
    }
@@ -119,6 +121,24 @@ void fn_ls (inode_state& state, const wordvec& words){
 void fn_lsr (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   inode_ptr current;
+   if (words.size() == 1 || words[1] == ".")
+   {
+      current = state.getCwd();
+   }
+   else if(words[1] == "/") {
+      current = state.getRoot();
+   }
+   else{
+      current = state.resolveInputPtr(words[1], state.getCwd(), 0) ;
+   }
+   if (current == nullptr) {
+      throw command_error ("Path does not exist");
+   }
+   if (current->getFileType() == file_type::PLAIN_TYPE){
+      throw command_error ("Not a directory");
+   }
+   state.printDirectoryRecursive(current);
 }
 
 void fn_make (inode_state& state, const wordvec& words){
@@ -207,5 +227,33 @@ void fn_rm (inode_state& state, const wordvec& words){
 void fn_rmr (inode_state& state, const wordvec& words){
    DEBUGF ('c', state);
    DEBUGF ('c', words);
+   // NEEDS CORRECTION
+   inode_ptr current;
+   if (words.size() == 1 || words[1] == ".")
+   {
+      current = state.getCwd();
+   }
+   else if(words[1] == "/") {
+      current = state.getRoot();
+   }
+   else{
+      current = state.resolveInputPtr(words[1], state.getCwd(), 0) ;
+   }
+   if (current == nullptr) {
+      throw command_error ("Path does not exist");
+   }
+   if (current->getFileType() == file_type::PLAIN_TYPE){
+      throw command_error ("Not a directory");
+   }
+   state.removeRecursive(current);
 }
 
+void fn_comment(inode_state& state, const wordvec& words){
+   int loopSize = words.size() ;
+   int loopIndex = 1 ;
+   while ( loopIndex < loopSize ) {
+      cout << words[loopIndex] << " ";
+      loopIndex++;
+   }
+   cout << "\n" ;
+}

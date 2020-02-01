@@ -238,6 +238,20 @@ void inode_state::printDirectory(inode_ptr current) {
    }
 }
 
+void inode_state::printDirectoryRecursive(inode_ptr current) {
+   printDirectory(current);
+   map<string, inode_ptr> checkDir = current->getContentsAsDirectory()->getDirents();
+   map<string, inode_ptr>::iterator index = checkDir.begin();
+   while (index != checkDir.end()){
+      if (index->first=="." || index->first==".."){
+      }
+      else if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
+         printDirectoryRecursive(index->second);
+      }
+      index++;
+   }
+}
+
 inode_ptr inode_state::resolveInputPtr(const string& words, const inode_ptr& current, const int check) {
    inode_ptr currentDir = nullptr;
    if (words[0] == '/'){
@@ -276,6 +290,20 @@ void inode_state::setPrompt(const string& words) {
 
 void inode_state::setCwd(inode_ptr current) {
    cwd = current;
+}
+
+void inode_state::removeRecursive(inode_ptr current){
+   map<string, inode_ptr> checkDir = current->getContentsAsDirectory()->getDirents();
+   map<string, inode_ptr>::iterator index = checkDir.begin();
+   while (index != checkDir.end()){
+      if (index->first=="." || index->first==".."){
+      }
+      else if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
+         removeRecursive(index->second);
+      }
+      index->second->getContentsAsDirectory()->remove(index->first);
+      index++;
+   }
 }
 
 //-------------- Inode ---------------------
