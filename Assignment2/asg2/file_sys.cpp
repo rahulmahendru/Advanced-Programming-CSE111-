@@ -85,7 +85,6 @@ inode_ptr base_file::mkdir (const string&) {
 inode_ptr base_file::mkfile (const string&) {
    throw file_error ("is a " + error_file_type());
 }
-
 
 size_t plain_file::size() const {
    size_t size {0};
@@ -207,42 +206,60 @@ void inode_state::printDirectory(inode_ptr current, const string& path) {
    else {
       cout << path << ":" << "\n" ;
    }
-   map<string, inode_ptr> printDir = current->getContentsAsDirectory()->getDirents();
-   map<string, inode_ptr>::iterator index;
-   for(index = printDir.begin(); index != printDir.end(); index++ ) {
-      if (index->first == ".." || index->first == "."){
-         cout << right << setw(6)  
-              << index->second->inode_nr 
+   if ( current->getFileType() == file_type::PLAIN_TYPE ){
+      cout << right << setw(6)  
+              << current->inode_nr
               << "  " 
               << right << setw(6)
-              << index->second->getContentsAsDirectory()->size() 
+              << current->getContentsAsPlainFile()->size()
               << "  " 
               << left
-              << index->first 
+              << path
               << "\n" ;
-      }
-      else if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
-         cout << right << setw(6)  
-              << index->second->inode_nr 
-              << "  " 
-              << right << setw(6)
-              << index->second->getContentsAsDirectory()->size() 
-              << "  " 
-              << left
-              << index->first 
-              << "/"
-              << "\n";
-      }
-      else if (index->second->getFileType() == file_type::PLAIN_TYPE) {
-         cout << right << setw(6)  
-              << index->second->inode_nr 
-              << "  " 
-              << right << setw(6)
-              << index->second->getContentsAsPlainFile()->size() 
-              << "  " 
-              << left
-              << index->first 
-              << "\n" ;
+   }
+   else
+   {
+      map<string, inode_ptr> printDir = current->getContentsAsDirectory()->getDirents();
+      map<string, inode_ptr>::iterator index;
+      for (index = printDir.begin(); index != printDir.end(); index++)
+      {
+         if (index->first == ".." || index->first == ".")
+         {
+            cout << right << setw(6)
+                 << index->second->inode_nr
+                 << "  "
+                 << right << setw(6)
+                 << index->second->getContentsAsDirectory()->size()
+                 << "  "
+                 << left
+                 << index->first
+                 << "\n";
+         }
+         else if (index->second->getFileType() == file_type::DIRECTORY_TYPE)
+         {
+            cout << right << setw(6)
+                 << index->second->inode_nr
+                 << "  "
+                 << right << setw(6)
+                 << index->second->getContentsAsDirectory()->size()
+                 << "  "
+                 << left
+                 << index->first
+                 << "/"
+                 << "\n";
+         }
+         else if (index->second->getFileType() == file_type::PLAIN_TYPE)
+         {
+            cout << right << setw(6)
+                 << index->second->inode_nr
+                 << "  "
+                 << right << setw(6)
+                 << index->second->getContentsAsPlainFile()->size()
+                 << "  "
+                 << left
+                 << index->first
+                 << "\n";
+         }
       }
    }
 }
@@ -307,33 +324,6 @@ void inode_state::setCwd(inode_ptr current) {
    cwd = current;
 }
 
-void inode_state::removeRecursive(inode_ptr current){
-   map<string, inode_ptr> checkDir = current->getContentsAsDirectory()->getDirents();
-   map<string, inode_ptr>::reverse_iterator index = checkDir.rbegin();
-   
-   while (index != checkDir.rend()){
-      file_type filenameType = index->second->getFileType();
-      
-      if (index->first=="." || index->first==".."){
-         index++;
-      }
-
-      else if (filenameType == file_type::DIRECTORY_TYPE){
-         removeRecursive(index->second);
-         index->second->getContentsAsDirectory()->getDirents().find("..")->second = nullptr;
-         index->second->getContentsAsDirectory()->getDirents().find(".")->second = nullptr;
-         index->second->getContentsAsDirectory()->getDirents().clear();
-         index->second = nullptr;
-         checkDir.erase(index->first) ;
-      }
-      else if ( filenameType == file_type::PLAIN_TYPE) {
-         cout << index->first << "\n" ;
-         index->second = nullptr;
-         checkDir.erase(index->first) ;
-      }
-   }
-   checkDir.clear();
-}
 
 //-------------- Inode ---------------------
 shared_ptr<directory> inode::getContentsAsDirectory() {
@@ -357,8 +347,8 @@ map<string, inode_ptr> plain_file::getDirents() {
    throw file_error ("is a " + error_file_type());
 }
 
-wordvec plain_file::getData() {
-   return data;
+void plain_file::removeRecursive(){
+   throw file_error ("is a " + error_file_type());
 }
 
 //--------------- Directory ----------------
@@ -372,6 +362,16 @@ map<string, inode_ptr> directory::getDirents() {
    return dirents;
 }
 
-wordvec directory::getData() {
-   throw file_error ("is a " + error_file_type());
+void directory::removeRecursive() {
+   map<string, inode_ptr>::reverse_iterator index = dirents.rbegin() ;
+   while ( index != dirents.rend() ) {
+      if (index->first=="." || index->first==".."){
+         index++;
+         continue;
+      }
+      else if ( index->second->getFileType() == file_type::DIRECTORY_TYPE) {
+         index->second->getContentsAsDirectory()->removeRecursive();
+      }
+      remove(index->first);
+   }
 }

@@ -16,7 +16,6 @@ command_hash cmd_hash{
     {"pwd", fn_pwd},
     {"rm", fn_rm},
     {"rmr", fn_rmr},
-    {"#", fn_comment},
 };
 
 command_fn find_command_fn(const string &cmd)
@@ -75,7 +74,7 @@ void fn_cat(inode_state &state, const wordvec &words)
             throw command_error("Directory exists with the name");
          }
          //cout << filename << "\n";
-         cout << checkPtr->second->getContentsAsPlainFile()->getData() << "\n";
+         cout << checkPtr->second->getContentsAsPlainFile()->readfile() << "\n";
       }
       loopIndex++;
    }
@@ -85,6 +84,9 @@ void fn_cd(inode_state &state, const wordvec &words)
 {
    DEBUGF('c', state);
    DEBUGF('c', words);
+   if (words.size() > 2) {
+      throw command_error ("Too many operands");
+   }
    if (words.size() == 1 || words[1] == "/")
    {
       state.setCwd(state.getRoot());
@@ -111,6 +113,24 @@ void fn_exit(inode_state &state, const wordvec &words)
 {
    DEBUGF('c', state);
    DEBUGF('c', words);
+   if ( words.size() == 2 ) {
+      string status = words[1];
+      bool check = true ;
+      for ( unsigned long loopIndex = 0; loopIndex < status.length() ; loopIndex++ ){
+         if (!isdigit(status[loopIndex])){
+            check = false;
+         }
+         if (!check) { 
+            break;
+         }
+      }
+      if (!check){
+         exec::status(127);
+      }
+      else {
+         exec::status(stoi(words[1]));
+      }
+   }
    throw ysh_exit();
 }
 
@@ -118,60 +138,88 @@ void fn_ls(inode_state &state, const wordvec &words)
 {
    DEBUGF('c', state);
    DEBUGF('c', words);
-   inode_ptr current;
-   if (words.size() == 1 || words[1] == ".")
+   if (words.size() == 1)
    {
-      current = state.getCwd();
-   }
-   else if (words[1] == "/")
-   {
-      current = state.getRoot();
+      state.printDirectory(state.getCwd(), "");
    }
    else
    {
-      current = state.resolveInputPtr(words[1], state.getCwd(), 0);
+      if (words[1] == "/")
+      {
+         state.printDirectory(state.getRoot(), "/");
+      }
+      else if (words[1] == ".")
+      {
+         state.printDirectory(state.getCwd(), ".");
+      }
+      else
+      {
+         inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
+         if (current == nullptr)
+         {
+            throw command_error("Path does not exist");
+         }
+         string filename = state.resolveInputString(words[1]);
+         map<string, inode_ptr> currentPtr = current->getContentsAsDirectory()->getDirents();
+         map<string, inode_ptr>::iterator checkPtr = currentPtr.find(filename);
+         if (checkPtr == currentPtr.end())
+         {
+            throw command_error("Path does not exist");
+         }
+         if (checkPtr->second->getFileType() == file_type::PLAIN_TYPE)
+         {
+            state.printDirectory(checkPtr->second, filename);
+         }
+         else
+         {
+            state.printDirectory(checkPtr->second, "" );
+         }
+      }
    }
-   if (current == nullptr)
-   {
-      throw command_error("Path does not exist");
-   }
-   if (current->getFileType() == file_type::PLAIN_TYPE)
-   {
-      throw command_error("Not a directory");
-   }
-   string path = "";
-   if (words.size() > 1){
-      path = words[1];
-   }
-   state.printDirectory(current, path);
 }
 
 void fn_lsr(inode_state &state, const wordvec &words)
 {
    DEBUGF('c', state);
    DEBUGF('c', words);
-   inode_ptr current;
-   if (words.size() == 1 || words[1] == ".")
+   if (words.size() == 1)
    {
-      current = state.getCwd();
-   }
-   else if (words[1] == "/")
-   {
-      current = state.getRoot();
+      state.printDirectoryRecursive(state.getCwd());
    }
    else
    {
-      current = state.resolveInputPtr(words[1], state.getCwd(), 0);
+      if (words[1] == "/")
+      {
+         state.printDirectoryRecursive(state.getRoot());
+      }
+      else if (words[1] == ".")
+      {
+         state.printDirectoryRecursive(state.getCwd());
+      }
+      else
+      {
+         inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
+         if (current == nullptr)
+         {
+            throw command_error("Path does not exist");
+         }
+         string filename = state.resolveInputString(words[1]);
+         map<string, inode_ptr> currentPtr = current->getContentsAsDirectory()->getDirents();
+         map<string, inode_ptr>::iterator checkPtr = currentPtr.find(filename);
+         if (checkPtr == currentPtr.end())
+         {
+            throw command_error("Path does not exist");
+         }
+         if (checkPtr->second->getFileType() == file_type::PLAIN_TYPE)
+         {
+            state.printDirectory(checkPtr->second, filename);
+         }
+         else
+         {
+            state.printDirectoryRecursive(checkPtr->second);
+         }
+      }
    }
-   if (current == nullptr)
-   {
-      throw command_error("Path does not exist");
-   }
-   if (current->getFileType() == file_type::PLAIN_TYPE)
-   {
-      throw command_error("Not a directory");
-   }
-   state.printDirectoryRecursive(current);
 }
 
 void fn_make(inode_state &state, const wordvec &words)
@@ -237,6 +285,9 @@ void fn_prompt(inode_state &state, const wordvec &words)
 {
    DEBUGF('c', state);
    DEBUGF('c', words);
+   if ( words.size() == 1 ){
+      throw command_error ("No prompt specified");
+   }
    state.setPrompt(words);
 }
 
@@ -255,6 +306,9 @@ void fn_rm(inode_state &state, const wordvec &words)
    if (words.size() == 1)
    {
       throw command_error("No files specified");
+   }
+   if (words[1] == ".") {
+      throw command_error ("rmdir: failed to remove '.': Invalid argument") ;
    }
    inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
    if (current == nullptr)
@@ -276,30 +330,43 @@ void fn_rmr(inode_state &state, const wordvec &words)
    DEBUGF('c', state);
    DEBUGF('c', words);
    // NEEDS CORRECTION
-   inode_ptr current;
-   if (words.size() == 1 || words[1] == ".")
+   if (words.size() == 1)
    {
-      current = state.getCwd();
+      throw command_error("No path specified");
    }
-   else if (words[1] == "/")
+   if (words[1] == ".") {
+      throw command_error ("rmdir: failed to remove '.': Invalid argument") ;
+   }
+   if (words[1] == "/")
    {
-      current = state.getRoot();
+      state.getRoot()->getContentsAsDirectory()->removeRecursive();
    }
    else
    {
-      current = state.resolveInputPtr(words[1], state.getCwd(), 0);
+      inode_ptr current = state.resolveInputPtr(words[1], state.getCwd(), 1);
+      if (current == nullptr)
+      {
+         throw command_error("Path does not exist");
+      }
+      string filename = state.resolveInputString(words[1]);
+      map<string, inode_ptr> currentPtr = current->getContentsAsDirectory()->getDirents();
+      map<string, inode_ptr>::iterator checkPtr = currentPtr.find(filename);
+      if (checkPtr == currentPtr.end())
+      {
+         throw command_error("Path does not exist");
+      }
+      if (checkPtr->second->getFileType() == file_type::PLAIN_TYPE)
+      {
+         current->getContentsAsDirectory()->remove(filename);
+      }
+      else
+      {
+         checkPtr->second->getContentsAsDirectory()->removeRecursive();
+         current->getContentsAsDirectory()->remove(filename);
+      }
    }
-   if (current == nullptr)
-   {
-      throw command_error("Path does not exist");
-   }
-   if (current->getFileType() == file_type::PLAIN_TYPE)
-   {
-      throw command_error("Not a directory");
-   }
-   state.removeRecursive(current);
 }
-
+/*
 void fn_comment(inode_state &state, const wordvec &words)
 {
    int loopSize = words.size();
@@ -311,3 +378,4 @@ void fn_comment(inode_state &state, const wordvec &words)
    }
    cout << "\n";
 }
+*/

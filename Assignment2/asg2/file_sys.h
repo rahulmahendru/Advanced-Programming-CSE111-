@@ -12,6 +12,9 @@ using namespace std;
 
 #include "util.h"
 
+const static string dirError  = "directory";
+const static string fileError = "plain_file";
+
 // inode_t -
 //    An inode is either a directory or a plain file.
 
@@ -53,7 +56,6 @@ class inode_state {
       string resolveInputString(const string& words);
       void setPrompt(const wordvec& words);
       void setCwd(inode_ptr current);
-      void removeRecursive(inode_ptr current);
 };
 
 // class inode -
@@ -100,7 +102,7 @@ class file_error: public runtime_error {
 class base_file {
    protected:
       base_file() = default;
-      virtual const string error_file_type() const = 0;
+      virtual const string& error_file_type() const = 0;
    public:
       virtual ~base_file() = default;
       base_file (const base_file&) = delete;
@@ -115,7 +117,7 @@ class base_file {
       //
       virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) = 0 ;
       virtual map<string, inode_ptr> getDirents() = 0 ;
-      virtual wordvec getData() = 0;
+      virtual void removeRecursive() = 0;
 };
 
 // class plain_file -
@@ -130,8 +132,8 @@ class base_file {
 class plain_file: public base_file {
    private:
       wordvec data;
-      virtual const string error_file_type() const override {
-         return "plain file";
+      virtual const string& error_file_type() const override {
+         return fileError;
       }
    public:
       virtual size_t size() const override;
@@ -141,7 +143,7 @@ class plain_file: public base_file {
       //
       virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) override ;
       virtual map<string, inode_ptr> getDirents() override ;
-      virtual wordvec getData() override;
+      virtual void removeRecursive() override;
 };
 
 // class directory -
@@ -166,8 +168,8 @@ class directory: public base_file {
    private:
       // Must be a map, not unordered_map, so printing is lexicographic
       map<string,inode_ptr> dirents;
-      virtual const string error_file_type() const override {
-         return "directory";
+      virtual const string& error_file_type() const override {
+         return dirError;
       }
    public:
       virtual size_t size() const override;
@@ -178,7 +180,7 @@ class directory: public base_file {
       // Self Functions
       virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) override ;
       virtual map<string, inode_ptr> getDirents() override ;
-      virtual wordvec getData() override;
+      virtual void removeRecursive() override;
 };
 
 #endif
