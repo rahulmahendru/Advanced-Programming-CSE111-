@@ -139,7 +139,11 @@ void fn_ls(inode_state &state, const wordvec &words)
    {
       throw command_error("Not a directory");
    }
-   state.printDirectory(current);
+   string path = "";
+   if (words.size() > 1){
+      path = words[1];
+   }
+   state.printDirectory(current, path);
 }
 
 void fn_lsr(inode_state &state, const wordvec &words)

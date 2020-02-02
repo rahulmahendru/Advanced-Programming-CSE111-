@@ -3,6 +3,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <unordered_map>
+#include <iomanip>
 
 using namespace std;
 
@@ -199,39 +200,47 @@ string inode_state::getPath(inode_ptr current){
    return path;
 }
 
-void inode_state::printDirectory(inode_ptr current) {
-   cout << getPath(current) << ":" << "\n" ;
+void inode_state::printDirectory(inode_ptr current, const string& path) {
+   if (path == "") {
+      cout << getPath(current) << ":" << "\n" ;
+   }
+   else {
+      cout << path << ":" << "\n" ;
+   }
    map<string, inode_ptr> printDir = current->getContentsAsDirectory()->getDirents();
    map<string, inode_ptr>::iterator index;
    for(index = printDir.begin(); index != printDir.end(); index++ ) {
       if (index->first == ".." || index->first == "."){
-         cout << "     " 
+         cout << right << setw(6)  
               << index->second->inode_nr 
               << "  " 
-              << "     "
+              << right << setw(6)
               << index->second->getContentsAsDirectory()->size() 
               << "  " 
+              << left
               << index->first 
               << "\n" ;
       }
       else if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
-         cout << "     " 
+         cout << right << setw(6)  
               << index->second->inode_nr 
-              << "  "
-              << "     "
+              << "  " 
+              << right << setw(6)
               << index->second->getContentsAsDirectory()->size() 
               << "  " 
+              << left
               << index->first 
               << "/"
               << "\n";
       }
       else if (index->second->getFileType() == file_type::PLAIN_TYPE) {
-         cout << "     " 
+         cout << right << setw(6)  
               << index->second->inode_nr 
               << "  " 
-              << "     "
+              << right << setw(6)
               << index->second->getContentsAsPlainFile()->size() 
               << "  " 
+              << left
               << index->first 
               << "\n" ;
       }
@@ -239,7 +248,7 @@ void inode_state::printDirectory(inode_ptr current) {
 }
 
 void inode_state::printDirectoryRecursive(inode_ptr current) {
-   printDirectory(current);
+   printDirectory(current, getPath(current));
    map<string, inode_ptr> checkDir = current->getContentsAsDirectory()->getDirents();
    map<string, inode_ptr>::iterator index = checkDir.begin();
    while (index != checkDir.end()){
@@ -300,16 +309,30 @@ void inode_state::setCwd(inode_ptr current) {
 
 void inode_state::removeRecursive(inode_ptr current){
    map<string, inode_ptr> checkDir = current->getContentsAsDirectory()->getDirents();
-   map<string, inode_ptr>::iterator index = checkDir.begin();
-   while (index != checkDir.end()){
+   map<string, inode_ptr>::reverse_iterator index = checkDir.rbegin();
+   
+   while (index != checkDir.rend()){
+      file_type filenameType = index->second->getFileType();
+      
       if (index->first=="." || index->first==".."){
+         index++;
       }
-      else if (index->second->getFileType() == file_type::DIRECTORY_TYPE){
+
+      else if (filenameType == file_type::DIRECTORY_TYPE){
          removeRecursive(index->second);
+         index->second->getContentsAsDirectory()->getDirents().find("..")->second = nullptr;
+         index->second->getContentsAsDirectory()->getDirents().find(".")->second = nullptr;
+         index->second->getContentsAsDirectory()->getDirents().clear();
+         index->second = nullptr;
+         checkDir.erase(index->first) ;
       }
-      index->second->getContentsAsDirectory()->remove(index->first);
-      index++;
+      else if ( filenameType == file_type::PLAIN_TYPE) {
+         cout << index->first << "\n" ;
+         index->second = nullptr;
+         checkDir.erase(index->first) ;
+      }
    }
+   checkDir.clear();
 }
 
 //-------------- Inode ---------------------
