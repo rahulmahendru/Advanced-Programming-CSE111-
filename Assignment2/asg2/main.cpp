@@ -1,5 +1,8 @@
 // $Id: main.cpp,v 1.10 2019-10-08 13:55:31-07 - - $
 
+// Rahul Mahendru (ramahend@ucsc.edu)
+// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -68,9 +71,8 @@ int main (int argc, char** argv) {
             // function.  Complain or call it.
             wordvec words = split (line, " \t");
             DEBUGF ('y', "words = " << words);
-            //
+            // To check for a leading comment sign
             if (words.at(0)[0] == '#' ) {
-               //
             }
             else {
                command_fn fn = find_command_fn (words.at(0));

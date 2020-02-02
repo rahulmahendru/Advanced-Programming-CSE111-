@@ -1,5 +1,8 @@
 // $Id: util.h,v 1.13 2019-10-08 13:55:31-07 - - $
 
+// Rahul Mahendru (ramahend@ucsc.edu)
+// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+
 // util -
 //    A utility class to provide various services not conveniently
 //    included in other modules.

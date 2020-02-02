@@ -1,5 +1,8 @@
 // $Id: debug.h,v 1.12 2019-10-16 15:17:26-07 - - $
 
+// Rahul Mahendru (ramahend@ucsc.edu)
+// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+
 #ifndef __DEBUG_H__
 #define __DEBUG_H__
 

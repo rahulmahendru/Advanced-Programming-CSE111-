@@ -1,5 +1,8 @@
 # $Id: Makefile,v 1.34 2019-10-16 15:17:26-07 - - $
 
+# Rahul Mahendru (ramahend@ucsc.edu)
+# Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+
 MKFILE      = Makefile
 DEPFILE     = ${MKFILE}.dep
 NOINCL      = ci clean spotless
@@ -55,6 +58,9 @@ ${DEPFILE} : ${MKFILE}
 
 again :
 	${GMAKE} spotless dep ci all lis
+
+submit : ${ALLSOURCES} README PARTNER
+	submit  cse111-wm.w20 asg2 $^
 
 ifeq (${NEEDINCL}, )
 include ${DEPFILE}

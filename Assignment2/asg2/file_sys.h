@@ -1,5 +1,8 @@
 // $Id: file_sys.h,v 1.7 2019-07-09 14:05:44-07 - - $
 
+// Rahul Mahendru (ramahend@ucsc.edu)
+// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+
 #ifndef __INODE_H__
 #define __INODE_H__
 
