@@ -1,7 +1,7 @@
 // $Id: file_sys.h,v 1.7 2019-07-09 14:05:44-07 - - $
 
-// Rahul Mahendru (ramahend@ucsc.edu)
-// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+// Rahul Mahendru (ramahend)
+// Ivan Garcia-Sanchez (igarci33)
 
 #ifndef __INODE_H__
 #define __INODE_H__
@@ -47,6 +47,7 @@ class inode_state {
       inode_state (const inode_state&) = delete; // copy ctor
       inode_state& operator= (const inode_state&) = delete; // op=
       inode_state();
+      ~inode_state();
       const string& prompt() const;
 
       // Self Functions
@@ -86,6 +87,7 @@ class inode {
       int get_inode_nr() const;
 
       // Self Functions
+      void invalidate() ;
       shared_ptr<directory> getContentsAsDirectory() ;
       shared_ptr<plain_file> getContentsAsPlainFile() ;
       file_type getFileType() ;
@@ -175,6 +177,7 @@ class directory: public base_file {
          return dirError;
       }
    public:
+      ~directory();
       virtual size_t size() const override;
       virtual void remove (const string& filename) override;
       virtual inode_ptr mkdir (const string& dirname) override;

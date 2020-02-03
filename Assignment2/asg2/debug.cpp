@@ -1,7 +1,7 @@
 // $Id: debug.cpp,v 1.15 2020-01-22 14:21:55-08 - - $
 
-// Rahul Mahendru (ramahend@ucsc.edu)
-// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+// Rahul Mahendru (ramahend)
+// Ivan Garcia-Sanchez (igarci33)
 
 #include <climits>
 #include <iostream>

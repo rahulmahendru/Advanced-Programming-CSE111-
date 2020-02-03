@@ -1,7 +1,7 @@
 // $Id: file_sys.cpp,v 1.7 2019-07-09 14:05:44-07 - - $
 
-// Rahul Mahendru (ramahend@ucsc.edu)
-// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+// Rahul Mahendru (ramahend)
+// Ivan Garcia-Sanchez (igarci33)
 
 #include <iostream>
 #include <stdexcept>
@@ -37,6 +37,16 @@ inode_state::inode_state() {
    root = make_shared<inode>(file_type::DIRECTORY_TYPE) ;
    root->getContentsAsDirectory()->initializeDirectory(root, root) ;
    cwd = root ;
+}
+
+// Inode_state destructor
+inode_state::~inode_state() {
+   root->invalidate();
+}
+
+// to set the contents as null
+void inode::invalidate() {
+   contents = nullptr ;
 }
 
 const string& inode_state::prompt() const { return prompt_; }
@@ -123,6 +133,15 @@ void plain_file::writefile (const wordvec& words) {
    for (unsigned long loopIndex = 2; loopIndex < words.size();
         loopIndex++) {
       data.push_back(words[loopIndex]);
+   }
+}
+
+// directory destructor
+// invalidates all the fields of the dirents
+directory::~directory() {
+   map<string, inode_ptr>::iterator index;
+   for (index = dirents.begin(); index != dirents.end(); index++) {
+      index->second->invalidate();
    }
 }
 

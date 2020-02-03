@@ -1,7 +1,7 @@
 // $Id: util.cpp,v 1.14 2019-10-08 14:01:38-07 - - $
 
-// Rahul Mahendru (ramahend@ucsc.edu)
-// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+// Rahul Mahendru (ramahend)
+// Ivan Garcia-Sanchez (igarci33)
 
 #include <cstdlib>
 #include <unistd.h>

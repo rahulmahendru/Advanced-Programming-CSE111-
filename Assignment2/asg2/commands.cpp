@@ -1,7 +1,7 @@
 // $Id: commands.cpp,v 1.18 2019-10-08 13:55:31-07 - - $
 
-// Rahul Mahendru (ramahend@ucsc.edu)
-// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+// Rahul Mahendru (ramahend)
+// Ivan Garcia-Sanchez (igarci33)
 
 #include "commands.h"
 #include "debug.h"
@@ -242,7 +242,7 @@ void fn_lsr(inode_state &state, const wordvec &words) {
                                 state.getCwd(), 1) ;
 
             if (current == nullptr) {
-               throw command_error("ls: " + words[loopIndex]
+               throw command_error("lsr: " + words[loopIndex]
                                    + ": No such file or directory") ;
             }
 
@@ -255,7 +255,7 @@ void fn_lsr(inode_state &state, const wordvec &words) {
                                    currentPtr.find(filename) ;
 
             if (checkPtr == currentPtr.end()) {
-               throw command_error("ls: " + filename +
+               throw command_error("lsr: " + filename +
                                    ": No such file or directory") ;
             }
 
@@ -286,7 +286,7 @@ void fn_make(inode_state &state, const wordvec &words) {
                                              state.getCwd(), 1) ;
 
    if (current == nullptr) {
-      throw command_error("ls: " + words[1] +
+      throw command_error("make: " + words[1] +
                           ": No such file or directory") ;
    }
 
@@ -307,7 +307,7 @@ void fn_make(inode_state &state, const wordvec &words) {
    else {
       if (checkPtr->second->getFileType() == 
           file_type::DIRECTORY_TYPE) {
-         throw command_error("make:" + filename + 
+         throw command_error("make: " + filename + 
                              ": Directory already exists") ;
       }
 
@@ -327,7 +327,7 @@ void fn_mkdir(inode_state &state, const wordvec &words) {
                                              state.getCwd(), 1) ;
 
    if (current == nullptr) {
-      throw command_error("ls: " + words[1] +
+      throw command_error("mkdir: " + words[1] +
                           ": No such file or directory") ;
    }
 
@@ -339,7 +339,7 @@ void fn_mkdir(inode_state &state, const wordvec &words) {
                           currentPtr.find(filename);
 
    if (checkPtr != currentPtr.end()) {
-      throw command_error("make:" + filename + 
+      throw command_error("mkdir: " + filename + 
                           ": File or directory already exists") ;
    }
 
@@ -388,7 +388,7 @@ void fn_rm(inode_state &state, const wordvec &words) {
                                              state.getCwd(), 1) ;
 
    if (current == nullptr) {
-      throw command_error("ls: " + words[1] +
+      throw command_error("rm: " + words[1] +
                           ": No such file or directory") ;
    }
 
@@ -400,7 +400,7 @@ void fn_rm(inode_state &state, const wordvec &words) {
                           currentPtr.find(filename);
 
    if (checkPtr == currentPtr.end()) {
-      throw command_error("ls: " + filename +
+      throw command_error("rm: " + filename +
                           ": No such file or directory") ;
    }
    
@@ -428,7 +428,7 @@ void fn_rmr(inode_state &state, const wordvec &words) {
                                                 state.getCwd(), 1) ;
 
       if (current == nullptr) {
-         throw command_error("ls: " + words[1] +
+         throw command_error("rmr: " + words[1] +
                              ": No such file or directory") ;
       }
 
@@ -440,7 +440,7 @@ void fn_rmr(inode_state &state, const wordvec &words) {
                                        currentPtr.find(filename) ;
 
       if (checkPtr == currentPtr.end()) {
-         throw command_error("ls: " + filename +
+         throw command_error("rmr: " + filename +
                              ": No such file or directory") ;
       }
 

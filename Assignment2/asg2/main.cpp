@@ -1,7 +1,7 @@
 // $Id: main.cpp,v 1.10 2019-10-08 13:55:31-07 - - $
 
-// Rahul Mahendru (ramahend@ucsc.edu)
-// Ivan Garcia-Sanchez (igarci33@ucsc.edu)
+// Rahul Mahendru (ramahend)
+// Ivan Garcia-Sanchez (igarci33)
 
 #include <cstdlib>
 #include <iostream>
