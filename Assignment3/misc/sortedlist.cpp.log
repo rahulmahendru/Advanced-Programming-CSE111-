@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting sortedlist.cpp
+checksource sortedlist.cpp
+ident sortedlist.cpp
+sortedlist.cpp:
+     $Id: sortedlist.cpp,v 1.12 2019-02-07 13:54:19-08 - - $
+cpplint.py.perl sortedlist.cpp
+Done processing sortedlist.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 sortedlist.cpp -o sortedlist -lm
+rm -f sortedlist.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished sortedlist.cpp

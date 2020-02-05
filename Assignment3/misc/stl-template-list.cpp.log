@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting stl-template-list.cpp
+checksource stl-template-list.cpp
+ident stl-template-list.cpp
+stl-template-list.cpp:
+     $Id: stl-template-list.cpp,v 1.5 2019-01-31 18:16:28-08 - - $
+cpplint.py.perl stl-template-list.cpp
+Done processing stl-template-list.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 stl-template-list.cpp -o stl-template-list -lm
+rm -f stl-template-list.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished stl-template-list.cpp

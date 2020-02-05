@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting matchlines.cpp
+checksource matchlines.cpp
+ident matchlines.cpp
+matchlines.cpp:
+     $Id: matchlines.cpp,v 1.1 2016-06-28 14:46:02-07 - - $
+cpplint.py.perl matchlines.cpp
+Done processing matchlines.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 matchlines.cpp -o matchlines -lm
+rm -f matchlines.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished matchlines.cpp

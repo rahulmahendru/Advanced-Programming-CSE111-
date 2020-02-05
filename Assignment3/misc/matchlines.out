@@ -1,0 +1,25 @@
+
+input: "    # comment   "
+Comment or empty line.
+
+input: "                  "
+Comment or empty line.
+
+input: "    No equal in this line.           "
+query: "No equal in this line."
+
+input: "   key key key  =  value value value  "
+key  : "key key key"
+value: "value value value"
+
+input: "only key here =     "
+key  : "only key here"
+value: ""
+
+input: "  = only value here     "
+key  : ""
+value: "only value here"
+
+input: "   =   "
+key  : ""
+value: ""

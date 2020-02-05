@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting testxless.cpp
+checksource testxless.cpp
+ident testxless.cpp
+testxless.cpp:
+     $Id: testxless.cpp,v 1.2 2019-02-07 13:26:15-08 - - $
+cpplint.py.perl testxless.cpp
+Done processing testxless.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 testxless.cpp -o testxless -lm
+rm -f testxless.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished testxless.cpp

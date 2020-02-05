@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting loop-cin.cpp
+checksource loop-cin.cpp
+ident loop-cin.cpp
+loop-cin.cpp:
+     $Id: loop-cin.cpp,v 1.3 2019-07-25 11:45:41-07 - - $
+cpplint.py.perl loop-cin.cpp
+Done processing loop-cin.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 loop-cin.cpp -o loop-cin -lm
+rm -f loop-cin.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished loop-cin.cpp

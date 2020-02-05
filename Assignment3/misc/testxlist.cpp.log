@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting testxlist.cpp
+checksource testxlist.cpp
+ident testxlist.cpp
+testxlist.cpp:
+     $Id: testxlist.cpp,v 1.1 2016-06-28 14:47:09-07 - - $
+cpplint.py.perl testxlist.cpp
+Done processing testxlist.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 testxlist.cpp -o testxlist -lm
+rm -f testxlist.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished testxlist.cpp

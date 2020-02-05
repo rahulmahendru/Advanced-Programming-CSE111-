@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting linknode.cpp
+checksource linknode.cpp
+ident linknode.cpp
+linknode.cpp:
+     $Id: linknode.cpp,v 1.1 2016-06-28 14:46:57-07 - - $
+cpplint.py.perl linknode.cpp
+Done processing linknode.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 linknode.cpp -o linknode -lm
+rm -f linknode.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished linknode.cpp
