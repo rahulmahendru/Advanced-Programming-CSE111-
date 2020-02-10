@@ -1,9 +1,29 @@
-head	1.30;
+head	1.34;
 access;
 symbols;
 locks;
 comment	@# @;
 
+
+1.34
+date	2020.02.06.20.55.59;	author -;	state -;
+branches;
+next	1.33;
+
+1.33
+date	2020.02.06.20.55.44;	author -;	state -;
+branches;
+next	1.32;
+
+1.32
+date	2020.02.06.20.52.28;	author -;	state -;
+branches;
+next	1.31;
+
+1.31
+date	2020.02.06.20.33.31;	author -;	state -;
+branches;
+next	1.30;
 
 1.30
 date	2020.01.31.21.20.40;	author -;	state -;
@@ -160,16 +180,60 @@ desc
 @@
 
 
+1.34
+log
+@-
+@
+text
+@# Makefile.dep created Thu Feb  6 12:55:59 PST 2020
+debug.o: debug.cpp debug.h util.h util.tcc
+util.o: util.cpp debug.h util.h util.tcc
+main.o: main.cpp listmap.h xless.h xpair.h listmap.tcc debug.h util.h \
+ util.tcc
+@
+
+
+1.33
+log
+@-
+@
+text
+@d1 1
+a1 1
+# Makefile.dep created Thu Feb  6 12:55:44 PST 2020
+@
+
+
+1.32
+log
+@-
+@
+text
+@d1 1
+a1 1
+# Makefile.dep created Thu Feb  6 12:52:28 PST 2020
+@
+
+
+1.31
+log
+@-
+@
+text
+@d1 1
+a1 1
+# Makefile.dep created Thu Feb  6 12:33:31 PST 2020
+@
+
+
 1.30
 log
 @-
 @
 text
-@# Makefile.dep created Fri Jan 31 13:20:40 PST 2020
-debug.o: debug.cpp debug.h util.h util.tcc
-util.o: util.cpp debug.h util.h util.tcc
-main.o: main.cpp listmap.h xless.h xpair.h listmap.tcc debug.h util.h \
- util.tcc
+@d1 1
+a1 1
+# Makefile.dep created Fri Jan 31 13:20:40 PST 2020
 @
 
 

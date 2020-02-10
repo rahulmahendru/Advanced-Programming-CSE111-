@@ -21,34 +21,14 @@ int main() {
       if (cin.eof()) break;
       cout << endl << "input: \"" << line << "\"" << endl;
       smatch result;
-      
       if (regex_search (line, result, comment_regex)) {
-         // Case 1 : comment
          cout << "Comment or empty line." << endl;
          continue;
       }
       if (regex_search (line, result, key_value_regex)) {
          cout << "key  : \"" << result[1] << "\"" << endl;
          cout << "value: \"" << result[2] << "\"" << endl;
-         /* if ( - result 1 : empty - ) {
-            if (resutl2 : empty) {
-               Case 5
-
-            } else {
-               case 6
-            }
-            else {
-               if(){
-                  case 3
-               }
-               else(){
-                  case 4
-               }
-            }
-         } */
-         
       }else if (regex_search (line, result, trimmed_regex)) {
-         // Case 2 : only key
          cout << "query: \"" << result[1] << "\"" << endl;
       }else {
          assert (false and "This can not happen.");

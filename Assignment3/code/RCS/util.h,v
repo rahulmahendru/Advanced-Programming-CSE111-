@@ -1,9 +1,19 @@
-head	1.6;
+head	1.8;
 access;
 symbols;
 locks;
 comment	@ * @;
 
+
+1.8
+date	2020.02.06.20.52.28;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2020.02.06.20.33.29;	author -;	state -;
+branches;
+next	1.6;
 
 1.6
 date	2018.01.25.22.18.43;	author -;	state -;
@@ -40,12 +50,12 @@ desc
 @@
 
 
-1.6
+1.8
 log
 @-
 @
 text
-@// $Id: util.h,v 1.5 2018-01-25 14:09:09-08 - - $
+@// $Id: util.h,v 1.7 2020-02-06 12:33:29-08 - - $
 
 //
 // util -
@@ -57,7 +67,6 @@ text
 #define __UTIL_H__
 
 #include <iostream>
-#include <list>
 #include <stdexcept>
 #include <string>
 using namespace std;
@@ -82,22 +91,6 @@ class sys_info {
       static int exit_status ();
 };
 
-//
-// datestring -
-//    Return the current date, as printed by date(1).
-//
-
-const string datestring ();
-
-//
-// split -
-//    Split a string into a list<string>..  Any sequence
-//    of chars in the delimiter string is used as a separator.  To
-//    Split a pathname, use "/".  To split a shell command, use " ".
-//
-
-list<string> split (const string& line, const string& delimiter);
-
 
 //
 // complain -
@@ -117,17 +110,6 @@ ostream& complain();
 //
 
 void syscall_error (const string&);
-
-//
-// operator<< (list) -
-//    An overloaded template operator which allows lists to be
-//    printed out as a single operator, each element separated from
-//    the next with spaces.  The item_t must have an output operator
-//    defined for it.
-//
-
-template <typename item_t>
-ostream& operator<< (ostream& out, const list<item_t>& vec);
 
 //
 // string to_string (thing) -
@@ -152,6 +134,60 @@ item_t from_string (const string&);
 #include "util.tcc"
 #endif
 
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: util.h,v 1.6 2018-01-25 14:18:43-08 - - $
+a35 7
+
+//
+// datestring -
+//    Return the current date, as printed by date(1).
+//
+
+const string datestring ();
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: util.h,v 1.5 2018-01-25 14:09:09-08 - - $
+a12 1
+#include <list>
+a43 9
+//
+// split -
+//    Split a string into a list<string>..  Any sequence
+//    of chars in the delimiter string is used as a separator.  To
+//    Split a pathname, use "/".  To split a shell command, use " ".
+//
+
+list<string> split (const string& line, const string& delimiter);
+
+a62 11
+
+//
+// operator<< (list) -
+//    An overloaded template operator which allows lists to be
+//    printed out as a single operator, each element separated from
+//    the next with spaces.  The item_t must have an output operator
+//    defined for it.
+//
+
+template <typename item_t>
+ostream& operator<< (ostream& out, const list<item_t>& vec);
 @
 
 

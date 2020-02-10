@@ -1,9 +1,29 @@
-head	1.14;
+head	1.18;
 access;
 symbols;
 locks;
 comment	@// @;
 
+
+1.18
+date	2020.02.06.20.55.59;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2020.02.06.20.55.44;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2020.02.06.20.52.28;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2020.02.06.20.33.29;	author -;	state -;
+branches;
+next	1.14;
 
 1.14
 date	2018.01.25.22.18.43;	author -;	state -;
@@ -80,13 +100,14 @@ desc
 @@
 
 
-1.14
+1.18
 log
 @-
 @
 text
-@// $Id: util.cpp,v 1.13 2018-01-25 14:18:22-08 - - $
+@// $Id: util.cpp,v 1.17 2020-02-06 12:55:44-08 - - $
 
+#include <cassert>
 #include <cerrno>
 #include <cstdlib>
 #include <cstring>
@@ -101,13 +122,8 @@ using namespace std;
 int sys_info::exit_status_ = EXIT_SUCCESS;
 string sys_info::execname_; // Must be initialized from main().
 
-void sys_info_error (const string& condition) {
-   throw logic_error ("main() has " + condition
-               + " called sys_info::execname()");
-}
-
 void sys_info::execname (const string& argv0) {
-   if (execname_ != "") sys_info_error ("already");
+   assert (execname_ == "");
    int slashpos = argv0.find_last_of ('/') + 1;
    execname_ = argv0.substr (slashpos);
    cout << boolalpha;
@@ -116,19 +132,83 @@ void sys_info::execname (const string& argv0) {
 }
 
 const string& sys_info::execname () {
-   if (execname_ == "") sys_info_error ("not yet");
+   assert (execname_ != "");
    return execname_;
 }
 
 void sys_info::exit_status (int status) {
-   if (execname_ == "") sys_info_error ("not yet");
+   assert (execname_ != "");
    exit_status_ = status;
 }
 
 int sys_info::exit_status () {
-   if (execname_ == "") sys_info_error ("not yet");
+   assert (execname_ != "");
    return exit_status_;
 }
+
+ostream& complain() {
+   sys_info::exit_status (EXIT_FAILURE);
+   cerr << sys_info::execname () << ": ";
+   return cerr;
+}
+
+void syscall_error (const string& object) {
+   complain() << object << ": " << strerror (errno) << endl;
+}
+
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: util.cpp,v 1.16 2020-02-06 12:52:28-08 - - $
+d3 1
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: util.cpp,v 1.15 2020-02-06 12:33:29-08 - - $
+a16 5
+void sys_info_error (const string& condition) {
+   throw logic_error ("main() has " + condition
+               + " called sys_info::execname()");
+}
+
+d18 1
+a18 1
+   if (execname_ != "") sys_info_error ("already");
+d27 1
+a27 1
+   if (execname_ == "") sys_info_error ("not yet");
+d32 1
+a32 1
+   if (execname_ == "") sys_info_error ("not yet");
+d37 1
+a37 1
+   if (execname_ == "") sys_info_error ("not yet");
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: util.cpp,v 1.14 2018-01-25 14:18:43-08 - - $
+a44 11
 
 const string datestring () {
    time_t clock = time (nullptr);
@@ -140,6 +220,18 @@ const string datestring () {
 }
 
 
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: util.cpp,v 1.13 2018-01-25 14:18:22-08 - - $
+a55 14
 list<string> split (const string& line, const string& delimiters) {
    list<string> words;
    size_t end = 0;
@@ -154,17 +246,6 @@ list<string> split (const string& line, const string& delimiters) {
    DEBUGF ('u', words);
    return words;
 }
-
-ostream& complain() {
-   sys_info::exit_status (EXIT_FAILURE);
-   cerr << sys_info::execname () << ": ";
-   return cerr;
-}
-
-void syscall_error (const string& object) {
-   complain() << object << ": " << strerror (errno) << endl;
-}
-
 @
 
 

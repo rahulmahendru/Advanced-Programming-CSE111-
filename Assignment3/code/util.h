@@ -1,4 +1,4 @@
-// $Id: util.h,v 1.6 2018-01-25 14:18:43-08 - - $
+// $Id: util.h,v 1.8 2020-02-06 12:52:28-08 - - $
 
 //
 // util -
@@ -10,7 +10,6 @@
 #define __UTIL_H__
 
 #include <iostream>
-#include <list>
 #include <stdexcept>
 #include <string>
 using namespace std;
@@ -35,22 +34,6 @@ class sys_info {
       static int exit_status ();
 };
 
-//
-// datestring -
-//    Return the current date, as printed by date(1).
-//
-
-const string datestring ();
-
-//
-// split -
-//    Split a string into a list<string>..  Any sequence
-//    of chars in the delimiter string is used as a separator.  To
-//    Split a pathname, use "/".  To split a shell command, use " ".
-//
-
-list<string> split (const string& line, const string& delimiter);
-
 
 //
 // complain -
@@ -70,17 +53,6 @@ ostream& complain();
 //
 
 void syscall_error (const string&);
-
-//
-// operator<< (list) -
-//    An overloaded template operator which allows lists to be
-//    printed out as a single operator, each element separated from
-//    the next with spaces.  The item_t must have an output operator
-//    defined for it.
-//
-
-template <typename item_t>
-ostream& operator<< (ostream& out, const list<item_t>& vec);
 
 //
 // string to_string (thing) -
