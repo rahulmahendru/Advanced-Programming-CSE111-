@@ -21,7 +21,7 @@
      * This will be a circularly doubly-linked list, where the head
        acts as a node itself, but doesn't contain a pair
      * We will implement listmap::iterator as well
-      -> Look at code note B
+  #####   -> Look at code note B
       
    look at pkeyvalue.perl for Perl impl of this asgn
 */
