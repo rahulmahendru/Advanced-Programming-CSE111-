@@ -36,8 +36,8 @@ class listmap {
       iterator insert (const value_type&);
       iterator find (const key_type&);
       iterator erase (iterator position);
-      iterator begin() { return anchor()->next; }
-      iterator end() { return anchor(); }
+      inline iterator begin() { return anchor()->next; }
+      inline iterator end() { return anchor(); }
       bool empty() const { return anchor_.next == &anchor_; }
 };
 
@@ -61,6 +61,8 @@ class listmap<key_t,mapped_t,less_t>::iterator {
       bool operator!= (const iterator& that) const {
          return this->where != that.where;
       }
+      friend ostream& operator<< (ostream& out,
+                     const value_type& pair);
 };
 
 #include "listmap.tcc"

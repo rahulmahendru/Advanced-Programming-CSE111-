@@ -9,6 +9,7 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
+#include <cassert>
 #include <iostream>
 #include <stdexcept>
 #include <string>

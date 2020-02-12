@@ -7,7 +7,7 @@ NEEDINCL    = ${filter ${NOINCL}, ${MAKECMDGOALS}}
 GMAKE       = ${MAKE} --no-print-directory
 
 GPPWARN     = -Wall -Wextra -Wpedantic -Wshadow -Wold-style-cast
-GPPOPTS     = ${GPPWARN} -fdiagnostics-color=never
+GPPOPTS     = ${GPPWARN}
 COMPILECPP  = g++ -std=gnu++17 -g -O0 ${GPPOPTS}
 MAKEDEPCPP  = g++ -std=gnu++17 -MM ${GPPOPTS}
 UTILBIN     = /afs/cats.ucsc.edu/courses/cse111-wm/bin
