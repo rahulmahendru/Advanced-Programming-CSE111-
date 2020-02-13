@@ -45,25 +45,30 @@ string trim(string line)
    return line.substr(first, (last - first + 1));
 }
 
-void catfile(istream &infile)
+void catfile(istream &infile, string filename, str_str_map &myMap)
 {
    regex comment_regex{R"(^\s*(#.*)?$)"};
    regex key_value_regex{R"(^\s*(.*?)\s*=\s*(.*?)\s*$)"};
    regex trimmed_regex{R"(^\s*([^=]+?)\s*$)"};
+   int argNum {0};
    for (;;)
    {
       string line;
       getline(infile, line);
       if (infile.eof())
          break;
-      cout << endl
-           << "input: \"" << line << "\"" << endl;
+      cout << filename 
+           << ": "
+           << ++argNum
+           << ": "
+           << line 
+           << endl;
       smatch result;
 
       if (regex_search(line, result, comment_regex))
       {
          // Case 1 : comment
-         cout << "Comment or empty line." << endl;
+         //cout << "Comment or empty line." << endl;
          continue;
       }
       if (regex_search(line, result, key_value_regex))
@@ -75,34 +80,54 @@ void catfile(istream &infile)
          {
             if (result[2] == "")
             {
-               //Case 5
+               for (str_str_map::iterator itor = myMap.begin();
+                    itor != myMap.end(); ++itor){
+                       cout << *itor << endl ;
+               }
             }
             else
             {
-               //case 6
+               for (str_str_map::iterator itor = myMap.begin();
+                    itor != myMap.end(); ++itor){
+                       if (itor->second == result[2]){
+                       cout << *itor << endl ;
+                       }
+               }
             }
          }
          else
          {
             if (result[2] == "")
             {
-               //case 3
+               if (myMap.find(result[1]) != myMap.end()) {
+                  myMap.erase(myMap.find(result[1]));
+               }
             }
             else
             {
-               //case 4
+               // problem with insert before
+               str_str_pair pair(result[1], result[2]);
+               myMap.insert(pair);
             }
          }
       }
       else if (regex_search(line, result, trimmed_regex))
       {
          // Case 2 : only key
-         // Done
-         cout << "query: \"" << result[1] << "\"" << endl;
+         // check after insert
+         if (myMap.find(line) == myMap.end()) {
+            cout << result[1]
+                 << ": Key not found" 
+                 << endl;
+         }
+         else {
+            cout << *myMap.find(line)
+                 << endl ;
+         }
       }
       else
       {
-         assert(false and "This can not happen.");
+         assert(false && "This can not happen.");
       }
    }
 }
@@ -118,12 +143,13 @@ int main(int argc, char **argv)
       str_str_pair pair(*argp, to_string<int>(argp - argv));
       cout << "Before insert: " << pair << endl;
       test.insert(pair);
-   }
-
+   } 
+   str_str_map myMap;
    if (argc < 2)
    {
-      catfile(cin);
+      catfile(cin, "-", myMap);
    }
+
    else
    {
       const string cin_name = "-";
@@ -131,7 +157,7 @@ int main(int argc, char **argv)
       {
          string myFileStr = argv[index];
          if (myFileStr == cin_name)
-            catfile(cin);
+            catfile(cin, "-", myMap);
          else
          {
             ifstream infile(myFileStr);
@@ -143,7 +169,7 @@ int main(int argc, char **argv)
             }
             else
             {
-               catfile(infile);
+               catfile(infile, myFileStr, myMap);
                infile.close();
             }
          }

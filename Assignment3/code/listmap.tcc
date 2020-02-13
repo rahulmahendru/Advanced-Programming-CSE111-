@@ -27,31 +27,28 @@ template <typename key_t, typename mapped_t, class less_t>
 typename listmap<key_t,mapped_t,less_t>::iterator
 listmap<key_t,mapped_t,less_t>::insert (const value_type& pair) {
    DEBUGF ('l', &pair << "->" << pair);
-   iterator newLink = find(pair.first);
-   if (newLink == anchor()) {
-      node *newNode = new node(anchor(), anchor()->prev, pair);
-      bool check = true;
-      iterator curr = begin();
-      for(;curr.where != anchor(); ++curr) {
-         if (less(pair.first, curr.where->value.first)){
-            newNode->prev = curr.where->prev;
-            newNode->next = curr.where;
-            curr.where->prev->next = newNode;
-            curr.where->prev       = newNode;
-            check = false;
-            break;
-         }
+   node* newNode { new node(anchor(), anchor(), pair)} ;
+   iterator curr;
+   for (curr = begin(); curr != end(); ++curr) {
+      if (!(less(pair.first, curr.where->value.first)) &&
+          !(less(curr.where->value.first, pair.first))) {
+             curr.where->value.second = pair.second;
+             break;
       }
-      if (check) {
+      if (less(pair.first, curr.where->value.first)) {
+         newNode->prev = curr.where->prev;
+         newNode->next = curr.where;
          curr.where->prev->next = newNode;
          curr.where->prev = newNode;
+         break;
       }
-      return iterator(newNode);
    }
-   else {
-      newLink.where->value.second = pair.second;
-      return newLink;
+   if (curr == end()) {
+      newNode->prev = curr.where->prev;
+      curr.where->prev->next = newNode;
+      curr.where->prev = newNode;
    }
+   return iterator(newNode);
 }
 
 //
@@ -61,8 +58,9 @@ template <typename key_t, typename mapped_t, class less_t>
 typename listmap<key_t,mapped_t,less_t>::iterator
 listmap<key_t,mapped_t,less_t>::find (const key_type& that) {
    DEBUGF ('l', that);
-   for(iterator curr = begin(); curr.where != anchor(); ++curr) {
-      if(!(less(curr.where->value.first, that) && !(less(that, curr.where->value.first)))){
+   for(iterator curr = begin(); curr != end(); ++curr) {
+      if(!(less(curr.where->value.first, that) && 
+         !(less(that, curr.where->value.first)))){
          return iterator(curr);
       }
    }
@@ -76,7 +74,11 @@ template <typename key_t, typename mapped_t, class less_t>
 typename listmap<key_t,mapped_t,less_t>::iterator
 listmap<key_t,mapped_t,less_t>::erase (iterator position) {
    DEBUGF ('l', &*position);
-   return iterator();
+   iterator curr = position.where->next;
+   position.where->prev->next = position.where->next;
+   position.where->next->prev = position.where->prev;
+   delete(position.where);
+   return curr;
 }
 
 

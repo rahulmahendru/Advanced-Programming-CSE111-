@@ -1,5 +1,0 @@
-# Makefile.dep created Sun Feb  9 16:37:17 PST 2020
-debug.o: debug.cpp debug.h util.h util.tcc
-util.o: util.cpp debug.h util.h util.tcc
-main.o: main.cpp listmap.h xless.h xpair.h listmap.tcc debug.h util.h \
-  util.tcc
