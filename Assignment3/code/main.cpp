@@ -118,7 +118,7 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
       else if (regex_search(line, result, trimmed_regex))
       {
          str_str_map::iterator curr = myMap.find(result[1]);
-         if (curr->first == result[1]) {
+         if (curr != myMap.end()) {
             cout << curr->first
                  << " = " 
                  << curr->second

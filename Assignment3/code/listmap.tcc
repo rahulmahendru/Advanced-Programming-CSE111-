@@ -58,6 +58,9 @@ template <typename key_t, typename mapped_t, class less_t>
 typename listmap<key_t,mapped_t,less_t>::iterator
 listmap<key_t,mapped_t,less_t>::find (const key_type& that) {
    DEBUGF ('l', that);
+   if (begin() == end()){
+      return end();
+   }
    for(iterator curr = begin(); curr != end(); ++curr) {
       if(!(less(curr.where->value.first, that) && 
          !(less(that, curr.where->value.first)))){
