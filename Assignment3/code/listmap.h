@@ -61,8 +61,8 @@ class listmap<key_t,mapped_t,less_t>::iterator {
       bool operator!= (const iterator& that) const {
          return this->where != that.where;
       }
-      friend ostream& operator<< (ostream& out,
-                     const value_type& pair);
+      //friend ostream& operator<< (ostream& out,
+      //               const value_type& pair);
 };
 
 #include "listmap.tcc"

@@ -61,7 +61,7 @@ listmap<key_t,mapped_t,less_t>::find (const key_type& that) {
    for(iterator curr = begin(); curr != end(); ++curr) {
       if(!(less(curr.where->value.first, that) && 
          !(less(that, curr.where->value.first)))){
-         return iterator(curr);
+         return curr;
       }
    }
    return end();
