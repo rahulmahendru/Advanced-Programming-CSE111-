@@ -117,16 +117,17 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
       }
       else if (regex_search(line, result, trimmed_regex))
       {
-         // Case 2 : only key
-         // check after insert
-         if (myMap.find(line) == myMap.end()) {
+         str_str_map::iterator curr = myMap.find(result[1]);
+         if (curr->first == result[1]) {
+            cout << curr->first
+                 << " = " 
+                 << curr->second
+                 << endl ;
+         }
+         else {
             cout << result[1]
                  << ": Key not found" 
                  << endl;
-         }
-         else {
-            cout << *myMap.find(line)
-                 << endl ;
          }
       }
       else
