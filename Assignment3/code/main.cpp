@@ -67,14 +67,12 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
 
       if (regex_search(line, result, comment_regex))
       {
-         // Case 1 : comment
-         //cout << "Comment or empty line." << endl;
          continue;
       }
       if (regex_search(line, result, key_value_regex))
       {
-         cout << "key  : \"" << result[1] << "\"" << endl;
-         cout << "value: \"" << result[2] << "\"" << endl;
+         //cout << "key  : \"" << result[1] << "\"" << endl;
+         //cout << "value: \"" << result[2] << "\"" << endl;
 
          if (result[1] == "")
          {
@@ -82,7 +80,10 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
             {
                for (str_str_map::iterator itor = myMap.begin();
                     itor != myMap.end(); ++itor){
-                       cout << *itor << endl ;
+                       cout << itor->first
+                            << " = " 
+                            << itor->second
+                            << endl ;
                }
             }
             else
@@ -90,7 +91,10 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
                for (str_str_map::iterator itor = myMap.begin();
                     itor != myMap.end(); ++itor){
                        if (itor->second == result[2]){
-                       cout << *itor << endl ;
+                       cout << itor->first
+                            << " = " 
+                            << itor->second
+                            << endl ;
                        }
                }
             }
@@ -105,9 +109,9 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
             }
             else
             {
-               // problem with insert before
                str_str_pair pair(result[1], result[2]);
                myMap.insert(pair);
+               cout << line << endl;
             }
          }
       }
@@ -137,27 +141,18 @@ int main(int argc, char **argv)
    sys_info::execname(argv[0]);
    scan_options(argc, argv);
 
-   str_str_map test;
-   for (char **argp = &argv[optind]; argp != &argv[argc]; ++argp)
-   {
-      str_str_pair pair(*argp, to_string<int>(argp - argv));
-      cout << "Before insert: " << pair << endl;
-      test.insert(pair);
-   } 
    str_str_map myMap;
    if (argc < 2)
    {
       catfile(cin, "-", myMap);
    }
-
-   else
-   {
+   else {
       const string cin_name = "-";
-      for (int index = 1; index < argc; index++)
-      {
-         string myFileStr = argv[index];
-         if (myFileStr == cin_name)
+      for (char **argp = &argv[optind]; argp != &argv[argc]; ++argp) {
+         string myFileStr = *argp;
+         if (myFileStr == cin_name) {
             catfile(cin, "-", myMap);
+         }
          else
          {
             ifstream infile(myFileStr);
@@ -176,15 +171,8 @@ int main(int argc, char **argv)
       }
    }
 
-   for (str_str_map::iterator itor = test.begin();
-        itor != test.end(); ++itor)
-   {
-      cout << "During iteration: " << *itor << endl;
-   }
-
-   //cout << "after Iteration" << endl;
-   str_str_map::iterator itor = test.begin();
-   test.erase(itor);
+   //str_str_map::iterator itor = myMap.begin();
+   //myMap.erase(itor);
 
    cout << "EXIT_SUCCESS" << endl;
    return EXIT_SUCCESS;

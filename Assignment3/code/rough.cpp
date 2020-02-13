@@ -1,25 +1,21 @@
-iterator newLink {find(pair.first)};
-   if (newLink == end()) {
-      node *newNode { new node(anchor(), anchor(), pair) };
-      bool check = true;
-      iterator curr;
-      for(curr = begin(); curr != end(); ++curr) {
-         if (less(pair.first, curr.where->value.first)){
-            newNode->prev = curr.where->prev;
-            newNode->next = curr.where;
-            curr.where->prev->next = newNode;
-            curr.where->prev       = newNode;
-            check = false;
-            break;
+for (int index = 1; index < argc; index++)
+      {
+         string myFileStr = argv[index];
+         if (myFileStr == cin_name)
+            catfile(cin, "-", myMap);
+         else
+         {
+            ifstream infile(myFileStr);
+            if (infile.fail())
+            {
+               cerr << "matchlines: "
+                    << ": " << myFileStr << ": "
+                    << strerror(errno) << endl;
+            }
+            else
+            {
+               catfile(infile, myFileStr, myMap);
+               infile.close();
+            }
          }
       }
-      if (check) {
-         curr.where->prev->next = newNode;
-         curr.where->prev = newNode;
-      }
-      return iterator(newNode);
-   }
-   else {
-      newLink.where->value.second = pair.second;
-      return newLink;
-   }
