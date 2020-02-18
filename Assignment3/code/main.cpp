@@ -17,16 +17,13 @@ using namespace std;
 using str_str_map = listmap<string, string>;
 using str_str_pair = str_str_map::value_type;
 
-void scan_options(int argc, char **argv)
-{
+void scan_options(int argc, char **argv) {
    opterr = 0;
-   for (;;)
-   {
+   for (;;) {
       int option = getopt(argc, argv, "@:");
       if (option == EOF)
          break;
-      switch (option)
-      {
+      switch (option) {
       case '@':
          debugflags::setflags(optarg);
          break;
@@ -38,25 +35,20 @@ void scan_options(int argc, char **argv)
    }
 }
 
-string trim(string line)
-{
-   size_t first = line.find_first_not_of(' ');
-   size_t last = line.find_last_not_of(' ');
-   return line.substr(first, (last - first + 1));
-}
-
-void catfile(istream &infile, string filename, str_str_map &myMap)
-{
+// This function has been adapted from the catfile.cpp, loop-cin.cpp
+// and matchlines.cpp for input check
+void catfile(istream &infile, string filename, str_str_map &myMap) {
    regex comment_regex{R"(^\s*(#.*)?$)"};
    regex key_value_regex{R"(^\s*(.*?)\s*=\s*(.*?)\s*$)"};
    regex trimmed_regex{R"(^\s*([^=]+?)\s*$)"};
    int argNum {0};
-   for (;;)
-   {
+   for (;;) {
       string line;
       getline(infile, line);
       if (infile.eof())
          break;
+
+      // Print the input line
       cout << filename 
            << ": "
            << ++argNum
@@ -65,19 +57,18 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
            << endl;
       smatch result;
 
-      if (regex_search(line, result, comment_regex))
-      {
+      // Comment Case
+      if (regex_search(line, result, comment_regex)) {
          continue;
       }
-      if (regex_search(line, result, key_value_regex))
-      {
-         //cout << "key  : \"" << result[1] << "\"" << endl;
-         //cout << "value: \"" << result[2] << "\"" << endl;
 
-         if (result[1] == "")
-         {
-            if (result[2] == "")
-            {
+      // Case where the input line has a " = "
+      if (regex_search(line, result, key_value_regex)) {
+         // If the string before "=" is empty
+         if (result[1] == "") {
+            // If the string after "=" is also empty
+            // Prints all the (key,value) pairs
+            if (result[2] == "") {
                for (str_str_map::iterator itor = myMap.begin();
                     itor != myMap.end(); ++itor){
                        cout << itor->first
@@ -86,10 +77,11 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
                             << endl ;
                }
             }
-            else
-            {
+            // If the string after "=" is not empty
+            // prints the pairs which match the specified value
+            else {
                for (str_str_map::iterator itor = myMap.begin();
-                    itor != myMap.end(); ++itor){
+                    itor != myMap.end(); ++itor) {
                        if (itor->second == result[2]){
                        cout << itor->first
                             << " = " 
@@ -99,39 +91,46 @@ void catfile(istream &infile, string filename, str_str_map &myMap)
                }
             }
          }
-         else
-         {
-            if (result[2] == "")
-            {
+         // If the string before "=" is not empty
+         else {
+            // If the string after "=" is empty
+            // Deletes the (key,value) pair
+            if (result[2] == "") {
                if (myMap.find(result[1]) != myMap.end()) {
                   myMap.erase(myMap.find(result[1]));
                }
             }
-            else
-            {
+            // If the string after "=" is not empty
+            // Inserts the new (key,value) pair
+            // Replaces the value if the key already exists
+            else {
                str_str_pair pair(result[1], result[2]);
                myMap.insert(pair);
-               cout << line << endl;
+               cout << result[1]
+                    << " = " 
+                    << result[2]
+                    << endl;
             }
          }
       }
-      else if (regex_search(line, result, trimmed_regex))
-      {
+      // If only the key is specified
+      else if (regex_search(line, result, trimmed_regex)) {
+         // To find the key and value pair
          str_str_map::iterator curr = myMap.find(result[1]);
-         if (curr->first == result[1]) {
+         if (curr != myMap.end()) {
             cout << curr->first
                  << " = " 
                  << curr->second
                  << endl ;
          }
+         // Returns error statement if key is not found
          else {
             cout << result[1]
                  << ": Key not found" 
                  << endl;
          }
       }
-      else
-      {
+      else {
          assert(false && "This can not happen.");
       }
    }
@@ -143,37 +142,34 @@ int main(int argc, char **argv)
    scan_options(argc, argv);
 
    str_str_map myMap;
-   if (argc < 2)
-   {
+
+   // Check if no operands are given
+   if (argc < 2) {
       catfile(cin, "-", myMap);
    }
+   // If operands are given
    else {
       const string cin_name = "-";
       for (char **argp = &argv[optind]; argp != &argv[argc]; ++argp) {
-         string myFileStr = *argp;
-         if (myFileStr == cin_name) {
+         string myFileStr = *argp;            // Store the filename
+         if (myFileStr == cin_name) {         // Check for stdin
             catfile(cin, "-", myMap);
          }
-         else
-         {
+         else {
             ifstream infile(myFileStr);
-            if (infile.fail())
-            {
-               cerr << "matchlines: "
-                    << ": " << myFileStr << ": "
+            // Check for file existence       
+            if (infile.fail()) {
+               cerr << "keyvalue: "
+                    << myFileStr << ": "
                     << strerror(errno) << endl;
             }
-            else
-            {
+            else {
                catfile(infile, myFileStr, myMap);
                infile.close();
             }
          }
       }
    }
-
-   //str_str_map::iterator itor = myMap.begin();
-   //myMap.erase(itor);
 
    cout << "EXIT_SUCCESS" << endl;
    return EXIT_SUCCESS;
