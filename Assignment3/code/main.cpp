@@ -159,9 +159,7 @@ int main(int argc, char **argv)
             ifstream infile(myFileStr);
             // Check for file existence       
             if (infile.fail()) {
-               cerr << "keyvalue: "
-                    << myFileStr << ": "
-                    << strerror(errno) << endl;
+               syscall_error(myFileStr);
             }
             else {
                catfile(infile, myFileStr, myMap);
@@ -171,6 +169,5 @@ int main(int argc, char **argv)
       }
    }
 
-   cout << "EXIT_SUCCESS" << endl;
-   return EXIT_SUCCESS;
+   return sys_info::exit_status();
 }
