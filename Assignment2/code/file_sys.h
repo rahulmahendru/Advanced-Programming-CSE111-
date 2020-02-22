@@ -1,5 +1,8 @@
 // $Id: file_sys.h,v 1.7 2019-07-09 14:05:44-07 - - $
 
+// Rahul Mahendru (ramahend)
+// Ivan Garcia-Sanchez (igarci33)
+
 #ifndef __INODE_H__
 #define __INODE_H__
 
@@ -11,6 +14,9 @@
 using namespace std;
 
 #include "util.h"
+
+const static string dirError  = "directory";
+const static string fileError = "plain_file";
 
 // inode_t -
 //    An inode is either a directory or a plain file.
@@ -41,16 +47,19 @@ class inode_state {
       inode_state (const inode_state&) = delete; // copy ctor
       inode_state& operator= (const inode_state&) = delete; // op=
       inode_state();
+      ~inode_state();
       const string& prompt() const;
-      // Self functions
 
+      // Self Functions
       inode_ptr getCwd();
-      void setCwd(inode_ptr path);
       inode_ptr getRoot();
-      void setPrompt(const wordvec &words);
       string getPath(inode_ptr current);
-      void printList(inode_ptr currentDir);
-      void printListRecursive(string filename, inode_ptr currentDir);
+      void printDirectory(inode_ptr current, const string& path);
+      void printDirectoryRecursive(inode_ptr current);
+      inode_ptr resolveInputPtr(const string& words, const inode_ptr& current, const int check);
+      string resolveInputString(const string& words);
+      void setPrompt(const wordvec& words);
+      void setCwd(inode_ptr current);
 };
 
 // class inode -
@@ -72,14 +81,16 @@ class inode {
       static int next_inode_nr;
       int inode_nr;
       base_file_ptr contents;
-      file_type type;
+      file_type typeOfFile;
    public:
       inode (file_type);
       int get_inode_nr() const;
-      //
-      base_file_ptr getContents(file_type fType) ;
-      void initializeDirectory();
-      file_type getFileType();
+
+      // Self Functions
+      void invalidate() ;
+      shared_ptr<directory> getContentsAsDirectory() ;
+      shared_ptr<plain_file> getContentsAsPlainFile() ;
+      file_type getFileType() ;
 };
 
 
@@ -108,13 +119,12 @@ class base_file {
       virtual inode_ptr mkdir (const string& dirname);
       virtual inode_ptr mkfile (const string& filename);
 
-      // Self functions
-      virtual void initializeRoot(inode_ptr root) = 0;
-      virtual void initializeDirectory(inode_ptr parent, inode_ptr current);
-      virtual map<string,inode_ptr> getDirents();
-      virtual wordvec getData();
+      //
+      virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) = 0 ;
+      virtual map<string, inode_ptr> getDirents() = 0 ;
+      virtual void removeRecursive() = 0;
 };
-
+
 // class plain_file -
 // Used to hold data.
 // synthesized default ctor -
@@ -128,18 +138,17 @@ class plain_file: public base_file {
    private:
       wordvec data;
       virtual const string& error_file_type() const override {
-         static const string result = "plain file";
-         return result;
-         
+         return fileError;
       }
    public:
       virtual size_t size() const override;
       virtual const wordvec& readfile() const override;
       virtual void writefile (const wordvec& newdata) override;
-       
+
       //
-      virtual map<string,inode_ptr> getDirents() override;
-      virtual wordvec getData() override;
+      virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) override ;
+      virtual map<string, inode_ptr> getDirents() override ;
+      virtual void removeRecursive() override;
 };
 
 // class directory -
@@ -165,20 +174,19 @@ class directory: public base_file {
       // Must be a map, not unordered_map, so printing is lexicographic
       map<string,inode_ptr> dirents;
       virtual const string& error_file_type() const override {
-       static const string result = "directory";
-         return result;
-       //  return "directory";
+         return dirError;
       }
    public:
+      ~directory();
       virtual size_t size() const override;
       virtual void remove (const string& filename) override;
       virtual inode_ptr mkdir (const string& dirname) override;
       virtual inode_ptr mkfile (const string& filename) override;
-      //
-      virtual void initializeRoot(inode_ptr root) override;
-      virtual void initializeDirectory(inode_ptr parent, inode_ptr current) override;
-      virtual map<string,inode_ptr> getDirents() override;
-      virtual wordvec getData() override;
+
+      // Self Functions
+      virtual void initializeDirectory(const inode_ptr& parent, const inode_ptr& current) override ;
+      virtual map<string, inode_ptr> getDirents() override ;
+      virtual void removeRecursive() override;
 };
 
 #endif
