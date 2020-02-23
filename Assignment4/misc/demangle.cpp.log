@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting demangle.cpp
+checksource demangle.cpp
+ident demangle.cpp
+demangle.cpp:
+     $Id: demangle.cpp,v 1.3 2019-02-14 15:48:36-08 - - $
+cpplint.py.perl demangle.cpp
+Done processing demangle.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 demangle.cpp -o demangle -lm
+rm -f demangle.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished demangle.cpp

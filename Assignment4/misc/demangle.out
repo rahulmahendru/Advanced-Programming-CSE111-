@@ -1,0 +1,103 @@
+bool => 1
+   mangled:   b
+   demangled: bool
+char => 1
+   mangled:   c
+   demangled: char
+signed char => 1
+   mangled:   a
+   demangled: signed char
+unsigned char => 1
+   mangled:   h
+   demangled: unsigned char
+short => 2
+   mangled:   s
+   demangled: short
+signed short => 2
+   mangled:   s
+   demangled: short
+unsigned short => 2
+   mangled:   t
+   demangled: unsigned short
+int => 4
+   mangled:   i
+   demangled: int
+signed int => 4
+   mangled:   i
+   demangled: int
+unsigned int => 4
+   mangled:   j
+   demangled: unsigned int
+long => 8
+   mangled:   l
+   demangled: long
+signed long => 8
+   mangled:   l
+   demangled: long
+unsigned long => 8
+   mangled:   m
+   demangled: unsigned long
+long long => 8
+   mangled:   x
+   demangled: long long
+float => 4
+   mangled:   f
+   demangled: float
+double => 8
+   mangled:   d
+   demangled: double
+long double => 16
+   mangled:   e
+   demangled: long double
+size_t => 8
+   mangled:   m
+   demangled: unsigned long
+
+foo => 1
+   mangled:   3foo
+   demangled: foo
+bar => 1
+   mangled:   3bar
+   demangled: bar
+baz => 1
+   mangled:   3baz
+   demangled: baz
+tmpl<int> => 4
+   mangled:   4tmplIiE
+   demangled: tmpl<int>
+vector<string> => 24
+   mangled:   St6vectorISsSaISsEE
+   demangled: std::vector<std::string, std::allocator<std::string> >
+vector<int> => 24
+   mangled:   St6vectorIiSaIiEE
+   demangled: std::vector<int, std::allocator<int> >
+list<vector<long>> => 16
+   mangled:   St4listISt6vectorIlSaIlEESaIS2_EE
+   demangled: std::list<std::vector<long, std::allocator<long> >, std::allocator<std::vector<long, std::allocator<long> > > >
+map_string_int => 48
+   mangled:   St3mapISsiSt4lessISsESaISt4pairIKSsiEEE
+   demangled: std::map<std::string, int, std::less<std::string>, std::allocator<std::pair<std::string const, int> > >
+__FILE__ => 13
+   mangled:   A13_c
+   demangled: char [13]
+   value: demangle.cpp
+__LINE__ => 4
+   mangled:   i
+   demangled: int
+   value: 81
+__DATE__ => 12
+   mangled:   A12_c
+   demangled: char [12]
+   value: Feb  3 2020
+__TIME__ => 9
+   mangled:   A9_c
+   demangled: char [9]
+   value: 17:09:08
+__func__ => 5
+   mangled:   A5_c
+   demangled: char [5]
+   value: main
+__PRETTY_FUNCTION__ => 11
+   mangled:   A11_c
+   demangled: char [11]
+   value: int main()

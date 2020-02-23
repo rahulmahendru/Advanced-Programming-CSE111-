@@ -1,0 +1,11 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting makeunique.cpp
+checksource makeunique.cpp
+ident makeunique.cpp
+makeunique.cpp:
+     $Id: makeunique.cpp,v 1.11 2019-05-08 11:33:31-07 - - $
+     $RCSfile: makeunique.cpp,v $
+cpplint.py.perl makeunique.cpp
+Done processing makeunique.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 makeunique.cpp -o makeunique -lm
+rm -f makeunique.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished makeunique.cpp

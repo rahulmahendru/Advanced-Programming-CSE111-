@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting statfile.cpp
+checksource statfile.cpp
+ident statfile.cpp
+statfile.cpp:
+     $Id: statfile.cpp,v 1.1 2019-11-21 13:22:37-08 - - $
+cpplint.py.perl statfile.cpp
+Done processing statfile.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 statfile.cpp -o statfile -lm
+rm -f statfile.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished statfile.cpp

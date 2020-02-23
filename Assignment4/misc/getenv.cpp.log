@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting getenv.cpp
+checksource getenv.cpp
+ident getenv.cpp
+getenv.cpp:
+     $Id: getenv.cpp,v 1.24 2017-08-02 15:58:04-07 - - $
+cpplint.py.perl getenv.cpp
+Done processing getenv.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 getenv.cpp -o getenv -lm
+rm -f getenv.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished getenv.cpp

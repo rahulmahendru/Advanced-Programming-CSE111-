@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting filesize.cpp
+checksource filesize.cpp
+ident filesize.cpp
+filesize.cpp:
+     $Id: filesize.cpp,v 1.3 2019-11-21 14:03:52-08 - - $
+cpplint.py.perl filesize.cpp
+Done processing filesize.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 filesize.cpp -o filesize -lm
+rm -f filesize.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished filesize.cpp

@@ -1,0 +1,425 @@
+head	1.9;
+access;
+symbols;
+locks;
+comment	@// @;
+
+
+1.9
+date	2019.04.05.22.04.28;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2019.04.05.22.01.06;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2019.02.07.23.14.37;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2018.07.26.21.18.32;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2018.07.13.00.49.26;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.05.09.23.01.56;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.03.22.23.32.34;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2015.05.13.01.59.40;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2015.05.13.01.48.40;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@-
+@
+text
+@// $Id: cix.cpp,v 1.8 2019-04-05 15:01:06-07 - - $
+
+#include <iostream>
+#include <memory>
+#include <string>
+#include <unordered_map>
+#include <vector>
+using namespace std;
+
+#include <libgen.h>
+#include <sys/types.h>
+#include <unistd.h>
+
+#include "protocol.h"
+#include "logstream.h"
+#include "sockets.h"
+
+logstream outlog (cout);
+struct cix_exit: public exception {};
+
+unordered_map<string,cix_command> command_map {
+   {"exit", cix_command::EXIT},
+   {"help", cix_command::HELP},
+   {"ls"  , cix_command::LS  },
+};
+
+static const char help[] = R"||(
+exit         - Exit the program.  Equivalent to EOF.
+get filename - Copy remote file to local host.
+help         - Print help summary.
+ls           - List names of files on remote server.
+put filename - Copy local file to remote host.
+rm filename  - Remove file from remote server.
+)||";
+
+void cix_help() {
+   cout << help;
+}
+
+void cix_ls (client_socket& server) {
+   cix_header header;
+   header.command = cix_command::LS;
+   outlog << "sending header " << header << endl;
+   send_packet (server, &header, sizeof header);
+   recv_packet (server, &header, sizeof header);
+   outlog << "received header " << header << endl;
+   if (header.command != cix_command::LSOUT) {
+      outlog << "sent LS, server did not return LSOUT" << endl;
+      outlog << "server returned " << header << endl;
+   }else {
+      auto buffer = make_unique<char[]> (header.nbytes + 1);
+      recv_packet (server, buffer.get(), header.nbytes);
+      outlog << "received " << header.nbytes << " bytes" << endl;
+      buffer[header.nbytes] = '\0';
+      cout << buffer.get();
+   }
+}
+
+
+void usage() {
+   cerr << "Usage: " << outlog.execname() << " [host] [port]" << endl;
+   throw cix_exit();
+}
+
+int main (int argc, char** argv) {
+   outlog.execname (basename (argv[0]));
+   outlog << "starting" << endl;
+   vector<string> args (&argv[1], &argv[argc]);
+   if (args.size() > 2) usage();
+   string host = get_cix_server_host (args, 0);
+   in_port_t port = get_cix_server_port (args, 1);
+   outlog << to_string (hostinfo()) << endl;
+   try {
+      outlog << "connecting to " << host << " port " << port << endl;
+      client_socket server (host, port);
+      outlog << "connected to " << to_string (server) << endl;
+      for (;;) {
+         string line;
+         getline (cin, line);
+         if (cin.eof()) throw cix_exit();
+         outlog << "command " << line << endl;
+         const auto& itor = command_map.find (line);
+         cix_command cmd = itor == command_map.end()
+                         ? cix_command::ERROR : itor->second;
+         switch (cmd) {
+            case cix_command::EXIT:
+               throw cix_exit();
+               break;
+            case cix_command::HELP:
+               cix_help();
+               break;
+            case cix_command::LS:
+               cix_ls (server);
+               break;
+            default:
+               outlog << line << ": invalid command" << endl;
+               break;
+         }
+      }
+   }catch (socket_error& error) {
+      outlog << error.what() << endl;
+   }catch (cix_exit& error) {
+      outlog << "caught cix_exit" << endl;
+   }
+   outlog << "finishing" << endl;
+   return 0;
+}
+
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.7 2019-02-07 15:14:37-08 - - $
+d18 1
+a18 1
+logstream clog (cout);
+d43 1
+a43 1
+   clog << "sending header " << header << endl;
+d46 1
+a46 1
+   clog << "received header " << header << endl;
+d48 2
+a49 2
+      clog << "sent LS, server did not return LSOUT" << endl;
+      clog << "server returned " << header << endl;
+d53 1
+a53 1
+      clog << "received " << header.nbytes << " bytes" << endl;
+d61 1
+a61 1
+   cerr << "Usage: " << clog.execname() << " [host] [port]" << endl;
+d66 2
+a67 2
+   clog.execname (basename (argv[0]));
+   clog << "starting" << endl;
+d72 1
+a72 1
+   clog << to_string (hostinfo()) << endl;
+d74 1
+a74 1
+      clog << "connecting to " << host << " port " << port << endl;
+d76 1
+a76 1
+      clog << "connected to " << to_string (server) << endl;
+d81 1
+a81 1
+         clog << "command " << line << endl;
+d96 1
+a96 1
+               clog << line << ": invalid command" << endl;
+d101 1
+a101 1
+      clog << error.what() << endl;
+d103 1
+a103 1
+      clog << "caught cix_exit" << endl;
+d105 1
+a105 1
+   clog << "finishing" << endl;
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.6 2018-07-26 14:18:32-07 - - $
+d18 1
+a18 1
+logstream log (cout);
+d27 1
+a27 1
+static const string help = R"||(
+d43 1
+a43 1
+   log << "sending header " << header << endl;
+d46 1
+a46 1
+   log << "received header " << header << endl;
+d48 2
+a49 2
+      log << "sent LS, server did not return LSOUT" << endl;
+      log << "server returned " << header << endl;
+d53 1
+a53 1
+      log << "received " << header.nbytes << " bytes" << endl;
+d61 1
+a61 1
+   cerr << "Usage: " << log.execname() << " [host] [port]" << endl;
+d66 2
+a67 2
+   log.execname (basename (argv[0]));
+   log << "starting" << endl;
+d72 1
+a72 1
+   log << to_string (hostinfo()) << endl;
+d74 1
+a74 1
+      log << "connecting to " << host << " port " << port << endl;
+d76 1
+a76 1
+      log << "connected to " << to_string (server) << endl;
+d81 1
+a81 1
+         log << "command " << line << endl;
+d96 1
+a96 1
+               log << line << ": invalid command" << endl;
+d101 1
+a101 1
+      log << error.what() << endl;
+d103 1
+a103 1
+      log << "caught cix_exit" << endl;
+d105 1
+a105 1
+   log << "finishing" << endl;
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.5 2018-07-12 17:49:26-07 - - $
+d4 1
+d6 1
+a7 1
+#include <unordered_map>
+d51 2
+a52 2
+      char buffer[header.nbytes + 1];
+      recv_packet (server, buffer, header.nbytes);
+d55 1
+a55 1
+      cout << buffer;
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.4 2016-05-09 16:01:56-07 - - $
+d26 1
+a26 1
+static const string help = R"{}(
+d33 1
+a33 2
+
+){}";
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.3 2016-03-22 16:32:34-07 - - $
+d26 10
+d37 1
+a37 9
+   static const vector<string> help = {
+      "exit         - Exit the program.  Equivalent to EOF.",
+      "get filename - Copy remote file to local host.",
+      "help         - Print help summary.",
+      "ls           - List names of files on remote server.",
+      "put filename - Copy local file to remote host.",
+      "rm filename  - Remove file from remote server.",
+   };
+   for (const auto& line: help) cout << line << endl;
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.2 2015-05-12 18:59:40-07 - - $
+d21 3
+a23 3
+   {"exit", CIX_EXIT},
+   {"help", CIX_HELP},
+   {"ls"  , CIX_LS  },
+d40 1
+a40 1
+   header.command = CIX_LS;
+d45 2
+a46 2
+   if (header.command != CIX_LSOUT) {
+      log << "sent CIX_LS, server did not return CIX_LSOUT" << endl;
+d82 1
+a82 1
+                         ? CIX_ERROR : itor->second;
+d84 1
+a84 1
+            case CIX_EXIT:
+d87 1
+a87 1
+            case CIX_HELP:
+d90 1
+a90 1
+            case CIX_LS:
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.1 2015-05-12 18:48:40-07 - - $
+d27 1
+a27 1
+   static vector<string> help = {
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: cix.cpp,v 1.1 2015-05-12 18:48:18-07 - - $
+d40 1
+a40 1
+   header.cix_command = CIX_LS;
+d45 1
+a45 1
+   if (header.cix_command != CIX_LSOUT) {
+d49 4
+a52 4
+      char buffer[header.cix_nbytes + 1];
+      recv_packet (server, buffer, header.cix_nbytes);
+      log << "received " << header.cix_nbytes << " bytes" << endl;
+      buffer[header.cix_nbytes] = '\0';
+@

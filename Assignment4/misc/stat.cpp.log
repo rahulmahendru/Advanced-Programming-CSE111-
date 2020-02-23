@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting stat.cpp
+checksource stat.cpp
+ident stat.cpp
+stat.cpp:
+     $Id: stat.cpp,v 1.1 2020-02-03 17:09:13-08 - - $
+cpplint.py.perl stat.cpp
+Done processing stat.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 stat.cpp -o stat -lm
+rm -f stat.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished stat.cpp

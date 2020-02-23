@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting lsfile.cpp
+checksource lsfile.cpp
+ident lsfile.cpp
+lsfile.cpp:
+     $Id: lsfile.cpp,v 1.10 2019-11-21 16:10:16-08 - - $
+cpplint.py.perl lsfile.cpp
+Done processing lsfile.cpp
+g++ -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast -g -O0 lsfile.cpp -o lsfile -lm
+rm -f lsfile.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished lsfile.cpp
