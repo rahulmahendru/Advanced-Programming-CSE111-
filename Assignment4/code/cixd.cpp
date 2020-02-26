@@ -22,7 +22,7 @@ void reply_ls (accepted_socket& client_sock, cix_header& header) {
    if (ls_pipe == NULL) { 
       outlog << "ls -l: popen failed: " << strerror (errno) << endl;
       header.command = cix_command::NAK;
-      header.nbytes = errno;
+      header.nbytes = htonl (errno);
       send_packet (client_sock, &header, sizeof header);
       return;
    }
@@ -39,7 +39,7 @@ void reply_ls (accepted_socket& client_sock, cix_header& header) {
                           << " signal " << (status & 0x7F)
                           << " core " << (status >> 7 & 1) << endl;
    header.command = cix_command::LSOUT;
-   header.nbytes = ls_output.size();
+   header.nbytes = htonl (ls_output.size());
    memset (header.filename, 0, FILENAME_SIZE);
    outlog << "sending header " << header << endl;
    send_packet (client_sock, &header, sizeof header);

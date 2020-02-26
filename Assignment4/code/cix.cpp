@@ -22,6 +22,9 @@ unordered_map<string,cix_command> command_map {
    {"exit", cix_command::EXIT},
    {"help", cix_command::HELP},
    {"ls"  , cix_command::LS  },
+   {"get" , cix_command::GET },
+   {"put" , cix_command::PUT },
+   {"rm"  , cix_command::RM  },
 };
 
 static const char help[] = R"||(
@@ -48,15 +51,29 @@ void cix_ls (client_socket& server) {
       outlog << "sent LS, server did not return LSOUT" << endl;
       outlog << "server returned " << header << endl;
    }else {
-      auto buffer = make_unique<char[]> (header.nbytes + 1);
-      recv_packet (server, buffer.get(), header.nbytes);
-      outlog << "received " << header.nbytes << " bytes" << endl;
-      buffer[header.nbytes] = '\0';
+      size_t host_nbytes = ntohl (header.nbytes);
+      auto buffer = make_unique<char[]> (host_nbytes + 1);
+      recv_packet (server, buffer.get(), host_nbytes);
+      outlog << "received " << host_nbytes << " bytes" << endl;
+      buffer[host_nbytes] = '\0';
       cout << buffer.get();
    }
 }
 
-
+// Self written Functions 
+void cix_get(client_socket& server) {
+   cix_header header;
+   header.command = cix_command::GET;
+}
+
+void cix_put(client_socket& server) {
+
+}
+
+void cix_rm(client_socket& server) {
+
+}
+
 void usage() {
    cerr << "Usage: " << outlog.execname() << " [host] [port]" << endl;
    throw cix_exit();

@@ -1,4 +1,4 @@
-// $Id: protocol.cpp,v 1.10 2019-05-15 15:26:36-07 - - $
+// $Id: protocol.cpp,v 1.11 2020-02-24 18:35:42-08 - - $
 
 #include <string>
 #include <unordered_map>
@@ -52,7 +52,8 @@ void recv_packet (base_socket& socket, void* buffer, size_t bufsize) {
 
 ostream& operator<< (ostream& out, const cix_header& header) {
    string code = to_string (header.command);
-   cout << "{" << header.nbytes << "," << unsigned (header.command)
+   cout << "{" << ntohl (header.nbytes) << ","
+        << unsigned (header.command)
         << "(" << code << "),\"" << header.filename << "\"}";
    return out;
 }    

@@ -1,9 +1,14 @@
-head	1.10;
+head	1.11;
 access;
 symbols;
 locks;
 comment	@// @;
 
+
+1.11
+date	2020.02.25.02.35.42;	author -;	state -;
+branches;
+next	1.10;
 
 1.10
 date	2019.05.15.22.26.36;	author -;	state -;
@@ -60,12 +65,12 @@ desc
 @@
 
 
-1.10
+1.11
 log
 @-
 @
 text
-@// $Id: protocol.cpp,v 1.9 2019-04-05 16:45:29-07 - - $
+@// $Id: protocol.cpp,v 1.10 2019-05-15 15:26:36-07 - - $
 
 #include <string>
 #include <unordered_map>
@@ -119,7 +124,8 @@ void recv_packet (base_socket& socket, void* buffer, size_t bufsize) {
 
 ostream& operator<< (ostream& out, const cix_header& header) {
    string code = to_string (header.command);
-   cout << "{" << header.nbytes << "," << unsigned (header.command)
+   cout << "{" << ntohl (header.nbytes) << ","
+        << unsigned (header.command)
         << "(" << code << "),\"" << header.filename << "\"}";
    return out;
 }    
@@ -142,6 +148,20 @@ in_port_t get_cix_server_port (const vector<string>& args,
    return stoi (port);
 }
      
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: protocol.cpp,v 1.9 2019-04-05 16:45:29-07 - - $
+d55 2
+a56 1
+   cout << "{" << header.nbytes << "," << unsigned (header.command)
 @
 
 
