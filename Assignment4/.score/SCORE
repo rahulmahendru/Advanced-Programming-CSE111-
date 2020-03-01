@@ -1,4 +1,4 @@
-$Id: SCORE,v 1.10 2020-02-03 17:08:29-08 - - $
+$Id: SCORE,v 1.11 2020-02-27 12:48:44-08 - - $
 
 Copy all of the files in this directory into the student's
 directory.  For each point deduction, give a reason.  Numbers in
@@ -106,7 +106,7 @@ PROGRAM TESTING:
          is the file now in client's directory?
 
      (4) client: rm to-remove
-         does client2 now have client's local file
+         does client now have client's local file
          were the server files unlinked?
 
      (4) client: rm no-such-file

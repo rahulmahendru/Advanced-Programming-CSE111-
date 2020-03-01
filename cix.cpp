@@ -57,7 +57,7 @@ void cix_ls (client_socket& server) {
       size_t host_nbytes = ntohl (header.nbytes);
       auto buffer = make_unique<char[]> (host_nbytes + 1);
       recv_packet (server, buffer.get(), host_nbytes);
-      //outlog << "received " << host_nbytes << " bytes" << endl;
+      outlog << "received " << host_nbytes << " bytes" << endl;
       buffer[host_nbytes] = '\0';
       cout << buffer.get();
    }
@@ -70,26 +70,21 @@ void cix_get(client_socket& server, string& file) {
    strcpy(header.filename, file.c_str());
    send_packet (server, &header, sizeof header);
    recv_packet (server, &header, sizeof header);
-   //outlog << "received header " << header << endl;
+   outlog << "received header " << header << endl;
    if(header.command != cix_command::FILEOUT) {
-      outlog << "cix: get failed for " 
-             << file 
-             << ": No such file or directory"
-             << endl;
+      outlog << "sent GET, server did not return FILEOUT" << endl;
+      outlog << "server returned " << header << endl;
    }
    else {
       size_t host_nbytes = ntohl (header.nbytes);
       auto buffer = make_unique<char[]> (host_nbytes + 1);
       recv_packet (server, buffer.get(), host_nbytes);
-      //outlog << "received " << host_nbytes << " bytes" << endl;
+      outlog << "received " << host_nbytes << " bytes" << endl;
       buffer[host_nbytes] = '\0';
       ofstream newFile;
       newFile.open(file);
       newFile << buffer.get();
       newFile.close();
-      outlog << "cix: get successful for "
-             << file 
-             << endl;
    }
 }
 
@@ -99,6 +94,7 @@ void cix_put(client_socket& server, string& file) {
    strcpy(header.filename, file.c_str());
    ifstream get_file (header.filename, ifstream::binary);
    if(!get_file) {
+      outlog << "get: File not found: " << strerror (errno) << endl;
       header.command = cix_command::NAK;
       header.nbytes = htonl (errno);
       send_packet (server, &header, sizeof header);
@@ -108,29 +104,21 @@ void cix_put(client_socket& server, string& file) {
       int length = get_file.tellg();
       get_file.seekg(0, get_file.beg);
       header.nbytes = htonl (length);
-      char buffer[0x1000];
+      char buffer[length];
       get_file.read(buffer, length);
       get_file.close();
       send_packet (server, &header, sizeof header);
       send_packet (server, buffer, length);
       recv_packet (server, &header, sizeof header);
-      //outlog << "Sent header " << header << endl;
+      outlog << "Sent header " << header << endl;
       memset (header.filename, 0, FILENAME_SIZE);
    }
    
    if(header.command != cix_command::ACK) {
-      //outlog << "sent PUT, server did not return ACK" << endl;
-      //outlog << "server returned " << header << endl;
-      outlog << "cix: put failed for " 
-             << file << ": " 
-             << strerror (errno) 
-             << endl;
+      outlog << "sent PUT, server did not return ACK" << endl;
+      outlog << "server returned " << header << endl;
    }
-   else {
-      outlog << "cix: put successful for " 
-             << file
-             << endl;
-   }
+
 }
 
 void cix_rm(client_socket& server, string& file) {
@@ -140,20 +128,12 @@ void cix_rm(client_socket& server, string& file) {
    header.nbytes = 0 ;
    send_packet (server, &header, sizeof header);
    recv_packet (server, &header, sizeof header);
-   //outlog << "received header " << header << endl;
+   outlog << "received header " << header << endl;
    if(header.command != cix_command::ACK) {
-      //outlog << "sent RM, server did not return ACK" << endl;
-      //outlog << "server returned " << header << endl;
-      outlog << "cix: rm failed for " 
-             << file 
-             << ": Remove error"
-             << endl;
+      outlog << "sent RM, server did not return ACK" << endl;
+      outlog << "server returned " << header << endl;
    }
-   else {
-      outlog << "cix: rm succesful for " 
-             << file 
-             << endl;
-   }
+   cout << "Now here" << endl;
 }
 
 void usage() {
