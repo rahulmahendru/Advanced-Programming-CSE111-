@@ -1,7 +1,7 @@
 # $Id: Makefile,v 7.46 2019-08-15 17:02:48-07 - - $
 
-ALL:= ${basename ${filter %.mm, ${shell ls -t}}}
-NEW:= ${firstword ${ALL}}
+ALL     := ${basename ${filter %.mm, ${shell ls -t}}}
+NEW     := ${firstword ${ALL}}
 
 GROFFDIR = /afs/cats.ucsc.edu/courses/cse110a-wm/groff
 DEPS     = ${GROFFDIR}/tmac/Tmac.mm-etc Makefile

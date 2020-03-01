@@ -1,9 +1,14 @@
-head	1.10;
+head	1.11;
 access;
 symbols;
 locks;
 comment	@# @;
 
+
+1.11
+date	2020.02.27.20.48.44;	author -;	state -;
+branches;
+next	1.10;
 
 1.10
 date	2020.02.04.01.08.29;	author -;	state -;
@@ -60,12 +65,12 @@ desc
 @@
 
 
-1.10
+1.11
 log
 @-
 @
 text
-@$Id: SCORE,v 1.9 2019-11-19 12:07:08-08 - - $
+@$Id: SCORE,v 1.10 2020-02-03 17:08:29-08 - - $
 
 Copy all of the files in this directory into the student's
 directory.  For each point deduction, give a reason.  Numbers in
@@ -173,7 +178,7 @@ PROGRAM TESTING:
          is the file now in client's directory?
 
      (4) client: rm to-remove
-         does client2 now have client's local file
+         does client now have client's local file
          were the server files unlinked?
 
      (4) client: rm no-such-file
@@ -204,6 +209,20 @@ TOTALSCORE=
 min 1, max 60
 
 
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+$Id: SCORE,v 1.9 2019-11-19 12:07:08-08 - - $
+d109 1
+a109 1
+         does client2 now have client's local file
 @
 
 
