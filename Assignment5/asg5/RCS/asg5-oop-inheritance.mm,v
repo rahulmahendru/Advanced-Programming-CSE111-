@@ -1,0 +1,1020 @@
+head	1.27;
+access;
+symbols;
+locks;
+comment	@.\" @;
+
+
+1.27
+date	2020.02.19.22.49.10;	author -;	state -;
+branches;
+next	1.26;
+
+1.26
+date	2020.02.19.22.48.54;	author -;	state -;
+branches;
+next	1.25;
+
+1.25
+date	2020.02.19.22.45.36;	author -;	state -;
+branches;
+next	1.24;
+
+1.24
+date	2020.02.19.22.43.14;	author -;	state -;
+branches;
+next	1.23;
+
+1.23
+date	2019.11.25.22.18.26;	author -;	state -;
+branches;
+next	1.22;
+
+1.22
+date	2019.11.25.22.17.49;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2019.11.18.22.48.41;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2019.06.19.17.20.01;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2019.05.16.00.49.54;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2019.02.28.22.54.10;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2018.07.17.19.34.39;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2018.03.01.22.40.57;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2018.02.16.23.47.50;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2018.02.16.23.46.54;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2018.02.16.23.46.25;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2018.02.16.23.45.34;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2018.02.16.23.44.47;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2018.02.16.23.44.33;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2018.02.16.23.42.43;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2018.02.16.23.41.37;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2017.07.24.22.56.02;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.07.20.03.33.41;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.07.01.00.57.34;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.07.01.00.54.40;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.05.04.23.27.20;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.02.10.02.27.57;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2015.07.16.23.42.52;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.27
+log
+@-
+@
+text
+@.so Tmac.mm-etc
+.if t .Newcentury-fonts
+.INITR* \n[.F]
+.SIZE 12 14
+.TITLE CSE-111 Winter\~2020 Program\~5 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.26 2020-02-19 14:48:54-08 - - $"
+.PWD
+.URL
+.EQ
+delim $$
+.EN
+.de COMMAND 
+.   ds commandstr \f[CB]\\$1
+.   while \\n[.$]>1 \{ .\"
+.      shift   
+.      if '\\$1'?' .as commandstr \0\fR[\fI\\$2\fR]\f[CB]
+.      if '\\$1'I' .as commandstr \0\fI\\$2\f[CB]
+.      if '\\$1'R' .as commandstr \0\fR\\$2\f[CB]
+.      if '\\$1'V' .as commandstr \0\\$2
+.      shift   
+.   \}
+.   LI "\\*[commandstr]\f[R]"
+..
+.H 1 "Overview"
+In this assignment you will implement a simple graphics package
+using the OpenGL graphics library.
+Using inheritance, 
+geometric objects will be displayed in a window.
+The lab workstations all run X11 so there is no problem there.
+When you log into the server remotely, be sure to specify the
+.V= -X
+option, as in\(::
+.VTCODE* 1 "ssh -X \fIusername\fP@@unix.ucsc.edu"
+Before you log into the server make sure you have an X11 client
+running on your own workstation.
+.H 1 "Program Specification"
+The program is presented in the form of a Unix 
+.V= man (1)
+page.
+.SH=BVL
+.MANPAGE=LI "NAME"
+gdraw
+\[em]
+drawing program displaying objects in a window
+.MANPAGE=LI "SYNOPSIS"
+.V= gdraw
+.RI \|[
+.IR options ]
+.RI [ filename ]
+.MANPAGE=LI "OPTIONS"
+All options are recognized by
+.V= getopt (3).
+.VL \n[Pi]
+.MANOPT=LI -@@ flags
+The flags specified are passed to the debugging macro.
+Debug output is printed to the standard error.
+.MANOPT=LI -w width
+The initial width of the window.
+Default\(::
+640.
+.MANOPT=LI -h height
+The initial height of the window.
+Default\(::
+480.
+.LE
+.MANPAGE=LI "OPERANDS"
+Commands are read from the file whose name is given as an operand.
+If no filename is given, commands are read from the standard input.
+.MANPAGE=LI "COMMANDS"
+When the program begins, a window is created for displaying
+information, which consists of text and geometric objects of
+various kinds.
+The project proceeds in two parts\(::
+.ALX a ()
+.LI
+Shapes are defined in terms of their sizes (length, width,
+or vertices).
+.LI
+Objects are drawn in the window by drawing commands,
+after which they may be altered by keyboard commands.
+.LE
+.P
+Sizes, lengths, widths, and co\[:o]rdinates are all
+floating point numbers, and measure pixels.
+.P
+Colors may be specified by name using one of the names in
+the file
+.V= rgb.txt ,
+or by their hexadecimal values in the form
+.VI 0xRRGGBB ,
+where
+.V= RR ,
+.V= GG ,
+and
+.V= BB
+are the red, green, and blue components each specified as
+two hexadecimal digits in the range
+.V= 00
+to
+.V= FF .
+.P
+The
+.V= define
+command makes a record of the definition of an shape and makes
+it available later for a draw command.
+The
+.V= draw
+command
+creates an object in the screen's object list,
+to be displayed when the program starts.
+.P
+The following commands are recognized.
+Each command is on a line by itself and terminates with the
+newline character.
+If the last character on a line is a backslash
+.=V ( \[rs] ),
+the command is continued onto the next line.
+.BVL \n[Pi]
+.COMMAND # R \|.\|.\|.
+A comment line is ignored,
+as are empty lines and lines consisting only of white space.
+.COMMAND define I name V text I font I words\|.\|.\|.
+A text object is created by concatenating all of the words together,
+each separated from the next by spaces.
+The font is any of the seven GLUT bitmap fonts\(::
+.ALX \[bu] 0 "" 0 0
+.LI
+.V= Fixed-8x13
+.LI
+.V= Fixed-9x15
+.LI
+.V= Helvetica-10
+.LI
+.V= Helvetica-12
+.LI
+.V= Helvetica-18
+.LI
+.V= Times-Roman-10
+.LI
+.V= Times-Roman-24
+.LE
+.COMMAND define I name V ellipse I width I height
+An ellipse is specified with the major and minor diameters specified.
+When drawn, the drawing co\[:o]rdinate is the center.
+.COMMAND define I name V circle I diameter
+A circle is just an ellipse whose length and width are equal.
+.COMMAND define I name V polygon I x0 I y0 I x1 I y1 \
+I x2 I y2 R \|.\|.\|.\|
+A polygon is specified with the number of vertices being equal to
+the number of $ ( x , y ) $ co\[:o]rdinates given.
+The polygon must be convex (each interior angle less than 180 degrees).
+The convexity is not verified by the program,
+so the appearance of a non-convex polygon is undefined.
+The center of the polygon is at $ ( x bar , y bar ) $, i.e.,
+at the average of all the $x$ co\[:o]rdinates and the average of
+the $y$ co\[:o]rdinates.
+After computing the average,
+it is subtracted from each of the vertices to normalize them.
+For example, if the vertices are
+specified as shown in the left side of the diagram,
+they are normalized to that shown on the right side,
+so that $ ( x bar , y bar ) $ changes from $ ( .5 , .5 ) $ to
+$ ( 0 , 0 ) $.
+.nr Si 2*\n[Pi]
+.DS I
+.TS
+tab(|); c cw(1i) c.
+T{
+.PS 1i
+"$ ( 0 , 0 ) $" at 0,-.1
+"$ ( 1 , 0 ) $" at 1,-.1
+"$ ( 1 , 1 ) $" at 1,1.1
+"$ ( 0 , 1 ) $" at 0,1.1
+line from 0,0 to 1,0 then to 1,1 then to 0,1 then to 0,0
+"$ ( .5 , .5 ) $" at .5,.5
+.PE
+T}||T{
+.PS 1i
+"$ ( -.5 , -.5 $)" at 0,-.1
+"$ ( +.5 , -.5 $)" at 1,-.1
+"$ ( +.5 , +.5 $)" at 1,1.1
+"$ ( -.5 , +.5 $)" at 0,1.1
+line from 0,0 to 1,0 then to 1,1 then to 0,1 then to 0,0
+"$ ( 0 , 0 ) $" at .5,.5
+.PE
+T}
+.TE
+.DE
+.COMMAND define I name V rectangle I width I height
+A rectangle with the given width and height is defined with
+strictly horizontal and vertical lines.
+When drawn, the drawing co\[:o]rdinates will be the center.
+.COMMAND define I name V square I width
+A square is a rectangle with equal width and height.
+.COMMAND define I name V diamond I width I height
+A diamond's width is from the leftmost to rightmost point and its
+height is from topmost to bottommost height.
+The draw command specifies its center.
+.COMMAND define I name V triangle I x0 I y0 I x1 I y1 I x2 I y2
+A triangle is just another name for a polygon.
+.COMMAND define I name V equilateral I width
+An equilateral triangle has a horizontal base (two points have
+the same $y$-value).
+The apex has a higher $y$-value.
+The constructor just uses the constructor for a triangle.
+.COMMAND border I color I thickness
+Specifies the thickness in pixels of the border surrounding the selected
+object, and its color.
+Defaults\(::
+red, 4.
+.COMMAND moveby I pixels
+The move parameter indicates how many pixels an object moves when
+directed by one keystroke.
+Default\(::
+4.
+.COMMAND draw I color I name I xcenter I ycenter
+A geometrical object (an ellipse or a polygon)
+is drawn with the center at the co\[:o]rdinates
+$ ( x , y ) $, using the color specified.
+A text object is drawn using $ ( x , y ) $ as the co\[:o]rdinate
+of the left end of the string at the baseline.
+.LE
+.MANPAGE=LI "KEYBOARD INPUT"
+Once the input file is finished,
+the keyboard is used to command the movements of the objects.
+The following keystrokes control the program\(::
+.nr Si \n[Pi]
+.DS I
+.TS
+tab(|); lfCB l.
+q|Quit (exit the program).
+h|Move the selected object left.
+j|Move the selected object down.
+k|Move the selected object up.
+l|Move the selected object right.
+n|Set the selection to the next object.
+p|Set the selection to the previous object.
+0\fR ... \f[CB]9|Set the selection to objects 0 through 9, respectively.
+.TE
+.DE
+An object is always displayed using the co\[:o]rdinates of the center.
+If an object is moved off the window, it appears at the other
+end of the window.
+That is, if the $x$ or $y$ co\[:o]rdinate exceeds the width (height)
+of the window, it is set to 0.
+If it becomes negative, it is set to the width (height).
+.P
+The selected object is always surrounded by a border to make
+it more visible,
+and is always displayed on top of all of the others.
+Other objects are displayed in the order that they appear 
+in the object vector.
+.P
+For objects 0 through 9,
+except for text objects,
+the object's number is displayed in the center of the object.
+A text object might disappear if its left end is out of the window.
+(A bug in OpenGL?)
+.P
+.br
+.ne 3
+.MANPAGE=LI "EXIT STATUS"
+.VL \n[Pi]
+.LI 0
+No errors were detected.
+.LI 1
+Errors were detected and messages printed to the standard error.
+.LE
+.LE
+.H 1 "Code"
+OpenGL and GLUT will be used to display the window.
+See the short example programs in the
+following subdirectories\(::
+.VTCODE* 1 Assignments/labg-x11-opengl/hello-world/
+.VTCODE* 1 Assignments/labg-x11-opengl/other-tests/
+.VTCODE* 1 Examples/opengl-examples/
+Starter code is in the
+.V= code/
+subdirectory.
+For documentation, Google using the terms ``OpenGL'' and/or ``GLUT''
+and the name of the function, 
+then look for results naming the web pages in
+.VTCODE* 1 www.opengl.org/documentation
+Following are some functions you might need\(::
+.DS
+.TS
+tab(|); lfCB lfCB lfCB.
+T{
+glBegin
+glClear
+glClearColor
+glColor3ub
+glColor3ubv
+glEnable
+glEnd
+glFlush
+glHint
+glLineWidth
+glLoadIdentity
+glMatrixMode
+glOrtho
+glPointSize
+glPopMatrix
+glPushMatrix
+glRasterPos2f
+glRasterPos2i
+T}|T{
+glRotatef
+glTranslatef
+glVertex2f
+glViewport
+gluOrtho2D
+glutAddMenuEntry
+glutAddSubMenu
+glutAttachMenu
+glutBitmapCharacter
+glutBitmapHeight
+glutBitmapLength
+glutBitmapString
+glutCloseFunc
+glutCreateMenu
+glutCreateWindow
+glutDisplayFunc
+glutEntryFunc
+glutInit
+T}|T{
+glutInitDisplayMode
+glutInitWindowPosition
+glutInitWindowSize
+glutKeyboardFunc
+glutKeyboardUpFunc
+glutMainLoop
+glutMotionFunc
+glutMouseFunc
+glutPassiveMotionFunc
+glutPostRedisplay
+glutReshapeFunc
+glutSetIconTitle
+glutSetWindowTitle
+glutSpecialFunc
+glutSpecialUpFunc
+glutSwapBuffers
+glutTimerFunc
+glutWireTeapot
+T}
+.TE
+.DE
+.FINISH
+@
+
+
+1.26
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.25 2020-02-19 14:45:36-08 - - $"
+d258 1
+a258 1
+(a bug in OpenGL?)
+@
+
+
+1.25
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.24 2020-02-19 14:43:14-08 - - $"
+d247 1
+d249 5
+a253 1
+it visible.
+d255 1
+d257 3
+@
+
+
+1.24
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.23 2020-11-25 14:18:26-08 - - $"
+d245 1
+a245 1
+of the windor, it is set to 0.
+@
+
+
+1.23
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CSE-111 Fall\~2019 Program\~5 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.22 2019-11-25 14:17:49-08 - - $"
+@
+
+
+1.22
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.21 2019-11-18 14:48:41-08 - - $"
+d265 3
+a267 4
+.ds CSE111 /afs/cats.ucsc.edu/courses/cse111-wm
+.VTCODE* 0 \*[CSE111]//Assignments/labg-x11-opengl/hello-world/
+.VTCODE* 0 \*[CSE111]//Assignments/labg-x11-opengl/other-tests/
+.VTCODE* 0 \*[CSE111]//Examples/opengl-examples/
+@
+
+
+1.21
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.20 2019-06-19 10:20:01-07 - - $"
+d264 5
+a268 2
+.V= misc/
+subdirectory.
+@
+
+
+1.20
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2019 Program\~5 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.19 2019-05-15 17:49:54-07 - - $"
+@
+
+
+1.19
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Spring\~2019 Program\~5 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.18 2019-02-28 14:54:10-08 - - $"
+@
+
+
+1.18
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Winter\~2019 Program\~5 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg5-oop-inheritance.mm,v 1.17 2018-07-17 12:34:39-07 - - $"
+@
+
+
+1.17
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Winter\~2018 Program\~5 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.16 2018-03-01 14:40:57-08 - - $"
+@
+
+
+1.16
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Winter\~2018 Program\~4 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.15 2018-02-16 15:47:50-08 - - $"
+@
+
+
+1.15
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.14 2018-02-16 15:46:54-08 - - $"
+d191 1
+a191 1
+strictly horizontal and vertical lines with the given thickness.
+@
+
+
+1.14
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.13 2018-02-16 15:46:25-08 - - $"
+a336 6
+.H 1 "What to Submit"
+Submit all C++ source files and the
+.V= Makefile .
+If you are doing pair programming, also submit the
+.V= PARTNER
+file.
+@
+
+
+1.13
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.12 2018-02-16 15:45:34-08 - - $"
+a311 1
+T}|T{
+d315 1
+@
+
+
+1.12
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.11 2018-02-16 15:44:47-08 - - $"
+d276 1
+a276 1
+tab(|); lfCB lfCB lfCB lfCB.
+a291 1
+T}|T{
+d296 1
+a306 1
+T}|T{
+d312 1
+a321 1
+T}|T{
+@
+
+
+1.11
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.10 2018-02-16 15:44:33-08 - - $"
+a64 16
+.\".MANOPT=LI -u unit
+.\"The number of pixels included in one unit of distance.
+.\"Default\(:: 1.
+.\"Example\(::
+.\"If the unit is specified as 100,
+.\"then a length of 1 unit is 100 pixels.
+.\".MANOPT=LI -x co\[:o]rdinate
+.\"The $x$ position in pixels of the co\[:o]rdinate $ ( 0 , 0 ) $.
+.\"Default\(::
+.\"0.
+.\"The $x$-axis always increases to the right.
+.\".MANOPT=LI -y co\[:o]rdinate
+.\"The $y$ position in pixels of the co\[:o]rdinate $ ( 0 , 0 ) $.
+.\"Default\(::
+.\"0.
+.\"The $y$-acis always increases upward.
+d291 1
+a292 1
+glPointSize
+a304 1
+T}|T{
+d307 1
+a318 1
+T}|T{
+d322 1
+@
+
+
+1.10
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.9 2018-02-16 15:42:43-08 - - $"
+d352 2
+@
+
+
+1.9
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.8 2018-02-16 15:41:37-08 - - $"
+d290 62
+a351 54
+.V= glBegin
+.V= glClear
+.V= glClearColor
+.V= glColor3ub
+.V= glColor3ubv
+.V= glEnable
+.V= glEnd
+.V= glFlush
+.V= glHint
+.V= glLineWidth
+.V= glLoadIdentity
+.V= glMatrixMode
+.V= glOrtho
+.V= glPointSize
+.V= glPopMatrix
+.V= glPushMatrix
+.V= glRasterPos2f
+.V= glRasterPos2i
+.V= glRotatef
+.V= glTranslatef
+.V= glVertex2f
+.V= glViewport
+.V= gluOrtho2D
+.V= glutAddMenuEntry
+.V= glutAddSubMenu
+.V= glutAttachMenu
+.V= glutBitmapCharacter
+.V= glutBitmapHeight
+.V= glutBitmapLength
+.V= glutBitmapString
+.V= glutCloseFunc
+.V= glutCreateMenu
+.V= glutCreateWindow
+.V= glutDisplayFunc
+.V= glutEntryFunc
+.V= glutInit
+.V= glutInitDisplayMode
+.V= glutInitWindowPosition
+.V= glutInitWindowSize
+.V= glutKeyboardFunc
+.V= glutKeyboardUpFunc
+.V= glutMainLoop
+.V= glutMotionFunc
+.V= glutMouseFunc
+.V= glutPassiveMotionFunc
+.V= glutPostRedisplay
+.V= glutReshapeFunc
+.V= glutSetIconTitle
+.V= glutSetWindowTitle
+.V= glutSpecialFunc
+.V= glutSpecialUpFunc
+.V= glutSwapBuffers
+.V= glutTimerFunc
+.V= glutWireTeapot
+@
+
+
+1.8
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.7 2017-07-24 15:56:02-07 - - $"
+d290 54
+a343 54
+.VTCODE* 1 glBegin
+.VTCODE* 1 glClear
+.VTCODE* 1 glClearColor
+.VTCODE* 1 glColor3ub
+.VTCODE* 1 glColor3ubv
+.VTCODE* 1 glEnable
+.VTCODE* 1 glEnd
+.VTCODE* 1 glFlush
+.VTCODE* 1 glHint
+.VTCODE* 1 glLineWidth
+.VTCODE* 1 glLoadIdentity
+.VTCODE* 1 glMatrixMode
+.VTCODE* 1 glOrtho
+.VTCODE* 1 glPointSize
+.VTCODE* 1 glPopMatrix
+.VTCODE* 1 glPushMatrix
+.VTCODE* 1 glRasterPos2f
+.VTCODE* 1 glRasterPos2i
+.VTCODE* 1 glRotatef
+.VTCODE* 1 glTranslatef
+.VTCODE* 1 glVertex2f
+.VTCODE* 1 glViewport
+.VTCODE* 1 gluOrtho2D
+.VTCODE* 1 glutAddMenuEntry
+.VTCODE* 1 glutAddSubMenu
+.VTCODE* 1 glutAttachMenu
+.VTCODE* 1 glutBitmapCharacter
+.VTCODE* 1 glutBitmapHeight
+.VTCODE* 1 glutBitmapLength
+.VTCODE* 1 glutBitmapString
+.VTCODE* 1 glutCloseFunc
+.VTCODE* 1 glutCreateMenu
+.VTCODE* 1 glutCreateWindow
+.VTCODE* 1 glutDisplayFunc
+.VTCODE* 1 glutEntryFunc
+.VTCODE* 1 glutInit
+.VTCODE* 1 glutInitDisplayMode
+.VTCODE* 1 glutInitWindowPosition
+.VTCODE* 1 glutInitWindowSize
+.VTCODE* 1 glutKeyboardFunc
+.VTCODE* 1 glutKeyboardUpFunc
+.VTCODE* 1 glutMainLoop
+.VTCODE* 1 glutMotionFunc
+.VTCODE* 1 glutMouseFunc
+.VTCODE* 1 glutPassiveMotionFunc
+.VTCODE* 1 glutPostRedisplay
+.VTCODE* 1 glutReshapeFunc
+.VTCODE* 1 glutSetIconTitle
+.VTCODE* 1 glutSetWindowTitle
+.VTCODE* 1 glutSpecialFunc
+.VTCODE* 1 glutSpecialUpFunc
+.VTCODE* 1 glutSwapBuffers
+.VTCODE* 1 glutTimerFunc
+.VTCODE* 1 glutWireTeapot
+@
+
+
+1.7
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2017 Program\~4 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.6 2016-07-19 20:33:41-07 - - $"
+@
+
+
+1.6
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2016 Program\~4 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.5 2016-06-30 17:57:34-07 - - $"
+@
+
+
+1.5
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Spring\~2016 Program\~4 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.4 2016-06-30 17:54:40-07 - - $"
+@
+
+
+1.4
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.3 2016-05-04 16:27:20-07 - - $"
+d233 2
+a234 1
+A geometrical object is drawn with the center at the co\[:o]rdinates
+@
+
+
+1.3
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.2 2016-02-09 18:27:57-08 - - $"
+d72 1
+a72 1
+.\"The $x$ position in pixels of the coordinate $ ( 0 , 0 ) $.
+d76 2
+a77 2
+.\".MANOPT=LI -y coordinate
+.\"The $y$ position in pixels of the coordinate $ ( 0 , 0 ) $.
+d99 2
+a100 2
+Sizes, lengths, widths, and coordinates are all floating point numbers,
+and measure pixels.
+d160 1
+a160 1
+When drawn, the drawing coordinate is the center.
+d166 1
+a166 1
+the number of $ ( x , y ) $ coordinates given.
+d171 2
+a172 2
+at the average of all the $x$ coordinates and the average of
+the $y$ coordinates.
+d208 1
+a208 1
+When drawn, the drawing coordinates will be the center.
+d233 4
+a236 2
+Draws an object with the center at $ ( x , y ) $ using the color
+specified.
+d256 1
+a256 1
+An object is always displayed using the coordinates of the center.
+d259 1
+a259 1
+That is, if the $x$ or $y$ coordinate exceeds the width (height)
+@
+
+
+1.2
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Winter\~2016 Program\~4 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.1 2015-07-16 16:42:52-07 - - $"
+@
+
+
+1.1
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2015 Program\~4 "OOP, Inheritance, OpenGL"
+.RCS "$Id: asg4-oop-inheritance.mm,v 1.81 2015-07-16 16:42:08-07 - - $"
+@

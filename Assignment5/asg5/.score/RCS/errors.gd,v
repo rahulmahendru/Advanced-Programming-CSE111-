@@ -1,0 +1,31 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.1
+date	2015.07.16.23.38.06;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@# $Id$
+# Should generate lots of errors.
+define first qsuare 10 30
+define second circle 0xFF thirty
+define third test New-Century-Schoolbook No such font in this program.
+define box square 50 50
+draw pruple box  40 50
+draw qwerty box eleven five
+@

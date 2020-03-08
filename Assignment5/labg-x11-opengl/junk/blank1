@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id: blank1,v 1.1 2018-08-15 14:10:39-07 - - $
+export vblank_mode=1
+glxgears

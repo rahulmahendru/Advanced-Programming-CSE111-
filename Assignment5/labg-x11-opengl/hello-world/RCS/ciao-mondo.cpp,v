@@ -1,0 +1,226 @@
+head	1.7;
+access;
+symbols;
+locks;
+comment	@// @;
+
+
+1.7
+date	2019.05.16.00.12.40;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2019.05.16.00.10.27;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.07.21.02.53.20;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.06.30.21.03.51;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.06.30.20.58.48;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.06.30.19.47.48;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.06.24.00.14.43;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.7
+log
+@-
+@
+text
+@// $Id: ciao-mondo.cpp,v 1.6 2019-05-15 17:10:27-07 - - $
+
+// Draw line from (0,0) to (1,1).
+
+#include <cmath>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+#include <GL/freeglut.h>
+#include <libgen.h>
+
+struct {
+   int width = 384;
+   int height = 256;
+} window;
+
+const GLubyte VERDE[] {0x00, 0x92, 0x46};
+const GLubyte BIANCO[] {0xF1, 0xF2, 0xF1};
+const GLubyte SCARLATTO[] {0xCE, 0x2B, 0x37};
+const vector<const GLubyte*> colors {VERDE, BIANCO, SCARLATTO};
+constexpr GLfloat aspect_ratio = 2.0 / 3.0;
+
+void draw_italian_flag() {
+   for (size_t i = 0; i < 3; ++i) {
+      glBegin (GL_POLYGON);
+      glColor3ubv (colors[i]);
+      glVertex2f (window.width * i / 3.0, 0);
+      glVertex2f (window.width * (i + 1) / 3.0, 0);
+      glVertex2f (window.width * (i + 1) / 3.0, window.height);
+      glVertex2f (window.width * i / 3.0, window.height);
+      glEnd();
+   }
+}
+
+void display() {
+   glClearColor (0.0, 0.0, 0.0, 0.0);
+   glClear (GL_COLOR_BUFFER_BIT);
+   draw_italian_flag();
+   glutSwapBuffers();
+}
+
+
+void adjust_aspect (int width, int height) {
+   if (window.width != width) {
+      height = width * aspect_ratio;
+   }else if (window.height != height) {
+      width = height / aspect_ratio;
+   }else {
+      return;
+   }
+   window.width = width;
+   window.height = height;
+   glutReshapeWindow (window.width, window.height);
+}
+
+void reshape (int width, int height) {
+   adjust_aspect (width, height);
+   glMatrixMode (GL_PROJECTION);
+   glLoadIdentity();
+   gluOrtho2D (0, window.width, 0, window.height);
+   glMatrixMode (GL_MODELVIEW);
+   glViewport (0, 0, window.width, window.height);
+   glutPostRedisplay();
+}
+
+int main (int argc, char** argv) {
+   glutInit (&argc, argv);
+   glutInitDisplayMode (GLUT_RGBA | GLUT_DOUBLE);
+   glutInitWindowSize (window.width, window.height);
+   glutCreateWindow (basename (argv[0]));
+   glutDisplayFunc (display);
+   glutReshapeFunc (reshape);
+   glutMainLoop();
+   return 0;
+}
+
+//TEST// mkpspdf ciao-mondo.cpp.ps ciao-mondo.cpp*
+
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: ciao-mondo.cpp,v 1.5 2016-07-20 19:53:20-07 - - $
+d78 2
+a79 1
+//TEST// mkpspdf ciao-mondo.cpp.ps ciao-mondo.cpp
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: ciao-mondo.cpp,v 1.4 2016-06-30 14:03:51-07 - - $
+d78 1
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: ciao-mondo.cpp,v 1.3 2016-06-30 13:58:48-07 - - $
+d21 1
+a21 1
+vector<const GLubyte*> colors {VERDE, BIANCO, SCARLATTO};
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: ciao-mondo.cpp,v 1.2 2016-06-30 12:47:48-07 - - $
+d43 1
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: ciao-mondo.cpp,v 1.1 2016-06-23 17:14:43-07 - - $
+d14 2
+a15 2
+   size_t width = 384;
+   size_t height = 256;
+d22 1
+d24 1
+a24 1
+void draw_french_flag() {
+d39 1
+a39 1
+   draw_french_flag();
+d43 13
+d57 1
+a57 2
+   window.height = height;
+   window.width = width;
+a65 1
+
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.2 2016-06-23 17:05:45-07 - - $
+a44 1
+   glutReshapeWindow (window.width, window.height);
+@

@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting hello-gl.cpp
+checksource hello-gl.cpp
+ident hello-gl.cpp
+hello-gl.cpp:
+     $Id: hello-gl.cpp,v 1.16 2019-02-22 15:57:55-08 - - $
+cpplint.py.perl hello-gl.cpp
+Done processing hello-gl.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast hello-gl.cpp -o hello-gl -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f hello-gl.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished hello-gl.cpp

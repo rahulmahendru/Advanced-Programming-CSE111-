@@ -1,0 +1,234 @@
+CSE-111 · Fall 2019 · Lab GL · X11 and OpenGL                   1 of 2
+$Id: labg-x11-opengl.mm,v 1.265 2019-10-29 17:02:15-07 - - $
+PWD: /afs/cats.ucsc.edu/courses/cse111-wm/Assignments/labg-
+x11-opengl
+URL: http://www2.ucsc.edu/courses/cse111-wm/:/Assignments/labg-
+x11-opengl/
+
+This is a non-credit lab, in preparation for an upcoming project which
+will involve using OpenGL, which is a graphics toolkit.  There is
+nothing to submit, and it will not be graded.  In order to run an X11
+application on the server, and have it display on your own worksta-
+tion, you will need to install an X11 running on your computer.
+
+1.  Unix Timeshare: X2Go
+
+X2Go allows you to access a remote graphical desktop over a low
+bandwidth connection.  In otherwords, you can use X2Go to login to the
+Unix timeshare in a graphical fashion instead of using a command line.
+It is similar to the X11 (or XWindows) system that use XDMCP (or SSH)
+to view a remote desktop.  X2Go is availble on multiple platforms, so
+simply pick the client that works best for you.  More information can
+be found on the X2Go website:  https://wiki.x2go.org/
+
+Setting Up X2Go:
+http://its.ucsc.edu/unix-timeshare/tutorials/setting-up-x2go.html
+
+2.  Installing X11
+
+Depending on what personal computer you use, choose one of the
+following methods of installing X11.
+
+ (a) X11 on Linux.  X11 is the native windowing system used on Linux.
+     You may use any window manager of your choice.
+
+ (b) X11 on OSX.  The Macintosh OSX operating system is based on BSD
+     (the Berkeley Systems Distribution of Unix).  Install XQuartz if
+     you do not already have X11 running on your personal workstation.
+     https://www.xquartz.org/
+
+ (c) X11 on W*nd*z*.  There are some choices:  Xming.  Cygwin.
+     http://www.straightrunning.com/XmingNotes/
+     http://www.geo.mtu.edu/geoschem/docs/putty_install.html
+     https://www.cygwin.com/
+
+3.  Verifying X11
+
+Once X11 has been installed on your computer, verify that it is
+working.  When running an X11 program repomely but displaying on the
+local workstation, it is necessary to set up X11 forwarding with the
+-X flag of ssh, as in:
+   bash-1$ ssh -X username@unix.ucsc.edu
+
+One may run an X11 program by typing the command name, usually by
+backgrounding the process, as in the following.  Note the ampersand
+(&).
+
+   bash-2$ gv &
+   bash-3$ xev &
+   bash-4$ xpdf &
+
+4.  Running OpenGL programs
+
+In the subdirectory hello-world there are several OpenGL programs
+available for testing.  If your workstation has X11 properly
+installed, they can just be run as any other X11 program.  Example:
+   bash-5$ glxgears &
+
+Problems?  Because of incorrect configuration of OpenGL on the server,
+it is possible that you might see the following message:
+
+   bash-6$ glxgears &
+   libGL error: No matching fbConfigs or visuals found
+   libGL error: failed to load driver: swrast
+   Error: couldn't get an RGB, Double-buffered visual
+
+The following statement in your .bash_profile might solve that
+problem:
+
+   export GLES_MESA=/usr/local/android-sdk/emulator/lib64/gles_mesa
+   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$GLES_MESA
+
+5.  Hello, World!
+
+The subdirectory hello-world/ contains some sample programs.  You are
+not expected to understand the code in these programs at this time,
+but you should run the programs to verify that you can.  at the end of
+the line.  Three of the programs draw flags on the screen.  You can
+move them around and resize them.
+
+   bash-7$ bonjour-le-monde &
+   bash-8$ ciao-mondo &
+   bash-9$ hallo-welt &
+   bash-10$ konnichiwa-sekai &
+
+The program hello-world can also be moved around and resized, and it
+also reacts to inputs you give it.
+
+   bash-11$ hello-world &
+   To cycle the colors: right mouse button or key 'c' or 'C'.
+   To cycle the fonts: left mouse button or key 'f' or 'F'.
+   To cycle the greetings: middle mouse button or key 'g' or 'G'.
+   To invert the colors: key Backspace, Return, or Delete.
+   To quit: key 'q' or 'Q' or ESC.
+
+       +------------------------------------------------------+
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |hello-world/hello-world.xwd.ps                        |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       |                                                      |
+       +------------------------------------------------------+
+     hello-world/hello-world.xwd.ps
+
+6.  Other tests
+
+For other tests of OpenGL, look in the directory other-tests and run:
+
+   bash-12$ glclock &
+   bash-13$ color-wheel &
+   bash-14$ teapot &
+
+The last one shows a teapot picture both in a solid view and a wire
+frame.  Every time you press the left mouse button the view get
+swapped.
+
+7.  Installing a local OpenGL
+
+Running OpenGL across the internet will be net-intensive, especially
+if you have a slow internet connection.  So you might want to install
+OpenGL on your own workstation.
+   http://freeglut.sourceforge.net/
+
+Once you have installed OpenGl on your own workstation, you may copy
+the files from this code subdirectory onto your own workstation and
+compile them.  Depending on the OS you are using, you may have to
+change the line
+   #include <GL/freeglut.h>
+to something else, for example:
+
+   #ifdef __linux__
+   #include <GL/freeglut.h>
+   #endif
+   #ifdef __macosx__
+   #include <??????????>
+   #endif
+
+The #ifdefs detect which operation system you are using and will then
+include the appropriate header files, thus possibly leading to a
+portable program.  You need to figure out what the predefined macro
+identifying your OS, and where the OpenGL header files are.
+
+8.  Other references
+
+When looking for documentation on a particular function, look at
+https://www.opengl.org/.  For example, to find out about the function
+glutPostRedisplay, type ``OpenGL glutPostRedisplay'' into Google, then
+select www.opengl.org.
+
+Getting Started.
+   https://www.opengl.org/wiki/Getting_Started
+
+OpenGL Programming Guide.
+   http://www.glprogramming.com/red/
+
+OpenGL Reference Manual.
+   http://www.glprogramming.com/blue/
+
+GLUT Tutorial.  GLUT stands for the OpenGL Utility Toolkit.
+   http://www.lighthouse3d.com/tutorials/glut-tutorial/
+
+Compiling OpenGL programs on Windows, Linux and OS X.
+   http://myweb.wit.edu/wernerm/compilingOpenGl.html
+
+9.  Alternatives
+
+Instead of installing X11 on your workstation, you may do your
+development in the lab.  Instead of installing OpenGL on your
+workstation, you may work remotely and run all OpenGL programs on the
+timeshares.
+
+CSE-111 · Fall 2019 · Lab GL · X11 and OpenGL                   2 of 2
+
+10.  Some more examples
+
++-----------------------------+       +-----------------------------+
+|                             |       |                             |
+|                             |       |                             |
+|                             |       |                             |
+|                             |       |                             |
+|                             |       |                             |
+|                             |       |                             |
+|hello-world/bonjour-le-monde.xwd.ps  |hello-world/ciao-mondo.xwd.ps|
+|                             |       |                             |
+|                             |       |                             |
+|                             |       |                             |
+|                             |       |                             |
+|                             |       |                             |
++-----------------------------+       +-----------------------------+
+hello-world/bonjour-le-monde.xwd.ps   hello-world/ciao-mondo.xwd.ps
+
++-----------------------------+   +-----------------------------+
+|                             |   |                             |
+|                             |   |                             |
+|                             |   |                             |
+|                             |   |                             |
+|                             |   |                             |
+|hello-world/hallo-welt.xwd.ps|   |                             |
+|                             |   |hello-world/konnichiwa-sekai.xwd.ps
+|                             |   |                             |
+|                             |   |                             |
+|                             |   |                             |
+|                             |   |                             |
++-----------------------------+   |                             |
+hello-world/hallo-welt.xwd.ps     +-----------------------------+
+                                  hello-world/konnichiwa-sekai.xwd.ps
+

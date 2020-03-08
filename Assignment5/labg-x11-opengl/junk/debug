@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id: debug,v 1.1 2018-08-15 14:10:44-07 - - $
+export LIBGL_DEBUG=verbose
+glxinfo |& more

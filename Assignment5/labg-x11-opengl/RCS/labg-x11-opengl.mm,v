@@ -1,0 +1,6167 @@
+head	1.265;
+access;
+symbols;
+locks;
+comment	@.\" @;
+
+
+1.265
+date	2019.10.30.00.02.15;	author -;	state -;
+branches;
+next	1.264;
+
+1.264
+date	2019.10.30.00.00.32;	author -;	state -;
+branches;
+next	1.263;
+
+1.263
+date	2019.10.29.23.59.39;	author -;	state -;
+branches;
+next	1.262;
+
+1.262
+date	2019.10.29.23.59.02;	author -;	state -;
+branches;
+next	1.261;
+
+1.261
+date	2019.10.29.23.58.41;	author -;	state -;
+branches;
+next	1.260;
+
+1.260
+date	2019.10.29.23.55.01;	author -;	state -;
+branches;
+next	1.259;
+
+1.259
+date	2019.10.22.20.00.23;	author -;	state -;
+branches;
+next	1.258;
+
+1.258
+date	2019.05.17.22.00.24;	author -;	state -;
+branches;
+next	1.257;
+
+1.257
+date	2019.05.17.21.59.24;	author -;	state -;
+branches;
+next	1.256;
+
+1.256
+date	2019.05.17.21.59.08;	author -;	state -;
+branches;
+next	1.255;
+
+1.255
+date	2019.05.17.21.58.48;	author -;	state -;
+branches;
+next	1.254;
+
+1.254
+date	2019.05.17.21.58.08;	author -;	state -;
+branches;
+next	1.253;
+
+1.253
+date	2019.05.17.21.57.26;	author -;	state -;
+branches;
+next	1.252;
+
+1.252
+date	2019.05.17.21.55.41;	author -;	state -;
+branches;
+next	1.251;
+
+1.251
+date	2019.05.17.21.55.21;	author -;	state -;
+branches;
+next	1.250;
+
+1.250
+date	2019.05.17.21.55.01;	author -;	state -;
+branches;
+next	1.249;
+
+1.249
+date	2019.05.17.21.54.35;	author -;	state -;
+branches;
+next	1.248;
+
+1.248
+date	2019.05.17.21.53.47;	author -;	state -;
+branches;
+next	1.247;
+
+1.247
+date	2019.05.17.21.53.22;	author -;	state -;
+branches;
+next	1.246;
+
+1.246
+date	2019.05.17.21.52.58;	author -;	state -;
+branches;
+next	1.245;
+
+1.245
+date	2019.05.17.21.52.20;	author -;	state -;
+branches;
+next	1.244;
+
+1.244
+date	2019.05.17.21.51.45;	author -;	state -;
+branches;
+next	1.243;
+
+1.243
+date	2019.05.17.21.51.19;	author -;	state -;
+branches;
+next	1.242;
+
+1.242
+date	2019.05.17.21.50.56;	author -;	state -;
+branches;
+next	1.241;
+
+1.241
+date	2019.05.17.21.49.57;	author -;	state -;
+branches;
+next	1.240;
+
+1.240
+date	2019.05.17.21.49.33;	author -;	state -;
+branches;
+next	1.239;
+
+1.239
+date	2019.05.17.21.48.56;	author -;	state -;
+branches;
+next	1.238;
+
+1.238
+date	2019.05.17.21.48.15;	author -;	state -;
+branches;
+next	1.237;
+
+1.237
+date	2019.05.17.21.47.30;	author -;	state -;
+branches;
+next	1.236;
+
+1.236
+date	2019.05.17.21.47.09;	author -;	state -;
+branches;
+next	1.235;
+
+1.235
+date	2019.05.17.21.46.50;	author -;	state -;
+branches;
+next	1.234;
+
+1.234
+date	2019.05.17.21.46.24;	author -;	state -;
+branches;
+next	1.233;
+
+1.233
+date	2019.05.17.21.46.12;	author -;	state -;
+branches;
+next	1.232;
+
+1.232
+date	2019.05.17.21.45.56;	author -;	state -;
+branches;
+next	1.231;
+
+1.231
+date	2019.05.17.21.45.38;	author -;	state -;
+branches;
+next	1.230;
+
+1.230
+date	2019.05.17.21.45.16;	author -;	state -;
+branches;
+next	1.229;
+
+1.229
+date	2019.05.17.21.44.40;	author -;	state -;
+branches;
+next	1.228;
+
+1.228
+date	2019.05.17.21.44.18;	author -;	state -;
+branches;
+next	1.227;
+
+1.227
+date	2019.05.17.21.43.58;	author -;	state -;
+branches;
+next	1.226;
+
+1.226
+date	2019.05.17.21.43.36;	author -;	state -;
+branches;
+next	1.225;
+
+1.225
+date	2019.05.17.21.42.46;	author -;	state -;
+branches;
+next	1.224;
+
+1.224
+date	2019.05.17.21.42.28;	author -;	state -;
+branches;
+next	1.223;
+
+1.223
+date	2019.05.17.21.42.11;	author -;	state -;
+branches;
+next	1.222;
+
+1.222
+date	2019.05.17.21.41.50;	author -;	state -;
+branches;
+next	1.221;
+
+1.221
+date	2019.05.17.21.41.25;	author -;	state -;
+branches;
+next	1.220;
+
+1.220
+date	2019.05.17.21.40.50;	author -;	state -;
+branches;
+next	1.219;
+
+1.219
+date	2019.05.17.21.40.07;	author -;	state -;
+branches;
+next	1.218;
+
+1.218
+date	2019.05.17.21.39.46;	author -;	state -;
+branches;
+next	1.217;
+
+1.217
+date	2019.05.17.21.39.16;	author -;	state -;
+branches;
+next	1.216;
+
+1.216
+date	2019.05.17.21.38.50;	author -;	state -;
+branches;
+next	1.215;
+
+1.215
+date	2019.05.16.00.03.04;	author -;	state -;
+branches;
+next	1.214;
+
+1.214
+date	2019.05.15.23.59.44;	author -;	state -;
+branches;
+next	1.213;
+
+1.213
+date	2019.05.15.23.56.59;	author -;	state -;
+branches;
+next	1.212;
+
+1.212
+date	2019.05.15.23.54.52;	author -;	state -;
+branches;
+next	1.211;
+
+1.211
+date	2019.05.15.23.53.08;	author -;	state -;
+branches;
+next	1.210;
+
+1.210
+date	2019.05.15.23.50.28;	author -;	state -;
+branches;
+next	1.209;
+
+1.209
+date	2019.05.15.23.47.45;	author -;	state -;
+branches;
+next	1.208;
+
+1.208
+date	2019.05.14.23.14.25;	author -;	state -;
+branches;
+next	1.207;
+
+1.207
+date	2019.04.25.00.15.32;	author -;	state -;
+branches;
+next	1.206;
+
+1.206
+date	2019.04.11.23.48.10;	author -;	state -;
+branches;
+next	1.205;
+
+1.205
+date	2019.04.11.23.47.40;	author -;	state -;
+branches;
+next	1.204;
+
+1.204
+date	2019.04.11.23.46.58;	author -;	state -;
+branches;
+next	1.203;
+
+1.203
+date	2019.04.11.23.45.54;	author -;	state -;
+branches;
+next	1.202;
+
+1.202
+date	2019.04.11.23.45.37;	author -;	state -;
+branches;
+next	1.201;
+
+1.201
+date	2019.04.11.23.45.13;	author -;	state -;
+branches;
+next	1.200;
+
+1.200
+date	2019.04.11.23.44.38;	author -;	state -;
+branches;
+next	1.199;
+
+1.199
+date	2019.04.11.23.42.53;	author -;	state -;
+branches;
+next	1.198;
+
+1.198
+date	2019.04.11.23.41.56;	author -;	state -;
+branches;
+next	1.197;
+
+1.197
+date	2019.04.11.23.41.37;	author -;	state -;
+branches;
+next	1.196;
+
+1.196
+date	2019.04.11.23.41.06;	author -;	state -;
+branches;
+next	1.195;
+
+1.195
+date	2019.04.11.23.40.04;	author -;	state -;
+branches;
+next	1.194;
+
+1.194
+date	2019.02.27.23.44.36;	author -;	state -;
+branches;
+next	1.193;
+
+1.193
+date	2019.02.27.23.44.02;	author -;	state -;
+branches;
+next	1.192;
+
+1.192
+date	2019.02.27.23.42.46;	author -;	state -;
+branches;
+next	1.191;
+
+1.191
+date	2019.02.27.23.40.43;	author -;	state -;
+branches;
+next	1.190;
+
+1.190
+date	2019.02.22.01.48.10;	author -;	state -;
+branches;
+next	1.189;
+
+1.189
+date	2019.02.22.01.47.54;	author -;	state -;
+branches;
+next	1.188;
+
+1.188
+date	2019.02.22.01.47.36;	author -;	state -;
+branches;
+next	1.187;
+
+1.187
+date	2019.02.22.01.46.53;	author -;	state -;
+branches;
+next	1.186;
+
+1.186
+date	2019.02.22.01.45.39;	author -;	state -;
+branches;
+next	1.185;
+
+1.185
+date	2019.02.22.01.45.07;	author -;	state -;
+branches;
+next	1.184;
+
+1.184
+date	2019.02.22.01.44.27;	author -;	state -;
+branches;
+next	1.183;
+
+1.183
+date	2019.02.22.01.44.12;	author -;	state -;
+branches;
+next	1.182;
+
+1.182
+date	2019.02.22.01.43.49;	author -;	state -;
+branches;
+next	1.181;
+
+1.181
+date	2019.02.22.01.43.26;	author -;	state -;
+branches;
+next	1.180;
+
+1.180
+date	2019.02.22.01.42.47;	author -;	state -;
+branches;
+next	1.179;
+
+1.179
+date	2019.02.22.01.40.34;	author -;	state -;
+branches;
+next	1.178;
+
+1.178
+date	2019.02.22.01.39.54;	author -;	state -;
+branches;
+next	1.177;
+
+1.177
+date	2019.02.22.01.36.36;	author -;	state -;
+branches;
+next	1.176;
+
+1.176
+date	2019.02.22.01.36.03;	author -;	state -;
+branches;
+next	1.175;
+
+1.175
+date	2019.02.22.01.22.29;	author -;	state -;
+branches;
+next	1.174;
+
+1.174
+date	2019.02.07.23.37.43;	author -;	state -;
+branches;
+next	1.173;
+
+1.173
+date	2018.11.20.00.10.00;	author -;	state -;
+branches;
+next	1.172;
+
+1.172
+date	2018.11.20.00.09.28;	author -;	state -;
+branches;
+next	1.171;
+
+1.171
+date	2018.11.20.00.08.33;	author -;	state -;
+branches;
+next	1.170;
+
+1.170
+date	2018.11.20.00.07.36;	author -;	state -;
+branches;
+next	1.169;
+
+1.169
+date	2018.11.20.00.07.01;	author -;	state -;
+branches;
+next	1.168;
+
+1.168
+date	2018.08.14.23.53.10;	author -;	state -;
+branches;
+next	1.167;
+
+1.167
+date	2018.08.14.23.52.31;	author -;	state -;
+branches;
+next	1.166;
+
+1.166
+date	2018.08.14.23.51.51;	author -;	state -;
+branches;
+next	1.165;
+
+1.165
+date	2018.08.14.23.51.05;	author -;	state -;
+branches;
+next	1.164;
+
+1.164
+date	2018.08.14.23.50.51;	author -;	state -;
+branches;
+next	1.163;
+
+1.163
+date	2018.08.02.20.31.17;	author -;	state -;
+branches;
+next	1.162;
+
+1.162
+date	2018.08.02.19.58.23;	author -;	state -;
+branches;
+next	1.161;
+
+1.161
+date	2018.08.01.18.49.08;	author -;	state -;
+branches;
+next	1.160;
+
+1.160
+date	2018.06.27.23.02.47;	author -;	state -;
+branches;
+next	1.159;
+
+1.159
+date	2018.06.27.23.02.29;	author -;	state -;
+branches;
+next	1.158;
+
+1.158
+date	2018.06.27.23.02.10;	author -;	state -;
+branches;
+next	1.157;
+
+1.157
+date	2018.06.27.23.01.52;	author -;	state -;
+branches;
+next	1.156;
+
+1.156
+date	2018.06.27.23.01.16;	author -;	state -;
+branches;
+next	1.155;
+
+1.155
+date	2018.06.27.22.32.55;	author -;	state -;
+branches;
+next	1.154;
+
+1.154
+date	2018.06.27.22.14.46;	author -;	state -;
+branches;
+next	1.153;
+
+1.153
+date	2018.02.16.23.35.26;	author -;	state -;
+branches;
+next	1.152;
+
+1.152
+date	2018.02.16.23.11.06;	author -;	state -;
+branches;
+next	1.151;
+
+1.151
+date	2018.02.16.23.10.36;	author -;	state -;
+branches;
+next	1.150;
+
+1.150
+date	2018.02.16.23.09.55;	author -;	state -;
+branches;
+next	1.149;
+
+1.149
+date	2018.02.16.23.09.11;	author -;	state -;
+branches;
+next	1.148;
+
+1.148
+date	2018.02.16.23.08.37;	author -;	state -;
+branches;
+next	1.147;
+
+1.147
+date	2018.02.16.23.07.14;	author -;	state -;
+branches;
+next	1.146;
+
+1.146
+date	2018.02.16.23.06.18;	author -;	state -;
+branches;
+next	1.145;
+
+1.145
+date	2018.02.16.23.05.40;	author -;	state -;
+branches;
+next	1.144;
+
+1.144
+date	2018.02.16.23.04.07;	author -;	state -;
+branches;
+next	1.143;
+
+1.143
+date	2018.02.16.23.03.41;	author -;	state -;
+branches;
+next	1.142;
+
+1.142
+date	2018.02.16.23.02.22;	author -;	state -;
+branches;
+next	1.141;
+
+1.141
+date	2018.02.16.23.01.26;	author -;	state -;
+branches;
+next	1.140;
+
+1.140
+date	2018.02.16.23.00.49;	author -;	state -;
+branches;
+next	1.139;
+
+1.139
+date	2018.02.16.22.58.45;	author -;	state -;
+branches;
+next	1.138;
+
+1.138
+date	2018.02.16.22.57.57;	author -;	state -;
+branches;
+next	1.137;
+
+1.137
+date	2018.02.16.22.53.14;	author -;	state -;
+branches;
+next	1.136;
+
+1.136
+date	2018.02.16.05.22.37;	author -;	state -;
+branches;
+next	1.135;
+
+1.135
+date	2018.02.16.00.42.05;	author -;	state -;
+branches;
+next	1.134;
+
+1.134
+date	2018.02.16.00.41.09;	author -;	state -;
+branches;
+next	1.133;
+
+1.133
+date	2018.02.16.00.39.32;	author -;	state -;
+branches;
+next	1.132;
+
+1.132
+date	2017.07.24.22.41.39;	author -;	state -;
+branches;
+next	1.131;
+
+1.131
+date	2017.06.30.00.21.50;	author -;	state -;
+branches;
+next	1.130;
+
+1.130
+date	2017.06.30.00.21.30;	author -;	state -;
+branches;
+next	1.129;
+
+1.129
+date	2017.06.29.23.52.37;	author -;	state -;
+branches;
+next	1.128;
+
+1.128
+date	2017.06.29.23.47.57;	author -;	state -;
+branches;
+next	1.127;
+
+1.127
+date	2017.06.29.20.49.12;	author -;	state -;
+branches;
+next	1.126;
+
+1.126
+date	2017.06.29.20.48.46;	author -;	state -;
+branches;
+next	1.125;
+
+1.125
+date	2017.06.29.20.48.00;	author -;	state -;
+branches;
+next	1.124;
+
+1.124
+date	2016.07.11.20.33.01;	author -;	state -;
+branches;
+next	1.123;
+
+1.123
+date	2016.07.06.23.14.45;	author -;	state -;
+branches;
+next	1.122;
+
+1.122
+date	2016.07.06.23.14.27;	author -;	state -;
+branches;
+next	1.121;
+
+1.121
+date	2016.07.06.23.14.09;	author -;	state -;
+branches;
+next	1.120;
+
+1.120
+date	2016.07.06.23.13.35;	author -;	state -;
+branches;
+next	1.119;
+
+1.119
+date	2016.07.06.23.13.11;	author -;	state -;
+branches;
+next	1.118;
+
+1.118
+date	2016.07.06.23.12.54;	author -;	state -;
+branches;
+next	1.117;
+
+1.117
+date	2016.07.06.23.12.03;	author -;	state -;
+branches;
+next	1.116;
+
+1.116
+date	2016.07.06.23.11.30;	author -;	state -;
+branches;
+next	1.115;
+
+1.115
+date	2016.07.06.23.11.03;	author -;	state -;
+branches;
+next	1.114;
+
+1.114
+date	2016.07.06.23.10.08;	author -;	state -;
+branches;
+next	1.113;
+
+1.113
+date	2016.07.06.23.09.50;	author -;	state -;
+branches;
+next	1.112;
+
+1.112
+date	2016.07.06.23.06.51;	author -;	state -;
+branches;
+next	1.111;
+
+1.111
+date	2016.07.06.23.06.00;	author -;	state -;
+branches;
+next	1.110;
+
+1.110
+date	2016.07.06.19.47.47;	author -;	state -;
+branches;
+next	1.109;
+
+1.109
+date	2016.07.06.19.47.09;	author -;	state -;
+branches;
+next	1.108;
+
+1.108
+date	2016.07.06.19.46.35;	author -;	state -;
+branches;
+next	1.107;
+
+1.107
+date	2016.07.06.19.46.03;	author -;	state -;
+branches;
+next	1.106;
+
+1.106
+date	2016.07.06.19.45.37;	author -;	state -;
+branches;
+next	1.105;
+
+1.105
+date	2016.07.06.19.45.15;	author -;	state -;
+branches;
+next	1.104;
+
+1.104
+date	2016.07.06.19.44.52;	author -;	state -;
+branches;
+next	1.103;
+
+1.103
+date	2016.07.06.19.44.09;	author -;	state -;
+branches;
+next	1.102;
+
+1.102
+date	2016.07.06.19.43.50;	author -;	state -;
+branches;
+next	1.101;
+
+1.101
+date	2016.07.06.19.42.41;	author -;	state -;
+branches;
+next	1.100;
+
+1.100
+date	2016.07.06.19.42.01;	author -;	state -;
+branches;
+next	1.99;
+
+1.99
+date	2016.07.06.19.41.14;	author -;	state -;
+branches;
+next	1.98;
+
+1.98
+date	2016.07.06.19.40.26;	author -;	state -;
+branches;
+next	1.97;
+
+1.97
+date	2016.07.06.19.39.36;	author -;	state -;
+branches;
+next	1.96;
+
+1.96
+date	2016.07.06.19.38.16;	author -;	state -;
+branches;
+next	1.95;
+
+1.95
+date	2016.07.06.19.37.59;	author -;	state -;
+branches;
+next	1.94;
+
+1.94
+date	2016.07.06.19.37.22;	author -;	state -;
+branches;
+next	1.93;
+
+1.93
+date	2016.07.06.19.35.43;	author -;	state -;
+branches;
+next	1.92;
+
+1.92
+date	2016.07.06.19.35.11;	author -;	state -;
+branches;
+next	1.91;
+
+1.91
+date	2016.07.06.19.33.36;	author -;	state -;
+branches;
+next	1.90;
+
+1.90
+date	2016.07.06.19.32.38;	author -;	state -;
+branches;
+next	1.89;
+
+1.89
+date	2016.07.06.19.32.15;	author -;	state -;
+branches;
+next	1.88;
+
+1.88
+date	2016.07.06.19.31.47;	author -;	state -;
+branches;
+next	1.87;
+
+1.87
+date	2016.07.06.19.29.56;	author -;	state -;
+branches;
+next	1.86;
+
+1.86
+date	2016.07.06.19.21.10;	author -;	state -;
+branches;
+next	1.85;
+
+1.85
+date	2016.06.30.23.38.48;	author -;	state -;
+branches;
+next	1.84;
+
+1.84
+date	2016.06.30.23.38.35;	author -;	state -;
+branches;
+next	1.83;
+
+1.83
+date	2016.06.30.23.38.19;	author -;	state -;
+branches;
+next	1.82;
+
+1.82
+date	2016.06.30.23.38.03;	author -;	state -;
+branches;
+next	1.81;
+
+1.81
+date	2016.06.30.23.37.31;	author -;	state -;
+branches;
+next	1.80;
+
+1.80
+date	2016.06.30.23.34.55;	author -;	state -;
+branches;
+next	1.79;
+
+1.79
+date	2016.06.30.23.33.36;	author -;	state -;
+branches;
+next	1.78;
+
+1.78
+date	2016.06.30.23.33.14;	author -;	state -;
+branches;
+next	1.77;
+
+1.77
+date	2016.06.30.23.30.44;	author -;	state -;
+branches;
+next	1.76;
+
+1.76
+date	2016.06.30.23.22.23;	author -;	state -;
+branches;
+next	1.75;
+
+1.75
+date	2016.06.30.23.21.54;	author -;	state -;
+branches;
+next	1.74;
+
+1.74
+date	2016.06.30.23.20.46;	author -;	state -;
+branches;
+next	1.73;
+
+1.73
+date	2016.06.30.23.20.25;	author -;	state -;
+branches;
+next	1.72;
+
+1.72
+date	2016.06.30.23.19.45;	author -;	state -;
+branches;
+next	1.71;
+
+1.71
+date	2016.06.30.23.19.14;	author -;	state -;
+branches;
+next	1.70;
+
+1.70
+date	2016.06.30.23.18.36;	author -;	state -;
+branches;
+next	1.69;
+
+1.69
+date	2016.06.30.22.58.55;	author -;	state -;
+branches;
+next	1.68;
+
+1.68
+date	2016.06.30.22.32.08;	author -;	state -;
+branches;
+next	1.67;
+
+1.67
+date	2016.06.30.22.31.48;	author -;	state -;
+branches;
+next	1.66;
+
+1.66
+date	2016.06.30.22.31.08;	author -;	state -;
+branches;
+next	1.65;
+
+1.65
+date	2016.06.30.22.30.35;	author -;	state -;
+branches;
+next	1.64;
+
+1.64
+date	2016.06.30.22.30.08;	author -;	state -;
+branches;
+next	1.63;
+
+1.63
+date	2016.06.30.22.29.51;	author -;	state -;
+branches;
+next	1.62;
+
+1.62
+date	2016.06.30.22.28.58;	author -;	state -;
+branches;
+next	1.61;
+
+1.61
+date	2016.06.30.22.28.36;	author -;	state -;
+branches;
+next	1.60;
+
+1.60
+date	2016.06.30.22.28.17;	author -;	state -;
+branches;
+next	1.59;
+
+1.59
+date	2016.06.30.22.28.09;	author -;	state -;
+branches;
+next	1.58;
+
+1.58
+date	2016.06.30.22.16.44;	author -;	state -;
+branches;
+next	1.57;
+
+1.57
+date	2016.06.30.22.03.48;	author -;	state -;
+branches;
+next	1.56;
+
+1.56
+date	2016.06.30.22.01.48;	author -;	state -;
+branches;
+next	1.55;
+
+1.55
+date	2016.06.30.22.01.08;	author -;	state -;
+branches;
+next	1.54;
+
+1.54
+date	2016.06.30.22.00.39;	author -;	state -;
+branches;
+next	1.53;
+
+1.53
+date	2016.06.30.21.59.36;	author -;	state -;
+branches;
+next	1.52;
+
+1.52
+date	2016.06.30.21.59.09;	author -;	state -;
+branches;
+next	1.51;
+
+1.51
+date	2016.06.30.21.58.46;	author -;	state -;
+branches;
+next	1.50;
+
+1.50
+date	2016.06.30.21.58.34;	author -;	state -;
+branches;
+next	1.49;
+
+1.49
+date	2016.06.30.21.58.05;	author -;	state -;
+branches;
+next	1.48;
+
+1.48
+date	2016.06.30.21.51.58;	author -;	state -;
+branches;
+next	1.47;
+
+1.47
+date	2016.06.30.21.51.38;	author -;	state -;
+branches;
+next	1.46;
+
+1.46
+date	2016.06.30.21.50.05;	author -;	state -;
+branches;
+next	1.45;
+
+1.45
+date	2016.06.30.21.49.46;	author -;	state -;
+branches;
+next	1.44;
+
+1.44
+date	2016.06.30.21.49.13;	author -;	state -;
+branches;
+next	1.43;
+
+1.43
+date	2016.06.30.21.48.56;	author -;	state -;
+branches;
+next	1.42;
+
+1.42
+date	2016.06.30.21.48.28;	author -;	state -;
+branches;
+next	1.41;
+
+1.41
+date	2016.06.30.21.48.07;	author -;	state -;
+branches;
+next	1.40;
+
+1.40
+date	2016.06.30.21.47.46;	author -;	state -;
+branches;
+next	1.39;
+
+1.39
+date	2016.06.30.21.46.19;	author -;	state -;
+branches;
+next	1.38;
+
+1.38
+date	2016.06.30.21.44.42;	author -;	state -;
+branches;
+next	1.37;
+
+1.37
+date	2016.06.30.21.41.50;	author -;	state -;
+branches;
+next	1.36;
+
+1.36
+date	2016.06.30.21.40.35;	author -;	state -;
+branches;
+next	1.35;
+
+1.35
+date	2016.06.30.21.38.59;	author -;	state -;
+branches;
+next	1.34;
+
+1.34
+date	2016.06.30.21.38.15;	author -;	state -;
+branches;
+next	1.33;
+
+1.33
+date	2016.06.30.21.33.50;	author -;	state -;
+branches;
+next	1.32;
+
+1.32
+date	2016.06.30.21.26.08;	author -;	state -;
+branches;
+next	1.31;
+
+1.31
+date	2016.06.30.21.25.40;	author -;	state -;
+branches;
+next	1.30;
+
+1.30
+date	2016.06.30.19.06.08;	author -;	state -;
+branches;
+next	1.29;
+
+1.29
+date	2016.06.30.19.05.26;	author -;	state -;
+branches;
+next	1.28;
+
+1.28
+date	2016.06.30.19.00.47;	author -;	state -;
+branches;
+next	1.27;
+
+1.27
+date	2016.06.28.21.08.14;	author -;	state -;
+branches;
+next	1.26;
+
+1.26
+date	2016.06.28.03.32.23;	author -;	state -;
+branches;
+next	1.25;
+
+1.25
+date	2016.06.28.03.32.01;	author -;	state -;
+branches;
+next	1.24;
+
+1.24
+date	2016.06.28.03.31.27;	author -;	state -;
+branches;
+next	1.23;
+
+1.23
+date	2016.06.28.03.29.21;	author -;	state -;
+branches;
+next	1.22;
+
+1.22
+date	2016.06.28.03.28.09;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2016.06.28.03.27.47;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2016.06.28.03.26.26;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2016.06.27.23.14.17;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2016.06.27.22.59.22;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2016.06.27.22.49.33;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2016.06.27.22.49.20;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2016.06.27.22.49.09;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2016.06.27.22.48.42;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2016.06.27.22.48.23;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2016.06.27.22.48.00;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2016.06.27.22.47.40;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2016.06.27.22.45.44;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2016.06.27.22.37.03;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2016.06.27.22.26.43;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2016.06.25.01.31.39;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.06.25.01.30.33;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.06.24.00.54.43;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.06.24.00.54.32;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.06.24.00.54.20;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.06.24.00.50.17;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.06.24.00.49.45;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.265
+log
+@-
+@
+text
+@.so Tmac.mm-etc
+.if t .Newcentury-fonts
+.INITR* \n[.F]
+.SIZE 12 14
+.TITLE CSE-111 Fall\~2019 Lab\~GL "X11 and OpenGL"
+.RCS "$Id: labg-x11-opengl.mm,v 1.264 2019-10-29 17:00:32-07 - - $"
+.PWD
+.URL
+.nr HISTORY 0 1
+.de PROMPT
+.   TVCODE* 1 "bash-\\n+[HISTORY]\[Do] " "\\$*"
+..
+This is a
+.E= non-credit
+lab, in preparation for an upcoming project which
+will involve using OpenGL,
+which is a graphics toolkit.
+There is nothing to submit,
+and it will not be graded.
+In order to run an X11 application on the server,
+and have it display on your own workstation,
+you will need to install an X11 running on your computer.
+.H 1 "Unix Timeshare\(:) X2Go"
+X2Go allows you to access a remote graphical
+desktop over a low bandwidth connection.
+In otherwords, you can use X2Go to login to the
+Unix timeshare in a graphical fashion instead of using a command line.
+It is similar to the X11 (or XWindows)
+system that use XDMCP (or SSH) to view a remote desktop.
+X2Go is availble on multiple platforms, so simply pick
+the client that works best for you.
+More information can be found on the X2Go website\(::
+.V= https://wiki.x2go.org/
+.P
+Setting Up X2Go\(::
+.br
+.V= http://its.ucsc.edu/unix-timeshare/tutorials/setting-up-x2go.html
+.H 1 "Installing X11"
+Depending on what personal computer you use,
+choose one of the following methods of installing X11.
+.ALX a ()
+.LI
+.BR "X11 on Linux."
+X11 is the native windowing system used on Linux.
+You may use any window manager of your choice.
+.LI
+.BR "X11 on OSX."
+The Macintosh OSX operating system is based on BSD
+(the Berkeley Systems Distribution of Unix).
+Install XQuartz if you do not already have X11 running on your
+personal workstation.
+.br
+.VTCODE* 0 "https://www.xquartz.org/"
+.LI
+.BR "X11 on W*nd*z*."
+There are some choices\(::
+Xming.
+Cygwin.
+.br
+.VTCODE* 0 "http://www.straightrunning.com/XmingNotes/"
+.VTCODE* 0 "http://www.geo.mtu.edu/geoschem/docs/putty_install.html"
+.VTCODE* 0 "https://www.cygwin.com/"
+.LE
+.H 1 "Verifying X11"
+Once X11 has been installed on your computer,
+verify that it is working.
+When running an X11 program repomely but displaying on the local
+workstation, 
+it is necessary to set up X11 forwarding with the
+.V= -X
+flag of
+.V= ssh ,
+as in\(::
+.PROMPT ssh -X \fIusername\fP@@unix.ucsc.edu
+.P
+One may run an X11 program by typing the command name,
+usually by backgrounding the process,
+as in the following.
+Note the ampersand
+.=V ( & ).
+.DS
+.PROMPT gv &
+.PROMPT xev &
+.PROMPT xpdf &
+.DE
+.H 1 "Running OpenGL programs"
+In the subdirectory
+.V= hello-world
+there are several OpenGL programs available for testing.
+If your workstation has X11 properly installed,
+they can just be run as any other X11 program.
+Example\(::
+.PROMPT glxgears &
+.P
+.E= Problems\(??
+Because of incorrect configuration of OpenGL on the server,
+it is possible that you might see the following message\(::
+.DS
+.PROMPT glxgears &
+.TVCODE* 1 "libGL error: No matching fbConfigs or visuals found"
+.TVCODE* 1 "libGL error: failed to load driver: swrast"
+.TVCODE* 1 "Error: couldn't get an RGB, Double-buffered visual"
+.DE
+The following statement in your
+.V= \&.bash_profile
+might solve that problem\(::
+.DS
+.VTCODE* 1 \
+ "export GLES_MESA=/usr/local/android-sdk/emulator/lib64/gles_mesa
+.VTCODE* 1 "export\0LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:\[Do]GLES_MESA
+.DE
+.H 1 "Hello, World!"
+The subdirectory
+.V= hello-world/
+contains some sample programs.
+You are not expected to understand the code in these programs
+at this time,
+but you should run the programs to verify that you can.
+at the end of the line.
+Three of the programs draw flags on the screen.
+You can move them around and resize them.
+.DS
+.PROMPT bonjour-le-monde &
+.PROMPT ciao-mondo &
+.PROMPT hallo-welt &
+.PROMPT konnichiwa-sekai &
+.DE
+.P
+The program
+.V= hello-world
+can also be moved around and resized,
+and it also reacts to inputs you give it.
+.DS
+.PROMPT hello-world &
+.TVCODE* 1 "To cycle the colors: right mouse button or key 'c' or 'C'."
+.TVCODE* 1 "To cycle the fonts: left mouse button or key 'f' or 'F'."
+.TVCODE* 1 \
+"To cycle the greetings: middle mouse button or key 'g' or 'G'."
+.TVCODE* 1 "To invert the colors: key Backspace, Return, or Delete."
+.TVCODE* 1 "To quit: key 'q' or 'Q' or ESC."
+.DE
+.if dPSPIC \{
+.DS 
+.PSPIC hello-world/hello-world.xwd.ps 400p
+.V= \0\0\0\0\0hello-world/hello-world.xwd.ps
+.DE
+.H 1 "Other tests"
+For other tests of OpenGL,
+look in the directory
+.V= other-tests
+and run\(::
+.P
+.DS
+.PROMPT glclock &
+.PROMPT color-wheel &
+.PROMPT teapot &
+.DE
+The last one
+shows a teapot picture both in a solid view and a wire frame.
+Every time you press the left mouse button the view get swapped.
+.H 1 "Installing a local OpenGL"
+Running OpenGL across the internet will be net-intensive,
+especially if you have a slow internet connection.
+So you might want to install OpenGL on your own workstation.
+.VTCODE* 1 "http://freeglut.sourceforge.net/"
+.P
+Once you have installed OpenGl on your own workstation,
+you may copy the files from this 
+.V= code
+subdirectory onto your own workstation and compile them.
+Depending on the OS you are using,
+you may have to change the line
+.VTCODE* 1 "#include <GL/freeglut.h>"
+to something else, for example\(::
+.DS
+.VTCODE* 1 "#ifdef __linux__"
+.VTCODE* 1 "#include <GL/freeglut.h>"
+.VTCODE* 1 "#endif"
+.VTCODE* 1 "#ifdef __macosx__"
+.VTCODE* 1 "#include <\f[I]??????????\fP>"
+.VTCODE* 1 "#endif"
+.DE
+.P
+The
+.V= #ifdef s
+detect which operation system you are using and
+will then include the appropriate header files,
+thus possibly leading to a portable program.
+You need to figure out what the predefined macro identifying your
+OS, and where the OpenGL header files are.
+.H 1 "Other references"
+When looking for documentation on a particular function,
+look at
+.V= https://www.opengl.org/ .
+For example,
+to find out about the function
+.V= glutPostRedisplay ,
+type
+.=V `` "OpenGL glutPostRedisplay" ''
+into Google, then select
+.V= www.opengl.org .
+.P
+.ne 5
+Getting Started.
+.VTCODE* 1 "https://www.opengl.org/wiki/Getting_Started"
+.P
+OpenGL Programming Guide.
+.VTCODE* 1 "http://www.glprogramming.com/red/"
+.P
+OpenGL Reference Manual.
+.VTCODE* 1 "http://www.glprogramming.com/blue/"
+.P
+GLUT Tutorial.
+GLUT stands for the OpenGL Utility Toolkit.
+.VTCODE* 1 "http://www.lighthouse3d.com/tutorials/glut-tutorial/"
+.P
+Compiling OpenGL programs on Windows, Linux and OS X.
+.VTCODE* 1 "http://myweb.wit.edu/wernerm/compilingOpenGl.html"
+.H 1 "Alternatives"
+Instead of installing X11 on your workstation,
+you may do your development in the lab.
+Instead of installing OpenGL on your workstation,
+you may work remotely and run all OpenGL programs on the timeshares.
+.bp
+.H 1 "Some more examples"
+.DS
+.TS
+tab(|); lw(225p) lw(225p).
+T{
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 220p
+.V= hello-world/bonjour-le-monde.xwd.ps
+T}|T{
+.PSPIC hello-world/ciao-mondo.xwd.ps 220p
+.V= hello-world/ciao-mondo.xwd.ps
+T}
+.TE
+.DE
+.DS
+.TS
+tab(|); lw(225p) lw(225p).
+T{
+.PSPIC hello-world/hallo-welt.xwd.ps 220p
+.V= hello-world/hallo-welt.xwd.ps
+T}|T{
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 220p
+.V= hello-world/konnichiwa-sekai.xwd.ps
+T}
+.TE
+.DE
+.\}
+@
+
+
+1.264
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.263 2019-10-29 16:59:39-07 - - $"
+d81 1
+d85 1
+d122 1
+d127 1
+d153 1
+d157 1
+d175 1
+d182 1
+@
+
+
+1.263
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.262 2019-10-29 16:59:02-07 - - $"
+d216 1
+@
+
+
+1.262
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.261 2019-10-29 16:58:41-07 - - $"
+d13 3
+a15 2
+This is a non-credit lab,
+in preparation for an upcoming project which
+d18 2
+a19 1
+There is nothing to submit or grade.  
+@
+
+
+1.261
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.260 2019-10-29 16:55:01-07 - - $"
+d34 1
+@
+
+
+1.260
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.259 2019-10-22 13:00:23-07 - - $"
+d22 4
+a25 10
+Setting Up X2Go\(::
+.br
+.V= \
+"http://its.ucsc.edu/unix-timeshare/tutorials/setting-up-x2go.html"
+.P
+X2Go allows you to access a remote graphical desktop
+over a low bandwidth connection.
+In otherwords,
+you can use X2Go to login to the Unix timeshare
+in a graphical fashion instead of using a command line.
+d28 7
+a34 4
+X2Go is availble on multiple platforms,
+so simply pick the client that works best for you.
+More information can be found on the X2Go website,
+.V= https://wiki.x2go.org/ .
+@
+
+
+1.259
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.258 2019-05-17 15:00:24-07 - - $"
+d21 17
+a37 17
+.\"""".H 1 "Unix Timeshare\(:) X2Go"
+.\""""Setting Up X2Go\(::
+.\"""".br
+.\"""".V= \
+.\"""""http://its.ucsc.edu/unix-timeshare/tutorials/setting-up-x2go.html"
+.\"""".P
+.\""""X2Go allows you to access a remote graphical desktop
+.\""""over a low bandwidth connection.
+.\""""In otherwords,
+.\""""you can use X2Go to login to the Unix timeshare
+.\""""in a graphical fashion instead of using a command line.
+.\""""It is similar to the X11 (or XWindows)
+.\""""system that use XDMCP (or SSH) to view a remote desktop.
+.\""""X2Go is availble on multiple platforms,
+.\""""so simply pick the client that works best for you.
+.\""""More information can be found on the X2Go website,
+.\"""".V= https://wiki.x2go.org/ .
+@
+
+
+1.258
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Winter\~2019 Lab\~GL "X11 and OpenGL"
+.RCS "$Id: labg-x11-opengl.mm,v 1.257 2019-05-17 14:59:24-07 - - $"
+@
+
+
+1.257
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.256 2019-05-17 14:59:08-07 - - $"
+d216 1
+@
+
+
+1.256
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.255 2019-05-17 14:58:48-07 - - $"
+d141 1
+a141 1
+.V= \0\0\0\0\0\0hello-world/hello-world.xwd.ps
+@
+
+
+1.255
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.254 2019-05-17 14:58:08-07 - - $"
+d141 1
+a141 1
+.V= \0\0\0\0\0\0\0\0\0\0\0hello-world/hello-world.xwd.ps
+@
+
+
+1.254
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.253 2019-05-17 14:57:26-07 - - $"
+d140 1
+a140 1
+.PSPIC hello-world/hello-world.xwd.ps 330p
+@
+
+
+1.253
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.252 2019-05-17 14:55:41-07 - - $"
+a137 1
+.P
+a142 3
+An X11 window dump of this
+program is shown at the end of this document
+(Postscript and PDF versions only).
+@
+
+
+1.252
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.251 2019-05-17 14:55:21-07 - - $"
+d139 5
+a219 5
+.if dPSPIC \{
+.DS 
+.PSPIC hello-world/hello-world.xwd.ps 330p
+.V= \0\0\0\0\0\0\0\0\0\0\0hello-world/hello-world.xwd.ps
+.DE
+@
+
+
+1.251
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.250 2019-05-17 14:55:01-07 - - $"
+d218 1
+a218 1
+.V= \0\0\0\0\0\0\0\0\0\0hello-world/hello-world.xwd.ps
+@
+
+
+1.250
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.249 2019-05-17 14:54:35-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 340p
+@
+
+
+1.249
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.248 2019-05-17 14:53:47-07 - - $"
+d218 1
+a218 1
+.V= \0\0\0\0\0\0\0\0\0\0\0hello-world/hello-world.xwd.ps
+@
+
+
+1.248
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.247 2019-05-17 14:53:22-07 - - $"
+d218 1
+a218 1
+.V= hello-world/hello-world.xwd.ps
+@
+
+
+1.247
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.246 2019-05-17 14:52:58-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 350p
+@
+
+
+1.246
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.245 2019-05-17 14:52:20-07 - - $"
+d224 1
+a224 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 215p
+d227 1
+a227 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 215p
+d236 1
+a236 1
+.PSPIC hello-world/hallo-welt.xwd.ps 215p
+d239 1
+a239 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 215p
+@
+
+
+1.245
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.244 2019-05-17 14:51:45-07 - - $"
+d224 1
+a224 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 210p
+d227 1
+a227 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 210p
+d236 1
+a236 1
+.PSPIC hello-world/hallo-welt.xwd.ps 210p
+d239 1
+a239 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 210p
+@
+
+
+1.244
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.243 2019-05-17 14:51:19-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 360p
+@
+
+
+1.243
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.242 2019-05-17 14:50:56-07 - - $"
+d218 1
+a218 1
+hello-world/hello-world.xwd.ps
+d225 1
+a225 1
+hello-world/bonjour-le-monde.xwd.ps
+d228 1
+a228 1
+hello-world/ciao-mondo.xwd.ps
+d237 1
+a237 1
+hello-world/hallo-welt.xwd.ps
+d240 1
+a240 1
+hello-world/konnichiwa-sekai.xwd.ps
+@
+
+
+1.242
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.241 2019-05-17 14:49:57-07 - - $"
+d217 2
+a218 2
+.PSPIC hello-world/hello-world.img.ps 360p
+hello-world/hello-world.img.ps
+d224 2
+a225 2
+.PSPIC hello-world/bonjour-le-monde.img.ps 210p
+hello-world/bonjour-le-monde.img.ps
+d227 2
+a228 2
+.PSPIC hello-world/ciao-mondo.img.ps 210p
+hello-world/ciao-mondo.img.ps
+d236 2
+a237 2
+.PSPIC hello-world/hallo-welt.img.ps 210p
+hello-world/hallo-welt.img.ps
+d239 2
+a240 2
+.PSPIC hello-world/konnichiwa-sekai.img.ps 210p
+hello-world/konnichiwa-sekai.img.ps
+@
+
+
+1.241
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.240 2019-05-17 14:49:33-07 - - $"
+d217 2
+a218 2
+.PSPIC hello-world/hello-world.xwd.ps 360p
+hello-world/hello-world.xwd.ps
+d224 2
+a225 2
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 210p
+hello-world/bonjour-le-monde.xwd.ps
+d227 2
+a228 2
+.PSPIC hello-world/ciao-mondo.xwd.ps 210p
+hello-world/ciao-mondo.xwd.ps
+d236 2
+a237 2
+.PSPIC hello-world/hallo-welt.xwd.ps 210p
+hello-world/hallo-welt.xwd.ps
+d239 2
+a240 2
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 210p
+hello-world/konnichiwa-sekai.xwd.ps
+@
+
+
+1.240
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.239 2019-05-17 14:48:56-07 - - $"
+a219 1
+.SP
+a231 1
+.SP
+@
+
+
+1.239
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.238 2019-05-17 14:48:15-07 - - $"
+d217 1
+a218 1
+.PSPIC hello-world/hello-world.xwd.ps 360p
+d225 1
+a226 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 210p
+d228 1
+a229 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 210p
+d238 1
+a239 1
+.PSPIC hello-world/hallo-welt.xwd.ps 210p
+d241 1
+a242 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 210p
+@
+
+
+1.238
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.237 2019-05-17 14:47:30-07 - - $"
+d228 1
+d238 1
+d241 1
+@
+
+
+1.237
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.236 2019-05-17 14:47:09-07 - - $"
+d217 1
+d225 1
+@
+
+
+1.236
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.235 2019-05-17 14:46:50-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 350p
+@
+
+
+1.235
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.234 2019-05-17 14:46:24-07 - - $"
+d219 1
+d230 1
+@
+
+
+1.234
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.233 2019-05-17 14:46:12-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 300p
+@
+
+
+1.233
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.232 2019-05-17 14:45:56-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 400p
+@
+
+
+1.232
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.231 2019-05-17 14:45:38-07 - - $"
+a218 1
+.bp
+@
+
+
+1.231
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.230 2019-05-17 14:45:16-07 - - $"
+d222 1
+a222 1
+tab(|); lw(230p) lw(230p).
+d232 1
+a232 1
+tab(|); lw(230p) lw(230p).
+@
+
+
+1.230
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.229 2019-05-17 14:44:40-07 - - $"
+d222 1
+a222 1
+tab(|); lw(220p) lw(220p).
+d232 1
+a232 1
+tab(|); lw(220p) lw(220p).
+@
+
+
+1.229
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.228 2019-05-17 14:44:18-07 - - $"
+d222 1
+a222 1
+tab(|); lw(210p) lw(210p).
+d232 1
+a232 1
+tab(|); lw(220p) l.
+@
+
+
+1.228
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.227 2019-05-17 14:43:58-07 - - $"
+d232 1
+a232 1
+tab(|); lw(210p) lw(200p).
+@
+
+
+1.227
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.226 2019-05-17 14:43:36-07 - - $"
+d232 1
+a232 1
+tab(|); lw(200p) lw(200p).
+@
+
+
+1.226
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.225 2019-05-17 14:42:46-07 - - $"
+d222 1
+a222 1
+tab(|); lw(200p) lw(200p).
+@
+
+
+1.225
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.224 2019-05-17 14:42:28-07 - - $"
+d225 1
+d227 8
+a235 1
+.PSPIC hello-world/hallo-welt.xwd.ps 210p
+@
+
+
+1.224
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.223 2019-05-17 14:42:11-07 - - $"
+d222 1
+a222 1
+tab(|); cw(200p) cw(200p).
+@
+
+
+1.223
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.222 2019-05-17 14:41:50-07 - - $"
+d222 1
+a222 1
+tab(|); lw(200p) lw(200p).
+@
+
+
+1.222
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.221 2019-05-17 14:41:25-07 - - $"
+d222 1
+a222 1
+tab(|); lw(160p) lw(160p).
+@
+
+
+1.221
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.220 2019-05-17 14:40:50-07 - - $"
+d222 1
+a222 1
+tab(|); lw(460p) lw(460p).
+@
+
+
+1.220
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.219 2019-05-17 14:40:07-07 - - $"
+d222 1
+a222 1
+tab(|); l l.
+@
+
+
+1.219
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.218 2019-05-17 14:39:46-07 - - $"
+d221 3
+d226 1
+d229 2
+@
+
+
+1.218
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.217 2019-05-17 14:39:16-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 500p
+@
+
+
+1.217
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.216 2019-05-17 14:38:50-07 - - $"
+d221 4
+a224 4
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 220p
+.PSPIC hello-world/ciao-mondo.xwd.ps 220p
+.PSPIC hello-world/hallo-welt.xwd.ps 220p
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 220p
+@
+
+
+1.216
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.215 2019-05-15 17:03:04-07 - - $"
+d217 1
+a217 1
+.PSPIC hello-world/hello-world.xwd.ps 400p
+d221 4
+a224 4
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 210p
+.PSPIC hello-world/ciao-mondo.xwd.ps 210p
+.PSPIC hello-world/hallo-welt.xwd.ps 210p
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 210p
+@
+
+
+1.215
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.214 2019-05-15 16:59:44-07 - - $"
+d219 1
+@
+
+
+1.214
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.213 2019-05-15 16:56:59-07 - - $"
+d92 1
+@
+
+
+1.213
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.212 2019-05-15 16:54:52-07 - - $"
+d92 1
+a92 1
+.H 1 "Problems?"
+@
+
+
+1.212
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.211 2019-05-15 16:53:08-07 - - $"
+d95 1
+d100 1
+d104 1
+d106 1
+a106 1
+"export GLES_MESA=/usr/local/android-sdk/emulator/lib64/gles_mesa
+d108 1
+d128 1
+d136 1
+@
+
+
+1.211
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.210 2019-05-15 16:50:28-07 - - $"
+d103 2
+a104 3
+"export GLES_MESA_LIB=/usr/local/android-sdk/emulator/lib64/gles_mesa
+.VTCODE* 1 \
+"export\0LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:\[Do]GLES_MESA_LIB
+@
+
+
+1.210
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.209 2019-05-15 16:47:45-07 - - $"
+d103 3
+a105 2
+"export GLES_MESA=/usr/local/android-sdk/emulator/lib64/gles_mesa
+.VTCODE* 1 "export\0LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:\[Do]GLES_MESA
+@
+
+
+1.209
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.208 2019-05-14 16:14:25-07 - - $"
+d92 17
+a108 1
+.P
+a134 13
+.H 1 "Problems?"
+Because of incorrect configuration of OpenGL on the server,
+it is possible that you might see the following message\(::
+.PROMPT glxgears &
+.TVCODE* 1 "libGL error: No matching fbConfigs or visuals found"
+.TVCODE* 1 "libGL error: failed to load driver: swrast"
+.TVCODE* 1 "Error: couldn't get an RGB, Double-buffered visual"
+The following statement in your
+.V= \&.bash_profile
+might solve that problem\(::
+.VTCODE* 1 \
+"export GLES_MESA=/usr/local/android-sdk/emulator/lib64/gles_mesa
+.VTCODE* 1 "export\0LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:\[Do]GLES_MESA
+@
+
+
+1.208
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.207 2019-04-24 17:15:32-07 - - $"
+d122 4
+a125 3
+.TVCODE* 1 \
+"freeglut (./spincolors):  ERROR:  Internal error <FBConfig with"
+.TVCODE* 1 "necessary capabilities not found> in function fgOpenWindow"
+@
+
+
+1.207
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.206 2019-04-11 16:48:10-07 - - $"
+d129 2
+a130 2
+"export GLESLIB=/usr/local/android-sdk/emulator/lib64/gles_mesa
+.VTCODE* 1 "export\0LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:\[Do]GLESLIB
+@
+
+
+1.206
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.205 2019-04-11 16:47:40-07 - - $"
+a214 1
+.FINISH
+@
+
+
+1.205
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.204 2019-04-11 16:46:58-07 - - $"
+d129 1
+a129 1
+"export GLESLIB /usr/local/android-sdk/emulator/lib64/gles_mesa
+@
+
+
+1.204
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.203 2019-04-11 16:45:54-07 - - $"
+d128 3
+a130 2
+.VTCODE* 1 "export GLES_MESA /usr/local/android-sdk/emulator/lib64/gles_mesa
+.VTCODE* 1 "export\0LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:\[Do]GLES_MESA
+@
+
+
+1.203
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.202 2019-04-11 16:45:37-07 - - $"
+d128 2
+a129 1
+.VTCODE* 1 "export\0LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:/usr/local/android-sdk/emulator/lib64/gles_mesa"
+@
+
+
+1.202
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.201 2019-04-11 16:45:13-07 - - $"
+d128 1
+a128 1
+.VTCODE* 1 "export\~LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:/usr/local/android-sdk/emulator/lib64/gles_mesa"
+@
+
+
+1.201
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.200 2019-04-11 16:44:38-07 - - $"
+d128 1
+a128 1
+.VTCODE* 1 "export LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:/usr/local/android-sdk/emulator/lib64/gles_mesa"
+@
+
+
+1.200
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.199 2019-04-11 16:42:53-07 - - $"
+d122 3
+a124 2
+.TVCODE* 1 "freeglut (./spincolors):  ERROR:  Internal error <FBConfig"
+.TVCODE* 1 " with necessary capabilities not found> in function fgOpenWindow"
+@
+
+
+1.199
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.198 2019-04-11 16:41:56-07 - - $"
+d122 2
+a123 1
+.TVCODE* 1 "freeglut (./spincolors):  ERROR:  Internal error <FBConfig with necessary capabilities not found> in function fgOpenWindow"
+@
+
+
+1.198
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.197 2019-04-11 16:41:37-07 - - $"
+d122 1
+a122 6
+.DS
+.ft CR
+.fi
+.na
+freeglut (./spincolors):  ERROR:  Internal error <FBConfig with necessary capabilities not found> in function fgOpenWindow
+.DE
+d126 1
+a126 4
+.DS
+.ft CB
+export LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:/usr/local/android-sdk/emulator/lib64/gles_mesa
+.DE
+@
+
+
+1.197
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.196 2019-04-11 16:41:06-07 - - $"
+d125 1
+@
+
+
+1.196
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.195 2019-04-11 16:40:04-07 - - $"
+d124 1
+@
+
+
+1.195
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.194 2019-02-27 15:44:36-08 - - $"
+d122 1
+a122 1
+.br
+d125 1
+a125 2
+.br
+.ft P
+d129 4
+a132 1
+.TVCODE* 0 "export LD_LIBRARY_PATH=\[Do]LD_LIBRARY_PATH:/usr/local/android-sdk/emulator/lib64/gles_mesa"
+@
+
+
+1.194
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.193 2019-02-27 15:44:02-08 - - $"
+d119 12
+@
+
+
+1.193
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.192 2019-02-27 15:42:46-08 - - $"
+d171 1
+@
+
+
+1.192
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.191 2019-02-27 15:40:43-08 - - $"
+d119 2
+a120 2
+.H 1 "More active tests"
+For more active tests of OpenGL,
+d126 1
+a126 2
+Will display an analog clock with a moving second hand.
+.P
+d128 2
+a129 1
+Show a teapot picture both in a solid view and a wire frame.
+@
+
+
+1.191
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.190 2019-02-21 17:48:10-08 - - $"
+d123 1
+a123 1
+and run the following\(::
+a124 3
+.ne 5
+To display an analog clock with a moving second hand
+(the other hands move more slowly).
+d126 1
+d128 1
+a130 1
+.PROMPT teapot &
+@
+
+
+1.190
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.189 2019-02-21 17:47:54-08 - - $"
+d90 2
+@
+
+
+1.189
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.188 2019-02-21 17:47:36-08 - - $"
+d196 4
+a199 4
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 220p
+.PSPIC hello-world/ciao-mondo.xwd.ps 220p
+.PSPIC hello-world/hallo-welt.xwd.ps 220p
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 220p
+@
+
+
+1.188
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.187 2019-02-21 17:46:53-08 - - $"
+d196 4
+a199 4
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 240p
+.PSPIC hello-world/ciao-mondo.xwd.ps 240p
+.PSPIC hello-world/hallo-welt.xwd.ps 240p
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 240p
+@
+
+
+1.187
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.186 2019-02-21 17:45:39-08 - - $"
+d196 4
+a199 8
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 210p
+hello-world/bonjour-le-monde
+.PSPIC hello-world/ciao-mondo.xwd.ps 210p
+hello-world/ciao-mondo
+.PSPIC hello-world/hallo-welt.xwd.ps 210p
+hello-world/hallo-welt
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 210p
+hello-world/konnichiwa-sekai
+@
+
+
+1.186
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.185 2019-02-21 17:45:07-08 - - $"
+a195 1
+hello-world/bonjour-le-monde.xwd.ps
+d197 1
+a197 1
+hello-world/ciao-mondo.xwd.ps 210p
+d199 1
+a199 1
+hello-world/hallo-welt.xwd.ps 210p
+d201 1
+a201 1
+hello-world/konnichiwa-sekai.xwd.ps 210p
+d203 1
+@
+
+
+1.185
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.184 2019-02-21 17:44:27-08 - - $"
+d198 1
+d200 1
+d202 1
+@
+
+
+1.184
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.183 2019-02-21 17:44:12-08 - - $"
+d196 1
+@
+
+
+1.183
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.182 2019-02-21 17:43:49-08 - - $"
+d193 1
+a193 1
+.PSPIC hello-world/hello-world.xwd.ps 480p
+@
+
+
+1.182
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.181 2019-02-21 17:43:26-08 - - $"
+a196 2
+.DE
+.DS
+a197 2
+.DE
+.DS
+a198 2
+.DE
+.DS
+@
+
+
+1.181
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.180 2019-02-21 17:42:47-08 - - $"
+d193 1
+a193 1
+.PSPIC hello-world/hello-world.xwd.ps 384p
+d196 1
+a196 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 200p
+d199 1
+a199 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 200p
+d202 1
+a202 1
+.PSPIC hello-world/hallo-welt.xwd.ps 200p
+d205 1
+a205 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 200p
+@
+
+
+1.180
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.179 2019-02-21 17:40:34-08 - - $"
+d193 1
+a193 1
+.PSPIC hello-world/hello-world.xwd.ps 240p
+d196 1
+a196 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 240p
+d199 1
+a199 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 240p
+d202 1
+a202 1
+.PSPIC hello-world/hallo-welt.xwd.ps 240p
+d205 1
+a205 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 240p
+@
+
+
+1.179
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.178 2019-02-21 17:39:54-08 - - $"
+a134 1
+.VTCODE* 1 "https://www.opengl.org/wiki/Getting_Started"
+@
+
+
+1.178
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.177 2019-02-21 17:36:36-08 - - $"
+d194 1
+a194 1
+.PSPIC hello-world/hello-world.xwd.ps 280p
+d197 1
+a197 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 280p
+d200 1
+a200 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 280p
+d203 1
+a203 1
+.PSPIC hello-world/hallo-welt.xwd.ps 280p
+d206 1
+a206 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 280p
+@
+
+
+1.177
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.176 2019-02-21 17:36:03-08 - - $"
+d194 1
+a194 1
+.PSPIC hello-world/hello-world.xwd.ps 380p
+@
+
+
+1.176
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.175 2019-02-21 17:22:29-08 - - $"
+d194 1
+a194 1
+.PSPIC hello-world/hello-world.xwd.ps 280p
+@
+
+
+1.175
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.174 2019-02-07 15:37:43-08 - - $"
+d73 1
+a73 1
+as in the following\(::
+d78 3
+a80 1
+as in\(::
+a83 2
+Note the ampersand
+.=V ( & )
+@
+
+
+1.174
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.173 2018-11-19 16:10:00-08 - - $"
+d79 3
+a81 2
+.PROMPT xclock &
+.PROMPT xeyes &
+@
+
+
+1.173
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2018 Lab\~GL "X11 and OpenGL"
+.RCS "$Id: labg-x11-opengl.mm,v 1.172 2018-11-19 16:09:28-08 - - $"
+@
+
+
+1.172
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.171 2018-11-19 16:08:33-08 - - $"
+a43 1
+.br
+a47 1
+.br
+d53 1
+a53 1
+.VTCODE* 1 "https://www.xquartz.org/"
+d60 3
+a62 3
+.VTCODE* 1 "http://www.straightrunning.com/XmingNotes/"
+.VTCODE* 1 "http://www.geo.mtu.edu/geoschem/docs/putty_install.html"
+.VTCODE* 1 "https://www.cygwin.com/"
+@
+
+
+1.171
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.170 2018-11-19 16:07:36-08 - - $"
+d58 1
+a58 1
+.br
+d60 1
+a63 2
+.br
+Cygwin.
+@
+
+
+1.170
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.169 2018-11-19 16:07:01-08 - - $"
+d59 1
+a59 1
+Install Xming.
+a62 1
+Another alternative to Xming is MobzXterm.
+d64 1
+a64 2
+.VTCODE* 1 "http://mobaxterm.mobatek.net/"
+Another possibility is Cygwin.
+@
+
+
+1.169
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.168 2018-08-14 16:53:10-07 - - $"
+d46 1
+@
+
+
+1.168
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.167 2018-08-14 16:52:31-07 - - $"
+d14 2
+a15 1
+in preparation for an upcoming project which will involve using OpenGL,
+d21 17
+a37 16
+.H 1 "Unix Timeshare\(:) X2Go"
+Setting Up X2Go\(::
+.br
+.V= "http://its.ucsc.edu/unix-timeshare/tutorials/setting-up-x2go.html"
+.P
+X2Go allows you to access a remote graphical desktop
+over a low bandwidth connection.
+In otherwords,
+you can use X2Go to login to the Unix timeshare
+in a graphical fashion instead of using a command line.
+It is similar to the X11 (or XWindows)
+system that use XDMCP (or SSH) to view a remote desktop.
+X2Go is availble on multiple platforms,
+so simply pick the client that works best for you.
+More information can be found on the X2Go website,
+.V= https://wiki.x2go.org/ .
+@
+
+
+1.167
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.166 2018-08-14 16:51:51-07 - - $"
+d20 1
+a20 2
+.H 1 "X2Go"
+Unix Timeshare,
+@
+
+
+1.166
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.165 2018-08-14 16:51:05-07 - - $"
+d21 3
+a25 2
+Unix Timeshare,
+Setting Up X2Go\(::
+@
+
+
+1.165
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.164 2018-08-14 16:50:51-07 - - $"
+d23 2
+@
+
+
+1.164
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.163 2018-08-02 13:31:17-07 - - $"
+d22 1
+@
+
+
+1.163
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: labg-x11-opengl.mm,v 1.162 2018-08-02 12:58:23-07 - - $"
+d21 1
+d29 4
+a32 2
+.br
+.V= "http://its.ucsc.edu/unix-timeshare/tutorials/setting-up-x2go.html"
+@
+
+
+1.162
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab5-x11-opengl.mm,v 1.161 2018-08-01 11:49:08-07 - - $"
+a121 9
+.P
+The test that comes with OpenGL will show three gears
+rotating around each other.
+.PROMPT glxgears &
+.P
+Press the left mouse button in the oval,
+and while pressing it down,
+move the oval around the window.
+.PROMPT mousedepth &
+@
+
+
+1.161
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2018 Lab\~5 "X11 and OpenGL"
+.RCS "$Id: lab4-x11-opengl.mm,v 1.160 2018-06-27 16:02:47-07 - - $"
+@
+
+
+1.160
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2018 Lab\~4 "X11 and OpenGL"
+.RCS "$Id: lab4-x11-opengl.mm,v 1.159 2018-06-27 16:02:29-07 - - $"
+@
+
+
+1.159
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.158 2018-06-27 16:02:10-07 - - $"
+d198 1
+a198 1
+.PSPIC hello-world/hello-world.xwd.ps 275p
+d201 1
+a201 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 275p
+d204 1
+a204 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 275p
+d207 1
+a207 1
+.PSPIC hello-world/hallo-welt.xwd.ps 275p
+d210 1
+a210 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 275p
+@
+
+
+1.158
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.157 2018-06-27 16:01:52-07 - - $"
+d198 1
+a198 1
+.PSPIC hello-world/hello-world.xwd.ps 256p
+d201 1
+a201 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 256p
+d204 1
+a204 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 256p
+d207 1
+a207 1
+.PSPIC hello-world/hallo-welt.xwd.ps 256p
+d210 1
+a210 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 256p
+@
+
+
+1.157
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.156 2018-06-27 16:01:16-07 - - $"
+d198 1
+a198 1
+.PSPIC hello-world/hello-world.xwd.ps 300p
+d201 1
+a201 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 300p
+d204 1
+a204 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 300p
+d207 1
+a207 1
+.PSPIC hello-world/hallo-welt.xwd.ps 300p
+d210 1
+a210 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 300p
+@
+
+
+1.156
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.155 2018-06-27 15:32:55-07 - - $"
+d198 1
+a198 1
+.PSPIC hello-world/hello-world.xwd.ps 340p
+d201 1
+a201 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 340p
+d204 1
+a204 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 340p
+d207 1
+a207 1
+.PSPIC hello-world/hallo-welt.xwd.ps 340p
+d210 1
+a210 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 340p
+@
+
+
+1.155
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.154 2018-06-27 15:14:46-07 - - $"
+a197 1
+.sp -1v
+d201 10
+a210 14
+.TS
+tab(|); l0ew(235p) le.
+T{
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 231p
+T}|T{
+.PSPIC hello-world/ciao-mondo.xwd.ps 231p
+T}
+.SP
+T{
+.PSPIC hello-world/hallo-welt.xwd.ps 231p
+T}|T{
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 231p
+T}
+.TE
+@
+
+
+1.154
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.153 2018-02-16 15:35:26-08 - - $"
+d199 1
+a199 1
+.PSPIC hello-world/hello-world.image.ps 340p
+d205 1
+a205 1
+.PSPIC hello-world/bonjour-le-monde.image.ps 231p
+d207 1
+a207 1
+.PSPIC hello-world/ciao-mondo.image.ps 231p
+d211 1
+a211 1
+.PSPIC hello-world/hallo-welt.image.ps 231p
+d213 1
+a213 1
+.PSPIC hello-world/konnichiwa-sekai.image.ps 231p
+@
+
+
+1.153
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Winter\~2018 Lab\~4 "X11 and OpenGL"
+.RCS "$Id: lab4-x11-opengl.mm,v 1.152 2018-02-16 15:11:06-08 - - $"
+@
+
+
+1.152
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2017 Lab\~4 "X11 and OpenGL"
+.RCS "$Id: lab4-x11-opengl.mm,v 1.151 2018-02-16 15:10:36-08 - - $"
+@
+
+
+1.151
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.150 2018-02-16 15:09:55-08 - - $"
+d203 1
+a203 1
+tab(|); l0ew(234p) le.
+d205 1
+a205 1
+.PSPIC hello-world/bonjour-le-monde.image.ps 230p
+d207 1
+a207 1
+.PSPIC hello-world/ciao-mondo.image.ps 230p
+d211 1
+a211 1
+.PSPIC hello-world/hallo-welt.image.ps 230p
+d213 1
+a213 1
+.PSPIC hello-world/konnichiwa-sekai.image.ps 230p
+@
+
+
+1.150
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.149 2018-02-16 15:09:11-08 - - $"
+d203 1
+a203 1
+tab(|); l0ew(232p) le.
+d205 1
+a205 1
+.PSPIC hello-world/bonjour-le-monde.image.ps 228p
+d207 1
+a207 1
+.PSPIC hello-world/ciao-mondo.image.ps 228p
+d211 1
+a211 1
+.PSPIC hello-world/hallo-welt.image.ps 228p
+d213 1
+a213 1
+.PSPIC hello-world/konnichiwa-sekai.image.ps 228p
+@
+
+
+1.149
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.148 2018-02-16 15:08:37-08 - - $"
+d203 1
+a203 1
+tab(|); l0ew(230p) le.
+d205 1
+a205 1
+.PSPIC hello-world/bonjour-le-monde.image.ps 226p
+d207 1
+a207 1
+.PSPIC hello-world/ciao-mondo.image.ps 226p
+d211 1
+a211 1
+.PSPIC hello-world/hallo-welt.image.ps 226p
+d213 1
+a213 1
+.PSPIC hello-world/konnichiwa-sekai.image.ps 226p
+@
+
+
+1.148
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.147 2018-02-16 15:07:14-08 - - $"
+d203 1
+a203 1
+tab(|); l0ew(226p) le.
+@
+
+
+1.147
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.146 2018-02-16 15:06:18-08 - - $"
+d203 1
+a203 1
+tab(|); lew(226p) le.
+d205 1
+a205 2
+.PSPIC hello-world/bonjour-le-monde.image.ps 224p
+.T= bonjour-le-monde
+d207 1
+a207 2
+.PSPIC hello-world/ciao-mondo.image.ps 224p
+.T= ciao-mondo
+d211 1
+a211 2
+.PSPIC hello-world/hallo-welt.image.ps 224p
+.T= hallo-welt
+d213 1
+a213 2
+.PSPIC hello-world/konnichiwa-sekai.image.ps 224p
+.T= konnichiwa-sekai
+@
+
+
+1.146
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.145 2018-02-16 15:05:40-08 - - $"
+d199 1
+a199 1
+.PSPIC hello-world/hello-world.image.ps 350p
+d205 1
+a205 1
+.PSPIC hello-world/bonjour-le-monde.image.ps 222p
+d208 1
+a208 1
+.PSPIC hello-world/ciao-mondo.image.ps 222p
+d213 1
+a213 1
+.PSPIC hello-world/hallo-welt.image.ps 222p
+d216 1
+a216 1
+.PSPIC hello-world/konnichiwa-sekai.image.ps 222p
+@
+
+
+1.145
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.144 2018-02-16 15:04:07-08 - - $"
+d205 1
+a205 1
+.PSPIC hello-world/bonjour-le-monde.image.ps 220p
+d208 1
+a208 1
+.PSPIC hello-world/ciao-mondo.image.ps 220p
+d213 1
+a213 1
+.PSPIC hello-world/hallo-welt.image.ps 220p
+d216 1
+a216 1
+.PSPIC hello-world/konnichiwa-sekai.image.ps 220p
+@
+
+
+1.144
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.143 2018-02-16 15:03:41-08 - - $"
+d197 1
+a197 1
+.DS
+a199 1
+.T= hello-world
+a200 1
+.\}
+@
+
+
+1.143
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.142 2018-02-16 15:02:22-08 - - $"
+d199 1
+a199 1
+.PSPIC hello-world/hello-world.image.ps 360p
+@
+
+
+1.142
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.139 2018-02-16 14:58:45-08 - - $"
+d199 2
+a200 1
+.PSPIC hello-world/hello-world.image.ps 5i
+d207 2
+a208 2
+.PSPIC hello-world/bonjour-le-monde.image.ps 222p
+bonjour-le-monde
+d210 2
+a211 2
+.PSPIC hello-world/ciao-mondo.image.ps 222p
+ciao-mondo
+d215 2
+a216 2
+.PSPIC hello-world/hallo-welt.image.ps 222p
+hallo-welt
+d218 2
+a219 2
+.PSPIC hello-world/konnichiwa-sekai.image.ps 222p
+konnichiwa-sekai
+@
+
+
+1.141
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.140 2018-02-16 15:00:49-08 - - $"
+d198 1
+a199 1
+.T= hello-world
+d204 1
+a204 1
+tab(|); lew(226) le.
+d207 1
+a207 1
+.T= bonjour-le-monde
+d210 1
+a210 1
+.T= ciao-mondo
+d215 1
+a215 1
+.T= hallo-welt
+d218 1
+a218 1
+.T= konnichiwa-sekai
+@
+
+
+1.140
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.139 2018-02-16 14:58:45-08 - - $"
+d204 1
+a204 1
+tab(|); le le.
+@
+
+
+1.139
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.138 2018-02-16 14:57:57-08 - - $"
+a197 1
+.sp -1v
+d199 1
+d204 1
+a204 1
+tab(|); lew(226p) le.
+d207 1
+a207 1
+bonjour-le-monde
+d210 1
+a210 1
+ciao-mondo
+d215 1
+a215 1
+hallo-welt
+d218 1
+a218 1
+konnichiwa-sekai
+@
+
+
+1.138
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.137 2018-02-16 14:53:14-08 - - $"
+a195 3
+.if dPSPIC \{
+.ne 10i
+.H 1 "Other examples"
+@
+
+
+1.137
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.136 2018-02-15 21:22:37-08 - - $"
+d209 1
+a209 1
+.PSPIC hello-world/bonjour-le-monde.xwd.ps 222p
+d212 1
+a212 1
+.PSPIC hello-world/ciao-mondo.xwd.ps 222p
+d217 1
+a217 1
+.PSPIC hello-world/hallo-welt.xwd.ps 222p
+d220 1
+a220 1
+.PSPIC hello-world/konnichiwa-sekai.xwd.ps 222p
+@
+
+
+1.136
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.135 2018-02-15 16:42:05-08 - - $"
+d202 1
+a202 1
+.PSPIC hello-world/hello-world.xwd.ps 5i
+@
+
+
+1.135
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.134 2018-02-15 16:41:09-08 - - $"
+d109 3
+a111 9
+An X11 window dumps of this program is shown here\(::
+.if dPSPIC \{
+.DS
+.sp -1v
+.PSPIC hello-world/hello-world.xwd.ps 5i
+.DE
+.\}
+.br
+.ne 10
+d199 6
+@
+
+
+1.134
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.133 2018-02-15 16:39:32-08 - - $"
+d116 2
+@
+
+
+1.133
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.132 2017-07-24 15:41:39-07 - - $"
+d95 1
+@
+
+
+1.132
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.131 2017-06-29 17:21:50-07 - - $"
+d81 1
+a81 1
+.V= world-hello
+d112 1
+a112 1
+.PSPIC world-hello/hello-world.xwd.ps 5i
+d206 1
+a206 1
+.PSPIC world-hello/bonjour-le-monde.xwd.ps 222p
+d209 1
+a209 1
+.PSPIC world-hello/ciao-mondo.xwd.ps 222p
+d214 1
+a214 1
+.PSPIC world-hello/hallo-welt.xwd.ps 222p
+d217 1
+a217 1
+.PSPIC world-hello/konnichiwa-sekai.xwd.ps 222p
+@
+
+
+1.131
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.130 2017-06-29 17:21:30-07 - - $"
+d206 1
+a206 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 222p
+d209 1
+a209 1
+.PSPIC misc/ciao-mondo.xwd.ps 222p
+d214 1
+a214 1
+.PSPIC misc/hallo-welt.xwd.ps 222p
+d217 1
+a217 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 222p
+@
+
+
+1.130
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.129 2017-06-29 16:52:37-07 - - $"
+d121 1
+@
+
+
+1.129
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.128 2017-06-29 16:47:57-07 - - $"
+d120 3
+d124 3
+a126 1
+Should show a clock with the second hand moving.
+d128 1
+a128 2
+Should show three gears rotating around each other.
+.PROMPT mousedepth &
+d132 4
+a136 3
+Every time you press the left mouse button,
+the image will swap from a solid teapot to a wire frame
+image of the teapot.
+@
+
+
+1.128
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.127 2017-06-29 13:49:12-07 - - $"
+d120 12
+@
+
+
+1.127
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.126 2017-06-29 13:48:46-07 - - $"
+d115 5
+@
+
+
+1.126
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.125 2017-06-29 13:48:00-07 - - $"
+d112 1
+a112 1
+.PSPIC misc/hello-world.xwd.ps 5i
+@
+
+
+1.125
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.124 2016-07-11 13:33:01-07 - - $"
+d81 1
+a81 1
+.V= code
+@
+
+
+1.124
+log
+@-
+@
+text
+@d5 2
+a6 2
+.TITLE CMPS-109 Summer\~2016 Lab\~4 "X11 and OpenGL"
+.RCS "$Id: lab4-x11-opengl.mm,v 1.123 2016-07-06 16:14:45-07 - - $"
+@
+
+
+1.123
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.122 2016-07-06 16:14:27-07 - - $"
+d112 1
+a112 1
+.PSPIC misc/hello-world.xwd.ps 4i
+@
+
+
+1.122
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.121 2016-07-06 16:14:09-07 - - $"
+d189 1
+@
+
+
+1.121
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.120 2016-07-06 16:13:35-07 - - $"
+d190 1
+a191 1
+.PSPIC misc/hallo-welt.xwd.ps 222p
+d193 1
+a194 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 222p
+@
+
+
+1.120
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.119 2016-07-06 16:13:11-07 - - $"
+d183 1
+a184 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 222p
+d186 1
+a187 1
+.PSPIC misc/ciao-mondo.xwd.ps 222p
+@
+
+
+1.119
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.118 2016-07-06 16:12:54-07 - - $"
+d177 1
+@
+
+
+1.118
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.117 2016-07-06 16:12:03-07 - - $"
+d180 1
+a180 1
+tab(|); lew(234p) le.
+@
+
+
+1.117
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.116 2016-07-06 16:11:30-07 - - $"
+d183 1
+a183 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 230p
+d186 1
+a186 1
+.PSPIC misc/ciao-mondo.xwd.ps 230p
+d190 1
+a190 1
+.PSPIC misc/hallo-welt.xwd.ps 230p
+d193 1
+a193 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 230p
+@
+
+
+1.116
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.115 2016-07-06 16:11:03-07 - - $"
+d180 1
+a180 1
+tab(|); cew(234p) ce.
+d183 1
+a183 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 110p
+d186 1
+a186 1
+.PSPIC misc/ciao-mondo.xwd.ps 110p
+d190 1
+a190 1
+.PSPIC misc/hallo-welt.xwd.ps 110p
+d193 1
+a193 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 110p
+@
+
+
+1.115
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.114 2016-07-06 16:10:08-07 - - $"
+d180 1
+a180 1
+tab(|); lew(234p) le.
+@
+
+
+1.114
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.113 2016-07-06 16:09:50-07 - - $"
+d180 1
+a180 1
+tab(|); c1ew(114p) c1e c1e c1e.
+@
+
+
+1.113
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.112 2016-07-06 16:06:51-07 - - $"
+d180 1
+a180 1
+tab(|); l1ew(114p) l1e l1e l1e.
+@
+
+
+1.112
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.111 2016-07-06 16:06:00-07 - - $"
+d187 2
+a188 1
+T}|T{
+@
+
+
+1.111
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.110 2016-07-06 12:47:47-07 - - $"
+d101 3
+a103 3
+.TVCODE* 0 "To cycle the colors: right mouse button or key 'c' or 'C'."
+.TVCODE* 0 "To cycle the fonts: left mouse button or key 'f' or 'F'."
+.TVCODE* 0 \
+d105 2
+a106 2
+.TVCODE* 0 "To invert the colors: key Backspace, Return, or Delete."
+.TVCODE* 0 "To quit: key 'q' or 'Q' or ESC."
+@
+
+
+1.110
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.109 2016-07-06 12:47:09-07 - - $"
+d101 3
+a103 2
+.TVCODE* 1 "To cycle the fonts: left mouse button or key 'f' or 'F'."
+.TVCODE* 1 \
+d105 2
+a106 2
+.TVCODE* 1 "To cycle the colors: right mouse button or key 'c' or 'C'."
+.TVCODE* 1 "To quit: key 'q' or 'Q' or ESC."
+@
+
+
+1.109
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.108 2016-07-06 12:46:35-07 - - $"
+d179 1
+a179 1
+tab(|); l1ew(104p) l1e l1e l1e.
+d182 1
+a182 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 100p
+d185 1
+a185 1
+.PSPIC misc/ciao-mondo.xwd.ps 100p
+d188 1
+a188 1
+.PSPIC misc/hallo-welt.xwd.ps 100p
+d191 1
+a191 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 100p
+@
+
+
+1.108
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.107 2016-07-06 12:46:03-07 - - $"
+d179 1
+a179 1
+tab(|); lew(104p) le le le.
+@
+
+
+1.107
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.106 2016-07-06 12:45:37-07 - - $"
+d176 1
+@
+
+
+1.106
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.105 2016-07-06 12:45:15-07 - - $"
+d178 1
+a178 1
+tab(|); cew(104p) ce ce ce, l l l l.
+@
+
+
+1.105
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.104 2016-07-06 12:44:52-07 - - $"
+d180 1
+a181 1
+bonjour-le-monde
+d183 1
+a184 1
+ciao-mondo
+d186 1
+a187 1
+hallo-welt
+d189 1
+a190 1
+konnichiwa-sekai
+@
+
+
+1.104
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.103 2016-07-06 12:44:09-07 - - $"
+d178 1
+a178 1
+tab(|); cew(104p) ce ce ce; l l l l.
+@
+
+
+1.103
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.102 2016-07-06 12:43:50-07 - - $"
+d178 1
+a178 1
+tab(|); cew(104p) ce ce ce.
+@
+
+
+1.102
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.101 2016-07-06 12:42:41-07 - - $"
+d178 1
+a178 1
+tab(|); lew(104p) le le le.
+@
+
+
+1.101
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.100 2016-07-06 12:42:01-07 - - $"
+d181 1
+d184 1
+d187 1
+d190 1
+@
+
+
+1.100
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.99 2016-07-06 12:41:14-07 - - $"
+d178 1
+a178 1
+tab(|); lew(106p) le le le.
+@
+
+
+1.99
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.98 2016-07-06 12:40:26-07 - - $"
+d178 1
+a178 1
+tab(|); lew(118p) le le le.
+@
+
+
+1.98
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.97 2016-07-06 12:39:36-07 - - $"
+d178 1
+a178 1
+tab(|); l l l l.
+d180 1
+a180 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 72p
+d182 1
+a182 1
+.PSPIC misc/ciao-mondo.xwd.ps 72p
+d184 1
+a184 1
+.PSPIC misc/hallo-welt.xwd.ps 72p
+d186 1
+a186 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 72p
+@
+
+
+1.97
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.96 2016-07-06 12:38:16-07 - - $"
+d178 1
+a178 1
+tab(|); lw(252p) lw(252p).
+d180 1
+a180 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 216p
+d182 3
+a184 4
+.PSPIC misc/ciao-mondo.xwd.ps 216p
+T}
+T{
+.PSPIC misc/hallo-welt.xwd.ps 216p
+d186 1
+a186 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 216p
+@
+
+
+1.96
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.95 2016-07-06 12:37:59-07 - - $"
+d178 1
+a178 1
+tab(|); lw(3i) lw(3i).
+d180 1
+a180 1
+.PSPIC misc/bonjour-le-monde.xwd.ps 3i
+d182 1
+a182 1
+.PSPIC misc/ciao-mondo.xwd.ps 3i
+d185 1
+a185 1
+.PSPIC misc/hallo-welt.xwd.ps 3i
+d187 1
+a187 1
+.PSPIC misc/konnichiwa-sekai.xwd.ps 3i
+@
+
+
+1.95
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.94 2016-07-06 12:37:22-07 - - $"
+d178 1
+a178 1
+tab(|); cw(3i) cw(3i).
+@
+
+
+1.94
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.93 2016-07-06 12:35:43-07 - - $"
+d178 1
+a178 1
+tab(|); c c.
+@
+
+
+1.93
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.92 2016-07-06 12:35:11-07 - - $"
+d108 1
+d110 3
+a112 3
+.if dPSPIC \{
+.   sp -1v
+.   PSPIC misc/hello-world.xwd.ps 4i
+a113 1
+.DE
+d175 1
+d177 14
+a190 5
+.if dPSPIC \{
+.   PSPIC misc/bonjour-le-monde.xwd.ps 3i
+.   PSPIC misc/ciao-mondo.xwd.ps 3i
+.   PSPIC misc/hallo-welt.xwd.ps 3i
+.   PSPIC misc/konnichiwa-sekai.xwd.ps 3i
+a191 1
+.DE
+@
+
+
+1.92
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.91 2016-07-06 12:33:36-07 - - $"
+d175 1
+d177 4
+a180 4
+.   PSPIC misc/bonjour-le-monde.xwd.ps 4i
+.   PSPIC misc/ciao-mondo.xwd.ps 4i
+.   PSPIC misc/hallo-welt.xwd.ps 4i
+.   PSPIC misc/konnichiwa-sekai.xwd.ps 4i
+d182 1
+@
+
+
+1.91
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.90 2016-07-06 12:32:38-07 - - $"
+d175 6
+@
+
+
+1.90
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.89 2016-07-06 12:32:15-07 - - $"
+a19 6
+.P
+Alternatives\(::
+Instead of installing X11 on your workstation,
+you may do your development in the lab.
+Instead of installing OpenGL on your workstation,
+you may work remotely and run all OpenGL programs on the timeshares.
+d170 5
+@
+
+
+1.89
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.88 2016-07-06 12:31:47-07 - - $"
+a175 7
+.H 1 "X11 window dumps of the sample programs"
+.if dPSPIC \{
+.   PSPIC misc/bonjour-le-monde.xwd.ps 4i
+.   PSPIC misc/ciao-mondo.xwd.ps 4i
+.   PSPIC misc/hallo-welt.xwd.ps 4i
+.   PSPIC misc/konnichiwa-sekai.xwd.ps 4i
+.\}
+@
+
+
+1.88
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.87 2016-07-06 12:29:56-07 - - $"
+d116 1
+@
+
+
+1.87
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.86 2016-07-06 12:21:10-07 - - $"
+d113 6
+a118 2
+X11 window dumps of the initial screens of each of these programs
+are given at the end of this document.
+a176 1
+.   PSPIC misc/hello-world.xwd.ps 4i
+@
+
+
+1.86
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.85 2016-06-30 16:38:48-07 - - $"
+a16 1
+.P
+d20 6
+@
+
+
+1.85
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.84 2016-06-30 16:38:35-07 - - $"
+d168 5
+a172 4
+.   PSPIC code/bonjour-le-monde.xwd.ps 4i
+.   PSPIC code/ciao-mondo.xwd.ps 4i
+.   PSPIC code/hallo-welt.xwd.ps 4i
+.   PSPIC code/hello-world.xwd.ps 4i
+@
+
+
+1.84
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.83 2016-06-30 16:38:19-07 - - $"
+d168 4
+a171 4
+.   PSPIC code/bonjour-le-monde.xwd.ps 4.25i
+.   PSPIC code/ciao-mondo.xwd.ps 4.25i
+.   PSPIC code/hallo-welt.xwd.ps 4.25i
+.   PSPIC code/hello-world.xwd.ps 4.25i
+@
+
+
+1.83
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.82 2016-06-30 16:38:03-07 - - $"
+d168 4
+a171 4
+.   PSPIC code/bonjour-le-monde.xwd.ps 4.5i
+.   PSPIC code/ciao-mondo.xwd.ps 4.5i
+.   PSPIC code/hallo-welt.xwd.ps 4.5i
+.   PSPIC code/hello-world.xwd.ps 4.5i
+@
+
+
+1.82
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.81 2016-06-30 16:37:31-07 - - $"
+d168 4
+a171 4
+.   PSPIC code/bonjour-le-monde.xwd.ps 5i
+.   PSPIC code/ciao-mondo.xwd.ps 5i
+.   PSPIC code/hallo-welt.xwd.ps 5i
+.   PSPIC code/hello-world.xwd.ps 5i
+@
+
+
+1.81
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.80 2016-06-30 16:34:55-07 - - $"
+a166 3
+See the 
+.V= code/
+subdirectory for source code.
+d168 4
+a171 4
+.   PSPIC code/bonjour-le-monde.xwd.ps 4i
+.   PSPIC code/ciao-mondo.xwd.ps 4i
+.   PSPIC code/hallo-welt.xwd.ps 4i
+.   PSPIC code/hello-world.xwd.ps 4i
+@
+
+
+1.80
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.79 2016-06-30 16:33:36-07 - - $"
+d80 1
+a80 1
+.H 1 "Running OpenGL Programs"
+d96 1
+d107 3
+d139 1
+a139 1
+.H 1 "Other References"
+d166 4
+@
+
+
+1.79
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.78 2016-06-30 16:33:14-07 - - $"
+d162 6
+@
+
+
+1.78
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.77 2016-06-30 16:30:44-07 - - $"
+d143 1
+a143 1
+.=V `` OpenGL glutPostRedisplay ''
+@
+
+
+1.77
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.76 2016-06-30 16:22:23-07 - - $"
+d147 1
+a147 1
+Other references\(::
+d149 2
+d152 2
+d155 3
+d159 2
+@
+
+
+1.76
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.75 2016-06-30 16:21:54-07 - - $"
+d135 18
+@
+
+
+1.75
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.74 2016-06-30 16:20:46-07 - - $"
+d112 1
+d127 1
+@
+
+
+1.74
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.73 2016-06-30 16:20:25-07 - - $"
+d107 1
+a107 1
+Running OpenGL across the internet will be communication-intensive,
+@
+
+
+1.73
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.72 2016-06-30 16:19:45-07 - - $"
+d124 1
+a124 1
+.VTCODE* 1 "#include <\f[RI]??????????\fP>"
+@
+
+
+1.72
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.71 2016-06-30 16:19:14-07 - - $"
+d124 1
+a124 1
+.VTCODE* 1 "#include <\fI??????????\fP>"
+@
+
+
+1.71
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.70 2016-06-30 16:18:36-07 - - $"
+d47 1
+a47 1
+.VTCODE* 0 https://www.xquartz.org/
+@
+
+
+1.70
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.69 2016-06-30 15:58:55-07 - - $"
+d53 2
+a54 2
+.VTCODE* 0 "http://www.straightrunning.com/XmingNotes/"
+.VTCODE* 0 "http://www.geo.mtu.edu/geoschem/docs/putty_install.html"
+d57 1
+a57 1
+.VTCODE* 0 "http://mobaxterm.mobatek.net/"
+d59 1
+a59 1
+.VTCODE* ) "https://www.cygwin.com/"
+d110 2
+a111 2
+.VTCODE* 0 "https://www.opengl.org/wiki/Getting_Started"
+.VTCODE* 0 "http://freeglut.sourceforge.net/"
+d118 1
+a118 1
+.VTCODE* 0 "#include <GL/freeglut.h>"
+d120 6
+a125 6
+.VTCODE* 0 "#ifdef __linux__"
+.VTCODE* 0 "#include <GL/freeglut.h>"
+.VTCODE* 0 "#endif"
+.VTCODE* 0 "#ifdef __macosx__"
+.VTCODE* 0 "#include <\fI??????????\fP>"
+.VTCODE* 0 "#endif"
+@
+
+
+1.69
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.68 2016-06-30 15:32:08-07 - - $"
+d58 2
+d84 3
+a90 1
+.P
+d106 27
+@
+
+
+1.68
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.67 2016-06-30 15:31:48-07 - - $"
+a101 7
+.if dPSPIC \{
+.SP 10i
+.PSPIC code/bonjour-le-monde.ps 3i
+.PSPIC code/ciao-mondo.ps 3i
+.PSPIC code/hallo-welt.ps 3i
+.PSPIC code/hello-world.ps 3i
+.\}
+@
+
+
+1.67
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.66 2016-06-30 15:31:08-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 3.15i
+.PSPIC code/ciao-mondo.ps 3.15i
+.PSPIC code/hallo-welt.ps 3.15i
+.PSPIC code/hello-world.ps 3.15i
+@
+
+
+1.66
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.65 2016-06-30 15:30:35-07 - - $"
+d102 1
+a102 1
+.if -dPSPIC .\{
+a103 1
+.DS
+a107 1
+.DE
+@
+
+
+1.65
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.64 2016-06-30 15:30:08-07 - - $"
+d102 1
+d110 1
+@
+
+
+1.64
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.63 2016-06-30 15:29:51-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 3.25i
+.PSPIC code/ciao-mondo.ps 3.25i
+.PSPIC code/hallo-welt.ps 3.25i
+.PSPIC code/hello-world.ps 3.25i
+@
+
+
+1.63
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.62 2016-06-30 15:28:58-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 3.5i
+.PSPIC code/ciao-mondo.ps 3.5i
+.PSPIC code/hallo-welt.ps 3.5i
+.PSPIC code/hello-world.ps 3.5i
+@
+
+
+1.62
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.61 2016-06-30 15:28:36-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 4i
+.PSPIC code/ciao-mondo.ps 4i
+.PSPIC code/hallo-welt.ps 4i
+.PSPIC code/hello-world.ps 4i
+@
+
+
+1.61
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.60 2016-06-30 15:28:17-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 240p
+.PSPIC code/ciao-mondo.ps 240p
+.PSPIC code/hallo-welt.ps 240p
+.PSPIC code/hello-world.ps 240p
+@
+
+
+1.60
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.59 2016-06-30 15:28:09-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 252p
+.PSPIC code/ciao-mondo.ps 252p
+.PSPIC code/hallo-welt.ps 252p
+.PSPIC code/hello-world.ps 252p
+@
+
+
+1.59
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.58 2016-06-30 15:16:44-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 252i
+.PSPIC code/ciao-mondo.ps 252i
+.PSPIC code/hallo-welt.ps 252i
+.PSPIC code/hello-world.ps 252i
+@
+
+
+1.58
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.57 2016-06-30 15:03:48-07 - - $"
+d104 4
+a107 4
+.PSPIC code/bonjour-le-monde.ps 3i
+.PSPIC code/ciao-mondo.ps 3i
+.PSPIC code/hallo-welt.ps 3i
+.PSPIC code/hello-world.ps 3i
+@
+
+
+1.57
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.56 2016-06-30 15:01:48-07 - - $"
+a103 1
+.fcolor gray
+@
+
+
+1.56
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.55 2016-06-30 15:01:08-07 - - $"
+d103 2
+d109 1
+@
+
+
+1.55
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.54 2016-06-30 15:00:39-07 - - $"
+d102 5
+a106 6
+.DS
+.PSPIC code/bonjour-le-monde.ps 4i
+.PSPIC code/ciao-mondo.ps 4i
+.PSPIC code/hallo-welt.ps 4i
+.PSPIC code/hello-world.ps 4i
+.DE
+@
+
+
+1.54
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.53 2016-06-30 14:59:36-07 - - $"
+d103 4
+a106 4
+.PSPIC code/bonjour-le-monde.ps
+.PSPIC code/ciao-mondo.ps
+.PSPIC code/hallo-welt.ps
+.PSPIC code/hello-world.ps
+@
+
+
+1.53
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.52 2016-06-30 14:59:09-07 - - $"
+d102 6
+@
+
+
+1.52
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.51 2016-06-30 14:58:46-07 - - $"
+a101 12
+When running these programs, 
+you should see the following on your screen\(::
+.DS
+.if dPSPIC \{
+.PSPIC -I 0 code/bonjour-le-monde.ps 210p
+.sp -155p
+.PSPIC -I 240p code/ciao-mondo.ps 210p
+.PSPIC -I 0 code/hallo-welt.ps 210p
+.sp -140p
+.PSPIC -I 240p code/hello-world.ps 210p
+.\}
+.DE
+@
+
+
+1.51
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.50 2016-06-30 14:58:34-07 - - $"
+d107 1
+a107 1
+.sp -150p
+@
+
+
+1.50
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.49 2016-06-30 14:58:05-07 - - $"
+d107 1
+a107 1
+.sp -160p
+@
+
+
+1.49
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.48 2016-06-30 14:51:58-07 - - $"
+d107 1
+a107 1
+.sp -140p
+@
+
+
+1.48
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.47 2016-06-30 14:51:38-07 - - $"
+d106 6
+a111 4
+.PSPIC code/bonjour-le-monde.ps 100p
+.PSPIC code/ciao-mondo.ps 100p
+.PSPIC code/hallo-welt.ps 100p
+.PSPIC code/hello-world.ps 100p
+@
+
+
+1.47
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.46 2016-06-30 14:50:05-07 - - $"
+d106 4
+a109 4
+.PSPIC -I -72p code/bonjour-le-monde.ps 100p
+.PSPIC -I -72p code/ciao-mondo.ps 100p
+.PSPIC -I -72p code/hallo-welt.ps 100p
+.PSPIC -I -72p code/hello-world.ps 100p
+@
+
+
+1.46
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.45 2016-06-30 14:49:46-07 - - $"
+d106 4
+a109 17
+.TS
+tab(|); cw(234p)fC cw(234p)fC .
+T{
+.PSPIC -I -72p code/bonjour-le-monde.ps 234p
+bonjour-le-monde
+T}|T{
+.PSPIC -I -72p code/ciao-mondo.ps 234p
+ciao-mondo
+T}
+T{
+.PSPIC -I -72p code/hallo-welt.ps 234p
+hallo-welt
+T}|T{
+.PSPIC -I -72p code/hello-world.ps 234p
+hello-world
+T}
+.TE
+@
+
+
+1.45
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.44 2016-06-30 14:49:13-07 - - $"
+d109 1
+a109 1
+.PSPIC -I -36p code/bonjour-le-monde.ps 234p
+d112 1
+a112 1
+.PSPIC -I -36p code/ciao-mondo.ps 234p
+d116 1
+a116 1
+.PSPIC -I -36p code/hallo-welt.ps 234p
+d119 1
+a119 1
+.PSPIC -I -36p code/hello-world.ps 234p
+@
+
+
+1.44
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.43 2016-06-30 14:48:56-07 - - $"
+d109 1
+a109 1
+.PSPIC -I -72p code/bonjour-le-monde.ps 234p
+d112 1
+a112 1
+.PSPIC -I 134p code/ciao-mondo.ps 234p
+d116 1
+a116 1
+.PSPIC -L code/hallo-welt.ps 234p
+d119 1
+a119 1
+.PSPIC -I 134p code/hello-world.ps 234p
+@
+
+
+1.43
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.42 2016-06-30 14:48:28-07 - - $"
+d109 1
+a109 1
+.PSPIC -I -10p code/bonjour-le-monde.ps 234p
+@
+
+
+1.42
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.41 2016-06-30 14:48:07-07 - - $"
+d109 1
+a109 1
+.PSPIC -L code/bonjour-le-monde.ps 234p
+@
+
+
+1.41
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.40 2016-06-30 14:47:46-07 - - $"
+d109 1
+a109 1
+.PSPIC code/bonjour-le-monde.ps 234p
+d116 1
+a116 1
+.PSPIC code/hallo-welt.ps 234p
+@
+
+
+1.40
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.39 2016-06-30 14:46:19-07 - - $"
+d109 1
+a109 1
+.PSPIC -I -134p code/bonjour-le-monde.ps 234p
+d116 1
+a116 1
+.PSPIC -I -134p code/hallo-welt.ps 234p
+@
+
+
+1.39
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.37 2016-06-30 14:41:50-07 - - $"
+d109 1
+a109 1
+.PSPIC -I 0p code/bonjour-le-monde.ps 234p
+d112 1
+a112 1
+.PSPIC -I 234p code/ciao-mondo.ps 234p
+d116 1
+a116 1
+.PSPIC -I 0p code/hallo-welt.ps 234p
+d119 1
+a119 1
+.PSPIC -I 234p code/hello-world.ps 234p
+@
+
+
+1.38
+log
+@-
+@
+text
+@d106 6
+a111 1
+.PSPIC -L code/bonjour-le-monde.ps 234p
+d113 6
+a118 1
+.PSPIC -L code/hallo-welt.ps 234p
+d120 3
+@
+
+
+1.37
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.36 2016-06-30 14:40:35-07 - - $"
+a105 3
+.TS
+tab(|); cw(234p)fC cw(234p)fC .
+T{
+a106 2
+bonjour-le-monde
+T}|T{
+a107 3
+ciao-mondo
+T}
+T{
+a108 2
+hallo-welt
+T}|T{
+a109 3
+hello-world
+T}
+.TE
+@
+
+
+1.36
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.35 2016-06-30 14:38:59-07 - - $"
+d107 1
+a107 1
+tab(|); lfC lfC .
+@
+
+
+1.35
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.34 2016-06-30 14:38:15-07 - - $"
+d107 1
+a107 1
+tab(|); l l.
+d109 2
+a110 1
+.PSPIC -L code/bonjour-le-monde.ps
+d112 2
+a113 1
+.PSPIC -I 234p code/ciao-mondo.ps
+d116 2
+a117 1
+.PSPIC -L code/hallo-welt.ps
+d119 2
+a120 1
+.PSPIC -I 234p code/hello-world.ps
+@
+
+
+1.34
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.33 2016-06-30 14:33:50-07 - - $"
+d109 1
+a109 1
+.PSPIC -Lcode/bonjour-le-monde.ps
+d111 1
+a111 1
+.PSPIC -R code/ciao-mondo.ps
+d116 1
+a116 1
+.PSPIC -R code/hello-world.ps
+@
+
+
+1.33
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.32 2016-06-30 14:26:08-07 - - $"
+d109 1
+a109 1
+.PSPIC code/bonjour-le-monde.ps
+d111 1
+a111 1
+.PSPIC code/ciao-mondo.ps
+d114 1
+a114 1
+.PSPIC code/hallo-welt.ps
+d116 1
+a116 1
+.PSPIC code/hello-world.ps
+@
+
+
+1.32
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.31 2016-06-30 14:25:40-07 - - $"
+d102 19
+@
+
+
+1.31
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.30 2016-06-30 12:06:08-07 - - $"
+d97 2
+a98 2
+.TVCODE* 0 "To cycle the fonts: left mouse button or key 'f' or 'F'."
+.TVCODE* 0 \
+d100 2
+a101 2
+.TVCODE* 0 "To cycle the colors: right mouse button or key 'c' or 'C'."
+.TVCODE* 0 "To quit: key 'q' or 'Q' or ESC."
+@
+
+
+1.30
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.29 2016-06-30 12:05:26-07 - - $"
+d78 7
+d86 16
+@
+
+
+1.29
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.28 2016-06-30 12:00:47-07 - - $"
+a9 1
+.af HISTORY 01
+@
+
+
+1.28
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.27 2016-06-28 14:08:14-07 - - $"
+d9 5
+d70 1
+a70 1
+.TVCODE* 0 "bash-\[Do] " "ssh -X \fIusername\fP@@unix.ucsc.edu"
+d75 2
+a76 2
+.TVCODE* 0 "bash-\[Do] " "xclock &"
+.TVCODE* 0 "bash-\[Do] " "xeyes &"
+@
+
+
+1.27
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.26 2016-06-27 20:32:23-07 - - $"
+d15 1
+a15 1
+and have it display on your own local workstation,
+@
+
+
+1.26
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.25 2016-06-27 20:32:01-07 - - $"
+d40 1
+a40 1
+Install XQuarts if you do not already have X11 running on your
+@
+
+
+1.25
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.24 2016-06-27 20:31:27-07 - - $"
+a50 1
+.P
+@
+
+
+1.24
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.23 2016-06-27 20:29:21-07 - - $"
+d57 3
+a59 1
+When running an X11 program repotely but displaying on the local
+a67 2
+Once X11 has been installed on your computer,
+verify that it is working.
+@
+
+
+1.23
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.22 2016-06-27 20:28:09-07 - - $"
+a34 8
+When running an X11 program repotely but displaying on the local
+workstation, 
+it is necessary to set up X11 forwarding with the
+.V= -X
+flag of
+.V= ssh ,
+as in the following\(::
+.TVCODE* 0 "bash-\[Do] " "ssh -X \fIusername\fP@@unix.ucsc.edu"
+d57 9
+@
+
+
+1.22
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.21 2016-06-27 20:27:47-07 - - $"
+d72 3
+@
+
+
+1.21
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.20 2016-06-27 20:26:26-07 - - $"
+d33 1
+d45 1
+d54 1
+@
+
+
+1.20
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.19 2016-06-27 16:14:17-07 - - $"
+d30 3
+a32 1
+.H 2 "X11 on Linux"
+d42 2
+a43 1
+.H 2 "X11 on OSX"
+d50 2
+a51 1
+.H 2 "X11 on W*nd*z*"
+d60 1
+@
+
+
+1.19
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.18 2016-06-27 15:59:22-07 - - $"
+d27 4
+a30 1
+.H 1 "X11 on Linux"
+d40 1
+a40 1
+.H 1 "X11 on OSX"
+d47 1
+a47 1
+.H 1 "X11 on W*nd*z*"
+@
+
+
+1.18
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.17 2016-06-27 15:49:33-07 - - $"
+d13 4
+d36 1
+a36 1
+.VTCODE* 0 "ssh -X \fIusername\fP@@unix.ucsc.edu"
+d59 2
+a60 2
+.VTCODE* 0 "xclock &"
+.VTCODE* 0 "xeyes &"
+@
+
+
+1.17
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.16 2016-06-27 15:49:20-07 - - $"
+a48 6
+.if dPSPIC \{
+.   sp -2v
+.   DS
+.   PSPIC -L drag-drop2.ps 4i
+.   DE
+.\}
+@
+
+
+1.16
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.15 2016-06-27 15:49:09-07 - - $"
+d50 1
+a50 1
+.   sp -1v
+@
+
+
+1.15
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.14 2016-06-27 15:48:42-07 - - $"
+d50 1
+a50 1
+.   sp -3v
+@
+
+
+1.14
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.13 2016-06-27 15:48:23-07 - - $"
+d50 1
+d52 1
+a52 1
+.   PSPIC  drag-drop2.ps 4i
+@
+
+
+1.13
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.12 2016-06-27 15:48:00-07 - - $"
+d51 1
+a51 1
+.   PSPIC -C drag-drop2.ps 4i
+@
+
+
+1.12
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.11 2016-06-27 15:47:40-07 - - $"
+d51 1
+a51 1
+.   PSPIC drag-drop2.ps
+@
+
+
+1.11
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.10 2016-06-27 15:45:44-07 - - $"
+d51 1
+a51 2
+hello
+.   PSPIC drag-and-drop2.ps
+@
+
+
+1.10
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.9 2016-06-27 15:37:03-07 - - $"
+d51 1
+@
+
+
+1.9
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.8 2016-06-27 15:26:43-07 - - $"
+d32 1
+a32 1
+.VTCODE* 1 "ssh -X \fIusername\fP@@unix.ucsc.edu"
+d43 2
+a44 2
+.VTCODE* 1 "http://www.straightrunning.com/XmingNotes/"
+.VTCODE* 1 "http://www.geo.mtu.edu/geoschem/docs/putty_install.html"
+d48 6
+a53 1
+.VTCODE* 1 "http://mobaxterm.mobatek.net/"
+d60 2
+a61 2
+.VTCODE* 1 "xclock &"
+.VTCODE* 1 "xeyes &"
+@
+
+
+1.8
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.7 2016-06-24 18:31:39-07 - - $"
+a32 6
+Having done that,
+one may run an X11 program by typing the command name,
+usually by backgrounding the process,
+as in\(::
+.VTCODE* 1 "xclock &"
+.VTCODE* 1 "xeyes &"
+d40 17
+@
+
+
+1.7
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.6 2016-06-24 18:30:33-07 - - $"
+d43 1
+a43 1
+local workstation.
+@
+
+
+1.6
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.5 2016-06-23 17:54:43-07 - - $"
+d21 2
+a22 4
+.P
+For more information see\(::
+.VTCODE* 0 \
+"http://its.ucsc.edu/unix-timeshare/tutorials/setting-up-x2go.html"
+d44 1
+a44 1
+See\(::
+@
+
+
+1.5
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.4 2016-06-23 17:54:32-07 - - $"
+d25 23
+@
+
+
+1.4
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.3 2016-06-23 17:54:20-07 - - $"
+d22 1
+a22 1
+For more information see
+@
+
+
+1.3
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.2 2016-06-23 17:50:17-07 - - $"
+d21 1
+@
+
+
+1.2
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: lab4-x11-opengl.mm,v 1.1 2016-06-23 17:49:45-07 - - $"
+d13 11
+@
+
+
+1.1
+log
+@-
+@
+text
+@d6 1
+a6 1
+.RCS "$Id: asg1-dc-bigint.mm,v 1.2 2016-06-13 13:45:48-07 - - $"
+d9 4
+@

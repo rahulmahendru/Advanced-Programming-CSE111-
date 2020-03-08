@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting teapot.cpp
+checksource teapot.cpp
+ident teapot.cpp
+teapot.cpp:
+     $Id: teapot.cpp,v 1.2 2019-02-22 15:37:19-08 - - $
+cpplint.py.perl teapot.cpp
+Done processing teapot.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast teapot.cpp -o teapot -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f teapot.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished teapot.cpp

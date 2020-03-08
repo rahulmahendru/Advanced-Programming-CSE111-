@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting bonjour-le-monde.cpp
+checksource bonjour-le-monde.cpp
+ident bonjour-le-monde.cpp
+bonjour-le-monde.cpp:
+     $Id: bonjour-le-monde.cpp,v 1.11 2019-05-15 17:12:35-07 - - $
+cpplint.py.perl bonjour-le-monde.cpp
+Done processing bonjour-le-monde.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast bonjour-le-monde.cpp -o bonjour-le-monde -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f bonjour-le-monde.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished bonjour-le-monde.cpp

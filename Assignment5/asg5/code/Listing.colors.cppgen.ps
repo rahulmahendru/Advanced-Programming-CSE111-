@@ -1,0 +1,3206 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 38 24 574 768
+%%Title: ./Listing.colors.cppgen.ps
+%%For: Wesley Mackey
+%%Creator: GNU Enscript 1.6.6
+%%CreationDate: Wed Feb 19 14:52:01 2020
+%%Orientation: Portrait
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6 6
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6 6
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier-Bold /F-gs-font MF
+/F-gs-font 11 11 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-enscript-mycolor 1.6 6
+%%IncludeResource: font Times-Bold
+%%IncludeResource: font Times-Roman
+
+% Fonts.
+/Times-Bold /HeaderFont-Bold MF
+/HeaderDateF /HeaderFont-Bold findfont 12 scalefont def
+
+/Times-Roman /HeaderFont-Times MF
+/HeaderHDRF /HeaderFont-Times findfont 14 scalefont def
+
+/HeaderPageNumF /Helvetica-Bold findfont 28.8 scalefont def
+/HeaderPageCountF /Helvetica-Bold findfont 18 scalefont def
+
+/do_header {	% print enscript header
+  gsave
+    d_header_x d_header_y translate
+
+    /dhw d_header_w 4 sub def
+
+    /linecolor {0 0 0 setrgbcolor} bind def  % line color
+    /txcolor   {0 0 0 setrgbcolor} bind def  % text color
+    /fncolor   {0 0 0 setrgbcolor} bind def  % filename line color
+
+    .5 setlinewidth
+
+    % line across bottom of the header area
+    linecolor
+    0 0 moveto dhw 0 lineto
+
+    % side boxes
+    /sbw d_header_h 2 mul def	% side box width
+
+    % left side box
+    0 0 sbw d_header_h Box
+    linecolor
+    stroke
+
+    % date/time in left box
+    txcolor
+    HeaderDateF setfont
+    moddatestr dup stringwidth pop sbw exch sub 2 div
+    d_header_h 2 div 2 add moveto show
+    modtimestr dup stringwidth pop sbw exch sub 2 div
+    d_header_h 5 div moveto show
+
+    % right side box
+    dhw sbw sub 0 sbw d_header_h Box
+    linecolor
+    stroke
+
+    % get width of pagecount
+    HeaderPageCountF setfont
+    pagecountstr stringwidth pop
+
+    txcolor
+    HeaderPageNumF setfont
+    pagenumstr stringwidth pop add  % add to width of pagecount
+    sbw exch sub 2 div dhw sbw sub add
+    d_header_h .2 mul moveto
+
+    pagenumstr show
+
+    HeaderPageCountF setfont
+    pagecountstr show
+
+    % filename
+    fncolor
+    HeaderHDRF setfont
+    dhw fname stringwidth pop sub 2 div d_header_h 8 div moveto
+    fname show
+
+    % user supplied header string.
+    user_header_p {
+      /h d_header_h 8 div 5 mul def
+
+      % HACK around a bug in enscript 1.6.0:
+      % for some reason this is getting set to "(null)" and
+      %
+      user_header_center_str (\(null\)) eq {
+        /user_header_center_str () def
+      } if
+
+      % Implement strict enscript compatibility.
+      user_header_center_str () eq user_header_right_str () eq and {
+        dhw user_header_left_str stringwidth pop sub 2 div
+        h moveto user_header_left_str show
+      } {
+        sbw 5 add h moveto user_header_left_str show
+
+        dhw user_header_center_str stringwidth pop sub 2 div
+        h moveto user_header_center_str show
+
+	dhw sbw sub 5 sub user_header_right_str stringwidth pop
+	sub h moveto user_header_right_str show
+      } ifelse
+    } if
+
+  grestore
+} bind def
+%%EndResource
+/d_page_w 536 def
+/d_page_h 744 def
+/d_header_x 0 def
+/d_header_y 708 def
+/d_header_w 536 def
+/d_header_h 36 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 536 def
+/d_footer_h 0 def
+/d_output_w 536 def
+/d_output_h 708 def
+/cols 1 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 1 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (1) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+32.4 694 M (1:) s
+52.2 694 M
+(// Data taken from source file /usr/share/X11/rgb.txt) s
+32.4 682 M (2:) s
+52.2 682 M
+(const unordered_map<string,rgbcolor> color_names = {) s
+32.4 670 M (3:) s
+52.2 670 M
+(   {"alice-blue"            , rgbcolor \(240, 248, 255\)},) s
+32.4 658 M (4:) s
+52.2 658 M
+(   {"AliceBlue"             , rgbcolor \(240, 248, 255\)},) s
+32.4 646 M (5:) s
+52.2 646 M
+(   {"antique-white"         , rgbcolor \(250, 235, 215\)},) s
+32.4 634 M (6:) s
+52.2 634 M
+(   {"AntiqueWhite"          , rgbcolor \(250, 235, 215\)},) s
+32.4 622 M (7:) s
+52.2 622 M
+(   {"AntiqueWhite1"         , rgbcolor \(255, 239, 219\)},) s
+32.4 610 M (8:) s
+52.2 610 M
+(   {"AntiqueWhite2"         , rgbcolor \(238, 223, 204\)},) s
+32.4 598 M (9:) s
+52.2 598 M
+(   {"AntiqueWhite3"         , rgbcolor \(205, 192, 176\)},) s
+25.8 586 M (10:) s
+52.2 586 M
+(   {"AntiqueWhite4"         , rgbcolor \(139, 131, 120\)},) s
+25.8 574 M (11:) s
+52.2 574 M
+(   {"aqua"                  , rgbcolor \(  0, 255, 255\)},) s
+25.8 562 M (12:) s
+52.2 562 M
+(   {"aquamarine"            , rgbcolor \(127, 255, 212\)},) s
+25.8 550 M (13:) s
+52.2 550 M
+(   {"aquamarine1"           , rgbcolor \(127, 255, 212\)},) s
+25.8 538 M (14:) s
+52.2 538 M
+(   {"aquamarine2"           , rgbcolor \(118, 238, 198\)},) s
+25.8 526 M (15:) s
+52.2 526 M
+(   {"aquamarine3"           , rgbcolor \(102, 205, 170\)},) s
+25.8 514 M (16:) s
+52.2 514 M
+(   {"aquamarine4"           , rgbcolor \( 69, 139, 116\)},) s
+25.8 502 M (17:) s
+52.2 502 M
+(   {"azure"                 , rgbcolor \(240, 255, 255\)},) s
+25.8 490 M (18:) s
+52.2 490 M
+(   {"azure1"                , rgbcolor \(240, 255, 255\)},) s
+25.8 478 M (19:) s
+52.2 478 M
+(   {"azure2"                , rgbcolor \(224, 238, 238\)},) s
+25.8 466 M (20:) s
+52.2 466 M
+(   {"azure3"                , rgbcolor \(193, 205, 205\)},) s
+25.8 454 M (21:) s
+52.2 454 M
+(   {"azure4"                , rgbcolor \(131, 139, 139\)},) s
+25.8 442 M (22:) s
+52.2 442 M
+(   {"beige"                 , rgbcolor \(245, 245, 220\)},) s
+25.8 430 M (23:) s
+52.2 430 M
+(   {"bisque"                , rgbcolor \(255, 228, 196\)},) s
+25.8 418 M (24:) s
+52.2 418 M
+(   {"bisque1"               , rgbcolor \(255, 228, 196\)},) s
+25.8 406 M (25:) s
+52.2 406 M
+(   {"bisque2"               , rgbcolor \(238, 213, 183\)},) s
+25.8 394 M (26:) s
+52.2 394 M
+(   {"bisque3"               , rgbcolor \(205, 183, 158\)},) s
+25.8 382 M (27:) s
+52.2 382 M
+(   {"bisque4"               , rgbcolor \(139, 125, 107\)},) s
+25.8 370 M (28:) s
+52.2 370 M
+(   {"black"                 , rgbcolor \(  0,   0,   0\)},) s
+25.8 358 M (29:) s
+52.2 358 M
+(   {"blanched-almond"       , rgbcolor \(255, 235, 205\)},) s
+25.8 346 M (30:) s
+52.2 346 M
+(   {"BlanchedAlmond"        , rgbcolor \(255, 235, 205\)},) s
+25.8 334 M (31:) s
+52.2 334 M
+(   {"blue"                  , rgbcolor \(  0,   0, 255\)},) s
+25.8 322 M (32:) s
+52.2 322 M
+(   {"blue-violet"           , rgbcolor \(138,  43, 226\)},) s
+25.8 310 M (33:) s
+52.2 310 M
+(   {"blue1"                 , rgbcolor \(  0,   0, 255\)},) s
+25.8 298 M (34:) s
+52.2 298 M
+(   {"blue2"                 , rgbcolor \(  0,   0, 238\)},) s
+25.8 286 M (35:) s
+52.2 286 M
+(   {"blue3"                 , rgbcolor \(  0,   0, 205\)},) s
+25.8 274 M (36:) s
+52.2 274 M
+(   {"blue4"                 , rgbcolor \(  0,   0, 139\)},) s
+25.8 262 M (37:) s
+52.2 262 M
+(   {"BlueViolet"            , rgbcolor \(138,  43, 226\)},) s
+25.8 250 M (38:) s
+52.2 250 M
+(   {"brown"                 , rgbcolor \(165,  42,  42\)},) s
+25.8 238 M (39:) s
+52.2 238 M
+(   {"brown1"                , rgbcolor \(255,  64,  64\)},) s
+25.8 226 M (40:) s
+52.2 226 M
+(   {"brown2"                , rgbcolor \(238,  59,  59\)},) s
+25.8 214 M (41:) s
+52.2 214 M
+(   {"brown3"                , rgbcolor \(205,  51,  51\)},) s
+25.8 202 M (42:) s
+52.2 202 M
+(   {"brown4"                , rgbcolor \(139,  35,  35\)},) s
+25.8 190 M (43:) s
+52.2 190 M
+(   {"burlywood"             , rgbcolor \(222, 184, 135\)},) s
+25.8 178 M (44:) s
+52.2 178 M
+(   {"burlywood1"            , rgbcolor \(255, 211, 155\)},) s
+25.8 166 M (45:) s
+52.2 166 M
+(   {"burlywood2"            , rgbcolor \(238, 197, 145\)},) s
+25.8 154 M (46:) s
+52.2 154 M
+(   {"burlywood3"            , rgbcolor \(205, 170, 125\)},) s
+25.8 142 M (47:) s
+52.2 142 M
+(   {"burlywood4"            , rgbcolor \(139, 115,  85\)},) s
+25.8 130 M (48:) s
+52.2 130 M
+(   {"cadet-blue"            , rgbcolor \( 95, 158, 160\)},) s
+25.8 118 M (49:) s
+52.2 118 M
+(   {"CadetBlue"             , rgbcolor \( 95, 158, 160\)},) s
+25.8 106 M (50:) s
+52.2 106 M
+(   {"CadetBlue1"            , rgbcolor \(152, 245, 255\)},) s
+25.8 94 M (51:) s
+52.2 94 M
+(   {"CadetBlue2"            , rgbcolor \(142, 229, 238\)},) s
+25.8 82 M (52:) s
+52.2 82 M
+(   {"CadetBlue3"            , rgbcolor \(122, 197, 205\)},) s
+25.8 70 M (53:) s
+52.2 70 M
+(   {"CadetBlue4"            , rgbcolor \( 83, 134, 139\)},) s
+25.8 58 M (54:) s
+52.2 58 M
+(   {"chartreuse"            , rgbcolor \(127, 255,   0\)},) s
+25.8 46 M (55:) s
+52.2 46 M
+(   {"chartreuse1"           , rgbcolor \(127, 255,   0\)},) s
+25.8 34 M (56:) s
+52.2 34 M
+(   {"chartreuse2"           , rgbcolor \(118, 238,   0\)},) s
+25.8 22 M (57:) s
+52.2 22 M
+(   {"chartreuse3"           , rgbcolor \(102, 205,   0\)},) s
+25.8 10 M (58:) s
+52.2 10 M
+(   {"chartreuse4"           , rgbcolor \( 69, 139,   0\)},) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 2 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (2) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+25.8 694 M (59:) s
+52.2 694 M
+(   {"chocolate"             , rgbcolor \(210, 105,  30\)},) s
+25.8 682 M (60:) s
+52.2 682 M
+(   {"chocolate1"            , rgbcolor \(255, 127,  36\)},) s
+25.8 670 M (61:) s
+52.2 670 M
+(   {"chocolate2"            , rgbcolor \(238, 118,  33\)},) s
+25.8 658 M (62:) s
+52.2 658 M
+(   {"chocolate3"            , rgbcolor \(205, 102,  29\)},) s
+25.8 646 M (63:) s
+52.2 646 M
+(   {"chocolate4"            , rgbcolor \(139,  69,  19\)},) s
+25.8 634 M (64:) s
+52.2 634 M
+(   {"coral"                 , rgbcolor \(255, 127,  80\)},) s
+25.8 622 M (65:) s
+52.2 622 M
+(   {"coral1"                , rgbcolor \(255, 114,  86\)},) s
+25.8 610 M (66:) s
+52.2 610 M
+(   {"coral2"                , rgbcolor \(238, 106,  80\)},) s
+25.8 598 M (67:) s
+52.2 598 M
+(   {"coral3"                , rgbcolor \(205,  91,  69\)},) s
+25.8 586 M (68:) s
+52.2 586 M
+(   {"coral4"                , rgbcolor \(139,  62,  47\)},) s
+25.8 574 M (69:) s
+52.2 574 M
+(   {"cornflower-blue"       , rgbcolor \(100, 149, 237\)},) s
+25.8 562 M (70:) s
+52.2 562 M
+(   {"CornflowerBlue"        , rgbcolor \(100, 149, 237\)},) s
+25.8 550 M (71:) s
+52.2 550 M
+(   {"cornsilk"              , rgbcolor \(255, 248, 220\)},) s
+25.8 538 M (72:) s
+52.2 538 M
+(   {"cornsilk1"             , rgbcolor \(255, 248, 220\)},) s
+25.8 526 M (73:) s
+52.2 526 M
+(   {"cornsilk2"             , rgbcolor \(238, 232, 205\)},) s
+25.8 514 M (74:) s
+52.2 514 M
+(   {"cornsilk3"             , rgbcolor \(205, 200, 177\)},) s
+25.8 502 M (75:) s
+52.2 502 M
+(   {"cornsilk4"             , rgbcolor \(139, 136, 120\)},) s
+25.8 490 M (76:) s
+52.2 490 M
+(   {"crimson"               , rgbcolor \(220,  20,  60\)},) s
+25.8 478 M (77:) s
+52.2 478 M
+(   {"cyan"                  , rgbcolor \(  0, 255, 255\)},) s
+25.8 466 M (78:) s
+52.2 466 M
+(   {"cyan1"                 , rgbcolor \(  0, 255, 255\)},) s
+25.8 454 M (79:) s
+52.2 454 M
+(   {"cyan2"                 , rgbcolor \(  0, 238, 238\)},) s
+25.8 442 M (80:) s
+52.2 442 M
+(   {"cyan3"                 , rgbcolor \(  0, 205, 205\)},) s
+25.8 430 M (81:) s
+52.2 430 M
+(   {"cyan4"                 , rgbcolor \(  0, 139, 139\)},) s
+25.8 418 M (82:) s
+52.2 418 M
+(   {"dark-blue"             , rgbcolor \(  0,   0, 139\)},) s
+25.8 406 M (83:) s
+52.2 406 M
+(   {"dark-cyan"             , rgbcolor \(  0, 139, 139\)},) s
+25.8 394 M (84:) s
+52.2 394 M
+(   {"dark-goldenrod"        , rgbcolor \(184, 134,  11\)},) s
+25.8 382 M (85:) s
+52.2 382 M
+(   {"dark-gray"             , rgbcolor \(169, 169, 169\)},) s
+25.8 370 M (86:) s
+52.2 370 M
+(   {"dark-green"            , rgbcolor \(  0, 100,   0\)},) s
+25.8 358 M (87:) s
+52.2 358 M
+(   {"dark-grey"             , rgbcolor \(169, 169, 169\)},) s
+25.8 346 M (88:) s
+52.2 346 M
+(   {"dark-khaki"            , rgbcolor \(189, 183, 107\)},) s
+25.8 334 M (89:) s
+52.2 334 M
+(   {"dark-magenta"          , rgbcolor \(139,   0, 139\)},) s
+25.8 322 M (90:) s
+52.2 322 M
+(   {"dark-olive-green"      , rgbcolor \( 85, 107,  47\)},) s
+25.8 310 M (91:) s
+52.2 310 M
+(   {"dark-orange"           , rgbcolor \(255, 140,   0\)},) s
+25.8 298 M (92:) s
+52.2 298 M
+(   {"dark-orchid"           , rgbcolor \(153,  50, 204\)},) s
+25.8 286 M (93:) s
+52.2 286 M
+(   {"dark-red"              , rgbcolor \(139,   0,   0\)},) s
+25.8 274 M (94:) s
+52.2 274 M
+(   {"dark-salmon"           , rgbcolor \(233, 150, 122\)},) s
+25.8 262 M (95:) s
+52.2 262 M
+(   {"dark-sea-green"        , rgbcolor \(143, 188, 143\)},) s
+25.8 250 M (96:) s
+52.2 250 M
+(   {"dark-slate-blue"       , rgbcolor \( 72,  61, 139\)},) s
+25.8 238 M (97:) s
+52.2 238 M
+(   {"dark-slate-gray"       , rgbcolor \( 47,  79,  79\)},) s
+25.8 226 M (98:) s
+52.2 226 M
+(   {"dark-slate-grey"       , rgbcolor \( 47,  79,  79\)},) s
+25.8 214 M (99:) s
+52.2 214 M
+(   {"dark-turquoise"        , rgbcolor \(  0, 206, 209\)},) s
+19.2 202 M (100:) s
+52.2 202 M
+(   {"dark-violet"           , rgbcolor \(148,   0, 211\)},) s
+19.2 190 M (101:) s
+52.2 190 M
+(   {"DarkBlue"              , rgbcolor \(  0,   0, 139\)},) s
+19.2 178 M (102:) s
+52.2 178 M
+(   {"DarkCyan"              , rgbcolor \(  0, 139, 139\)},) s
+19.2 166 M (103:) s
+52.2 166 M
+(   {"DarkGoldenrod"         , rgbcolor \(184, 134,  11\)},) s
+19.2 154 M (104:) s
+52.2 154 M
+(   {"DarkGoldenrod1"        , rgbcolor \(255, 185,  15\)},) s
+19.2 142 M (105:) s
+52.2 142 M
+(   {"DarkGoldenrod2"        , rgbcolor \(238, 173,  14\)},) s
+19.2 130 M (106:) s
+52.2 130 M
+(   {"DarkGoldenrod3"        , rgbcolor \(205, 149,  12\)},) s
+19.2 118 M (107:) s
+52.2 118 M
+(   {"DarkGoldenrod4"        , rgbcolor \(139, 101,   8\)},) s
+19.2 106 M (108:) s
+52.2 106 M
+(   {"DarkGray"              , rgbcolor \(169, 169, 169\)},) s
+19.2 94 M (109:) s
+52.2 94 M
+(   {"DarkGreen"             , rgbcolor \(  0, 100,   0\)},) s
+19.2 82 M (110:) s
+52.2 82 M
+(   {"DarkGrey"              , rgbcolor \(169, 169, 169\)},) s
+19.2 70 M (111:) s
+52.2 70 M
+(   {"DarkKhaki"             , rgbcolor \(189, 183, 107\)},) s
+19.2 58 M (112:) s
+52.2 58 M
+(   {"DarkMagenta"           , rgbcolor \(139,   0, 139\)},) s
+19.2 46 M (113:) s
+52.2 46 M
+(   {"DarkOliveGreen"        , rgbcolor \( 85, 107,  47\)},) s
+19.2 34 M (114:) s
+52.2 34 M
+(   {"DarkOliveGreen1"       , rgbcolor \(202, 255, 112\)},) s
+19.2 22 M (115:) s
+52.2 22 M
+(   {"DarkOliveGreen2"       , rgbcolor \(188, 238, 104\)},) s
+19.2 10 M (116:) s
+52.2 10 M
+(   {"DarkOliveGreen3"       , rgbcolor \(162, 205,  90\)},) s
+_R
+S
+%%Page: (3) 3
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 3 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (3) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (117:) s
+52.2 694 M
+(   {"DarkOliveGreen4"       , rgbcolor \(110, 139,  61\)},) s
+19.2 682 M (118:) s
+52.2 682 M
+(   {"DarkOrange"            , rgbcolor \(255, 140,   0\)},) s
+19.2 670 M (119:) s
+52.2 670 M
+(   {"DarkOrange1"           , rgbcolor \(255, 127,   0\)},) s
+19.2 658 M (120:) s
+52.2 658 M
+(   {"DarkOrange2"           , rgbcolor \(238, 118,   0\)},) s
+19.2 646 M (121:) s
+52.2 646 M
+(   {"DarkOrange3"           , rgbcolor \(205, 102,   0\)},) s
+19.2 634 M (122:) s
+52.2 634 M
+(   {"DarkOrange4"           , rgbcolor \(139,  69,   0\)},) s
+19.2 622 M (123:) s
+52.2 622 M
+(   {"DarkOrchid"            , rgbcolor \(153,  50, 204\)},) s
+19.2 610 M (124:) s
+52.2 610 M
+(   {"DarkOrchid1"           , rgbcolor \(191,  62, 255\)},) s
+19.2 598 M (125:) s
+52.2 598 M
+(   {"DarkOrchid2"           , rgbcolor \(178,  58, 238\)},) s
+19.2 586 M (126:) s
+52.2 586 M
+(   {"DarkOrchid3"           , rgbcolor \(154,  50, 205\)},) s
+19.2 574 M (127:) s
+52.2 574 M
+(   {"DarkOrchid4"           , rgbcolor \(104,  34, 139\)},) s
+19.2 562 M (128:) s
+52.2 562 M
+(   {"DarkRed"               , rgbcolor \(139,   0,   0\)},) s
+19.2 550 M (129:) s
+52.2 550 M
+(   {"DarkSalmon"            , rgbcolor \(233, 150, 122\)},) s
+19.2 538 M (130:) s
+52.2 538 M
+(   {"DarkSeaGreen"          , rgbcolor \(143, 188, 143\)},) s
+19.2 526 M (131:) s
+52.2 526 M
+(   {"DarkSeaGreen1"         , rgbcolor \(193, 255, 193\)},) s
+19.2 514 M (132:) s
+52.2 514 M
+(   {"DarkSeaGreen2"         , rgbcolor \(180, 238, 180\)},) s
+19.2 502 M (133:) s
+52.2 502 M
+(   {"DarkSeaGreen3"         , rgbcolor \(155, 205, 155\)},) s
+19.2 490 M (134:) s
+52.2 490 M
+(   {"DarkSeaGreen4"         , rgbcolor \(105, 139, 105\)},) s
+19.2 478 M (135:) s
+52.2 478 M
+(   {"DarkSlateBlue"         , rgbcolor \( 72,  61, 139\)},) s
+19.2 466 M (136:) s
+52.2 466 M
+(   {"DarkSlateGray"         , rgbcolor \( 47,  79,  79\)},) s
+19.2 454 M (137:) s
+52.2 454 M
+(   {"DarkSlateGray1"        , rgbcolor \(151, 255, 255\)},) s
+19.2 442 M (138:) s
+52.2 442 M
+(   {"DarkSlateGray2"        , rgbcolor \(141, 238, 238\)},) s
+19.2 430 M (139:) s
+52.2 430 M
+(   {"DarkSlateGray3"        , rgbcolor \(121, 205, 205\)},) s
+19.2 418 M (140:) s
+52.2 418 M
+(   {"DarkSlateGray4"        , rgbcolor \( 82, 139, 139\)},) s
+19.2 406 M (141:) s
+52.2 406 M
+(   {"DarkSlateGrey"         , rgbcolor \( 47,  79,  79\)},) s
+19.2 394 M (142:) s
+52.2 394 M
+(   {"DarkTurquoise"         , rgbcolor \(  0, 206, 209\)},) s
+19.2 382 M (143:) s
+52.2 382 M
+(   {"DarkViolet"            , rgbcolor \(148,   0, 211\)},) s
+19.2 370 M (144:) s
+52.2 370 M
+(   {"deep-pink"             , rgbcolor \(255,  20, 147\)},) s
+19.2 358 M (145:) s
+52.2 358 M
+(   {"deep-sky-blue"         , rgbcolor \(  0, 191, 255\)},) s
+19.2 346 M (146:) s
+52.2 346 M
+(   {"DeepPink"              , rgbcolor \(255,  20, 147\)},) s
+19.2 334 M (147:) s
+52.2 334 M
+(   {"DeepPink1"             , rgbcolor \(255,  20, 147\)},) s
+19.2 322 M (148:) s
+52.2 322 M
+(   {"DeepPink2"             , rgbcolor \(238,  18, 137\)},) s
+19.2 310 M (149:) s
+52.2 310 M
+(   {"DeepPink3"             , rgbcolor \(205,  16, 118\)},) s
+19.2 298 M (150:) s
+52.2 298 M
+(   {"DeepPink4"             , rgbcolor \(139,  10,  80\)},) s
+19.2 286 M (151:) s
+52.2 286 M
+(   {"DeepSkyBlue"           , rgbcolor \(  0, 191, 255\)},) s
+19.2 274 M (152:) s
+52.2 274 M
+(   {"DeepSkyBlue1"          , rgbcolor \(  0, 191, 255\)},) s
+19.2 262 M (153:) s
+52.2 262 M
+(   {"DeepSkyBlue2"          , rgbcolor \(  0, 178, 238\)},) s
+19.2 250 M (154:) s
+52.2 250 M
+(   {"DeepSkyBlue3"          , rgbcolor \(  0, 154, 205\)},) s
+19.2 238 M (155:) s
+52.2 238 M
+(   {"DeepSkyBlue4"          , rgbcolor \(  0, 104, 139\)},) s
+19.2 226 M (156:) s
+52.2 226 M
+(   {"dim-gray"              , rgbcolor \(105, 105, 105\)},) s
+19.2 214 M (157:) s
+52.2 214 M
+(   {"dim-grey"              , rgbcolor \(105, 105, 105\)},) s
+19.2 202 M (158:) s
+52.2 202 M
+(   {"DimGray"               , rgbcolor \(105, 105, 105\)},) s
+19.2 190 M (159:) s
+52.2 190 M
+(   {"DimGrey"               , rgbcolor \(105, 105, 105\)},) s
+19.2 178 M (160:) s
+52.2 178 M
+(   {"dodger-blue"           , rgbcolor \( 30, 144, 255\)},) s
+19.2 166 M (161:) s
+52.2 166 M
+(   {"DodgerBlue"            , rgbcolor \( 30, 144, 255\)},) s
+19.2 154 M (162:) s
+52.2 154 M
+(   {"DodgerBlue1"           , rgbcolor \( 30, 144, 255\)},) s
+19.2 142 M (163:) s
+52.2 142 M
+(   {"DodgerBlue2"           , rgbcolor \( 28, 134, 238\)},) s
+19.2 130 M (164:) s
+52.2 130 M
+(   {"DodgerBlue3"           , rgbcolor \( 24, 116, 205\)},) s
+19.2 118 M (165:) s
+52.2 118 M
+(   {"DodgerBlue4"           , rgbcolor \( 16,  78, 139\)},) s
+19.2 106 M (166:) s
+52.2 106 M
+(   {"firebrick"             , rgbcolor \(178,  34,  34\)},) s
+19.2 94 M (167:) s
+52.2 94 M
+(   {"firebrick1"            , rgbcolor \(255,  48,  48\)},) s
+19.2 82 M (168:) s
+52.2 82 M
+(   {"firebrick2"            , rgbcolor \(238,  44,  44\)},) s
+19.2 70 M (169:) s
+52.2 70 M
+(   {"firebrick3"            , rgbcolor \(205,  38,  38\)},) s
+19.2 58 M (170:) s
+52.2 58 M
+(   {"firebrick4"            , rgbcolor \(139,  26,  26\)},) s
+19.2 46 M (171:) s
+52.2 46 M
+(   {"floral-white"          , rgbcolor \(255, 250, 240\)},) s
+19.2 34 M (172:) s
+52.2 34 M
+(   {"FloralWhite"           , rgbcolor \(255, 250, 240\)},) s
+19.2 22 M (173:) s
+52.2 22 M
+(   {"forest-green"          , rgbcolor \( 34, 139,  34\)},) s
+19.2 10 M (174:) s
+52.2 10 M
+(   {"ForestGreen"           , rgbcolor \( 34, 139,  34\)},) s
+_R
+S
+%%Page: (4) 4
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 4 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (4) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (175:) s
+52.2 694 M
+(   {"fuchsia"               , rgbcolor \(255,   0, 255\)},) s
+19.2 682 M (176:) s
+52.2 682 M
+(   {"gainsboro"             , rgbcolor \(220, 220, 220\)},) s
+19.2 670 M (177:) s
+52.2 670 M
+(   {"ghost-white"           , rgbcolor \(248, 248, 255\)},) s
+19.2 658 M (178:) s
+52.2 658 M
+(   {"GhostWhite"            , rgbcolor \(248, 248, 255\)},) s
+19.2 646 M (179:) s
+52.2 646 M
+(   {"gold"                  , rgbcolor \(255, 215,   0\)},) s
+19.2 634 M (180:) s
+52.2 634 M
+(   {"gold1"                 , rgbcolor \(255, 215,   0\)},) s
+19.2 622 M (181:) s
+52.2 622 M
+(   {"gold2"                 , rgbcolor \(238, 201,   0\)},) s
+19.2 610 M (182:) s
+52.2 610 M
+(   {"gold3"                 , rgbcolor \(205, 173,   0\)},) s
+19.2 598 M (183:) s
+52.2 598 M
+(   {"gold4"                 , rgbcolor \(139, 117,   0\)},) s
+19.2 586 M (184:) s
+52.2 586 M
+(   {"goldenrod"             , rgbcolor \(218, 165,  32\)},) s
+19.2 574 M (185:) s
+52.2 574 M
+(   {"goldenrod1"            , rgbcolor \(255, 193,  37\)},) s
+19.2 562 M (186:) s
+52.2 562 M
+(   {"goldenrod2"            , rgbcolor \(238, 180,  34\)},) s
+19.2 550 M (187:) s
+52.2 550 M
+(   {"goldenrod3"            , rgbcolor \(205, 155,  29\)},) s
+19.2 538 M (188:) s
+52.2 538 M
+(   {"goldenrod4"            , rgbcolor \(139, 105,  20\)},) s
+19.2 526 M (189:) s
+52.2 526 M
+(   {"gray"                  , rgbcolor \(190, 190, 190\)},) s
+19.2 514 M (190:) s
+52.2 514 M
+(   {"gray0"                 , rgbcolor \(  0,   0,   0\)},) s
+19.2 502 M (191:) s
+52.2 502 M
+(   {"gray1"                 , rgbcolor \(  3,   3,   3\)},) s
+19.2 490 M (192:) s
+52.2 490 M
+(   {"gray10"                , rgbcolor \( 26,  26,  26\)},) s
+19.2 478 M (193:) s
+52.2 478 M
+(   {"gray100"               , rgbcolor \(255, 255, 255\)},) s
+19.2 466 M (194:) s
+52.2 466 M
+(   {"gray11"                , rgbcolor \( 28,  28,  28\)},) s
+19.2 454 M (195:) s
+52.2 454 M
+(   {"gray12"                , rgbcolor \( 31,  31,  31\)},) s
+19.2 442 M (196:) s
+52.2 442 M
+(   {"gray13"                , rgbcolor \( 33,  33,  33\)},) s
+19.2 430 M (197:) s
+52.2 430 M
+(   {"gray14"                , rgbcolor \( 36,  36,  36\)},) s
+19.2 418 M (198:) s
+52.2 418 M
+(   {"gray15"                , rgbcolor \( 38,  38,  38\)},) s
+19.2 406 M (199:) s
+52.2 406 M
+(   {"gray16"                , rgbcolor \( 41,  41,  41\)},) s
+19.2 394 M (200:) s
+52.2 394 M
+(   {"gray17"                , rgbcolor \( 43,  43,  43\)},) s
+19.2 382 M (201:) s
+52.2 382 M
+(   {"gray18"                , rgbcolor \( 46,  46,  46\)},) s
+19.2 370 M (202:) s
+52.2 370 M
+(   {"gray19"                , rgbcolor \( 48,  48,  48\)},) s
+19.2 358 M (203:) s
+52.2 358 M
+(   {"gray2"                 , rgbcolor \(  5,   5,   5\)},) s
+19.2 346 M (204:) s
+52.2 346 M
+(   {"gray20"                , rgbcolor \( 51,  51,  51\)},) s
+19.2 334 M (205:) s
+52.2 334 M
+(   {"gray21"                , rgbcolor \( 54,  54,  54\)},) s
+19.2 322 M (206:) s
+52.2 322 M
+(   {"gray22"                , rgbcolor \( 56,  56,  56\)},) s
+19.2 310 M (207:) s
+52.2 310 M
+(   {"gray23"                , rgbcolor \( 59,  59,  59\)},) s
+19.2 298 M (208:) s
+52.2 298 M
+(   {"gray24"                , rgbcolor \( 61,  61,  61\)},) s
+19.2 286 M (209:) s
+52.2 286 M
+(   {"gray25"                , rgbcolor \( 64,  64,  64\)},) s
+19.2 274 M (210:) s
+52.2 274 M
+(   {"gray26"                , rgbcolor \( 66,  66,  66\)},) s
+19.2 262 M (211:) s
+52.2 262 M
+(   {"gray27"                , rgbcolor \( 69,  69,  69\)},) s
+19.2 250 M (212:) s
+52.2 250 M
+(   {"gray28"                , rgbcolor \( 71,  71,  71\)},) s
+19.2 238 M (213:) s
+52.2 238 M
+(   {"gray29"                , rgbcolor \( 74,  74,  74\)},) s
+19.2 226 M (214:) s
+52.2 226 M
+(   {"gray3"                 , rgbcolor \(  8,   8,   8\)},) s
+19.2 214 M (215:) s
+52.2 214 M
+(   {"gray30"                , rgbcolor \( 77,  77,  77\)},) s
+19.2 202 M (216:) s
+52.2 202 M
+(   {"gray31"                , rgbcolor \( 79,  79,  79\)},) s
+19.2 190 M (217:) s
+52.2 190 M
+(   {"gray32"                , rgbcolor \( 82,  82,  82\)},) s
+19.2 178 M (218:) s
+52.2 178 M
+(   {"gray33"                , rgbcolor \( 84,  84,  84\)},) s
+19.2 166 M (219:) s
+52.2 166 M
+(   {"gray34"                , rgbcolor \( 87,  87,  87\)},) s
+19.2 154 M (220:) s
+52.2 154 M
+(   {"gray35"                , rgbcolor \( 89,  89,  89\)},) s
+19.2 142 M (221:) s
+52.2 142 M
+(   {"gray36"                , rgbcolor \( 92,  92,  92\)},) s
+19.2 130 M (222:) s
+52.2 130 M
+(   {"gray37"                , rgbcolor \( 94,  94,  94\)},) s
+19.2 118 M (223:) s
+52.2 118 M
+(   {"gray38"                , rgbcolor \( 97,  97,  97\)},) s
+19.2 106 M (224:) s
+52.2 106 M
+(   {"gray39"                , rgbcolor \( 99,  99,  99\)},) s
+19.2 94 M (225:) s
+52.2 94 M
+(   {"gray4"                 , rgbcolor \( 10,  10,  10\)},) s
+19.2 82 M (226:) s
+52.2 82 M
+(   {"gray40"                , rgbcolor \(102, 102, 102\)},) s
+19.2 70 M (227:) s
+52.2 70 M
+(   {"gray41"                , rgbcolor \(105, 105, 105\)},) s
+19.2 58 M (228:) s
+52.2 58 M
+(   {"gray42"                , rgbcolor \(107, 107, 107\)},) s
+19.2 46 M (229:) s
+52.2 46 M
+(   {"gray43"                , rgbcolor \(110, 110, 110\)},) s
+19.2 34 M (230:) s
+52.2 34 M
+(   {"gray44"                , rgbcolor \(112, 112, 112\)},) s
+19.2 22 M (231:) s
+52.2 22 M
+(   {"gray45"                , rgbcolor \(115, 115, 115\)},) s
+19.2 10 M (232:) s
+52.2 10 M
+(   {"gray46"                , rgbcolor \(117, 117, 117\)},) s
+_R
+S
+%%Page: (5) 5
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 5 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (5) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (233:) s
+52.2 694 M
+(   {"gray47"                , rgbcolor \(120, 120, 120\)},) s
+19.2 682 M (234:) s
+52.2 682 M
+(   {"gray48"                , rgbcolor \(122, 122, 122\)},) s
+19.2 670 M (235:) s
+52.2 670 M
+(   {"gray49"                , rgbcolor \(125, 125, 125\)},) s
+19.2 658 M (236:) s
+52.2 658 M
+(   {"gray5"                 , rgbcolor \( 13,  13,  13\)},) s
+19.2 646 M (237:) s
+52.2 646 M
+(   {"gray50"                , rgbcolor \(127, 127, 127\)},) s
+19.2 634 M (238:) s
+52.2 634 M
+(   {"gray51"                , rgbcolor \(130, 130, 130\)},) s
+19.2 622 M (239:) s
+52.2 622 M
+(   {"gray52"                , rgbcolor \(133, 133, 133\)},) s
+19.2 610 M (240:) s
+52.2 610 M
+(   {"gray53"                , rgbcolor \(135, 135, 135\)},) s
+19.2 598 M (241:) s
+52.2 598 M
+(   {"gray54"                , rgbcolor \(138, 138, 138\)},) s
+19.2 586 M (242:) s
+52.2 586 M
+(   {"gray55"                , rgbcolor \(140, 140, 140\)},) s
+19.2 574 M (243:) s
+52.2 574 M
+(   {"gray56"                , rgbcolor \(143, 143, 143\)},) s
+19.2 562 M (244:) s
+52.2 562 M
+(   {"gray57"                , rgbcolor \(145, 145, 145\)},) s
+19.2 550 M (245:) s
+52.2 550 M
+(   {"gray58"                , rgbcolor \(148, 148, 148\)},) s
+19.2 538 M (246:) s
+52.2 538 M
+(   {"gray59"                , rgbcolor \(150, 150, 150\)},) s
+19.2 526 M (247:) s
+52.2 526 M
+(   {"gray6"                 , rgbcolor \( 15,  15,  15\)},) s
+19.2 514 M (248:) s
+52.2 514 M
+(   {"gray60"                , rgbcolor \(153, 153, 153\)},) s
+19.2 502 M (249:) s
+52.2 502 M
+(   {"gray61"                , rgbcolor \(156, 156, 156\)},) s
+19.2 490 M (250:) s
+52.2 490 M
+(   {"gray62"                , rgbcolor \(158, 158, 158\)},) s
+19.2 478 M (251:) s
+52.2 478 M
+(   {"gray63"                , rgbcolor \(161, 161, 161\)},) s
+19.2 466 M (252:) s
+52.2 466 M
+(   {"gray64"                , rgbcolor \(163, 163, 163\)},) s
+19.2 454 M (253:) s
+52.2 454 M
+(   {"gray65"                , rgbcolor \(166, 166, 166\)},) s
+19.2 442 M (254:) s
+52.2 442 M
+(   {"gray66"                , rgbcolor \(168, 168, 168\)},) s
+19.2 430 M (255:) s
+52.2 430 M
+(   {"gray67"                , rgbcolor \(171, 171, 171\)},) s
+19.2 418 M (256:) s
+52.2 418 M
+(   {"gray68"                , rgbcolor \(173, 173, 173\)},) s
+19.2 406 M (257:) s
+52.2 406 M
+(   {"gray69"                , rgbcolor \(176, 176, 176\)},) s
+19.2 394 M (258:) s
+52.2 394 M
+(   {"gray7"                 , rgbcolor \( 18,  18,  18\)},) s
+19.2 382 M (259:) s
+52.2 382 M
+(   {"gray70"                , rgbcolor \(179, 179, 179\)},) s
+19.2 370 M (260:) s
+52.2 370 M
+(   {"gray71"                , rgbcolor \(181, 181, 181\)},) s
+19.2 358 M (261:) s
+52.2 358 M
+(   {"gray72"                , rgbcolor \(184, 184, 184\)},) s
+19.2 346 M (262:) s
+52.2 346 M
+(   {"gray73"                , rgbcolor \(186, 186, 186\)},) s
+19.2 334 M (263:) s
+52.2 334 M
+(   {"gray74"                , rgbcolor \(189, 189, 189\)},) s
+19.2 322 M (264:) s
+52.2 322 M
+(   {"gray75"                , rgbcolor \(191, 191, 191\)},) s
+19.2 310 M (265:) s
+52.2 310 M
+(   {"gray76"                , rgbcolor \(194, 194, 194\)},) s
+19.2 298 M (266:) s
+52.2 298 M
+(   {"gray77"                , rgbcolor \(196, 196, 196\)},) s
+19.2 286 M (267:) s
+52.2 286 M
+(   {"gray78"                , rgbcolor \(199, 199, 199\)},) s
+19.2 274 M (268:) s
+52.2 274 M
+(   {"gray79"                , rgbcolor \(201, 201, 201\)},) s
+19.2 262 M (269:) s
+52.2 262 M
+(   {"gray8"                 , rgbcolor \( 20,  20,  20\)},) s
+19.2 250 M (270:) s
+52.2 250 M
+(   {"gray80"                , rgbcolor \(204, 204, 204\)},) s
+19.2 238 M (271:) s
+52.2 238 M
+(   {"gray81"                , rgbcolor \(207, 207, 207\)},) s
+19.2 226 M (272:) s
+52.2 226 M
+(   {"gray82"                , rgbcolor \(209, 209, 209\)},) s
+19.2 214 M (273:) s
+52.2 214 M
+(   {"gray83"                , rgbcolor \(212, 212, 212\)},) s
+19.2 202 M (274:) s
+52.2 202 M
+(   {"gray84"                , rgbcolor \(214, 214, 214\)},) s
+19.2 190 M (275:) s
+52.2 190 M
+(   {"gray85"                , rgbcolor \(217, 217, 217\)},) s
+19.2 178 M (276:) s
+52.2 178 M
+(   {"gray86"                , rgbcolor \(219, 219, 219\)},) s
+19.2 166 M (277:) s
+52.2 166 M
+(   {"gray87"                , rgbcolor \(222, 222, 222\)},) s
+19.2 154 M (278:) s
+52.2 154 M
+(   {"gray88"                , rgbcolor \(224, 224, 224\)},) s
+19.2 142 M (279:) s
+52.2 142 M
+(   {"gray89"                , rgbcolor \(227, 227, 227\)},) s
+19.2 130 M (280:) s
+52.2 130 M
+(   {"gray9"                 , rgbcolor \( 23,  23,  23\)},) s
+19.2 118 M (281:) s
+52.2 118 M
+(   {"gray90"                , rgbcolor \(229, 229, 229\)},) s
+19.2 106 M (282:) s
+52.2 106 M
+(   {"gray91"                , rgbcolor \(232, 232, 232\)},) s
+19.2 94 M (283:) s
+52.2 94 M
+(   {"gray92"                , rgbcolor \(235, 235, 235\)},) s
+19.2 82 M (284:) s
+52.2 82 M
+(   {"gray93"                , rgbcolor \(237, 237, 237\)},) s
+19.2 70 M (285:) s
+52.2 70 M
+(   {"gray94"                , rgbcolor \(240, 240, 240\)},) s
+19.2 58 M (286:) s
+52.2 58 M
+(   {"gray95"                , rgbcolor \(242, 242, 242\)},) s
+19.2 46 M (287:) s
+52.2 46 M
+(   {"gray96"                , rgbcolor \(245, 245, 245\)},) s
+19.2 34 M (288:) s
+52.2 34 M
+(   {"gray97"                , rgbcolor \(247, 247, 247\)},) s
+19.2 22 M (289:) s
+52.2 22 M
+(   {"gray98"                , rgbcolor \(250, 250, 250\)},) s
+19.2 10 M (290:) s
+52.2 10 M
+(   {"gray99"                , rgbcolor \(252, 252, 252\)},) s
+_R
+S
+%%Page: (6) 6
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 6 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (6) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (291:) s
+52.2 694 M
+(   {"green"                 , rgbcolor \(  0, 255,   0\)},) s
+19.2 682 M (292:) s
+52.2 682 M
+(   {"green-yellow"          , rgbcolor \(173, 255,  47\)},) s
+19.2 670 M (293:) s
+52.2 670 M
+(   {"green1"                , rgbcolor \(  0, 255,   0\)},) s
+19.2 658 M (294:) s
+52.2 658 M
+(   {"green2"                , rgbcolor \(  0, 238,   0\)},) s
+19.2 646 M (295:) s
+52.2 646 M
+(   {"green3"                , rgbcolor \(  0, 205,   0\)},) s
+19.2 634 M (296:) s
+52.2 634 M
+(   {"green4"                , rgbcolor \(  0, 139,   0\)},) s
+19.2 622 M (297:) s
+52.2 622 M
+(   {"GreenYellow"           , rgbcolor \(173, 255,  47\)},) s
+19.2 610 M (298:) s
+52.2 610 M
+(   {"grey"                  , rgbcolor \(190, 190, 190\)},) s
+19.2 598 M (299:) s
+52.2 598 M
+(   {"grey0"                 , rgbcolor \(  0,   0,   0\)},) s
+19.2 586 M (300:) s
+52.2 586 M
+(   {"grey1"                 , rgbcolor \(  3,   3,   3\)},) s
+19.2 574 M (301:) s
+52.2 574 M
+(   {"grey10"                , rgbcolor \( 26,  26,  26\)},) s
+19.2 562 M (302:) s
+52.2 562 M
+(   {"grey100"               , rgbcolor \(255, 255, 255\)},) s
+19.2 550 M (303:) s
+52.2 550 M
+(   {"grey11"                , rgbcolor \( 28,  28,  28\)},) s
+19.2 538 M (304:) s
+52.2 538 M
+(   {"grey12"                , rgbcolor \( 31,  31,  31\)},) s
+19.2 526 M (305:) s
+52.2 526 M
+(   {"grey13"                , rgbcolor \( 33,  33,  33\)},) s
+19.2 514 M (306:) s
+52.2 514 M
+(   {"grey14"                , rgbcolor \( 36,  36,  36\)},) s
+19.2 502 M (307:) s
+52.2 502 M
+(   {"grey15"                , rgbcolor \( 38,  38,  38\)},) s
+19.2 490 M (308:) s
+52.2 490 M
+(   {"grey16"                , rgbcolor \( 41,  41,  41\)},) s
+19.2 478 M (309:) s
+52.2 478 M
+(   {"grey17"                , rgbcolor \( 43,  43,  43\)},) s
+19.2 466 M (310:) s
+52.2 466 M
+(   {"grey18"                , rgbcolor \( 46,  46,  46\)},) s
+19.2 454 M (311:) s
+52.2 454 M
+(   {"grey19"                , rgbcolor \( 48,  48,  48\)},) s
+19.2 442 M (312:) s
+52.2 442 M
+(   {"grey2"                 , rgbcolor \(  5,   5,   5\)},) s
+19.2 430 M (313:) s
+52.2 430 M
+(   {"grey20"                , rgbcolor \( 51,  51,  51\)},) s
+19.2 418 M (314:) s
+52.2 418 M
+(   {"grey21"                , rgbcolor \( 54,  54,  54\)},) s
+19.2 406 M (315:) s
+52.2 406 M
+(   {"grey22"                , rgbcolor \( 56,  56,  56\)},) s
+19.2 394 M (316:) s
+52.2 394 M
+(   {"grey23"                , rgbcolor \( 59,  59,  59\)},) s
+19.2 382 M (317:) s
+52.2 382 M
+(   {"grey24"                , rgbcolor \( 61,  61,  61\)},) s
+19.2 370 M (318:) s
+52.2 370 M
+(   {"grey25"                , rgbcolor \( 64,  64,  64\)},) s
+19.2 358 M (319:) s
+52.2 358 M
+(   {"grey26"                , rgbcolor \( 66,  66,  66\)},) s
+19.2 346 M (320:) s
+52.2 346 M
+(   {"grey27"                , rgbcolor \( 69,  69,  69\)},) s
+19.2 334 M (321:) s
+52.2 334 M
+(   {"grey28"                , rgbcolor \( 71,  71,  71\)},) s
+19.2 322 M (322:) s
+52.2 322 M
+(   {"grey29"                , rgbcolor \( 74,  74,  74\)},) s
+19.2 310 M (323:) s
+52.2 310 M
+(   {"grey3"                 , rgbcolor \(  8,   8,   8\)},) s
+19.2 298 M (324:) s
+52.2 298 M
+(   {"grey30"                , rgbcolor \( 77,  77,  77\)},) s
+19.2 286 M (325:) s
+52.2 286 M
+(   {"grey31"                , rgbcolor \( 79,  79,  79\)},) s
+19.2 274 M (326:) s
+52.2 274 M
+(   {"grey32"                , rgbcolor \( 82,  82,  82\)},) s
+19.2 262 M (327:) s
+52.2 262 M
+(   {"grey33"                , rgbcolor \( 84,  84,  84\)},) s
+19.2 250 M (328:) s
+52.2 250 M
+(   {"grey34"                , rgbcolor \( 87,  87,  87\)},) s
+19.2 238 M (329:) s
+52.2 238 M
+(   {"grey35"                , rgbcolor \( 89,  89,  89\)},) s
+19.2 226 M (330:) s
+52.2 226 M
+(   {"grey36"                , rgbcolor \( 92,  92,  92\)},) s
+19.2 214 M (331:) s
+52.2 214 M
+(   {"grey37"                , rgbcolor \( 94,  94,  94\)},) s
+19.2 202 M (332:) s
+52.2 202 M
+(   {"grey38"                , rgbcolor \( 97,  97,  97\)},) s
+19.2 190 M (333:) s
+52.2 190 M
+(   {"grey39"                , rgbcolor \( 99,  99,  99\)},) s
+19.2 178 M (334:) s
+52.2 178 M
+(   {"grey4"                 , rgbcolor \( 10,  10,  10\)},) s
+19.2 166 M (335:) s
+52.2 166 M
+(   {"grey40"                , rgbcolor \(102, 102, 102\)},) s
+19.2 154 M (336:) s
+52.2 154 M
+(   {"grey41"                , rgbcolor \(105, 105, 105\)},) s
+19.2 142 M (337:) s
+52.2 142 M
+(   {"grey42"                , rgbcolor \(107, 107, 107\)},) s
+19.2 130 M (338:) s
+52.2 130 M
+(   {"grey43"                , rgbcolor \(110, 110, 110\)},) s
+19.2 118 M (339:) s
+52.2 118 M
+(   {"grey44"                , rgbcolor \(112, 112, 112\)},) s
+19.2 106 M (340:) s
+52.2 106 M
+(   {"grey45"                , rgbcolor \(115, 115, 115\)},) s
+19.2 94 M (341:) s
+52.2 94 M
+(   {"grey46"                , rgbcolor \(117, 117, 117\)},) s
+19.2 82 M (342:) s
+52.2 82 M
+(   {"grey47"                , rgbcolor \(120, 120, 120\)},) s
+19.2 70 M (343:) s
+52.2 70 M
+(   {"grey48"                , rgbcolor \(122, 122, 122\)},) s
+19.2 58 M (344:) s
+52.2 58 M
+(   {"grey49"                , rgbcolor \(125, 125, 125\)},) s
+19.2 46 M (345:) s
+52.2 46 M
+(   {"grey5"                 , rgbcolor \( 13,  13,  13\)},) s
+19.2 34 M (346:) s
+52.2 34 M
+(   {"grey50"                , rgbcolor \(127, 127, 127\)},) s
+19.2 22 M (347:) s
+52.2 22 M
+(   {"grey51"                , rgbcolor \(130, 130, 130\)},) s
+19.2 10 M (348:) s
+52.2 10 M
+(   {"grey52"                , rgbcolor \(133, 133, 133\)},) s
+_R
+S
+%%Page: (7) 7
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 7 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (7) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (349:) s
+52.2 694 M
+(   {"grey53"                , rgbcolor \(135, 135, 135\)},) s
+19.2 682 M (350:) s
+52.2 682 M
+(   {"grey54"                , rgbcolor \(138, 138, 138\)},) s
+19.2 670 M (351:) s
+52.2 670 M
+(   {"grey55"                , rgbcolor \(140, 140, 140\)},) s
+19.2 658 M (352:) s
+52.2 658 M
+(   {"grey56"                , rgbcolor \(143, 143, 143\)},) s
+19.2 646 M (353:) s
+52.2 646 M
+(   {"grey57"                , rgbcolor \(145, 145, 145\)},) s
+19.2 634 M (354:) s
+52.2 634 M
+(   {"grey58"                , rgbcolor \(148, 148, 148\)},) s
+19.2 622 M (355:) s
+52.2 622 M
+(   {"grey59"                , rgbcolor \(150, 150, 150\)},) s
+19.2 610 M (356:) s
+52.2 610 M
+(   {"grey6"                 , rgbcolor \( 15,  15,  15\)},) s
+19.2 598 M (357:) s
+52.2 598 M
+(   {"grey60"                , rgbcolor \(153, 153, 153\)},) s
+19.2 586 M (358:) s
+52.2 586 M
+(   {"grey61"                , rgbcolor \(156, 156, 156\)},) s
+19.2 574 M (359:) s
+52.2 574 M
+(   {"grey62"                , rgbcolor \(158, 158, 158\)},) s
+19.2 562 M (360:) s
+52.2 562 M
+(   {"grey63"                , rgbcolor \(161, 161, 161\)},) s
+19.2 550 M (361:) s
+52.2 550 M
+(   {"grey64"                , rgbcolor \(163, 163, 163\)},) s
+19.2 538 M (362:) s
+52.2 538 M
+(   {"grey65"                , rgbcolor \(166, 166, 166\)},) s
+19.2 526 M (363:) s
+52.2 526 M
+(   {"grey66"                , rgbcolor \(168, 168, 168\)},) s
+19.2 514 M (364:) s
+52.2 514 M
+(   {"grey67"                , rgbcolor \(171, 171, 171\)},) s
+19.2 502 M (365:) s
+52.2 502 M
+(   {"grey68"                , rgbcolor \(173, 173, 173\)},) s
+19.2 490 M (366:) s
+52.2 490 M
+(   {"grey69"                , rgbcolor \(176, 176, 176\)},) s
+19.2 478 M (367:) s
+52.2 478 M
+(   {"grey7"                 , rgbcolor \( 18,  18,  18\)},) s
+19.2 466 M (368:) s
+52.2 466 M
+(   {"grey70"                , rgbcolor \(179, 179, 179\)},) s
+19.2 454 M (369:) s
+52.2 454 M
+(   {"grey71"                , rgbcolor \(181, 181, 181\)},) s
+19.2 442 M (370:) s
+52.2 442 M
+(   {"grey72"                , rgbcolor \(184, 184, 184\)},) s
+19.2 430 M (371:) s
+52.2 430 M
+(   {"grey73"                , rgbcolor \(186, 186, 186\)},) s
+19.2 418 M (372:) s
+52.2 418 M
+(   {"grey74"                , rgbcolor \(189, 189, 189\)},) s
+19.2 406 M (373:) s
+52.2 406 M
+(   {"grey75"                , rgbcolor \(191, 191, 191\)},) s
+19.2 394 M (374:) s
+52.2 394 M
+(   {"grey76"                , rgbcolor \(194, 194, 194\)},) s
+19.2 382 M (375:) s
+52.2 382 M
+(   {"grey77"                , rgbcolor \(196, 196, 196\)},) s
+19.2 370 M (376:) s
+52.2 370 M
+(   {"grey78"                , rgbcolor \(199, 199, 199\)},) s
+19.2 358 M (377:) s
+52.2 358 M
+(   {"grey79"                , rgbcolor \(201, 201, 201\)},) s
+19.2 346 M (378:) s
+52.2 346 M
+(   {"grey8"                 , rgbcolor \( 20,  20,  20\)},) s
+19.2 334 M (379:) s
+52.2 334 M
+(   {"grey80"                , rgbcolor \(204, 204, 204\)},) s
+19.2 322 M (380:) s
+52.2 322 M
+(   {"grey81"                , rgbcolor \(207, 207, 207\)},) s
+19.2 310 M (381:) s
+52.2 310 M
+(   {"grey82"                , rgbcolor \(209, 209, 209\)},) s
+19.2 298 M (382:) s
+52.2 298 M
+(   {"grey83"                , rgbcolor \(212, 212, 212\)},) s
+19.2 286 M (383:) s
+52.2 286 M
+(   {"grey84"                , rgbcolor \(214, 214, 214\)},) s
+19.2 274 M (384:) s
+52.2 274 M
+(   {"grey85"                , rgbcolor \(217, 217, 217\)},) s
+19.2 262 M (385:) s
+52.2 262 M
+(   {"grey86"                , rgbcolor \(219, 219, 219\)},) s
+19.2 250 M (386:) s
+52.2 250 M
+(   {"grey87"                , rgbcolor \(222, 222, 222\)},) s
+19.2 238 M (387:) s
+52.2 238 M
+(   {"grey88"                , rgbcolor \(224, 224, 224\)},) s
+19.2 226 M (388:) s
+52.2 226 M
+(   {"grey89"                , rgbcolor \(227, 227, 227\)},) s
+19.2 214 M (389:) s
+52.2 214 M
+(   {"grey9"                 , rgbcolor \( 23,  23,  23\)},) s
+19.2 202 M (390:) s
+52.2 202 M
+(   {"grey90"                , rgbcolor \(229, 229, 229\)},) s
+19.2 190 M (391:) s
+52.2 190 M
+(   {"grey91"                , rgbcolor \(232, 232, 232\)},) s
+19.2 178 M (392:) s
+52.2 178 M
+(   {"grey92"                , rgbcolor \(235, 235, 235\)},) s
+19.2 166 M (393:) s
+52.2 166 M
+(   {"grey93"                , rgbcolor \(237, 237, 237\)},) s
+19.2 154 M (394:) s
+52.2 154 M
+(   {"grey94"                , rgbcolor \(240, 240, 240\)},) s
+19.2 142 M (395:) s
+52.2 142 M
+(   {"grey95"                , rgbcolor \(242, 242, 242\)},) s
+19.2 130 M (396:) s
+52.2 130 M
+(   {"grey96"                , rgbcolor \(245, 245, 245\)},) s
+19.2 118 M (397:) s
+52.2 118 M
+(   {"grey97"                , rgbcolor \(247, 247, 247\)},) s
+19.2 106 M (398:) s
+52.2 106 M
+(   {"grey98"                , rgbcolor \(250, 250, 250\)},) s
+19.2 94 M (399:) s
+52.2 94 M
+(   {"grey99"                , rgbcolor \(252, 252, 252\)},) s
+19.2 82 M (400:) s
+52.2 82 M
+(   {"honeydew"              , rgbcolor \(240, 255, 240\)},) s
+19.2 70 M (401:) s
+52.2 70 M
+(   {"honeydew1"             , rgbcolor \(240, 255, 240\)},) s
+19.2 58 M (402:) s
+52.2 58 M
+(   {"honeydew2"             , rgbcolor \(224, 238, 224\)},) s
+19.2 46 M (403:) s
+52.2 46 M
+(   {"honeydew3"             , rgbcolor \(193, 205, 193\)},) s
+19.2 34 M (404:) s
+52.2 34 M
+(   {"honeydew4"             , rgbcolor \(131, 139, 131\)},) s
+19.2 22 M (405:) s
+52.2 22 M
+(   {"hot-pink"              , rgbcolor \(255, 105, 180\)},) s
+19.2 10 M (406:) s
+52.2 10 M
+(   {"HotPink"               , rgbcolor \(255, 105, 180\)},) s
+_R
+S
+%%Page: (8) 8
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 8 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (8) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (407:) s
+52.2 694 M
+(   {"HotPink1"              , rgbcolor \(255, 110, 180\)},) s
+19.2 682 M (408:) s
+52.2 682 M
+(   {"HotPink2"              , rgbcolor \(238, 106, 167\)},) s
+19.2 670 M (409:) s
+52.2 670 M
+(   {"HotPink3"              , rgbcolor \(205,  96, 144\)},) s
+19.2 658 M (410:) s
+52.2 658 M
+(   {"HotPink4"              , rgbcolor \(139,  58,  98\)},) s
+19.2 646 M (411:) s
+52.2 646 M
+(   {"indian-red"            , rgbcolor \(205,  92,  92\)},) s
+19.2 634 M (412:) s
+52.2 634 M
+(   {"IndianRed"             , rgbcolor \(205,  92,  92\)},) s
+19.2 622 M (413:) s
+52.2 622 M
+(   {"IndianRed1"            , rgbcolor \(255, 106, 106\)},) s
+19.2 610 M (414:) s
+52.2 610 M
+(   {"IndianRed2"            , rgbcolor \(238,  99,  99\)},) s
+19.2 598 M (415:) s
+52.2 598 M
+(   {"IndianRed3"            , rgbcolor \(205,  85,  85\)},) s
+19.2 586 M (416:) s
+52.2 586 M
+(   {"IndianRed4"            , rgbcolor \(139,  58,  58\)},) s
+19.2 574 M (417:) s
+52.2 574 M
+(   {"indigo"                , rgbcolor \( 75,   0, 130\)},) s
+19.2 562 M (418:) s
+52.2 562 M
+(   {"ivory"                 , rgbcolor \(255, 255, 240\)},) s
+19.2 550 M (419:) s
+52.2 550 M
+(   {"ivory1"                , rgbcolor \(255, 255, 240\)},) s
+19.2 538 M (420:) s
+52.2 538 M
+(   {"ivory2"                , rgbcolor \(238, 238, 224\)},) s
+19.2 526 M (421:) s
+52.2 526 M
+(   {"ivory3"                , rgbcolor \(205, 205, 193\)},) s
+19.2 514 M (422:) s
+52.2 514 M
+(   {"ivory4"                , rgbcolor \(139, 139, 131\)},) s
+19.2 502 M (423:) s
+52.2 502 M
+(   {"khaki"                 , rgbcolor \(240, 230, 140\)},) s
+19.2 490 M (424:) s
+52.2 490 M
+(   {"khaki1"                , rgbcolor \(255, 246, 143\)},) s
+19.2 478 M (425:) s
+52.2 478 M
+(   {"khaki2"                , rgbcolor \(238, 230, 133\)},) s
+19.2 466 M (426:) s
+52.2 466 M
+(   {"khaki3"                , rgbcolor \(205, 198, 115\)},) s
+19.2 454 M (427:) s
+52.2 454 M
+(   {"khaki4"                , rgbcolor \(139, 134,  78\)},) s
+19.2 442 M (428:) s
+52.2 442 M
+(   {"lavender"              , rgbcolor \(230, 230, 250\)},) s
+19.2 430 M (429:) s
+52.2 430 M
+(   {"lavender-blush"        , rgbcolor \(255, 240, 245\)},) s
+19.2 418 M (430:) s
+52.2 418 M
+(   {"LavenderBlush"         , rgbcolor \(255, 240, 245\)},) s
+19.2 406 M (431:) s
+52.2 406 M
+(   {"LavenderBlush1"        , rgbcolor \(255, 240, 245\)},) s
+19.2 394 M (432:) s
+52.2 394 M
+(   {"LavenderBlush2"        , rgbcolor \(238, 224, 229\)},) s
+19.2 382 M (433:) s
+52.2 382 M
+(   {"LavenderBlush3"        , rgbcolor \(205, 193, 197\)},) s
+19.2 370 M (434:) s
+52.2 370 M
+(   {"LavenderBlush4"        , rgbcolor \(139, 131, 134\)},) s
+19.2 358 M (435:) s
+52.2 358 M
+(   {"lawn-green"            , rgbcolor \(124, 252,   0\)},) s
+19.2 346 M (436:) s
+52.2 346 M
+(   {"LawnGreen"             , rgbcolor \(124, 252,   0\)},) s
+19.2 334 M (437:) s
+52.2 334 M
+(   {"lemon-chiffon"         , rgbcolor \(255, 250, 205\)},) s
+19.2 322 M (438:) s
+52.2 322 M
+(   {"LemonChiffon"          , rgbcolor \(255, 250, 205\)},) s
+19.2 310 M (439:) s
+52.2 310 M
+(   {"LemonChiffon1"         , rgbcolor \(255, 250, 205\)},) s
+19.2 298 M (440:) s
+52.2 298 M
+(   {"LemonChiffon2"         , rgbcolor \(238, 233, 191\)},) s
+19.2 286 M (441:) s
+52.2 286 M
+(   {"LemonChiffon3"         , rgbcolor \(205, 201, 165\)},) s
+19.2 274 M (442:) s
+52.2 274 M
+(   {"LemonChiffon4"         , rgbcolor \(139, 137, 112\)},) s
+19.2 262 M (443:) s
+52.2 262 M
+(   {"light-blue"            , rgbcolor \(173, 216, 230\)},) s
+19.2 250 M (444:) s
+52.2 250 M
+(   {"light-coral"           , rgbcolor \(240, 128, 128\)},) s
+19.2 238 M (445:) s
+52.2 238 M
+(   {"light-cyan"            , rgbcolor \(224, 255, 255\)},) s
+19.2 226 M (446:) s
+52.2 226 M
+(   {"light-goldenrod"       , rgbcolor \(238, 221, 130\)},) s
+19.2 214 M (447:) s
+52.2 214 M
+(   {"light-goldenrod-yellow", rgbcolor \(250, 250, 210\)},) s
+19.2 202 M (448:) s
+52.2 202 M
+(   {"light-gray"            , rgbcolor \(211, 211, 211\)},) s
+19.2 190 M (449:) s
+52.2 190 M
+(   {"light-green"           , rgbcolor \(144, 238, 144\)},) s
+19.2 178 M (450:) s
+52.2 178 M
+(   {"light-grey"            , rgbcolor \(211, 211, 211\)},) s
+19.2 166 M (451:) s
+52.2 166 M
+(   {"light-pink"            , rgbcolor \(255, 182, 193\)},) s
+19.2 154 M (452:) s
+52.2 154 M
+(   {"light-salmon"          , rgbcolor \(255, 160, 122\)},) s
+19.2 142 M (453:) s
+52.2 142 M
+(   {"light-sea-green"       , rgbcolor \( 32, 178, 170\)},) s
+19.2 130 M (454:) s
+52.2 130 M
+(   {"light-sky-blue"        , rgbcolor \(135, 206, 250\)},) s
+19.2 118 M (455:) s
+52.2 118 M
+(   {"light-slate-blue"      , rgbcolor \(132, 112, 255\)},) s
+19.2 106 M (456:) s
+52.2 106 M
+(   {"light-slate-gray"      , rgbcolor \(119, 136, 153\)},) s
+19.2 94 M (457:) s
+52.2 94 M
+(   {"light-slate-grey"      , rgbcolor \(119, 136, 153\)},) s
+19.2 82 M (458:) s
+52.2 82 M
+(   {"light-steel-blue"      , rgbcolor \(176, 196, 222\)},) s
+19.2 70 M (459:) s
+52.2 70 M
+(   {"light-yellow"          , rgbcolor \(255, 255, 224\)},) s
+19.2 58 M (460:) s
+52.2 58 M
+(   {"LightBlue"             , rgbcolor \(173, 216, 230\)},) s
+19.2 46 M (461:) s
+52.2 46 M
+(   {"LightBlue1"            , rgbcolor \(191, 239, 255\)},) s
+19.2 34 M (462:) s
+52.2 34 M
+(   {"LightBlue2"            , rgbcolor \(178, 223, 238\)},) s
+19.2 22 M (463:) s
+52.2 22 M
+(   {"LightBlue3"            , rgbcolor \(154, 192, 205\)},) s
+19.2 10 M (464:) s
+52.2 10 M
+(   {"LightBlue4"            , rgbcolor \(104, 131, 139\)},) s
+_R
+S
+%%Page: (9) 9
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 9 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (9) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (465:) s
+52.2 694 M
+(   {"LightCoral"            , rgbcolor \(240, 128, 128\)},) s
+19.2 682 M (466:) s
+52.2 682 M
+(   {"LightCyan"             , rgbcolor \(224, 255, 255\)},) s
+19.2 670 M (467:) s
+52.2 670 M
+(   {"LightCyan1"            , rgbcolor \(224, 255, 255\)},) s
+19.2 658 M (468:) s
+52.2 658 M
+(   {"LightCyan2"            , rgbcolor \(209, 238, 238\)},) s
+19.2 646 M (469:) s
+52.2 646 M
+(   {"LightCyan3"            , rgbcolor \(180, 205, 205\)},) s
+19.2 634 M (470:) s
+52.2 634 M
+(   {"LightCyan4"            , rgbcolor \(122, 139, 139\)},) s
+19.2 622 M (471:) s
+52.2 622 M
+(   {"LightGoldenrod"        , rgbcolor \(238, 221, 130\)},) s
+19.2 610 M (472:) s
+52.2 610 M
+(   {"LightGoldenrod1"       , rgbcolor \(255, 236, 139\)},) s
+19.2 598 M (473:) s
+52.2 598 M
+(   {"LightGoldenrod2"       , rgbcolor \(238, 220, 130\)},) s
+19.2 586 M (474:) s
+52.2 586 M
+(   {"LightGoldenrod3"       , rgbcolor \(205, 190, 112\)},) s
+19.2 574 M (475:) s
+52.2 574 M
+(   {"LightGoldenrod4"       , rgbcolor \(139, 129,  76\)},) s
+19.2 562 M (476:) s
+52.2 562 M
+(   {"LightGoldenrodYellow"  , rgbcolor \(250, 250, 210\)},) s
+19.2 550 M (477:) s
+52.2 550 M
+(   {"LightGray"             , rgbcolor \(211, 211, 211\)},) s
+19.2 538 M (478:) s
+52.2 538 M
+(   {"LightGreen"            , rgbcolor \(144, 238, 144\)},) s
+19.2 526 M (479:) s
+52.2 526 M
+(   {"LightGrey"             , rgbcolor \(211, 211, 211\)},) s
+19.2 514 M (480:) s
+52.2 514 M
+(   {"LightPink"             , rgbcolor \(255, 182, 193\)},) s
+19.2 502 M (481:) s
+52.2 502 M
+(   {"LightPink1"            , rgbcolor \(255, 174, 185\)},) s
+19.2 490 M (482:) s
+52.2 490 M
+(   {"LightPink2"            , rgbcolor \(238, 162, 173\)},) s
+19.2 478 M (483:) s
+52.2 478 M
+(   {"LightPink3"            , rgbcolor \(205, 140, 149\)},) s
+19.2 466 M (484:) s
+52.2 466 M
+(   {"LightPink4"            , rgbcolor \(139,  95, 101\)},) s
+19.2 454 M (485:) s
+52.2 454 M
+(   {"LightSalmon"           , rgbcolor \(255, 160, 122\)},) s
+19.2 442 M (486:) s
+52.2 442 M
+(   {"LightSalmon1"          , rgbcolor \(255, 160, 122\)},) s
+19.2 430 M (487:) s
+52.2 430 M
+(   {"LightSalmon2"          , rgbcolor \(238, 149, 114\)},) s
+19.2 418 M (488:) s
+52.2 418 M
+(   {"LightSalmon3"          , rgbcolor \(205, 129,  98\)},) s
+19.2 406 M (489:) s
+52.2 406 M
+(   {"LightSalmon4"          , rgbcolor \(139,  87,  66\)},) s
+19.2 394 M (490:) s
+52.2 394 M
+(   {"LightSeaGreen"         , rgbcolor \( 32, 178, 170\)},) s
+19.2 382 M (491:) s
+52.2 382 M
+(   {"LightSkyBlue"          , rgbcolor \(135, 206, 250\)},) s
+19.2 370 M (492:) s
+52.2 370 M
+(   {"LightSkyBlue1"         , rgbcolor \(176, 226, 255\)},) s
+19.2 358 M (493:) s
+52.2 358 M
+(   {"LightSkyBlue2"         , rgbcolor \(164, 211, 238\)},) s
+19.2 346 M (494:) s
+52.2 346 M
+(   {"LightSkyBlue3"         , rgbcolor \(141, 182, 205\)},) s
+19.2 334 M (495:) s
+52.2 334 M
+(   {"LightSkyBlue4"         , rgbcolor \( 96, 123, 139\)},) s
+19.2 322 M (496:) s
+52.2 322 M
+(   {"LightSlateBlue"        , rgbcolor \(132, 112, 255\)},) s
+19.2 310 M (497:) s
+52.2 310 M
+(   {"LightSlateGray"        , rgbcolor \(119, 136, 153\)},) s
+19.2 298 M (498:) s
+52.2 298 M
+(   {"LightSlateGrey"        , rgbcolor \(119, 136, 153\)},) s
+19.2 286 M (499:) s
+52.2 286 M
+(   {"LightSteelBlue"        , rgbcolor \(176, 196, 222\)},) s
+19.2 274 M (500:) s
+52.2 274 M
+(   {"LightSteelBlue1"       , rgbcolor \(202, 225, 255\)},) s
+19.2 262 M (501:) s
+52.2 262 M
+(   {"LightSteelBlue2"       , rgbcolor \(188, 210, 238\)},) s
+19.2 250 M (502:) s
+52.2 250 M
+(   {"LightSteelBlue3"       , rgbcolor \(162, 181, 205\)},) s
+19.2 238 M (503:) s
+52.2 238 M
+(   {"LightSteelBlue4"       , rgbcolor \(110, 123, 139\)},) s
+19.2 226 M (504:) s
+52.2 226 M
+(   {"LightYellow"           , rgbcolor \(255, 255, 224\)},) s
+19.2 214 M (505:) s
+52.2 214 M
+(   {"LightYellow1"          , rgbcolor \(255, 255, 224\)},) s
+19.2 202 M (506:) s
+52.2 202 M
+(   {"LightYellow2"          , rgbcolor \(238, 238, 209\)},) s
+19.2 190 M (507:) s
+52.2 190 M
+(   {"LightYellow3"          , rgbcolor \(205, 205, 180\)},) s
+19.2 178 M (508:) s
+52.2 178 M
+(   {"LightYellow4"          , rgbcolor \(139, 139, 122\)},) s
+19.2 166 M (509:) s
+52.2 166 M
+(   {"lime"                  , rgbcolor \(  0, 255,   0\)},) s
+19.2 154 M (510:) s
+52.2 154 M
+(   {"lime-green"            , rgbcolor \( 50, 205,  50\)},) s
+19.2 142 M (511:) s
+52.2 142 M
+(   {"LimeGreen"             , rgbcolor \( 50, 205,  50\)},) s
+19.2 130 M (512:) s
+52.2 130 M
+(   {"linen"                 , rgbcolor \(250, 240, 230\)},) s
+19.2 118 M (513:) s
+52.2 118 M
+(   {"magenta"               , rgbcolor \(255,   0, 255\)},) s
+19.2 106 M (514:) s
+52.2 106 M
+(   {"magenta1"              , rgbcolor \(255,   0, 255\)},) s
+19.2 94 M (515:) s
+52.2 94 M
+(   {"magenta2"              , rgbcolor \(238,   0, 238\)},) s
+19.2 82 M (516:) s
+52.2 82 M
+(   {"magenta3"              , rgbcolor \(205,   0, 205\)},) s
+19.2 70 M (517:) s
+52.2 70 M
+(   {"magenta4"              , rgbcolor \(139,   0, 139\)},) s
+19.2 58 M (518:) s
+52.2 58 M
+(   {"maroon"                , rgbcolor \(176,  48,  96\)},) s
+19.2 46 M (519:) s
+52.2 46 M
+(   {"maroon1"               , rgbcolor \(255,  52, 179\)},) s
+19.2 34 M (520:) s
+52.2 34 M
+(   {"maroon2"               , rgbcolor \(238,  48, 167\)},) s
+19.2 22 M (521:) s
+52.2 22 M
+(   {"maroon3"               , rgbcolor \(205,  41, 144\)},) s
+19.2 10 M (522:) s
+52.2 10 M
+(   {"maroon4"               , rgbcolor \(139,  28,  98\)},) s
+_R
+S
+%%Page: (10) 10
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 10 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (10) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (523:) s
+52.2 694 M
+(   {"medium-aquamarine"     , rgbcolor \(102, 205, 170\)},) s
+19.2 682 M (524:) s
+52.2 682 M
+(   {"medium-blue"           , rgbcolor \(  0,   0, 205\)},) s
+19.2 670 M (525:) s
+52.2 670 M
+(   {"medium-orchid"         , rgbcolor \(186,  85, 211\)},) s
+19.2 658 M (526:) s
+52.2 658 M
+(   {"medium-purple"         , rgbcolor \(147, 112, 219\)},) s
+19.2 646 M (527:) s
+52.2 646 M
+(   {"medium-sea-green"      , rgbcolor \( 60, 179, 113\)},) s
+19.2 634 M (528:) s
+52.2 634 M
+(   {"medium-slate-blue"     , rgbcolor \(123, 104, 238\)},) s
+19.2 622 M (529:) s
+52.2 622 M
+(   {"medium-spring-green"   , rgbcolor \(  0, 250, 154\)},) s
+19.2 610 M (530:) s
+52.2 610 M
+(   {"medium-turquoise"      , rgbcolor \( 72, 209, 204\)},) s
+19.2 598 M (531:) s
+52.2 598 M
+(   {"medium-violet-red"     , rgbcolor \(199,  21, 133\)},) s
+19.2 586 M (532:) s
+52.2 586 M
+(   {"MediumAquamarine"      , rgbcolor \(102, 205, 170\)},) s
+19.2 574 M (533:) s
+52.2 574 M
+(   {"MediumBlue"            , rgbcolor \(  0,   0, 205\)},) s
+19.2 562 M (534:) s
+52.2 562 M
+(   {"MediumOrchid"          , rgbcolor \(186,  85, 211\)},) s
+19.2 550 M (535:) s
+52.2 550 M
+(   {"MediumOrchid1"         , rgbcolor \(224, 102, 255\)},) s
+19.2 538 M (536:) s
+52.2 538 M
+(   {"MediumOrchid2"         , rgbcolor \(209,  95, 238\)},) s
+19.2 526 M (537:) s
+52.2 526 M
+(   {"MediumOrchid3"         , rgbcolor \(180,  82, 205\)},) s
+19.2 514 M (538:) s
+52.2 514 M
+(   {"MediumOrchid4"         , rgbcolor \(122,  55, 139\)},) s
+19.2 502 M (539:) s
+52.2 502 M
+(   {"MediumPurple"          , rgbcolor \(147, 112, 219\)},) s
+19.2 490 M (540:) s
+52.2 490 M
+(   {"MediumPurple1"         , rgbcolor \(171, 130, 255\)},) s
+19.2 478 M (541:) s
+52.2 478 M
+(   {"MediumPurple2"         , rgbcolor \(159, 121, 238\)},) s
+19.2 466 M (542:) s
+52.2 466 M
+(   {"MediumPurple3"         , rgbcolor \(137, 104, 205\)},) s
+19.2 454 M (543:) s
+52.2 454 M
+(   {"MediumPurple4"         , rgbcolor \( 93,  71, 139\)},) s
+19.2 442 M (544:) s
+52.2 442 M
+(   {"MediumSeaGreen"        , rgbcolor \( 60, 179, 113\)},) s
+19.2 430 M (545:) s
+52.2 430 M
+(   {"MediumSlateBlue"       , rgbcolor \(123, 104, 238\)},) s
+19.2 418 M (546:) s
+52.2 418 M
+(   {"MediumSpringGreen"     , rgbcolor \(  0, 250, 154\)},) s
+19.2 406 M (547:) s
+52.2 406 M
+(   {"MediumTurquoise"       , rgbcolor \( 72, 209, 204\)},) s
+19.2 394 M (548:) s
+52.2 394 M
+(   {"MediumVioletRed"       , rgbcolor \(199,  21, 133\)},) s
+19.2 382 M (549:) s
+52.2 382 M
+(   {"midnight-blue"         , rgbcolor \( 25,  25, 112\)},) s
+19.2 370 M (550:) s
+52.2 370 M
+(   {"MidnightBlue"          , rgbcolor \( 25,  25, 112\)},) s
+19.2 358 M (551:) s
+52.2 358 M
+(   {"mint-cream"            , rgbcolor \(245, 255, 250\)},) s
+19.2 346 M (552:) s
+52.2 346 M
+(   {"MintCream"             , rgbcolor \(245, 255, 250\)},) s
+19.2 334 M (553:) s
+52.2 334 M
+(   {"misty-rose"            , rgbcolor \(255, 228, 225\)},) s
+19.2 322 M (554:) s
+52.2 322 M
+(   {"MistyRose"             , rgbcolor \(255, 228, 225\)},) s
+19.2 310 M (555:) s
+52.2 310 M
+(   {"MistyRose1"            , rgbcolor \(255, 228, 225\)},) s
+19.2 298 M (556:) s
+52.2 298 M
+(   {"MistyRose2"            , rgbcolor \(238, 213, 210\)},) s
+19.2 286 M (557:) s
+52.2 286 M
+(   {"MistyRose3"            , rgbcolor \(205, 183, 181\)},) s
+19.2 274 M (558:) s
+52.2 274 M
+(   {"MistyRose4"            , rgbcolor \(139, 125, 123\)},) s
+19.2 262 M (559:) s
+52.2 262 M
+(   {"moccasin"              , rgbcolor \(255, 228, 181\)},) s
+19.2 250 M (560:) s
+52.2 250 M
+(   {"navajo-white"          , rgbcolor \(255, 222, 173\)},) s
+19.2 238 M (561:) s
+52.2 238 M
+(   {"NavajoWhite"           , rgbcolor \(255, 222, 173\)},) s
+19.2 226 M (562:) s
+52.2 226 M
+(   {"NavajoWhite1"          , rgbcolor \(255, 222, 173\)},) s
+19.2 214 M (563:) s
+52.2 214 M
+(   {"NavajoWhite2"          , rgbcolor \(238, 207, 161\)},) s
+19.2 202 M (564:) s
+52.2 202 M
+(   {"NavajoWhite3"          , rgbcolor \(205, 179, 139\)},) s
+19.2 190 M (565:) s
+52.2 190 M
+(   {"NavajoWhite4"          , rgbcolor \(139, 121,  94\)},) s
+19.2 178 M (566:) s
+52.2 178 M
+(   {"navy"                  , rgbcolor \(  0,   0, 128\)},) s
+19.2 166 M (567:) s
+52.2 166 M
+(   {"navy-blue"             , rgbcolor \(  0,   0, 128\)},) s
+19.2 154 M (568:) s
+52.2 154 M
+(   {"NavyBlue"              , rgbcolor \(  0,   0, 128\)},) s
+19.2 142 M (569:) s
+52.2 142 M
+(   {"old-lace"              , rgbcolor \(253, 245, 230\)},) s
+19.2 130 M (570:) s
+52.2 130 M
+(   {"OldLace"               , rgbcolor \(253, 245, 230\)},) s
+19.2 118 M (571:) s
+52.2 118 M
+(   {"olive"                 , rgbcolor \(128, 128,   0\)},) s
+19.2 106 M (572:) s
+52.2 106 M
+(   {"olive-drab"            , rgbcolor \(107, 142,  35\)},) s
+19.2 94 M (573:) s
+52.2 94 M
+(   {"OliveDrab"             , rgbcolor \(107, 142,  35\)},) s
+19.2 82 M (574:) s
+52.2 82 M
+(   {"OliveDrab1"            , rgbcolor \(192, 255,  62\)},) s
+19.2 70 M (575:) s
+52.2 70 M
+(   {"OliveDrab2"            , rgbcolor \(179, 238,  58\)},) s
+19.2 58 M (576:) s
+52.2 58 M
+(   {"OliveDrab3"            , rgbcolor \(154, 205,  50\)},) s
+19.2 46 M (577:) s
+52.2 46 M
+(   {"OliveDrab4"            , rgbcolor \(105, 139,  34\)},) s
+19.2 34 M (578:) s
+52.2 34 M
+(   {"orange"                , rgbcolor \(255, 165,   0\)},) s
+19.2 22 M (579:) s
+52.2 22 M
+(   {"orange-red"            , rgbcolor \(255,  69,   0\)},) s
+19.2 10 M (580:) s
+52.2 10 M
+(   {"orange1"               , rgbcolor \(255, 165,   0\)},) s
+_R
+S
+%%Page: (11) 11
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 11 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (11) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (581:) s
+52.2 694 M
+(   {"orange2"               , rgbcolor \(238, 154,   0\)},) s
+19.2 682 M (582:) s
+52.2 682 M
+(   {"orange3"               , rgbcolor \(205, 133,   0\)},) s
+19.2 670 M (583:) s
+52.2 670 M
+(   {"orange4"               , rgbcolor \(139,  90,   0\)},) s
+19.2 658 M (584:) s
+52.2 658 M
+(   {"OrangeRed"             , rgbcolor \(255,  69,   0\)},) s
+19.2 646 M (585:) s
+52.2 646 M
+(   {"OrangeRed1"            , rgbcolor \(255,  69,   0\)},) s
+19.2 634 M (586:) s
+52.2 634 M
+(   {"OrangeRed2"            , rgbcolor \(238,  64,   0\)},) s
+19.2 622 M (587:) s
+52.2 622 M
+(   {"OrangeRed3"            , rgbcolor \(205,  55,   0\)},) s
+19.2 610 M (588:) s
+52.2 610 M
+(   {"OrangeRed4"            , rgbcolor \(139,  37,   0\)},) s
+19.2 598 M (589:) s
+52.2 598 M
+(   {"orchid"                , rgbcolor \(218, 112, 214\)},) s
+19.2 586 M (590:) s
+52.2 586 M
+(   {"orchid1"               , rgbcolor \(255, 131, 250\)},) s
+19.2 574 M (591:) s
+52.2 574 M
+(   {"orchid2"               , rgbcolor \(238, 122, 233\)},) s
+19.2 562 M (592:) s
+52.2 562 M
+(   {"orchid3"               , rgbcolor \(205, 105, 201\)},) s
+19.2 550 M (593:) s
+52.2 550 M
+(   {"orchid4"               , rgbcolor \(139,  71, 137\)},) s
+19.2 538 M (594:) s
+52.2 538 M
+(   {"pale-goldenrod"        , rgbcolor \(238, 232, 170\)},) s
+19.2 526 M (595:) s
+52.2 526 M
+(   {"pale-green"            , rgbcolor \(152, 251, 152\)},) s
+19.2 514 M (596:) s
+52.2 514 M
+(   {"pale-turquoise"        , rgbcolor \(175, 238, 238\)},) s
+19.2 502 M (597:) s
+52.2 502 M
+(   {"pale-violet-red"       , rgbcolor \(219, 112, 147\)},) s
+19.2 490 M (598:) s
+52.2 490 M
+(   {"PaleGoldenrod"         , rgbcolor \(238, 232, 170\)},) s
+19.2 478 M (599:) s
+52.2 478 M
+(   {"PaleGreen"             , rgbcolor \(152, 251, 152\)},) s
+19.2 466 M (600:) s
+52.2 466 M
+(   {"PaleGreen1"            , rgbcolor \(154, 255, 154\)},) s
+19.2 454 M (601:) s
+52.2 454 M
+(   {"PaleGreen2"            , rgbcolor \(144, 238, 144\)},) s
+19.2 442 M (602:) s
+52.2 442 M
+(   {"PaleGreen3"            , rgbcolor \(124, 205, 124\)},) s
+19.2 430 M (603:) s
+52.2 430 M
+(   {"PaleGreen4"            , rgbcolor \( 84, 139,  84\)},) s
+19.2 418 M (604:) s
+52.2 418 M
+(   {"PaleTurquoise"         , rgbcolor \(175, 238, 238\)},) s
+19.2 406 M (605:) s
+52.2 406 M
+(   {"PaleTurquoise1"        , rgbcolor \(187, 255, 255\)},) s
+19.2 394 M (606:) s
+52.2 394 M
+(   {"PaleTurquoise2"        , rgbcolor \(174, 238, 238\)},) s
+19.2 382 M (607:) s
+52.2 382 M
+(   {"PaleTurquoise3"        , rgbcolor \(150, 205, 205\)},) s
+19.2 370 M (608:) s
+52.2 370 M
+(   {"PaleTurquoise4"        , rgbcolor \(102, 139, 139\)},) s
+19.2 358 M (609:) s
+52.2 358 M
+(   {"PaleVioletRed"         , rgbcolor \(219, 112, 147\)},) s
+19.2 346 M (610:) s
+52.2 346 M
+(   {"PaleVioletRed1"        , rgbcolor \(255, 130, 171\)},) s
+19.2 334 M (611:) s
+52.2 334 M
+(   {"PaleVioletRed2"        , rgbcolor \(238, 121, 159\)},) s
+19.2 322 M (612:) s
+52.2 322 M
+(   {"PaleVioletRed3"        , rgbcolor \(205, 104, 137\)},) s
+19.2 310 M (613:) s
+52.2 310 M
+(   {"PaleVioletRed4"        , rgbcolor \(139,  71,  93\)},) s
+19.2 298 M (614:) s
+52.2 298 M
+(   {"papaya-whip"           , rgbcolor \(255, 239, 213\)},) s
+19.2 286 M (615:) s
+52.2 286 M
+(   {"PapayaWhip"            , rgbcolor \(255, 239, 213\)},) s
+19.2 274 M (616:) s
+52.2 274 M
+(   {"peach-puff"            , rgbcolor \(255, 218, 185\)},) s
+19.2 262 M (617:) s
+52.2 262 M
+(   {"PeachPuff"             , rgbcolor \(255, 218, 185\)},) s
+19.2 250 M (618:) s
+52.2 250 M
+(   {"PeachPuff1"            , rgbcolor \(255, 218, 185\)},) s
+19.2 238 M (619:) s
+52.2 238 M
+(   {"PeachPuff2"            , rgbcolor \(238, 203, 173\)},) s
+19.2 226 M (620:) s
+52.2 226 M
+(   {"PeachPuff3"            , rgbcolor \(205, 175, 149\)},) s
+19.2 214 M (621:) s
+52.2 214 M
+(   {"PeachPuff4"            , rgbcolor \(139, 119, 101\)},) s
+19.2 202 M (622:) s
+52.2 202 M
+(   {"peru"                  , rgbcolor \(205, 133,  63\)},) s
+19.2 190 M (623:) s
+52.2 190 M
+(   {"pink"                  , rgbcolor \(255, 192, 203\)},) s
+19.2 178 M (624:) s
+52.2 178 M
+(   {"pink1"                 , rgbcolor \(255, 181, 197\)},) s
+19.2 166 M (625:) s
+52.2 166 M
+(   {"pink2"                 , rgbcolor \(238, 169, 184\)},) s
+19.2 154 M (626:) s
+52.2 154 M
+(   {"pink3"                 , rgbcolor \(205, 145, 158\)},) s
+19.2 142 M (627:) s
+52.2 142 M
+(   {"pink4"                 , rgbcolor \(139,  99, 108\)},) s
+19.2 130 M (628:) s
+52.2 130 M
+(   {"plum"                  , rgbcolor \(221, 160, 221\)},) s
+19.2 118 M (629:) s
+52.2 118 M
+(   {"plum1"                 , rgbcolor \(255, 187, 255\)},) s
+19.2 106 M (630:) s
+52.2 106 M
+(   {"plum2"                 , rgbcolor \(238, 174, 238\)},) s
+19.2 94 M (631:) s
+52.2 94 M
+(   {"plum3"                 , rgbcolor \(205, 150, 205\)},) s
+19.2 82 M (632:) s
+52.2 82 M
+(   {"plum4"                 , rgbcolor \(139, 102, 139\)},) s
+19.2 70 M (633:) s
+52.2 70 M
+(   {"powder-blue"           , rgbcolor \(176, 224, 230\)},) s
+19.2 58 M (634:) s
+52.2 58 M
+(   {"PowderBlue"            , rgbcolor \(176, 224, 230\)},) s
+19.2 46 M (635:) s
+52.2 46 M
+(   {"purple"                , rgbcolor \(160,  32, 240\)},) s
+19.2 34 M (636:) s
+52.2 34 M
+(   {"purple1"               , rgbcolor \(155,  48, 255\)},) s
+19.2 22 M (637:) s
+52.2 22 M
+(   {"purple2"               , rgbcolor \(145,  44, 238\)},) s
+19.2 10 M (638:) s
+52.2 10 M
+(   {"purple3"               , rgbcolor \(125,  38, 205\)},) s
+_R
+S
+%%Page: (12) 12
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 12 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (12) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (639:) s
+52.2 694 M
+(   {"purple4"               , rgbcolor \( 85,  26, 139\)},) s
+19.2 682 M (640:) s
+52.2 682 M
+(   {"rebecca-purple"        , rgbcolor \(102,  51, 153\)},) s
+19.2 670 M (641:) s
+52.2 670 M
+(   {"RebeccaPurple"         , rgbcolor \(102,  51, 153\)},) s
+19.2 658 M (642:) s
+52.2 658 M
+(   {"red"                   , rgbcolor \(255,   0,   0\)},) s
+19.2 646 M (643:) s
+52.2 646 M
+(   {"red1"                  , rgbcolor \(255,   0,   0\)},) s
+19.2 634 M (644:) s
+52.2 634 M
+(   {"red2"                  , rgbcolor \(238,   0,   0\)},) s
+19.2 622 M (645:) s
+52.2 622 M
+(   {"red3"                  , rgbcolor \(205,   0,   0\)},) s
+19.2 610 M (646:) s
+52.2 610 M
+(   {"red4"                  , rgbcolor \(139,   0,   0\)},) s
+19.2 598 M (647:) s
+52.2 598 M
+(   {"rosy-brown"            , rgbcolor \(188, 143, 143\)},) s
+19.2 586 M (648:) s
+52.2 586 M
+(   {"RosyBrown"             , rgbcolor \(188, 143, 143\)},) s
+19.2 574 M (649:) s
+52.2 574 M
+(   {"RosyBrown1"            , rgbcolor \(255, 193, 193\)},) s
+19.2 562 M (650:) s
+52.2 562 M
+(   {"RosyBrown2"            , rgbcolor \(238, 180, 180\)},) s
+19.2 550 M (651:) s
+52.2 550 M
+(   {"RosyBrown3"            , rgbcolor \(205, 155, 155\)},) s
+19.2 538 M (652:) s
+52.2 538 M
+(   {"RosyBrown4"            , rgbcolor \(139, 105, 105\)},) s
+19.2 526 M (653:) s
+52.2 526 M
+(   {"royal-blue"            , rgbcolor \( 65, 105, 225\)},) s
+19.2 514 M (654:) s
+52.2 514 M
+(   {"RoyalBlue"             , rgbcolor \( 65, 105, 225\)},) s
+19.2 502 M (655:) s
+52.2 502 M
+(   {"RoyalBlue1"            , rgbcolor \( 72, 118, 255\)},) s
+19.2 490 M (656:) s
+52.2 490 M
+(   {"RoyalBlue2"            , rgbcolor \( 67, 110, 238\)},) s
+19.2 478 M (657:) s
+52.2 478 M
+(   {"RoyalBlue3"            , rgbcolor \( 58,  95, 205\)},) s
+19.2 466 M (658:) s
+52.2 466 M
+(   {"RoyalBlue4"            , rgbcolor \( 39,  64, 139\)},) s
+19.2 454 M (659:) s
+52.2 454 M
+(   {"saddle-brown"          , rgbcolor \(139,  69,  19\)},) s
+19.2 442 M (660:) s
+52.2 442 M
+(   {"SaddleBrown"           , rgbcolor \(139,  69,  19\)},) s
+19.2 430 M (661:) s
+52.2 430 M
+(   {"salmon"                , rgbcolor \(250, 128, 114\)},) s
+19.2 418 M (662:) s
+52.2 418 M
+(   {"salmon1"               , rgbcolor \(255, 140, 105\)},) s
+19.2 406 M (663:) s
+52.2 406 M
+(   {"salmon2"               , rgbcolor \(238, 130,  98\)},) s
+19.2 394 M (664:) s
+52.2 394 M
+(   {"salmon3"               , rgbcolor \(205, 112,  84\)},) s
+19.2 382 M (665:) s
+52.2 382 M
+(   {"salmon4"               , rgbcolor \(139,  76,  57\)},) s
+19.2 370 M (666:) s
+52.2 370 M
+(   {"sandy-brown"           , rgbcolor \(244, 164,  96\)},) s
+19.2 358 M (667:) s
+52.2 358 M
+(   {"SandyBrown"            , rgbcolor \(244, 164,  96\)},) s
+19.2 346 M (668:) s
+52.2 346 M
+(   {"sea-green"             , rgbcolor \( 46, 139,  87\)},) s
+19.2 334 M (669:) s
+52.2 334 M
+(   {"SeaGreen"              , rgbcolor \( 46, 139,  87\)},) s
+19.2 322 M (670:) s
+52.2 322 M
+(   {"SeaGreen1"             , rgbcolor \( 84, 255, 159\)},) s
+19.2 310 M (671:) s
+52.2 310 M
+(   {"SeaGreen2"             , rgbcolor \( 78, 238, 148\)},) s
+19.2 298 M (672:) s
+52.2 298 M
+(   {"SeaGreen3"             , rgbcolor \( 67, 205, 128\)},) s
+19.2 286 M (673:) s
+52.2 286 M
+(   {"SeaGreen4"             , rgbcolor \( 46, 139,  87\)},) s
+19.2 274 M (674:) s
+52.2 274 M
+(   {"seashell"              , rgbcolor \(255, 245, 238\)},) s
+19.2 262 M (675:) s
+52.2 262 M
+(   {"seashell1"             , rgbcolor \(255, 245, 238\)},) s
+19.2 250 M (676:) s
+52.2 250 M
+(   {"seashell2"             , rgbcolor \(238, 229, 222\)},) s
+19.2 238 M (677:) s
+52.2 238 M
+(   {"seashell3"             , rgbcolor \(205, 197, 191\)},) s
+19.2 226 M (678:) s
+52.2 226 M
+(   {"seashell4"             , rgbcolor \(139, 134, 130\)},) s
+19.2 214 M (679:) s
+52.2 214 M
+(   {"sienna"                , rgbcolor \(160,  82,  45\)},) s
+19.2 202 M (680:) s
+52.2 202 M
+(   {"sienna1"               , rgbcolor \(255, 130,  71\)},) s
+19.2 190 M (681:) s
+52.2 190 M
+(   {"sienna2"               , rgbcolor \(238, 121,  66\)},) s
+19.2 178 M (682:) s
+52.2 178 M
+(   {"sienna3"               , rgbcolor \(205, 104,  57\)},) s
+19.2 166 M (683:) s
+52.2 166 M
+(   {"sienna4"               , rgbcolor \(139,  71,  38\)},) s
+19.2 154 M (684:) s
+52.2 154 M
+(   {"silver"                , rgbcolor \(192, 192, 192\)},) s
+19.2 142 M (685:) s
+52.2 142 M
+(   {"sky-blue"              , rgbcolor \(135, 206, 235\)},) s
+19.2 130 M (686:) s
+52.2 130 M
+(   {"SkyBlue"               , rgbcolor \(135, 206, 235\)},) s
+19.2 118 M (687:) s
+52.2 118 M
+(   {"SkyBlue1"              , rgbcolor \(135, 206, 255\)},) s
+19.2 106 M (688:) s
+52.2 106 M
+(   {"SkyBlue2"              , rgbcolor \(126, 192, 238\)},) s
+19.2 94 M (689:) s
+52.2 94 M
+(   {"SkyBlue3"              , rgbcolor \(108, 166, 205\)},) s
+19.2 82 M (690:) s
+52.2 82 M
+(   {"SkyBlue4"              , rgbcolor \( 74, 112, 139\)},) s
+19.2 70 M (691:) s
+52.2 70 M
+(   {"slate-blue"            , rgbcolor \(106,  90, 205\)},) s
+19.2 58 M (692:) s
+52.2 58 M
+(   {"slate-gray"            , rgbcolor \(112, 128, 144\)},) s
+19.2 46 M (693:) s
+52.2 46 M
+(   {"slate-grey"            , rgbcolor \(112, 128, 144\)},) s
+19.2 34 M (694:) s
+52.2 34 M
+(   {"SlateBlue"             , rgbcolor \(106,  90, 205\)},) s
+19.2 22 M (695:) s
+52.2 22 M
+(   {"SlateBlue1"            , rgbcolor \(131, 111, 255\)},) s
+19.2 10 M (696:) s
+52.2 10 M
+(   {"SlateBlue2"            , rgbcolor \(122, 103, 238\)},) s
+_R
+S
+%%Page: (13) 13
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 13 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (13) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (697:) s
+52.2 694 M
+(   {"SlateBlue3"            , rgbcolor \(105,  89, 205\)},) s
+19.2 682 M (698:) s
+52.2 682 M
+(   {"SlateBlue4"            , rgbcolor \( 71,  60, 139\)},) s
+19.2 670 M (699:) s
+52.2 670 M
+(   {"SlateGray"             , rgbcolor \(112, 128, 144\)},) s
+19.2 658 M (700:) s
+52.2 658 M
+(   {"SlateGray1"            , rgbcolor \(198, 226, 255\)},) s
+19.2 646 M (701:) s
+52.2 646 M
+(   {"SlateGray2"            , rgbcolor \(185, 211, 238\)},) s
+19.2 634 M (702:) s
+52.2 634 M
+(   {"SlateGray3"            , rgbcolor \(159, 182, 205\)},) s
+19.2 622 M (703:) s
+52.2 622 M
+(   {"SlateGray4"            , rgbcolor \(108, 123, 139\)},) s
+19.2 610 M (704:) s
+52.2 610 M
+(   {"SlateGrey"             , rgbcolor \(112, 128, 144\)},) s
+19.2 598 M (705:) s
+52.2 598 M
+(   {"snow"                  , rgbcolor \(255, 250, 250\)},) s
+19.2 586 M (706:) s
+52.2 586 M
+(   {"snow1"                 , rgbcolor \(255, 250, 250\)},) s
+19.2 574 M (707:) s
+52.2 574 M
+(   {"snow2"                 , rgbcolor \(238, 233, 233\)},) s
+19.2 562 M (708:) s
+52.2 562 M
+(   {"snow3"                 , rgbcolor \(205, 201, 201\)},) s
+19.2 550 M (709:) s
+52.2 550 M
+(   {"snow4"                 , rgbcolor \(139, 137, 137\)},) s
+19.2 538 M (710:) s
+52.2 538 M
+(   {"spring-green"          , rgbcolor \(  0, 255, 127\)},) s
+19.2 526 M (711:) s
+52.2 526 M
+(   {"SpringGreen"           , rgbcolor \(  0, 255, 127\)},) s
+19.2 514 M (712:) s
+52.2 514 M
+(   {"SpringGreen1"          , rgbcolor \(  0, 255, 127\)},) s
+19.2 502 M (713:) s
+52.2 502 M
+(   {"SpringGreen2"          , rgbcolor \(  0, 238, 118\)},) s
+19.2 490 M (714:) s
+52.2 490 M
+(   {"SpringGreen3"          , rgbcolor \(  0, 205, 102\)},) s
+19.2 478 M (715:) s
+52.2 478 M
+(   {"SpringGreen4"          , rgbcolor \(  0, 139,  69\)},) s
+19.2 466 M (716:) s
+52.2 466 M
+(   {"steel-blue"            , rgbcolor \( 70, 130, 180\)},) s
+19.2 454 M (717:) s
+52.2 454 M
+(   {"SteelBlue"             , rgbcolor \( 70, 130, 180\)},) s
+19.2 442 M (718:) s
+52.2 442 M
+(   {"SteelBlue1"            , rgbcolor \( 99, 184, 255\)},) s
+19.2 430 M (719:) s
+52.2 430 M
+(   {"SteelBlue2"            , rgbcolor \( 92, 172, 238\)},) s
+19.2 418 M (720:) s
+52.2 418 M
+(   {"SteelBlue3"            , rgbcolor \( 79, 148, 205\)},) s
+19.2 406 M (721:) s
+52.2 406 M
+(   {"SteelBlue4"            , rgbcolor \( 54, 100, 139\)},) s
+19.2 394 M (722:) s
+52.2 394 M
+(   {"tan"                   , rgbcolor \(210, 180, 140\)},) s
+19.2 382 M (723:) s
+52.2 382 M
+(   {"tan1"                  , rgbcolor \(255, 165,  79\)},) s
+19.2 370 M (724:) s
+52.2 370 M
+(   {"tan2"                  , rgbcolor \(238, 154,  73\)},) s
+19.2 358 M (725:) s
+52.2 358 M
+(   {"tan3"                  , rgbcolor \(205, 133,  63\)},) s
+19.2 346 M (726:) s
+52.2 346 M
+(   {"tan4"                  , rgbcolor \(139,  90,  43\)},) s
+19.2 334 M (727:) s
+52.2 334 M
+(   {"teal"                  , rgbcolor \(  0, 128, 128\)},) s
+19.2 322 M (728:) s
+52.2 322 M
+(   {"thistle"               , rgbcolor \(216, 191, 216\)},) s
+19.2 310 M (729:) s
+52.2 310 M
+(   {"thistle1"              , rgbcolor \(255, 225, 255\)},) s
+19.2 298 M (730:) s
+52.2 298 M
+(   {"thistle2"              , rgbcolor \(238, 210, 238\)},) s
+19.2 286 M (731:) s
+52.2 286 M
+(   {"thistle3"              , rgbcolor \(205, 181, 205\)},) s
+19.2 274 M (732:) s
+52.2 274 M
+(   {"thistle4"              , rgbcolor \(139, 123, 139\)},) s
+19.2 262 M (733:) s
+52.2 262 M
+(   {"tomato"                , rgbcolor \(255,  99,  71\)},) s
+19.2 250 M (734:) s
+52.2 250 M
+(   {"tomato1"               , rgbcolor \(255,  99,  71\)},) s
+19.2 238 M (735:) s
+52.2 238 M
+(   {"tomato2"               , rgbcolor \(238,  92,  66\)},) s
+19.2 226 M (736:) s
+52.2 226 M
+(   {"tomato3"               , rgbcolor \(205,  79,  57\)},) s
+19.2 214 M (737:) s
+52.2 214 M
+(   {"tomato4"               , rgbcolor \(139,  54,  38\)},) s
+19.2 202 M (738:) s
+52.2 202 M
+(   {"turquoise"             , rgbcolor \( 64, 224, 208\)},) s
+19.2 190 M (739:) s
+52.2 190 M
+(   {"turquoise1"            , rgbcolor \(  0, 245, 255\)},) s
+19.2 178 M (740:) s
+52.2 178 M
+(   {"turquoise2"            , rgbcolor \(  0, 229, 238\)},) s
+19.2 166 M (741:) s
+52.2 166 M
+(   {"turquoise3"            , rgbcolor \(  0, 197, 205\)},) s
+19.2 154 M (742:) s
+52.2 154 M
+(   {"turquoise4"            , rgbcolor \(  0, 134, 139\)},) s
+19.2 142 M (743:) s
+52.2 142 M
+(   {"violet"                , rgbcolor \(238, 130, 238\)},) s
+19.2 130 M (744:) s
+52.2 130 M
+(   {"violet-red"            , rgbcolor \(208,  32, 144\)},) s
+19.2 118 M (745:) s
+52.2 118 M
+(   {"VioletRed"             , rgbcolor \(208,  32, 144\)},) s
+19.2 106 M (746:) s
+52.2 106 M
+(   {"VioletRed1"            , rgbcolor \(255,  62, 150\)},) s
+19.2 94 M (747:) s
+52.2 94 M
+(   {"VioletRed2"            , rgbcolor \(238,  58, 140\)},) s
+19.2 82 M (748:) s
+52.2 82 M
+(   {"VioletRed3"            , rgbcolor \(205,  50, 120\)},) s
+19.2 70 M (749:) s
+52.2 70 M
+(   {"VioletRed4"            , rgbcolor \(139,  34,  82\)},) s
+19.2 58 M (750:) s
+52.2 58 M
+(   {"web-gray"              , rgbcolor \(128, 128, 128\)},) s
+19.2 46 M (751:) s
+52.2 46 M
+(   {"web-green"             , rgbcolor \(  0, 128,   0\)},) s
+19.2 34 M (752:) s
+52.2 34 M
+(   {"web-grey"              , rgbcolor \(128, 128, 128\)},) s
+19.2 22 M (753:) s
+52.2 22 M
+(   {"web-maroon"            , rgbcolor \(128,   0,   0\)},) s
+19.2 10 M (754:) s
+52.2 10 M
+(   {"web-purple"            , rgbcolor \(128,   0, 128\)},) s
+_R
+S
+%%Page: (14) 14
+%%BeginPageSetup
+_S
+38 24 translate
+/pagenum 14 def
+/fname (colors.cppgen) def
+/fdir (.) def
+/ftail (colors.cppgen) def
+% User defined strings:
+/pagenumstr (14) def
+/moddatestr (02/19/20) def
+/pagecountstr (/14) def
+/modtimestr (14:51:52) def
+/user_header_p true def
+/user_header_left_str ($cse111-wm/Assignments/asg5-oop-opengl/code) def
+/user_header_center_str () def
+/user_header_right_str () def
+/user_footer_p false def
+%%EndPageSetup
+column_borders
+do_header
+19.2 694 M (755:) s
+52.2 694 M
+(   {"WebGray"               , rgbcolor \(128, 128, 128\)},) s
+19.2 682 M (756:) s
+52.2 682 M
+(   {"WebGreen"              , rgbcolor \(  0, 128,   0\)},) s
+19.2 670 M (757:) s
+52.2 670 M
+(   {"WebGrey"               , rgbcolor \(128, 128, 128\)},) s
+19.2 658 M (758:) s
+52.2 658 M
+(   {"WebMaroon"             , rgbcolor \(128,   0,   0\)},) s
+19.2 646 M (759:) s
+52.2 646 M
+(   {"WebPurple"             , rgbcolor \(128,   0, 128\)},) s
+19.2 634 M (760:) s
+52.2 634 M
+(   {"wheat"                 , rgbcolor \(245, 222, 179\)},) s
+19.2 622 M (761:) s
+52.2 622 M
+(   {"wheat1"                , rgbcolor \(255, 231, 186\)},) s
+19.2 610 M (762:) s
+52.2 610 M
+(   {"wheat2"                , rgbcolor \(238, 216, 174\)},) s
+19.2 598 M (763:) s
+52.2 598 M
+(   {"wheat3"                , rgbcolor \(205, 186, 150\)},) s
+19.2 586 M (764:) s
+52.2 586 M
+(   {"wheat4"                , rgbcolor \(139, 126, 102\)},) s
+19.2 574 M (765:) s
+52.2 574 M
+(   {"white"                 , rgbcolor \(255, 255, 255\)},) s
+19.2 562 M (766:) s
+52.2 562 M
+(   {"white-smoke"           , rgbcolor \(245, 245, 245\)},) s
+19.2 550 M (767:) s
+52.2 550 M
+(   {"WhiteSmoke"            , rgbcolor \(245, 245, 245\)},) s
+19.2 538 M (768:) s
+52.2 538 M
+(   {"x11-gray"              , rgbcolor \(190, 190, 190\)},) s
+19.2 526 M (769:) s
+52.2 526 M
+(   {"x11-green"             , rgbcolor \(  0, 255,   0\)},) s
+19.2 514 M (770:) s
+52.2 514 M
+(   {"x11-grey"              , rgbcolor \(190, 190, 190\)},) s
+19.2 502 M (771:) s
+52.2 502 M
+(   {"x11-maroon"            , rgbcolor \(176,  48,  96\)},) s
+19.2 490 M (772:) s
+52.2 490 M
+(   {"x11-purple"            , rgbcolor \(160,  32, 240\)},) s
+19.2 478 M (773:) s
+52.2 478 M
+(   {"X11Gray"               , rgbcolor \(190, 190, 190\)},) s
+19.2 466 M (774:) s
+52.2 466 M
+(   {"X11Green"              , rgbcolor \(  0, 255,   0\)},) s
+19.2 454 M (775:) s
+52.2 454 M
+(   {"X11Grey"               , rgbcolor \(190, 190, 190\)},) s
+19.2 442 M (776:) s
+52.2 442 M
+(   {"X11Maroon"             , rgbcolor \(176,  48,  96\)},) s
+19.2 430 M (777:) s
+52.2 430 M
+(   {"X11Purple"             , rgbcolor \(160,  32, 240\)},) s
+19.2 418 M (778:) s
+52.2 418 M
+(   {"yellow"                , rgbcolor \(255, 255,   0\)},) s
+19.2 406 M (779:) s
+52.2 406 M
+(   {"yellow-green"          , rgbcolor \(154, 205,  50\)},) s
+19.2 394 M (780:) s
+52.2 394 M
+(   {"yellow1"               , rgbcolor \(255, 255,   0\)},) s
+19.2 382 M (781:) s
+52.2 382 M
+(   {"yellow2"               , rgbcolor \(238, 238,   0\)},) s
+19.2 370 M (782:) s
+52.2 370 M
+(   {"yellow3"               , rgbcolor \(205, 205,   0\)},) s
+19.2 358 M (783:) s
+52.2 358 M
+(   {"yellow4"               , rgbcolor \(139, 139,   0\)},) s
+19.2 346 M (784:) s
+52.2 346 M
+(   {"YellowGreen"           , rgbcolor \(154, 205,  50\)},) s
+19.2 334 M (785:) s
+52.2 334 M
+(};) s
+_R
+S
+%%Trailer
+%%Pages: 14
+%%DocumentNeededResources: font Times-Roman Courier-Bold Times-Bold 
+%%EOF

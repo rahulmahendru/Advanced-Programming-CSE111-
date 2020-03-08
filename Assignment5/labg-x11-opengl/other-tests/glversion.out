@@ -1,0 +1,4 @@
+GL_VENDOR: VMware, Inc.
+GL_RENDERER: Gallium 0.4 on llvmpipe (LLVM 3.5, 256 bits)
+GL_VERSION: 3.0 Mesa 10.4.2 (git-)
+GL_SHADING_LANGUAGE_VERSION: 1.30

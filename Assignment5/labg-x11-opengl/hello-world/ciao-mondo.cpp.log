@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting ciao-mondo.cpp
+checksource ciao-mondo.cpp
+ident ciao-mondo.cpp
+ciao-mondo.cpp:
+     $Id: ciao-mondo.cpp,v 1.7 2019-05-15 17:12:40-07 - - $
+cpplint.py.perl ciao-mondo.cpp
+Done processing ciao-mondo.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast ciao-mondo.cpp -o ciao-mondo -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f ciao-mondo.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished ciao-mondo.cpp
