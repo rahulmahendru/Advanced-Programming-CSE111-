@@ -1,0 +1,300 @@
+head	1.11;
+access;
+symbols;
+locks;
+comment	@// @;
+
+
+1.11
+date	2019.05.16.00.12.35;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2019.05.16.00.10.23;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2018.06.27.22.49.48;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2018.06.27.22.48.51;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2016.07.21.02.53.20;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2016.06.30.21.03.51;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2016.06.30.20.58.48;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2016.06.30.19.47.48;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.06.30.19.28.03;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.06.24.00.05.45;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.06.23.23.55.32;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.11
+log
+@-
+@
+text
+@// $Id: bonjour-le-monde.cpp,v 1.10 2019-05-15 17:10:23-07 - - $
+
+// Draw line from (0,0) to (1,1).
+
+#include <cmath>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+#include <GL/freeglut.h>
+#include <libgen.h>
+
+struct {
+   int width {384};
+   int height {256};
+} window;
+
+const GLubyte BLEU[] {0, 85, 164};
+const GLubyte BLANC[] {255, 255, 255};
+const GLubyte ROUGE[] {239, 65, 53};
+const vector<const GLubyte*> colors {BLEU, BLANC, ROUGE};
+constexpr GLfloat aspect_ratio = 2.0 / 3.0;
+
+void draw_french_flag() {
+   for (size_t i = 0; i < 3; ++i) {
+      glBegin (GL_POLYGON);
+      glColor3ubv (colors[i]);
+      glVertex2f (window.width * i / 3.0, 0);
+      glVertex2f (window.width * (i + 1) / 3.0, 0);
+      glVertex2f (window.width * (i + 1) / 3.0, window.height);
+      glVertex2f (window.width * i / 3.0, window.height);
+      glEnd();
+   }
+}
+
+void display() {
+   glClearColor (0.0, 0.0, 0.0, 0.0);
+   glClear (GL_COLOR_BUFFER_BIT);
+   draw_french_flag();
+   glutSwapBuffers();
+}
+
+
+void adjust_aspect (int width, int height) {
+   if (window.width != width) {
+      height = width * aspect_ratio;
+   }else if (window.height != height) {
+      width = height / aspect_ratio;
+   }else { 
+      return;
+   }
+   window.width = width;
+   window.height = height; 
+   glutReshapeWindow (window.width, window.height);
+}
+
+void reshape (int width, int height) {
+   adjust_aspect (width, height);
+   window.width = width;
+   window.height = height;
+   glMatrixMode (GL_PROJECTION);
+   glLoadIdentity();
+   gluOrtho2D (0, window.width, 0, window.height);
+   glMatrixMode (GL_MODELVIEW);
+   glViewport (0, 0, window.width, window.height);
+   glutPostRedisplay();
+}
+
+int main (int argc, char** argv) {
+   glutInit (&argc, argv);
+   glutInitDisplayMode (GLUT_RGBA | GLUT_DOUBLE);
+   glutInitWindowSize (window.width, window.height);
+   glutInitWindowPosition (256, 256);
+   glutCreateWindow (basename (argv[0]));
+   glutDisplayFunc (display);
+   glutReshapeFunc (reshape);
+   glutMainLoop();
+   return 0;
+}
+
+//TEST// mkpspdf bonjour-le-monde.cpp.ps bonjour-le-monde.cpp*
+
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.9 2018-06-27 15:49:48-07 - - $
+d81 2
+a82 1
+//TEST// mkpspdf bonjour-le-monde.cpp.ps bonjour-le-monde.cpp
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.8 2018-06-27 15:48:51-07 - - $
+d81 1
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.7 2016-07-20 19:53:20-07 - - $
+d73 1
+a73 1
+   glutInitWindowPosition (128, 128);
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.6 2016-06-30 14:03:51-07 - - $
+d14 2
+a15 2
+   int width = 384;
+   int height = 256;
+d73 1
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.5 2016-06-30 13:58:48-07 - - $
+d21 1
+a21 1
+vector<const GLubyte*> colors {BLEU, BLANC, ROUGE};
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.4 2016-06-30 12:47:48-07 - - $
+d43 1
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.3 2016-06-30 12:28:03-07 - - $
+d14 2
+a15 2
+   size_t width = 384;
+   size_t height = 256;
+d22 1
+d43 13
+d57 1
+a67 1
+
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.2 2016-06-23 17:05:45-07 - - $
+a44 2
+cout << window.width << "x" << window.height << endl;
+   glutReshapeWindow (window.width, window.height);
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-le-monde.cpp,v 1.1 2016-06-23 16:55:32-07 - - $
+d43 1
+d45 1
+a45 1
+   window.width = width;
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: bonjour-monde.cpp,v 1.1 2016-05-04 14:14:49-07 - - $
+d57 1
+a58 1
+   glutInitWindowPosition (128, 128);
+@

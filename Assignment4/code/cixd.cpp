@@ -22,7 +22,6 @@ void reply_ls (accepted_socket& client_sock, cix_header& header) {
    const char* ls_cmd = "ls -l 2>&1";
    FILE* ls_pipe = popen (ls_cmd, "r");
    if (ls_pipe == NULL) { 
-      outlog << "ls -l: popen failed: " << strerror (errno) << endl;
       header.command = cix_command::NAK;
       header.nbytes = htonl (errno);
       send_packet (client_sock, &header, sizeof header);
@@ -36,72 +35,76 @@ void reply_ls (accepted_socket& client_sock, cix_header& header) {
       ls_output.append (buffer);
    }
    pclose (ls_pipe);
-   /*if (status < 0) outlog << ls_cmd << ": " << strerror (errno) 
-   << endl;
-              else outlog << ls_cmd << ": exit " << (status >> 8)
-                          << " signal " << (status & 0x7F)
-                          << " core " << (status >> 7 & 1) << endl;*/
    header.command = cix_command::LSOUT;
    header.nbytes = htonl (ls_output.size());
    memset (header.filename, 0, FILENAME_SIZE);
-   //outlog << "sending header " << header << endl;
    send_packet (client_sock, &header, sizeof header);
    send_packet (client_sock, ls_output.c_str(), ls_output.size());
-   //outlog << "sent " << ls_output.size() << " bytes" << endl;
 }
 
 void reply_get(accepted_socket& client_sock, cix_header& header){
+   // Use ifstream to read the file
    ifstream get_file (header.filename, ifstream::binary);
+
+   // Check of file does not exist
    if(!get_file) {
-      //outlog << "get: File not found: " << strerror (errno) << endl;
       header.command = cix_command::NAK;
       header.nbytes = htonl (errno);
       send_packet (client_sock, &header, sizeof header);
       return;
    }
+
+   // Calculate file size
    get_file.seekg(0, get_file.end);
    int length = get_file.tellg();
    get_file.seekg(0, get_file.beg);
+
+   // set the buffer and read the file
    char buffer[0x1000];
    get_file.read(buffer, length);
    get_file.close();
    header.command = cix_command::FILEOUT;
    header.nbytes = htonl (length);
+
+   // Send the FILE packet
    memset (header.filename, 0, FILENAME_SIZE);
-   //outlog << "sending header " << header << endl;
    send_packet (client_sock, &header, sizeof header);
    send_packet (client_sock, buffer, length);
-   //outlog << "sent " << length << " bytes" << endl;
 }
 
 void reply_put(accepted_socket& client_sock, cix_header& header){
+   // set header command, buffer and nbytes
    header.command = cix_command::ACK;
    size_t host_nbytes = ntohl (header.nbytes);
    auto buffer = make_unique<char[]> (host_nbytes + 1);
    recv_packet (client_sock, buffer.get(), host_nbytes);
-   //outlog << "received " << host_nbytes << " bytes" << endl;
    buffer[host_nbytes] = '\0';
+
+   // Use ofstream to write to a file in the server
    ofstream newFile;
    newFile.open(header.filename);
    newFile << buffer.get();
    newFile.close();
-   //outlog << "sending header " << header << endl;
    send_packet (client_sock, &header, sizeof header);
-   //outlog << "sent " << host_nbytes << " bytes" << endl;
 }
 
 void reply_rm(accepted_socket& client_sock, cix_header& header){
    ifstream get_file (header.filename, ifstream::binary);
+
+   // Check if the file does not exist
    if(!get_file) {
-     //outlog << "get: File not found: " << strerror (errno) << endl;
       memset (header.filename, 0, FILENAME_SIZE);
       header.command = cix_command::NAK;
       send_packet (client_sock, &header, sizeof header);
       return;
    }
+   // Remove the file
    else {
+      // Use unlink to remove the file
       int removed_file = unlink(header.filename);
       memset (header.filename, 0, FILENAME_SIZE);
+
+      // Check for an error removing the file
       if (removed_file == -1 ) {
          header.command = cix_command::NAK;
          }
@@ -119,7 +122,6 @@ void run_server (accepted_socket& client_sock) {
       for (;;) {
          cix_header header; 
          recv_packet (client_sock, &header, sizeof header);
-         //outlog << "received header " << header << endl;
          switch (header.command) {
             case cix_command::LS: 
                reply_ls (client_sock, header);
@@ -134,7 +136,6 @@ void run_server (accepted_socket& client_sock) {
                reply_rm (client_sock, header);
                break;
             default:
-               //outlog << "invalid client header:" << header << endl;
                break;
          }
       }
@@ -169,16 +170,11 @@ void reap_zombies() {
       int status;
       pid_t child = waitpid (-1, &status, WNOHANG);
       if (child <= 0) break;
-      /*outlog << "child " << child
-             << " exit " << (status >> 8)
-             << " signal " << (status & 0x7F)
-             << " core " << (status >> 7 & 1) << endl; */
    }
 }
 
 void signal_handler (int signal) {
    strsignal(signal);
-   //outlog << "signal_handler: caught " << strsignal (signal) << endl;
    reap_zombies();
 }
 

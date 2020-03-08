@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting hallo-welt.cpp
+checksource hallo-welt.cpp
+ident hallo-welt.cpp
+hallo-welt.cpp:
+     $Id: hallo-welt.cpp,v 1.9 2019-05-15 17:12:55-07 - - $
+cpplint.py.perl hallo-welt.cpp
+Done processing hallo-welt.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast hallo-welt.cpp -o hallo-welt -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f hallo-welt.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished hallo-welt.cpp

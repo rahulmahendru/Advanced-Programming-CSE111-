@@ -1,0 +1,31 @@
+head	1.1;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.1
+date	2015.02.18.23.39.59;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@-
+@
+text
+@# $Id$
+define c circle 90
+draw 0xFF0000 c 100 100
+draw 0x00FF00 c 200 100
+draw 0x0000FF c 300 100
+draw 0x00FFFF c 100 300
+draw 0xFF00FF c 200 300
+draw 0xFFFF00 c 300 300
+@

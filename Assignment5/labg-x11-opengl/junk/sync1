@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id: sync1,v 1.1 2018-08-15 14:10:57-07 - - $
+export __GL_SYNC_TO_VBLANK=1
+glxgears

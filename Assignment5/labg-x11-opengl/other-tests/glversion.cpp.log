@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting glversion.cpp
+checksource glversion.cpp
+ident glversion.cpp
+glversion.cpp:
+     $Id: glversion.cpp,v 1.16 2019-02-22 15:38:20-08 - - $
+cpplint.py.perl glversion.cpp
+Done processing glversion.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast glversion.cpp -o glversion -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f glversion.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished glversion.cpp

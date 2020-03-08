@@ -1,0 +1,94 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@// @;
+
+
+1.2
+date	2019.02.22.23.37.19;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2017.08.08.22.21.16;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@// $Id: teapot.cpp,v 1.1 2017-08-08 15:21:16-07 - - $
+
+#include <iostream>
+using namespace std;
+
+#include <GL/freeglut.h>
+#include <libgen.h>
+
+bool wantsolid = true;
+
+void display() {
+
+    /* clear window */
+    glClear (GL_COLOR_BUFFER_BIT);
+
+    /* draw scene */
+    if (wantsolid) glutSolidTeapot (.5);
+              else glutWireTeapot (.5);
+
+    /* flush drawing routines to the window */
+    glFlush();
+
+}
+
+void mouse (int button, int state, int x, int y) {
+   if (state == GLUT_DOWN) wantsolid = not wantsolid;
+   cout << boolalpha;
+   cout << "button=" << button << ", state=" << state
+        << ", x=" << x << ", y=" << y
+        << ", wantsolid=" << wantsolid << endl;
+   glutPostRedisplay();
+}
+
+int main (int argc, char** argv) {
+
+    // Initialize GLUT, using any commandline parameters passed.
+    glutInit (&argc, argv);
+
+    // Setup the size, position, and display mode for new windows.
+    glutInitWindowSize (500, 500);
+    glutInitWindowPosition (0, 0);
+    glutInitDisplayMode (GLUT_RGB);
+
+    // Create and set up a window.
+    glutCreateWindow (basename (argv[0]));
+    glutDisplayFunc (display);
+    glutMouseFunc (mouse);
+
+    // Tell GLUT to wait for events.
+    glutMainLoop();
+}
+
+//TEST// mkpspdf teapot.ps teapot.cpp*
+
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: teapot.cpp,v 1.7 2014-05-09 16:55:06-07 - - $
+d52 2
+@

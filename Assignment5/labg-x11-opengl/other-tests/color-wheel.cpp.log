@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting color-wheel.cpp
+checksource color-wheel.cpp
+ident color-wheel.cpp
+color-wheel.cpp:
+     $Id: color-wheel.cpp,v 1.25 2019-02-22 15:36:02-08 - - $
+cpplint.py.perl color-wheel.cpp
+Done processing color-wheel.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast color-wheel.cpp -o color-wheel -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f color-wheel.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished color-wheel.cpp

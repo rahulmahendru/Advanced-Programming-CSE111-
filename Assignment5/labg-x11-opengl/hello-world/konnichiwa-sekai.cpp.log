@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting konnichiwa-sekai.cpp
+checksource konnichiwa-sekai.cpp
+ident konnichiwa-sekai.cpp
+konnichiwa-sekai.cpp:
+     $Id: konnichiwa-sekai.cpp,v 1.2 2019-05-15 17:16:28-07 - - $
+cpplint.py.perl konnichiwa-sekai.cpp
+Done processing konnichiwa-sekai.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast konnichiwa-sekai.cpp -o konnichiwa-sekai -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f konnichiwa-sekai.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished konnichiwa-sekai.cpp

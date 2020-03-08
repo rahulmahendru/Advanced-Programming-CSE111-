@@ -1,0 +1,202 @@
+head	1.9;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.9
+date	2019.02.22.01.39.07;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2018.06.27.22.57.43;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2018.06.27.22.56.56;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2018.06.27.22.31.20;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2018.06.27.22.26.37;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2018.06.27.22.24.21;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2016.06.30.22.20.24;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2016.06.30.22.15.48;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.06.30.22.10.57;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.9
+log
+@-
+@
+text
+@#!/bin/bash -x
+# $Id: mk-xwds,v 1.8 2018-06-27 15:57:43-07 - - $
+for file in bonjour-le-monde ciao-mondo hallo-welt konnichiwa-sekai \
+            hello-world
+do
+   $file --geometry +500+155 &
+   xwd -frame -out $file.xwd
+   pkill $(echo $file | sed 's/-.*//')
+   convert $file.xwd $file.xwd.ps
+   sleep 2
+done
+@
+
+
+1.8
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk-xwds,v 1.7 2018-06-27 15:56:56-07 - - $
+d10 1
+a10 1
+   sleep 5
+@
+
+
+1.7
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk-xwds,v 1.6 2018-06-27 15:31:20-07 - - $
+d8 1
+a8 1
+   pkill $(echo $i | sed 's/-.*//')
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 2
+a2 2
+#!/bin/sh -x
+# $Id: mk-xwds,v 1.5 2018-06-27 15:26:37-07 - - $
+d7 2
+a8 4
+   sleep 5
+   xwd -name $file -frame -out $file.xwd
+   sleep 5
+   pkill $file
+a9 1
+   gh $file.xwd.ps
+@
+
+
+1.5
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk-xwds,v 1.4 2018-06-27 15:24:21-07 - - $
+d7 1
+a7 2
+   echo enter return to continue
+   read var
+d9 2
+d13 1
+a13 2
+   echo enter return to continue
+   read var
+@
+
+
+1.4
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk-xwds,v 1.3 2016-06-30 15:20:24-07 - - $
+d6 1
+a6 1
+   $file &
+@
+
+
+1.3
+log
+@-
+@
+text
+@d2 3
+a4 2
+# $Id: mk-xwds,v 1.2 2016-06-30 15:15:48-07 - - $
+for file in bonjour-le-monde ciao-mondo hallo-welt hello-world
+d6 2
+a7 2
+   $file&
+   echo enter return to contineu
+d10 4
+a13 1
+   convert $file.xwd $file.ps
+@
+
+
+1.2
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id: mk-xwds,v 1.1 2016-06-30 15:10:57-07 - - $
+d8 1
+a8 1
+   xwd -frame -out $file.xwd
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 2
+a2 2
+#!/bin/sh
+# $Id: make-xwds,v 1.1 2016-06-30 15:09:31-07 - - $
+d6 2
+@
