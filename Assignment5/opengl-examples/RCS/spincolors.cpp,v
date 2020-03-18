@@ -1,0 +1,1826 @@
+head	1.66;
+access;
+symbols;
+locks;
+comment	@// @;
+
+
+1.66
+date	2019.05.15.21.40.21;	author -;	state -;
+branches;
+next	1.65;
+
+1.65
+date	2019.05.15.21.39.33;	author -;	state -;
+branches;
+next	1.64;
+
+1.64
+date	2019.05.15.21.35.43;	author -;	state -;
+branches;
+next	1.63;
+
+1.63
+date	2019.04.02.02.15.59;	author -;	state -;
+branches;
+next	1.62;
+
+1.62
+date	2019.04.02.02.14.55;	author -;	state -;
+branches;
+next	1.61;
+
+1.61
+date	2019.04.02.02.14.16;	author -;	state -;
+branches;
+next	1.60;
+
+1.60
+date	2019.04.02.02.13.16;	author -;	state -;
+branches;
+next	1.59;
+
+1.59
+date	2019.04.02.02.12.11;	author -;	state -;
+branches;
+next	1.58;
+
+1.58
+date	2019.04.02.02.10.57;	author -;	state -;
+branches;
+next	1.57;
+
+1.57
+date	2019.04.02.02.10.37;	author -;	state -;
+branches;
+next	1.56;
+
+1.56
+date	2019.04.02.02.04.46;	author -;	state -;
+branches;
+next	1.55;
+
+1.55
+date	2019.04.02.02.04.17;	author -;	state -;
+branches;
+next	1.54;
+
+1.54
+date	2019.04.02.02.00.18;	author -;	state -;
+branches;
+next	1.53;
+
+1.53
+date	2019.04.02.02.00.05;	author -;	state -;
+branches;
+next	1.52;
+
+1.52
+date	2019.04.02.01.58.57;	author -;	state -;
+branches;
+next	1.51;
+
+1.51
+date	2019.04.02.01.58.40;	author -;	state -;
+branches;
+next	1.50;
+
+1.50
+date	2019.04.02.01.57.03;	author -;	state -;
+branches;
+next	1.49;
+
+1.49
+date	2019.04.02.01.56.42;	author -;	state -;
+branches;
+next	1.48;
+
+1.48
+date	2019.03.23.01.05.15;	author -;	state -;
+branches;
+next	1.47;
+
+1.47
+date	2019.03.23.01.04.41;	author -;	state -;
+branches;
+next	1.46;
+
+1.46
+date	2019.03.23.01.01.15;	author -;	state -;
+branches;
+next	1.45;
+
+1.45
+date	2019.03.23.01.00.09;	author -;	state -;
+branches;
+next	1.44;
+
+1.44
+date	2019.03.23.00.59.42;	author -;	state -;
+branches;
+next	1.43;
+
+1.43
+date	2019.03.23.00.43.36;	author -;	state -;
+branches;
+next	1.42;
+
+1.42
+date	2019.03.23.00.43.10;	author -;	state -;
+branches;
+next	1.41;
+
+1.41
+date	2019.03.23.00.42.51;	author -;	state -;
+branches;
+next	1.40;
+
+1.40
+date	2019.03.23.00.38.36;	author -;	state -;
+branches;
+next	1.39;
+
+1.39
+date	2019.03.23.00.37.08;	author -;	state -;
+branches;
+next	1.38;
+
+1.38
+date	2019.03.23.00.35.16;	author -;	state -;
+branches;
+next	1.37;
+
+1.37
+date	2019.03.23.00.34.18;	author -;	state -;
+branches;
+next	1.36;
+
+1.36
+date	2019.03.23.00.34.00;	author -;	state -;
+branches;
+next	1.35;
+
+1.35
+date	2019.03.23.00.33.43;	author -;	state -;
+branches;
+next	1.34;
+
+1.34
+date	2019.03.23.00.19.21;	author -;	state -;
+branches;
+next	1.33;
+
+1.33
+date	2019.03.23.00.17.54;	author -;	state -;
+branches;
+next	1.32;
+
+1.32
+date	2019.03.23.00.17.43;	author -;	state -;
+branches;
+next	1.31;
+
+1.31
+date	2019.03.23.00.17.21;	author -;	state -;
+branches;
+next	1.30;
+
+1.30
+date	2019.03.23.00.10.43;	author -;	state -;
+branches;
+next	1.29;
+
+1.29
+date	2019.03.23.00.04.49;	author -;	state -;
+branches;
+next	1.28;
+
+1.28
+date	2019.03.23.00.04.19;	author -;	state -;
+branches;
+next	1.27;
+
+1.27
+date	2019.03.22.23.22.22;	author -;	state -;
+branches;
+next	1.26;
+
+1.26
+date	2019.03.22.23.21.10;	author -;	state -;
+branches;
+next	1.25;
+
+1.25
+date	2019.03.22.23.20.19;	author -;	state -;
+branches;
+next	1.24;
+
+1.24
+date	2019.03.22.23.19.42;	author -;	state -;
+branches;
+next	1.23;
+
+1.23
+date	2019.03.22.23.17.37;	author -;	state -;
+branches;
+next	1.22;
+
+1.22
+date	2019.03.22.23.17.15;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2019.03.22.23.17.00;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2019.03.22.23.16.21;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2019.03.22.23.15.16;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2019.03.22.23.14.29;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2019.03.22.23.12.50;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2019.03.22.23.12.34;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2019.03.22.23.11.25;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2019.03.22.22.59.35;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2019.03.22.21.10.14;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2019.03.22.00.47.25;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2019.03.22.00.09.39;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2019.03.21.18.22.26;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2019.03.21.02.03.35;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2019.03.21.02.03.13;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2019.03.21.02.02.35;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2019.03.21.02.02.05;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2019.03.21.02.01.37;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2019.03.21.01.53.27;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2019.03.21.01.53.12;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2019.03.21.01.52.31;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2019.03.21.01.51.59;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.66
+log
+@-
+@
+text
+@// $Id: spincolors.cpp,v 1.65 2019-05-15 14:39:33-07 - - $
+
+// Draw a spinning triangle in a circle, cycling colors
+// red -> yellow -> green -> cyan -> blue -> magenta -> ...
+
+#include <algorithm>
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <unordered_map>
+using namespace std;
+
+#include <GL/freeglut.h>
+#include <libgen.h>
+#include <sys/time.h>
+#include <time.h>
+
+enum class justify {LL, LR, UL, UR};
+struct rgbcolor { GLubyte rgb[3] {}; };
+static constexpr int MARGIN = 5;
+struct {
+   string name;
+   int width {512};
+   int height {384};
+   rgbcolor pointer {};
+   rgbcolor circle {};
+   size_t steps_per_sec {10};
+   GLfloat radius() { return min (width, height) / 2.0 - 2 * MARGIN; };
+} window;
+
+const rgbcolor BLACK   {0x00, 0x00, 0x00};
+const rgbcolor WHITE   {0xFF, 0xFF, 0xFF};
+const rgbcolor RED     {0xFF, 0x00, 0x00};
+const rgbcolor YELLOW  {0xFF, 0xFF, 0x00};
+const rgbcolor GREEN   {0x00, 0xFF, 0x00};
+const rgbcolor CYAN    {0x00, 0xFF, 0xFF};
+const rgbcolor BLUE    {0x00, 0x00, 0xFF};
+const rgbcolor MAGENTA {0xFF, 0x00, 0xFF};
+
+
+string to_string (const rgbcolor& color) {
+   ostringstream out;
+   out << "0x" << hex << setiosflags (ios::uppercase) << setfill ('0')
+       << setw(2) << static_cast<unsigned> (color.rgb[0])
+       << setw(2) << static_cast<unsigned> (color.rgb[1])
+       << setw(2) << static_cast<unsigned> (color.rgb[2]);
+   return out.str();
+}
+
+string time_string() {
+   struct timeval tv;
+   gettimeofday (&tv, nullptr);
+   time_t now = tv.tv_sec;
+   struct tm tm;
+   localtime_r (&now, &tm);
+   char timebuf[64];
+   strftime (timebuf, sizeof timebuf, "%T", &tm);
+   char fracbuf[10];
+   snprintf (fracbuf, sizeof fracbuf, ".%02ld", tv.tv_usec / 10'000);
+   return string (timebuf) + string(fracbuf);
+}
+
+double time_seconds() {
+   struct timeval tv;
+   gettimeofday (&tv, nullptr);
+   constexpr long million = 1'000'000;
+   long fraction = million / window.steps_per_sec;
+   double microseconds = tv.tv_usec / fraction * fraction;
+   return double (tv.tv_sec % 60) + microseconds / million;
+}
+
+
+void draw_text (justify where, const string& text, int ystep = 0) {
+   static void* font = GLUT_BITMAP_9_BY_15;
+   auto ustring = reinterpret_cast<const GLubyte*> (text.c_str());
+   GLfloat length = glutBitmapLength (font, ustring);
+   GLfloat height = glutBitmapHeight (font);
+   GLfloat xpos = 0, ypos = 0;
+   switch (where) {
+      case justify::LL:
+         xpos = - window.width / 2.0 + MARGIN;
+         ypos = - window.height / 2.0 + MARGIN;;
+         break;
+      case justify::LR:
+         xpos = window.width / 2.0 - length - MARGIN;
+         ypos = - window.height / 2.0 + MARGIN;;
+         break;
+      case justify::UL:
+         xpos = - window.width / 2.0 + MARGIN;
+         ypos = window.height / 2.0 - height;
+         break;
+      case justify::UR:
+         xpos = window.width / 2.0 - length - MARGIN;
+         ypos = window.height / 2.0 - height;
+         break;
+   }
+   ypos += height * ystep;
+   glColor3ubv (BLACK.rgb);
+   glRasterPos2f (xpos, ypos);
+   glutBitmapString (font, ustring);
+}
+
+void draw_color (justify where, int index, rgbcolor color) {
+   ostringstream buffer;;
+   const char name[3] {'R', 'G', 'B'};
+   buffer << name[index] << ' ' << fixed << setprecision(3)
+          << color.rgb[index] / 255.0;
+   draw_text (where, buffer.str(), 3 - index);
+}
+
+void draw_point (GLfloat radius, GLfloat degrees) {
+   GLfloat xpos = radius * cos (degrees * M_PI / 180.0);
+   GLfloat ypos = radius * sin (degrees * M_PI / 180.0);
+   glVertex2f (xpos, ypos);
+}
+
+
+void draw_circle() {
+   glBegin (GL_POLYGON);
+   glColor3ubv (window.circle.rgb);
+   for (GLfloat angle = 0; angle < 360.0; angle += 360.0 / 128.0) {
+      draw_point (window.radius(), angle);
+   }
+   glEnd();
+}
+
+void draw_pointer() {
+   glBegin (GL_POLYGON);
+   glColor3ubv (window.pointer.rgb);
+   draw_point (window.radius(), 90.0);
+   draw_point (window.radius(), 225.0);
+   //draw_point (window.radius() * 0.5, 270.0);
+   draw_point (window.radius(), 315.0);
+   glEnd();
+}
+
+void draw_dots() {
+   glEnable (GL_POINT_SMOOTH);
+   glPointSize (window.radius() / 20.0);
+   glBegin(GL_POINTS);
+   glColor3ubv (BLACK.rgb);
+   constexpr size_t dot_count = 12;
+   for (size_t dotpos = 0; dotpos < dot_count; ++dotpos) {
+      draw_point (window.radius(), dotpos * 360.0 / dot_count - 90.0);
+   }
+   glEnd();
+}
+
+
+void set_colors (double seconds) {
+   if (seconds < 10) {
+      window.pointer = RED;
+      window.pointer.rgb[1] = round ((seconds / 10.0) * 255.0);
+   }else if (seconds < 20) {
+      window.pointer = YELLOW;
+      window.pointer.rgb[0] = round ((2.0 - seconds / 10.0) * 255.0);
+   }else if (seconds < 30) {
+      window.pointer = GREEN;
+      window.pointer.rgb[2] = round ((seconds / 10.0 - 2.0) * 255.0);
+   }else if (seconds < 40) {
+      window.pointer = BLUE;
+      window.pointer.rgb[1] = round ((4.0 - seconds / 10.0) * 255.0);
+   }else if (seconds < 50) {
+      window.pointer = BLUE;
+      window.pointer.rgb[0] = round ((seconds / 10.0 - 4.0) * 255.0);
+   }else {
+      window.pointer = MAGENTA;
+      window.pointer.rgb[2] = round ((6.0 - seconds / 10.0) * 255.0);
+   }
+   for (size_t pos = 0; pos < 3; ++pos) {
+      window.circle.rgb[pos] = 255 - window.pointer.rgb[pos];
+   }
+}
+
+void clear_color (const rgbcolor& color) {
+   glClearColor (color.rgb[0] / 255.0,
+                 color.rgb[1] / 255.0,
+                 color.rgb[2] / 255.0, 1.0);
+}
+
+
+void display() {
+   double seconds = time_seconds();
+   set_colors (seconds);
+   glClear (GL_COLOR_BUFFER_BIT);
+   clear_color (WHITE);
+   glPushMatrix();
+   glRotatef (-seconds * 6.0, 0, 0, 1);
+   draw_circle();
+   draw_pointer();
+   glPopMatrix();
+   draw_dots();
+   draw_text (justify::LL, to_string (window.pointer));
+   draw_text (justify::LR, to_string (window.circle));
+   draw_text (justify::UR, time_string());
+   draw_text (justify::UL, to_string (window.width) + "x"
+                         + to_string (window.height));
+   for (int index = 0; index < 3; ++index) {
+      draw_color (justify::LL, index, window.pointer);
+   }
+   for (int index = 0; index < 3; ++index) {
+      draw_color (justify::LR, index, window.circle);
+   }
+   glutSwapBuffers();
+}
+
+void reshape (int width, int height) {
+   window.width = width;
+   window.height = height;
+   glMatrixMode (GL_PROJECTION);
+   glLoadIdentity();
+   gluOrtho2D (-window.width / 2.0, +window.width / 2.0,
+               -window.height / 2.0, +window.height / 2.0);
+   glMatrixMode (GL_MODELVIEW);
+   glViewport (0, 0, window.width, window.height);
+   glutPostRedisplay();
+}
+
+constexpr GLfloat frequency_msec = 50;
+void timer (int) {
+   glutTimerFunc (500 / window.steps_per_sec, timer, 0);
+   glutPostRedisplay();
+}
+
+
+int main (int argc, char** argv) {
+   int steps = argc > 1 ? atoi (argv[1]) : 0;
+   if (1 <= steps and steps <= 100) window.steps_per_sec = steps;
+   window.name = basename (argv[0]);
+   glutInit (&argc, argv);
+   glutInitDisplayMode (GLUT_RGBA | GLUT_DOUBLE);
+   glutInitWindowSize (window.width, window.height);
+   glutInitWindowPosition (0, 0);
+   glutCreateWindow (window.name.c_str());
+   glutDisplayFunc (display);
+   glutReshapeFunc (reshape);
+   glutTimerFunc (500, timer, 0);
+   glutMainLoop();
+   return 0;
+}
+
+@
+
+
+1.65
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.64 2019-05-15 14:35:43-07 - - $
+d141 1
+a141 1
+   glPointSize (window.radius() / 25.0);
+@
+
+
+1.64
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.63 2019-04-01 19:15:59-07 - - $
+d141 1
+a141 1
+   glPointSize (window.radius() / 30.0);
+@
+
+
+1.63
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.62 2019-04-01 19:14:55-07 - - $
+d134 1
+a134 1
+   draw_point (window.radius() * 0.5, 270.0);
+@
+
+
+1.62
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.61 2019-04-01 19:14:16-07 - - $
+d141 1
+a141 1
+   glPointSize (window.radius() / 40.0);
+d144 1
+a144 1
+   constexpr size_t dot_count = 6;
+@
+
+
+1.61
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.60 2019-04-01 19:13:16-07 - - $
+d146 1
+a146 1
+      draw_point (window.radius(), dotpos * 360.0 / dot_count);
+@
+
+
+1.60
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.59 2019-04-01 19:12:11-07 - - $
+d141 1
+a141 1
+   glPointSize (window.radius() / 50.0);
+d144 1
+a144 1
+   constexpr size_t dot_count = 12;
+@
+
+
+1.59
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.58 2019-04-01 19:10:57-07 - - $
+d144 1
+a144 1
+   constexpr size_t dot_count = 16;
+@
+
+
+1.58
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.57 2019-04-01 19:10:37-07 - - $
+d144 1
+a144 1
+   constexpr size_t dot_count = 12;
+@
+
+
+1.57
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.56 2019-04-01 19:04:46-07 - - $
+d145 1
+a145 1
+   for (size_t dotpos = 0; dotpos < dot_count; dotpos += step) {
+@
+
+
+1.56
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.55 2019-04-01 19:04:17-07 - - $
+d140 7
+a146 9
+   for (size_t step = 1; step < 10; step *= 5) {
+      glEnable (GL_POINT_SMOOTH);
+      glPointSize (window.radius() / 50.0 * (step == 1 ? 1.0 : 1.75));
+      glBegin(GL_POINTS);
+      glColor3ubv (BLACK.rgb);
+      for (size_t dotpos = 0; dotpos < 60; dotpos += step) {
+         draw_point (window.radius(), dotpos * 360.0 / 60.0);
+      }
+      glEnd();
+d148 1
+@
+
+
+1.55
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.54 2019-04-01 19:00:18-07 - - $
+d142 1
+a142 1
+      glPointSize (window.radius() / 50.0 * (step == 1 ? 1.0 : 1.5));
+@
+
+
+1.54
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.53 2019-04-01 19:00:05-07 - - $
+d142 1
+a142 1
+      glPointSize (window.radius() / 50.0 * (step == 1 ? 1 : 2));
+@
+
+
+1.53
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.52 2019-04-01 18:58:57-07 - - $
+d29 1
+a29 1
+   size_t window.steps_per_sec {10};
+@
+
+
+1.52
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.51 2019-04-01 18:58:40-07 - - $
+a22 1
+static constexpr size_t STEPS_PER_SEC {10};
+d29 1
+d69 1
+a69 1
+   long fraction = million / STEPS_PER_SEC;
+d224 1
+a224 1
+   glutTimerFunc (500 / STEPS_PER_SEC, timer, 0);
+d231 1
+a231 1
+   if (1 <= steps and steps <= 100) STEPS_PER_SEC = steps;
+@
+
+
+1.51
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.50 2019-04-01 18:57:03-07 - - $
+d224 1
+a224 1
+   glutTimerFunc (500 / window.STEPS_PER_SEC, timer, 0);
+d231 1
+a231 1
+   if (1 <= steps and steps <= 100) window.STEPS_PER_SEC = steps;
+@
+
+
+1.50
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.49 2019-04-01 18:56:42-07 - - $
+d22 2
+a24 2
+   static constexpr int margin = 5;
+   static constexpr size_t steps_persec {10};
+d30 1
+a30 1
+   GLfloat radius() { return min (width, height) / 2.0 - 2 * margin; };
+d69 1
+a69 1
+   long fraction = million / window.steps_persec;
+d83 2
+a84 2
+         xpos = - window.width / 2.0 + window.margin;
+         ypos = - window.height / 2.0 + window.margin;;
+d87 2
+a88 2
+         xpos = window.width / 2.0 - length - window.margin;
+         ypos = - window.height / 2.0 + window.margin;;
+d91 1
+a91 1
+         xpos = - window.width / 2.0 + window.margin;
+d95 1
+a95 1
+         xpos = window.width / 2.0 - length - window.margin;
+d224 1
+a224 1
+   glutTimerFunc (500 / window.steps_persec, timer, 0);
+d231 1
+a231 1
+   if (1 <= steps and steps <= 100) window.steps_persec = steps;
+@
+
+
+1.49
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.48 2019-03-22 18:05:15-07 - - $
+d23 2
+a29 2
+   constexpr int margin = 5;
+   constexpr size_t steps_persec {10};
+@
+
+
+1.48
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.47 2019-03-22 18:04:41-07 - - $
+d28 3
+a30 3
+   int margin = 5;
+   size_t steps_persec {10};
+   GLfloat radius() { return min (width, height) / 2.0 - margin; };
+@
+
+
+1.47
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.46 2019-03-22 18:01:15-07 - - $
+a231 1
+   cout << window.steps_persec << endl;
+@
+
+
+1.46
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.45 2019-03-22 18:00:09-07 - - $
+d224 1
+a224 1
+   glutTimerFunc (frequency_msec, timer, 0);
+d241 1
+a241 1
+   glutTimerFunc (frequency_msec, timer, 0);
+@
+
+
+1.45
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.44 2019-03-22 17:59:42-07 - - $
+d232 1
+@
+
+
+1.44
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.43 2019-03-22 17:43:36-07 - - $
+d69 1
+a69 1
+   constexpr long fraction = million / window.steps_persec;
+@
+
+
+1.43
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.42 2019-03-22 17:43:10-07 - - $
+d29 1
+d42 1
+d69 1
+a69 1
+   constexpr long fraction = million / 10;
+a74 25
+void set_colors (double seconds) {
+   if (seconds < 10) {
+      window.pointer = RED;
+      window.pointer.rgb[1] = round ((seconds / 10.0) * 255.0);
+   }else if (seconds < 20) {
+      window.pointer = YELLOW;
+      window.pointer.rgb[0] = round ((2.0 - seconds / 10.0) * 255.0);
+   }else if (seconds < 30) {
+      window.pointer = GREEN;
+      window.pointer.rgb[2] = round ((seconds / 10.0 - 2.0) * 255.0);
+   }else if (seconds < 40) {
+      window.pointer = BLUE;
+      window.pointer.rgb[1] = round ((4.0 - seconds / 10.0) * 255.0);
+   }else if (seconds < 50) {
+      window.pointer = BLUE;
+      window.pointer.rgb[0] = round ((seconds / 10.0 - 4.0) * 255.0);
+   }else {
+      window.pointer = MAGENTA;
+      window.pointer.rgb[2] = round ((6.0 - seconds / 10.0) * 255.0);
+   }
+   for (size_t pos = 0; pos < 3; ++pos) {
+      window.circle.rgb[pos] = 255 - window.pointer.rgb[pos];
+   }
+}
+
+a104 1
+
+d119 1
+d152 26
+d230 2
+@
+
+
+1.42
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.41 2019-03-22 17:42:51-07 - - $
+d132 1
+a132 1
+   buffer << name[index] << fixed << setprecision(3)
+@
+
+
+1.41
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.40 2019-03-22 17:38:36-07 - - $
+d132 1
+a132 1
+   buffer << name[index] fixed << setprecision(3)
+@
+
+
+1.40
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.39 2019-03-22 17:37:08-07 - - $
+d131 3
+a133 1
+   buffer << fixed << setprecision(3) << color.rgb[index] / 255.0;
+@
+
+
+1.39
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.38 2019-03-22 17:35:16-07 - - $
+d191 2
+a192 2
+   draw_text (justify::LL, to_string (window.pointer).substr(2));
+   draw_text (justify::LR, to_string (window.circle).substr(2));
+@
+
+
+1.38
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.37 2019-03-22 17:34:18-07 - - $
+d99 1
+a99 1
+   static void* font = GLUT_BITMAP_TIMES_ROMAN_24;
+@
+
+
+1.37
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.35 2019-03-22 17:33:43-07 - - $
+d57 1
+a57 1
+   strftime (timebuf, sizeof timebuf, "%T", tm);
+d59 1
+a59 1
+   snprintf (fracbuf, sizeof fracbuf, ".%02d", tv.tv_usec / 10'000);
+@
+
+
+1.36
+log
+@-
+@
+text
+@d57 1
+a57 1
+   strftime (timebuf, sizeof buffer, "%T", tm);
+@
+
+
+1.35
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.34 2019-03-22 17:19:21-07 - - $
+d57 1
+a57 1
+   strftime (buffer, sizeof buffer, "%T", tm);
+@
+
+
+1.34
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.33 2019-03-22 17:17:54-07 - - $
+d18 1
+d50 13
+d128 1
+a134 1
+
+d193 1
+a193 3
+   ostringstream time;
+   time << fixed << setprecision(2) << seconds;
+   draw_text (justify::UR, time.str());
+d223 1
+@
+
+
+1.33
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.32 2019-03-22 17:17:43-07 - - $
+d184 6
+a189 2
+   for (int it = 0; it < 3; ++it) (draw_color (LL, it, window.pointer);
+   for (int it = 0; it < 3; ++it) (draw_color (LR, it, window.circle);
+@
+
+
+1.32
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.31 2019-03-22 17:17:21-07 - - $
+d116 1
+a116 1
+   buffer << fixed << precision(3) << color.rgb[index] / 255.0;
+@
+
+
+1.31
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.30 2019-03-22 17:10:43-07 - - $
+d116 1
+a116 1
+   buffer << fixed << precision(3) << color / 255.0;
+@
+
+
+1.30
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.29 2019-03-22 17:04:49-07 - - $
+d114 6
+d184 2
+@
+
+
+1.29
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.28 2019-03-22 17:04:19-07 - - $
+d84 1
+a84 1
+void draw_text (justify where, const string& text) {
+d108 1
+@
+
+
+1.28
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.27 2019-03-22 16:22:22-07 - - $
+d53 1
+a53 1
+   constexpr long fraction = million / 20;
+@
+
+
+1.27
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.26 2019-03-22 16:21:10-07 - - $
+a20 1
+
+d53 1
+a53 1
+   constexpr long fraction = million / 10;
+d58 1
+d113 1
+d158 1
+@
+
+
+1.26
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.25 2019-03-22 16:20:19-07 - - $
+d54 1
+a54 1
+   constexpr long fraction = million / 5;
+d190 1
+a190 1
+constexpr GLfloat frequency_msec = 100;
+@
+
+
+1.25
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.24 2019-03-22 16:19:42-07 - - $
+d132 3
+a134 3
+   draw_point (window.radius(), 210.0);
+   draw_point (window.radius() * 0.1, 270.0);
+   draw_point (window.radius(), 330.0);
+@
+
+
+1.24
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.23 2019-03-22 16:17:37-07 - - $
+d133 1
+a133 1
+   draw_point (window.radius() * 0.5, 270.0);
+@
+
+
+1.23
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.22 2019-03-22 16:17:15-07 - - $
+d132 3
+a134 3
+   draw_point (window.radius(), 225.0);
+   draw_point (window.radius() * 0.6, 270.0);
+   draw_point (window.radius(), 315.0);
+@
+
+
+1.22
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.21 2019-03-22 16:17:00-07 - - $
+d133 1
+a133 1
+   draw_point (window.radius() * 0.75, 270.0);
+@
+
+
+1.21
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.20 2019-03-22 16:16:21-07 - - $
+d133 1
+a133 1
+   draw_point (window.radius() 0.75, 270.0);
+@
+
+
+1.20
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.19 2019-03-22 16:15:16-07 - - $
+d133 1
+a133 1
+   draw_point (window.radius(), 270.0 * 0.75);
+@
+
+
+1.19
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.18 2019-03-22 16:14:29-07 - - $
+d133 1
+a133 1
+   draw_point (window.radius(), 270.0);
+@
+
+
+1.18
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.17 2019-03-22 16:12:50-07 - - $
+d132 1
+a132 1
+   draw_point (window.radius(), 240.0);
+d134 1
+a134 1
+   draw_point (window.radius(), 300.0);
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.16 2019-03-22 16:12:34-07 - - $
+d132 3
+a134 3
+   draw_point (window.radius(), 225.0);
+   draw_point (window.radius() / 4.0, 270.0);
+   draw_point (window.radius(), 315.0);
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.15 2019-03-22 16:11:25-07 - - $
+a18 4
+#define SHOW(X) { \
+   cout << __PRETTY_FUNCTION__ << " (" << X << ")" << endl; \
+}
+
+a178 1
+   SHOW (width << "," << height);
+a196 1
+   SHOW (argv[0]);
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.14 2019-03-22 15:59:35-07 - - $
+d177 2
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.13 2019-03-22 14:10:14-07 - - $
+d174 3
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.12 2019-03-21 17:47:25-07 - - $
+d23 2
+a24 2
+enum class justify {LEFT, RIGHT};
+struct color { GLubyte rgb[3] {}; };
+d26 20
+a45 1
+string to_string (const color& color) {
+a53 15
+const color RED     {0xFF, 0x00, 0x00};
+const color YELLOW  {0xFF, 0xFF, 0x00};
+const color GREEN   {0x00, 0xFF, 0x00};
+const color CYAN    {0x00, 0xFF, 0xFF};
+const color BLUE    {0x00, 0x00, 0xFF};
+const color MAGENTA {0xFF, 0x00, 0xFF};
+
+struct {
+   string name;
+   int width {512};
+   int height {384};
+   color pointer {};
+   color circle {};
+} window;
+
+d57 4
+a60 2
+   double time = double (tv.tv_sec) + double (tv.tv_usec) / 1.0e6;
+   return fmod (time, 60.0);
+d74 2
+a75 2
+      window.pointer = CYAN;
+      window.pointer.rgb[2] = round ((4.0 - seconds / 10.0) * 255.0);
+d78 1
+a78 1
+      window.pointer.rgb[1] = round ((seconds / 10.0 - 4.0) * 255.0);
+d81 1
+a81 1
+      window.pointer.rgb[0] = round ((6.0 - seconds / 10.0) * 255.0);
+d88 2
+a89 2
+void draw_string (justify where, const string& text) {
+   static void* font = GLUT_BITMAP_9_BY_15;
+d91 3
+a93 3
+   GLfloat size = glutBitmapLength (font, ustring);
+   constexpr GLfloat offset = 2;
+   GLfloat xpos;
+d95 16
+a110 2
+      case justify.LEFT: xpos = offset; break;
+      case justify.RIGHT: xpos = window.width - offset - size; break;
+d112 2
+a113 1
+   glRasterPos2f (xpos, offset);
+a123 1
+   GLfloat radius = min (window.width, window.height) / 2.0;
+d127 1
+a127 1
+      draw_point (radius, angle);
+a132 1
+   GLfloat radius = min (window.width, window.height) / 2.0;
+d135 4
+a138 4
+   draw_point (radius, 90.0);
+   draw_point (radius, 225.0);
+   draw_point (radius / 4.0, 270.0);
+   draw_point (radius, 315.0);
+d142 19
+a163 3
+   SHOW (seconds << ", " << to_string (window.pointer) << ", "
+                 << to_string (window.circle));
+   glClearColor (0.5, 0.5, 0.5, 1.0);
+d165 1
+d171 3
+a173 2
+   draw_string (justify.LEFT, to_string (window.pointer));
+   draw_string (justify.RIGHT, to_string (window.circle));
+d178 1
+a178 1
+   SHOW (width << ", " << height);
+d190 1
+a190 1
+constexpr GLfloat frequency_msec = 1000;
+d197 1
+a197 6
+   string argstring = to_string (argc) + ", {\"" + argv[0] + "\"";
+   for (char** argp = &argv[1]; argp != &argv[argc]; ++argp) {
+      argstring += ", \""s + *argp + "\"";
+   }
+   argstring += "}";
+   SHOW (argstring);
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.11 2019-03-21 17:09:39-07 - - $
+d10 1
+d23 2
+a24 1
+struct color { GLubyte rgb[3]; };
+d26 2
+a27 1
+ostream& operator<< (ostream& out, const color& color) {
+d32 1
+a32 1
+   return out;
+d46 2
+a47 2
+   color fore {BLUE};
+   color back {GREEN};
+d59 2
+a60 2
+      window.fore = RED;
+      window.fore.rgb[1] = round ((seconds / 10.0) * 255.0);
+d62 2
+a63 2
+      window.fore = YELLOW;
+      window.fore.rgb[0] = round ((2.0 - seconds / 10.0) * 255.0);
+d65 2
+a66 2
+      window.fore = GREEN;
+      window.fore.rgb[2] = round ((seconds / 10.0 - 2.0) * 255.0);
+d68 2
+a69 2
+      window.fore = CYAN;
+      window.fore.rgb[2] = round ((4.0 - seconds / 10.0) * 255.0);
+d71 2
+a72 2
+      window.fore = BLUE;
+      window.fore.rgb[1] = round ((seconds / 10.0 - 4.0) * 255.0);
+d74 2
+a75 2
+      window.fore = MAGENTA;
+      window.fore.rgb[0] = round ((6.0 - seconds / 10.0) * 255.0);
+d78 1
+a78 1
+      window.back.rgb[pos] = 255 - window.fore.rgb[pos];
+d82 21
+a102 1
+void draw_circle (const color& color, size_t points) {
+a103 2
+   GLfloat delta = 2.0 * M_PI / points;
+   constexpr GLfloat angle = M_PI / 2.0;
+d105 3
+a107 5
+   glColor3ubv (color.rgb);
+   for (GLfloat theta = 0; theta < 2.0 * M_PI; theta += delta) {
+      GLfloat xpos = radius * cos (angle + theta);
+      GLfloat ypos = radius * sin (angle + theta);
+      glVertex2f (xpos, ypos);
+d112 11
+d126 2
+a127 1
+   SHOW (seconds << ", " << window.fore << ", " << window.back);
+d132 2
+a133 2
+   draw_circle (window.back, 64);
+   draw_circle (window.fore, 3);
+d135 2
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.9 2019-03-20 19:03:35-07 - - $
+d8 1
+d22 16
+a37 6
+const GLubyte RED    [3] {0xFF, 0x00, 0x00};
+const GLubyte YELLOW [3] {0xFF, 0x00, 0x00};
+const GLubyte GREEN  [3] {0xFF, 0x00, 0x00};
+const GLubyte CYAN   [3] {0xFF, 0x00, 0x00};
+const GLubyte BLUE   [3] {0xFF, 0x00, 0x00};
+const GLubyte MAGENTA[3] {0xFF, 0x00, 0x00};
+d43 2
+a44 2
+   GLubyte fore[3] {0xFF, 0x00, 0x00};
+   GLubyte back[3] {0x00, 0xFF, 0xFF};
+a54 1
+   SHOW (seconds);
+d57 1
+d60 1
+d63 1
+d66 1
+d69 1
+d72 1
+d75 1
+a75 1
+      window.back[pos] = 255 - window.fore[pos];
+a76 1
+   SHOW (window.fore << ", " << window.back);
+d79 1
+a79 1
+void draw_circle (const GLubyte* color, size_t points) {
+d84 1
+a84 1
+   glColor3ubv (color);
+a92 2
+const GLubyte RED[] {255, 0 ,0};
+const GLubyte CYAN[] {0, 255, 255};
+a94 1
+   SHOW (seconds);
+d96 1
+@
+
+
+1.10
+log
+@-
+@
+text
+@d15 1
+d21 7
+d32 2
+d36 29
+a64 1
+void draw_circle (const GLfloat* color, size_t points, GLfloat angle) {
+d67 1
+d69 2
+a70 2
+   glColor3f (color[0], color[1], color[2]);
+   for (size_t theta = 0; theta < 2.0 * M_PI; theta += delta) {
+d78 2
+a79 2
+const GLfloat RED[] {1.0, 0.0, 0.0};
+const GLfloat CYAN[] {0.0, 1.0, 1.0};
+d81 3
+a83 1
+   SHOW ("");
+d86 5
+a90 2
+   draw_circle (CYAN, 64, 0);
+   draw_circle (RED, 3, 0);
+d109 1
+a109 1
+   glutTimerFunc (frequency_msec, timer, 100);
+d114 6
+a119 1
+   SHOW (argv[0]);
+d128 1
+a128 1
+   //glutTimerFunc (frequency_msec, timer, frequency_msec);
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.8 2019-03-20 19:03:13-07 - - $
+d75 1
+a75 1
+   glutInitWindowPosition (128, 128);
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.7 2019-03-20 19:02:35-07 - - $
+d79 1
+a79 1
+   glutTimerFunc (frequency_msec, timer, frequency_msec);
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.5 2019-03-20 19:01:37-07 - - $
+d79 1
+a79 1
+   glutTimerFunc (frequency_msec, timer, 0);
+@
+
+
+1.6
+log
+@-
+@
+text
+@d32 2
+a33 2
+      GLfloat xpos = radius * cos (theta);
+      GLfloat ypos = radius * sin (theta);
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.4 2019-03-20 18:53:27-07 - - $
+d40 1
+a40 1
+const GLfloat CYAN[] {0.0, 1.0, 1.0);
+@
+
+
+1.4
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.3 2019-03-20 18:53:12-07 - - $
+d26 15
+d45 2
+a46 1
+   //
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.2 2019-03-20 18:52:31-07 - - $
+d27 1
+a27 1
+   SHOW ();
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: spincolors.cpp,v 1.1 2019-03-20 18:51:59-07 - - $
+d27 1
+a27 1
+   cout << __PRETTY_FUNCTION__ << ":" << endl;
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id$
+d17 1
+a17 1
+   cout << __PRETTY_FUNCTION__ << " (" << X << << ")" << endl; \
+@

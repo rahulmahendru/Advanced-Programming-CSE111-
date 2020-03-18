@@ -12,6 +12,8 @@ using namespace std;
 #include "rgbcolor.h"
 #include "shape.h"
 
+extern unordered_map<string,void*> fontcode;
+
 class object {
    private:
       shared_ptr<shape> pshape;
@@ -19,7 +21,7 @@ class object {
       rgbcolor color;
    public:
       object (shared_ptr<shape>, vertex, rgbcolor);
-      void draw();
+      void draw(int objectPosition);
       void move (GLfloat delta_x, GLfloat delta_y);
 };
 
@@ -58,11 +60,16 @@ class window {
       static void passivemotion (int x, int y);
       static void mousefn (int button, int state, int x, int y);
    public:
+      static bool isSelected ;   // To check if an object is selected
+      static int moveByPixels ;  // To store the move pixels
       static void push_back (const object& obj) {
                   objects.push_back (obj); }
       static void setwidth (int width_) { width = width_; }
       static void setheight (int height_) { height = height_; }
       static void main();
+      static int  getwidth () { return width; }// returns window width
+      static int  getheight () { return height; }// returns window eight
+      static int  getmovepixels () { return moveByPixels; }
 };
 
 #endif

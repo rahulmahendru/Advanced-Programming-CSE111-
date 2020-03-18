@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting ellipses.cpp
+checksource ellipses.cpp
+ident ellipses.cpp
+ellipses.cpp:
+     $Id: ellipses.cpp,v 1.15 2019-02-22 19:17:22-08 - - $
+cpplint.py.perl ellipses.cpp
+Done processing ellipses.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast ellipses.cpp -o ellipses -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f ellipses.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished ellipses.cpp

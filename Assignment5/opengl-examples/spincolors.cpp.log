@@ -1,0 +1,8 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting spincolors.cpp
+checksource spincolors.cpp
+ident spincolors.cpp
+spincolors.cpp:
+     $Id: spincolors.cpp,v 1.64 2019-05-15 14:35:43-07 - - $
+cpplint.py.perl spincolors.cpp
+Done processing spincolors.cpp
+g++ -g -O0 -Wall -Wextra -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++2a -Wold-style-cast spincolors.cpp -o spincolors -lm

@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting showtext.cpp
+checksource showtext.cpp
+ident showtext.cpp
+showtext.cpp:
+     $Id: showtext.cpp,v 1.31 2019-02-22 17:38:44-08 - - $
+cpplint.py.perl showtext.cpp
+Done processing showtext.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast showtext.cpp -o showtext -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f showtext.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished showtext.cpp

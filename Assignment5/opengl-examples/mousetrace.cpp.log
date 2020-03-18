@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting mousetrace.cpp
+checksource mousetrace.cpp
+ident mousetrace.cpp
+mousetrace.cpp:
+     $Id: mousetrace.cpp,v 1.66 2019-02-22 17:38:43-08 - - $
+cpplint.py.perl mousetrace.cpp
+Done processing mousetrace.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast mousetrace.cpp -o mousetrace -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f mousetrace.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished mousetrace.cpp

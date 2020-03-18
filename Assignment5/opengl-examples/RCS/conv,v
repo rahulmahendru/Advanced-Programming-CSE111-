@@ -1,0 +1,48 @@
+head	1.2;
+access;
+symbols;
+locks;
+comment	@# @;
+
+
+1.2
+date	2016.07.20.21.13.52;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2016.07.20.21.13.04;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@-
+@
+text
+@#!/bin/sh
+# $Id: conv,v 1.1 2016-07-20 14:13:04-07 - - $
+for xwd in $*
+do
+   convert $xwd $xwd.pdf
+   pdftops -paper letter $xwd.pdf $xwd.ps
+   gv $xwd.ps
+done
+@
+
+
+1.1
+log
+@-
+@
+text
+@d2 1
+a2 1
+# $Id$
+d7 1
+@

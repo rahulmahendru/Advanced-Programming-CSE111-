@@ -1,0 +1,2339 @@
+%PDF-1.4
+5 0 obj
+<</Length 6 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(1)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 70.4 718 Tm
+[(1:)-600(255 250 250             snow)]TJ
+12 TL
+T*[(2:)-600(248 248 255             ghost white)]TJ
+T*[(3:)-600(248 248 255             GhostWhite)]TJ
+T*[(4:)-600(245 245 245             white smoke)]TJ
+T*[(5:)-600(245 245 245             WhiteSmoke)]TJ
+T*[(6:)-600(220 220 220             gainsboro)]TJ
+T*[(7:)-600(255 250 240             floral white)]TJ
+T*[(8:)-600(255 250 240             FloralWhite)]TJ
+T*[(9:)-600(253 245 230             old lace)]TJ
+-6.6 -12 Td
+[(10:)-600(253 245 230             OldLace)]TJ
+T*[(11:)-600(250 240 230             linen)]TJ
+T*[(12:)-600(250 235 215             antique white)]TJ
+T*[(13:)-600(250 235 215             AntiqueWhite)]TJ
+T*[(14:)-600(255 239 213             papaya whip)]TJ
+T*[(15:)-600(255 239 213             PapayaWhip)]TJ
+T*[(16:)-600(255 235 205             blanched almond)]TJ
+T*[(17:)-600(255 235 205             BlanchedAlmond)]TJ
+T*[(18:)-600(255 228 196             bisque)]TJ
+T*[(19:)-600(255 218 185             peach puff)]TJ
+T*[(20:)-600(255 218 185             PeachPuff)]TJ
+T*[(21:)-600(255 222 173             navajo white)]TJ
+T*[(22:)-600(255 222 173             NavajoWhite)]TJ
+T*[(23:)-600(255 228 181             moccasin)]TJ
+T*[(24:)-600(255 248 220             cornsilk)]TJ
+T*[(25:)-600(255 255 240             ivory)]TJ
+T*[(26:)-600(255 250 205             lemon chiffon)]TJ
+T*[(27:)-600(255 250 205             LemonChiffon)]TJ
+T*[(28:)-600(255 245 238             seashell)]TJ
+T*[(29:)-600(240 255 240             honeydew)]TJ
+T*[(30:)-600(245 255 250             mint cream)]TJ
+T*[(31:)-600(245 255 250             MintCream)]TJ
+T*[(32:)-600(240 255 255             azure)]TJ
+T*[(33:)-600(240 248 255             alice blue)]TJ
+T*[(34:)-600(240 248 255             AliceBlue)]TJ
+T*[(35:)-600(230 230 250             lavender)]TJ
+T*[(36:)-600(255 240 245             lavender blush)]TJ
+T*[(37:)-600(255 240 245             LavenderBlush)]TJ
+T*[(38:)-600(255 228 225             misty rose)]TJ
+T*[(39:)-600(255 228 225             MistyRose)]TJ
+T*[(40:)-600(255 255 255             white)]TJ
+T*[(41:)-600(  0   0   0             black)]TJ
+T*[(42:)-600( 47  79  79             dark slate gray)]TJ
+T*[(43:)-600( 47  79  79             DarkSlateGray)]TJ
+T*[(44:)-600( 47  79  79             dark slate grey)]TJ
+T*[(45:)-600( 47  79  79             DarkSlateGrey)]TJ
+T*[(46:)-600(105 105 105             dim gray)]TJ
+T*[(47:)-600(105 105 105             DimGray)]TJ
+T*[(48:)-600(105 105 105             dim grey)]TJ
+T*[(49:)-600(105 105 105             DimGrey)]TJ
+T*[(50:)-600(112 128 144             slate gray)]TJ
+T*[(51:)-600(112 128 144             SlateGray)]TJ
+T*[(52:)-600(112 128 144             slate grey)]TJ
+T*[(53:)-600(112 128 144             SlateGrey)]TJ
+T*[(54:)-600(119 136 153             light slate gray)]TJ
+T*[(55:)-600(119 136 153             LightSlateGray)]TJ
+T*[(56:)-600(119 136 153             light slate grey)]TJ
+T*[(57:)-600(119 136 153             LightSlateGrey)]TJ
+T*[(58:)-600(190 190 190             gray)]TJ
+ET
+Q
+Q
+endstream
+endobj
+6 0 obj
+3574
+endobj
+19 0 obj
+<</Length 20 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(2)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 63.8 718 Tm
+[(59:)-600(190 190 190             grey)]TJ
+12 TL
+T*[(60:)-600(190 190 190             x11 gray)]TJ
+T*[(61:)-600(190 190 190             X11Gray)]TJ
+T*[(62:)-600(190 190 190             x11 grey)]TJ
+T*[(63:)-600(190 190 190             X11Grey)]TJ
+T*[(64:)-600(128 128 128             web gray)]TJ
+T*[(65:)-600(128 128 128             WebGray)]TJ
+T*[(66:)-600(128 128 128             web grey)]TJ
+T*[(67:)-600(128 128 128             WebGrey)]TJ
+T*[(68:)-600(211 211 211             light grey)]TJ
+T*[(69:)-600(211 211 211             LightGrey)]TJ
+T*[(70:)-600(211 211 211             light gray)]TJ
+T*[(71:)-600(211 211 211             LightGray)]TJ
+T*[(72:)-600( 25  25 112             midnight blue)]TJ
+T*[(73:)-600( 25  25 112             MidnightBlue)]TJ
+T*[(74:)-600(  0   0 128             navy)]TJ
+T*[(75:)-600(  0   0 128             navy blue)]TJ
+T*[(76:)-600(  0   0 128             NavyBlue)]TJ
+T*[(77:)-600(100 149 237             cornflower blue)]TJ
+T*[(78:)-600(100 149 237             CornflowerBlue)]TJ
+T*[(79:)-600( 72  61 139             dark slate blue)]TJ
+T*[(80:)-600( 72  61 139             DarkSlateBlue)]TJ
+T*[(81:)-600(106  90 205             slate blue)]TJ
+T*[(82:)-600(106  90 205             SlateBlue)]TJ
+T*[(83:)-600(123 104 238             medium slate blue)]TJ
+T*[(84:)-600(123 104 238             MediumSlateBlue)]TJ
+T*[(85:)-600(132 112 255             light slate blue)]TJ
+T*[(86:)-600(132 112 255             LightSlateBlue)]TJ
+T*[(87:)-600(  0   0 205             medium blue)]TJ
+T*[(88:)-600(  0   0 205             MediumBlue)]TJ
+T*[(89:)-600( 65 105 225             royal blue)]TJ
+T*[(90:)-600( 65 105 225             RoyalBlue)]TJ
+T*[(91:)-600(  0   0 255             blue)]TJ
+T*[(92:)-600( 30 144 255             dodger blue)]TJ
+T*[(93:)-600( 30 144 255             DodgerBlue)]TJ
+T*[(94:)-600(  0 191 255             deep sky blue)]TJ
+T*[(95:)-600(  0 191 255             DeepSkyBlue)]TJ
+T*[(96:)-600(135 206 235             sky blue)]TJ
+T*[(97:)-600(135 206 235             SkyBlue)]TJ
+T*[(98:)-600(135 206 250             light sky blue)]TJ
+T*[(99:)-600(135 206 250             LightSkyBlue)]TJ
+-6.6 -12 Td
+[(100:)-600( 70 130 180             steel blue)]TJ
+T*[(101:)-600( 70 130 180             SteelBlue)]TJ
+T*[(102:)-600(176 196 222             light steel blue)]TJ
+T*[(103:)-600(176 196 222             LightSteelBlue)]TJ
+T*[(104:)-600(173 216 230             light blue)]TJ
+T*[(105:)-600(173 216 230             LightBlue)]TJ
+T*[(106:)-600(176 224 230             powder blue)]TJ
+T*[(107:)-600(176 224 230             PowderBlue)]TJ
+T*[(108:)-600(175 238 238             pale turquoise)]TJ
+T*[(109:)-600(175 238 238             PaleTurquoise)]TJ
+T*[(110:)-600(  0 206 209             dark turquoise)]TJ
+T*[(111:)-600(  0 206 209             DarkTurquoise)]TJ
+T*[(112:)-600( 72 209 204             medium turquoise)]TJ
+T*[(113:)-600( 72 209 204             MediumTurquoise)]TJ
+T*[(114:)-600( 64 224 208             turquoise)]TJ
+T*[(115:)-600(  0 255 255             cyan)]TJ
+T*[(116:)-600(  0 255 255             aqua)]TJ
+ET
+Q
+Q
+endstream
+endobj
+20 0 obj
+3629
+endobj
+24 0 obj
+<</Length 25 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(3)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(117:)-600(224 255 255             light cyan)]TJ
+12 TL
+T*[(118:)-600(224 255 255             LightCyan)]TJ
+T*[(119:)-600( 95 158 160             cadet blue)]TJ
+T*[(120:)-600( 95 158 160             CadetBlue)]TJ
+T*[(121:)-600(102 205 170             medium aquamarine)]TJ
+T*[(122:)-600(102 205 170             MediumAquamarine)]TJ
+T*[(123:)-600(127 255 212             aquamarine)]TJ
+T*[(124:)-600(  0 100   0             dark green)]TJ
+T*[(125:)-600(  0 100   0             DarkGreen)]TJ
+T*[(126:)-600( 85 107  47             dark olive green)]TJ
+T*[(127:)-600( 85 107  47             DarkOliveGreen)]TJ
+T*[(128:)-600(143 188 143             dark sea green)]TJ
+T*[(129:)-600(143 188 143             DarkSeaGreen)]TJ
+T*[(130:)-600( 46 139  87             sea green)]TJ
+T*[(131:)-600( 46 139  87             SeaGreen)]TJ
+T*[(132:)-600( 60 179 113             medium sea green)]TJ
+T*[(133:)-600( 60 179 113             MediumSeaGreen)]TJ
+T*[(134:)-600( 32 178 170             light sea green)]TJ
+T*[(135:)-600( 32 178 170             LightSeaGreen)]TJ
+T*[(136:)-600(152 251 152             pale green)]TJ
+T*[(137:)-600(152 251 152             PaleGreen)]TJ
+T*[(138:)-600(  0 255 127             spring green)]TJ
+T*[(139:)-600(  0 255 127             SpringGreen)]TJ
+T*[(140:)-600(124 252   0             lawn green)]TJ
+T*[(141:)-600(124 252   0             LawnGreen)]TJ
+T*[(142:)-600(  0 255   0             green)]TJ
+T*[(143:)-600(  0 255   0             lime)]TJ
+T*[(144:)-600(  0 255   0             x11 green)]TJ
+T*[(145:)-600(  0 255   0             X11Green)]TJ
+T*[(146:)-600(  0 128   0             web green)]TJ
+T*[(147:)-600(  0 128   0             WebGreen)]TJ
+T*[(148:)-600(127 255   0             chartreuse)]TJ
+T*[(149:)-600(  0 250 154             medium spring green)]TJ
+T*[(150:)-600(  0 250 154             MediumSpringGreen)]TJ
+T*[(151:)-600(173 255  47             green yellow)]TJ
+T*[(152:)-600(173 255  47             GreenYellow)]TJ
+T*[(153:)-600( 50 205  50             lime green)]TJ
+T*[(154:)-600( 50 205  50             LimeGreen)]TJ
+T*[(155:)-600(154 205  50             yellow green)]TJ
+T*[(156:)-600(154 205  50             YellowGreen)]TJ
+T*[(157:)-600( 34 139  34             forest green)]TJ
+T*[(158:)-600( 34 139  34             ForestGreen)]TJ
+T*[(159:)-600(107 142  35             olive drab)]TJ
+T*[(160:)-600(107 142  35             OliveDrab)]TJ
+T*[(161:)-600(189 183 107             dark khaki)]TJ
+T*[(162:)-600(189 183 107             DarkKhaki)]TJ
+T*[(163:)-600(240 230 140             khaki)]TJ
+T*[(164:)-600(238 232 170             pale goldenrod)]TJ
+T*[(165:)-600(238 232 170             PaleGoldenrod)]TJ
+T*[(166:)-600(250 250 210             light goldenrod yellow)]TJ
+T*[(167:)-600(250 250 210             LightGoldenrodYellow)]TJ
+T*[(168:)-600(255 255 224             light yellow)]TJ
+T*[(169:)-600(255 255 224             LightYellow)]TJ
+T*[(170:)-600(255 255   0             yellow)]TJ
+T*[(171:)-600(255 215   0             gold)]TJ
+T*[(172:)-600(238 221 130             light goldenrod)]TJ
+T*[(173:)-600(238 221 130             LightGoldenrod)]TJ
+T*[(174:)-600(218 165  32             goldenrod)]TJ
+ET
+Q
+Q
+endstream
+endobj
+25 0 obj
+3705
+endobj
+29 0 obj
+<</Length 30 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(4)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(175:)-600(184 134  11             dark goldenrod)]TJ
+12 TL
+T*[(176:)-600(184 134  11             DarkGoldenrod)]TJ
+T*[(177:)-600(188 143 143             rosy brown)]TJ
+T*[(178:)-600(188 143 143             RosyBrown)]TJ
+T*[(179:)-600(205  92  92             indian red)]TJ
+T*[(180:)-600(205  92  92             IndianRed)]TJ
+T*[(181:)-600(139  69  19             saddle brown)]TJ
+T*[(182:)-600(139  69  19             SaddleBrown)]TJ
+T*[(183:)-600(160  82  45             sienna)]TJ
+T*[(184:)-600(205 133  63             peru)]TJ
+T*[(185:)-600(222 184 135             burlywood)]TJ
+T*[(186:)-600(245 245 220             beige)]TJ
+T*[(187:)-600(245 222 179             wheat)]TJ
+T*[(188:)-600(244 164  96             sandy brown)]TJ
+T*[(189:)-600(244 164  96             SandyBrown)]TJ
+T*[(190:)-600(210 180 140             tan)]TJ
+T*[(191:)-600(210 105  30             chocolate)]TJ
+T*[(192:)-600(178  34  34             firebrick)]TJ
+T*[(193:)-600(165  42  42             brown)]TJ
+T*[(194:)-600(233 150 122             dark salmon)]TJ
+T*[(195:)-600(233 150 122             DarkSalmon)]TJ
+T*[(196:)-600(250 128 114             salmon)]TJ
+T*[(197:)-600(255 160 122             light salmon)]TJ
+T*[(198:)-600(255 160 122             LightSalmon)]TJ
+T*[(199:)-600(255 165   0             orange)]TJ
+T*[(200:)-600(255 140   0             dark orange)]TJ
+T*[(201:)-600(255 140   0             DarkOrange)]TJ
+T*[(202:)-600(255 127  80             coral)]TJ
+T*[(203:)-600(240 128 128             light coral)]TJ
+T*[(204:)-600(240 128 128             LightCoral)]TJ
+T*[(205:)-600(255  99  71             tomato)]TJ
+T*[(206:)-600(255  69   0             orange red)]TJ
+T*[(207:)-600(255  69   0             OrangeRed)]TJ
+T*[(208:)-600(255   0   0             red)]TJ
+T*[(209:)-600(255 105 180             hot pink)]TJ
+T*[(210:)-600(255 105 180             HotPink)]TJ
+T*[(211:)-600(255  20 147             deep pink)]TJ
+T*[(212:)-600(255  20 147             DeepPink)]TJ
+T*[(213:)-600(255 192 203             pink)]TJ
+T*[(214:)-600(255 182 193             light pink)]TJ
+T*[(215:)-600(255 182 193             LightPink)]TJ
+T*[(216:)-600(219 112 147             pale violet red)]TJ
+T*[(217:)-600(219 112 147             PaleVioletRed)]TJ
+T*[(218:)-600(176  48  96             maroon)]TJ
+T*[(219:)-600(176  48  96             x11 maroon)]TJ
+T*[(220:)-600(176  48  96             X11Maroon)]TJ
+T*[(221:)-600(128   0   0             web maroon)]TJ
+T*[(222:)-600(128   0   0             WebMaroon)]TJ
+T*[(223:)-600(199  21 133             medium violet red)]TJ
+T*[(224:)-600(199  21 133             MediumVioletRed)]TJ
+T*[(225:)-600(208  32 144             violet red)]TJ
+T*[(226:)-600(208  32 144             VioletRed)]TJ
+T*[(227:)-600(255   0 255             magenta)]TJ
+T*[(228:)-600(255   0 255             fuchsia)]TJ
+T*[(229:)-600(238 130 238             violet)]TJ
+T*[(230:)-600(221 160 221             plum)]TJ
+T*[(231:)-600(218 112 214             orchid)]TJ
+T*[(232:)-600(186  85 211             medium orchid)]TJ
+ET
+Q
+Q
+endstream
+endobj
+30 0 obj
+3569
+endobj
+34 0 obj
+<</Length 35 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(5)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(233:)-600(186  85 211             MediumOrchid)]TJ
+12 TL
+T*[(234:)-600(153  50 204             dark orchid)]TJ
+T*[(235:)-600(153  50 204             DarkOrchid)]TJ
+T*[(236:)-600(148   0 211             dark violet)]TJ
+T*[(237:)-600(148   0 211             DarkViolet)]TJ
+T*[(238:)-600(138  43 226             blue violet)]TJ
+T*[(239:)-600(138  43 226             BlueViolet)]TJ
+T*[(240:)-600(160  32 240             purple)]TJ
+T*[(241:)-600(160  32 240             x11 purple)]TJ
+T*[(242:)-600(160  32 240             X11Purple)]TJ
+T*[(243:)-600(128   0 128             web purple)]TJ
+T*[(244:)-600(128   0 128             WebPurple)]TJ
+T*[(245:)-600(147 112 219             medium purple)]TJ
+T*[(246:)-600(147 112 219             MediumPurple)]TJ
+T*[(247:)-600(216 191 216             thistle)]TJ
+T*[(248:)-600(255 250 250             snow1)]TJ
+T*[(249:)-600(238 233 233             snow2)]TJ
+T*[(250:)-600(205 201 201             snow3)]TJ
+T*[(251:)-600(139 137 137             snow4)]TJ
+T*[(252:)-600(255 245 238             seashell1)]TJ
+T*[(253:)-600(238 229 222             seashell2)]TJ
+T*[(254:)-600(205 197 191             seashell3)]TJ
+T*[(255:)-600(139 134 130             seashell4)]TJ
+T*[(256:)-600(255 239 219             AntiqueWhite1)]TJ
+T*[(257:)-600(238 223 204             AntiqueWhite2)]TJ
+T*[(258:)-600(205 192 176             AntiqueWhite3)]TJ
+T*[(259:)-600(139 131 120             AntiqueWhite4)]TJ
+T*[(260:)-600(255 228 196             bisque1)]TJ
+T*[(261:)-600(238 213 183             bisque2)]TJ
+T*[(262:)-600(205 183 158             bisque3)]TJ
+T*[(263:)-600(139 125 107             bisque4)]TJ
+T*[(264:)-600(255 218 185             PeachPuff1)]TJ
+T*[(265:)-600(238 203 173             PeachPuff2)]TJ
+T*[(266:)-600(205 175 149             PeachPuff3)]TJ
+T*[(267:)-600(139 119 101             PeachPuff4)]TJ
+T*[(268:)-600(255 222 173             NavajoWhite1)]TJ
+T*[(269:)-600(238 207 161             NavajoWhite2)]TJ
+T*[(270:)-600(205 179 139             NavajoWhite3)]TJ
+T*[(271:)-600(139 121  94             NavajoWhite4)]TJ
+T*[(272:)-600(255 250 205             LemonChiffon1)]TJ
+T*[(273:)-600(238 233 191             LemonChiffon2)]TJ
+T*[(274:)-600(205 201 165             LemonChiffon3)]TJ
+T*[(275:)-600(139 137 112             LemonChiffon4)]TJ
+T*[(276:)-600(255 248 220             cornsilk1)]TJ
+T*[(277:)-600(238 232 205             cornsilk2)]TJ
+T*[(278:)-600(205 200 177             cornsilk3)]TJ
+T*[(279:)-600(139 136 120             cornsilk4)]TJ
+T*[(280:)-600(255 255 240             ivory1)]TJ
+T*[(281:)-600(238 238 224             ivory2)]TJ
+T*[(282:)-600(205 205 193             ivory3)]TJ
+T*[(283:)-600(139 139 131             ivory4)]TJ
+T*[(284:)-600(240 255 240             honeydew1)]TJ
+T*[(285:)-600(224 238 224             honeydew2)]TJ
+T*[(286:)-600(193 205 193             honeydew3)]TJ
+T*[(287:)-600(131 139 131             honeydew4)]TJ
+T*[(288:)-600(255 240 245             LavenderBlush1)]TJ
+T*[(289:)-600(238 224 229             LavenderBlush2)]TJ
+T*[(290:)-600(205 193 197             LavenderBlush3)]TJ
+ET
+Q
+Q
+endstream
+endobj
+35 0 obj
+3618
+endobj
+39 0 obj
+<</Length 40 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(6)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(291:)-600(139 131 134             LavenderBlush4)]TJ
+12 TL
+T*[(292:)-600(255 228 225             MistyRose1)]TJ
+T*[(293:)-600(238 213 210             MistyRose2)]TJ
+T*[(294:)-600(205 183 181             MistyRose3)]TJ
+T*[(295:)-600(139 125 123             MistyRose4)]TJ
+T*[(296:)-600(240 255 255             azure1)]TJ
+T*[(297:)-600(224 238 238             azure2)]TJ
+T*[(298:)-600(193 205 205             azure3)]TJ
+T*[(299:)-600(131 139 139             azure4)]TJ
+T*[(300:)-600(131 111 255             SlateBlue1)]TJ
+T*[(301:)-600(122 103 238             SlateBlue2)]TJ
+T*[(302:)-600(105  89 205             SlateBlue3)]TJ
+T*[(303:)-600( 71  60 139             SlateBlue4)]TJ
+T*[(304:)-600( 72 118 255             RoyalBlue1)]TJ
+T*[(305:)-600( 67 110 238             RoyalBlue2)]TJ
+T*[(306:)-600( 58  95 205             RoyalBlue3)]TJ
+T*[(307:)-600( 39  64 139             RoyalBlue4)]TJ
+T*[(308:)-600(  0   0 255             blue1)]TJ
+T*[(309:)-600(  0   0 238             blue2)]TJ
+T*[(310:)-600(  0   0 205             blue3)]TJ
+T*[(311:)-600(  0   0 139             blue4)]TJ
+T*[(312:)-600( 30 144 255             DodgerBlue1)]TJ
+T*[(313:)-600( 28 134 238             DodgerBlue2)]TJ
+T*[(314:)-600( 24 116 205             DodgerBlue3)]TJ
+T*[(315:)-600( 16  78 139             DodgerBlue4)]TJ
+T*[(316:)-600( 99 184 255             SteelBlue1)]TJ
+T*[(317:)-600( 92 172 238             SteelBlue2)]TJ
+T*[(318:)-600( 79 148 205             SteelBlue3)]TJ
+T*[(319:)-600( 54 100 139             SteelBlue4)]TJ
+T*[(320:)-600(  0 191 255             DeepSkyBlue1)]TJ
+T*[(321:)-600(  0 178 238             DeepSkyBlue2)]TJ
+T*[(322:)-600(  0 154 205             DeepSkyBlue3)]TJ
+T*[(323:)-600(  0 104 139             DeepSkyBlue4)]TJ
+T*[(324:)-600(135 206 255             SkyBlue1)]TJ
+T*[(325:)-600(126 192 238             SkyBlue2)]TJ
+T*[(326:)-600(108 166 205             SkyBlue3)]TJ
+T*[(327:)-600( 74 112 139             SkyBlue4)]TJ
+T*[(328:)-600(176 226 255             LightSkyBlue1)]TJ
+T*[(329:)-600(164 211 238             LightSkyBlue2)]TJ
+T*[(330:)-600(141 182 205             LightSkyBlue3)]TJ
+T*[(331:)-600( 96 123 139             LightSkyBlue4)]TJ
+T*[(332:)-600(198 226 255             SlateGray1)]TJ
+T*[(333:)-600(185 211 238             SlateGray2)]TJ
+T*[(334:)-600(159 182 205             SlateGray3)]TJ
+T*[(335:)-600(108 123 139             SlateGray4)]TJ
+T*[(336:)-600(202 225 255             LightSteelBlue1)]TJ
+T*[(337:)-600(188 210 238             LightSteelBlue2)]TJ
+T*[(338:)-600(162 181 205             LightSteelBlue3)]TJ
+T*[(339:)-600(110 123 139             LightSteelBlue4)]TJ
+T*[(340:)-600(191 239 255             LightBlue1)]TJ
+T*[(341:)-600(178 223 238             LightBlue2)]TJ
+T*[(342:)-600(154 192 205             LightBlue3)]TJ
+T*[(343:)-600(104 131 139             LightBlue4)]TJ
+T*[(344:)-600(224 255 255             LightCyan1)]TJ
+T*[(345:)-600(209 238 238             LightCyan2)]TJ
+T*[(346:)-600(180 205 205             LightCyan3)]TJ
+T*[(347:)-600(122 139 139             LightCyan4)]TJ
+T*[(348:)-600(187 255 255             PaleTurquoise1)]TJ
+ET
+Q
+Q
+endstream
+endobj
+40 0 obj
+3641
+endobj
+44 0 obj
+<</Length 45 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(7)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(349:)-600(174 238 238             PaleTurquoise2)]TJ
+12 TL
+T*[(350:)-600(150 205 205             PaleTurquoise3)]TJ
+T*[(351:)-600(102 139 139             PaleTurquoise4)]TJ
+T*[(352:)-600(152 245 255             CadetBlue1)]TJ
+T*[(353:)-600(142 229 238             CadetBlue2)]TJ
+T*[(354:)-600(122 197 205             CadetBlue3)]TJ
+T*[(355:)-600( 83 134 139             CadetBlue4)]TJ
+T*[(356:)-600(  0 245 255             turquoise1)]TJ
+T*[(357:)-600(  0 229 238             turquoise2)]TJ
+T*[(358:)-600(  0 197 205             turquoise3)]TJ
+T*[(359:)-600(  0 134 139             turquoise4)]TJ
+T*[(360:)-600(  0 255 255             cyan1)]TJ
+T*[(361:)-600(  0 238 238             cyan2)]TJ
+T*[(362:)-600(  0 205 205             cyan3)]TJ
+T*[(363:)-600(  0 139 139             cyan4)]TJ
+T*[(364:)-600(151 255 255             DarkSlateGray1)]TJ
+T*[(365:)-600(141 238 238             DarkSlateGray2)]TJ
+T*[(366:)-600(121 205 205             DarkSlateGray3)]TJ
+T*[(367:)-600( 82 139 139             DarkSlateGray4)]TJ
+T*[(368:)-600(127 255 212             aquamarine1)]TJ
+T*[(369:)-600(118 238 198             aquamarine2)]TJ
+T*[(370:)-600(102 205 170             aquamarine3)]TJ
+T*[(371:)-600( 69 139 116             aquamarine4)]TJ
+T*[(372:)-600(193 255 193             DarkSeaGreen1)]TJ
+T*[(373:)-600(180 238 180             DarkSeaGreen2)]TJ
+T*[(374:)-600(155 205 155             DarkSeaGreen3)]TJ
+T*[(375:)-600(105 139 105             DarkSeaGreen4)]TJ
+T*[(376:)-600( 84 255 159             SeaGreen1)]TJ
+T*[(377:)-600( 78 238 148             SeaGreen2)]TJ
+T*[(378:)-600( 67 205 128             SeaGreen3)]TJ
+T*[(379:)-600( 46 139  87             SeaGreen4)]TJ
+T*[(380:)-600(154 255 154             PaleGreen1)]TJ
+T*[(381:)-600(144 238 144             PaleGreen2)]TJ
+T*[(382:)-600(124 205 124             PaleGreen3)]TJ
+T*[(383:)-600( 84 139  84             PaleGreen4)]TJ
+T*[(384:)-600(  0 255 127             SpringGreen1)]TJ
+T*[(385:)-600(  0 238 118             SpringGreen2)]TJ
+T*[(386:)-600(  0 205 102             SpringGreen3)]TJ
+T*[(387:)-600(  0 139  69             SpringGreen4)]TJ
+T*[(388:)-600(  0 255   0             green1)]TJ
+T*[(389:)-600(  0 238   0             green2)]TJ
+T*[(390:)-600(  0 205   0             green3)]TJ
+T*[(391:)-600(  0 139   0             green4)]TJ
+T*[(392:)-600(127 255   0             chartreuse1)]TJ
+T*[(393:)-600(118 238   0             chartreuse2)]TJ
+T*[(394:)-600(102 205   0             chartreuse3)]TJ
+T*[(395:)-600( 69 139   0             chartreuse4)]TJ
+T*[(396:)-600(192 255  62             OliveDrab1)]TJ
+T*[(397:)-600(179 238  58             OliveDrab2)]TJ
+T*[(398:)-600(154 205  50             OliveDrab3)]TJ
+T*[(399:)-600(105 139  34             OliveDrab4)]TJ
+T*[(400:)-600(202 255 112             DarkOliveGreen1)]TJ
+T*[(401:)-600(188 238 104             DarkOliveGreen2)]TJ
+T*[(402:)-600(162 205  90             DarkOliveGreen3)]TJ
+T*[(403:)-600(110 139  61             DarkOliveGreen4)]TJ
+T*[(404:)-600(255 246 143             khaki1)]TJ
+T*[(405:)-600(238 230 133             khaki2)]TJ
+T*[(406:)-600(205 198 115             khaki3)]TJ
+ET
+Q
+Q
+endstream
+endobj
+45 0 obj
+3657
+endobj
+49 0 obj
+<</Length 50 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(8)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(407:)-600(139 134  78             khaki4)]TJ
+12 TL
+T*[(408:)-600(255 236 139             LightGoldenrod1)]TJ
+T*[(409:)-600(238 220 130             LightGoldenrod2)]TJ
+T*[(410:)-600(205 190 112             LightGoldenrod3)]TJ
+T*[(411:)-600(139 129  76             LightGoldenrod4)]TJ
+T*[(412:)-600(255 255 224             LightYellow1)]TJ
+T*[(413:)-600(238 238 209             LightYellow2)]TJ
+T*[(414:)-600(205 205 180             LightYellow3)]TJ
+T*[(415:)-600(139 139 122             LightYellow4)]TJ
+T*[(416:)-600(255 255   0             yellow1)]TJ
+T*[(417:)-600(238 238   0             yellow2)]TJ
+T*[(418:)-600(205 205   0             yellow3)]TJ
+T*[(419:)-600(139 139   0             yellow4)]TJ
+T*[(420:)-600(255 215   0             gold1)]TJ
+T*[(421:)-600(238 201   0             gold2)]TJ
+T*[(422:)-600(205 173   0             gold3)]TJ
+T*[(423:)-600(139 117   0             gold4)]TJ
+T*[(424:)-600(255 193  37             goldenrod1)]TJ
+T*[(425:)-600(238 180  34             goldenrod2)]TJ
+T*[(426:)-600(205 155  29             goldenrod3)]TJ
+T*[(427:)-600(139 105  20             goldenrod4)]TJ
+T*[(428:)-600(255 185  15             DarkGoldenrod1)]TJ
+T*[(429:)-600(238 173  14             DarkGoldenrod2)]TJ
+T*[(430:)-600(205 149  12             DarkGoldenrod3)]TJ
+T*[(431:)-600(139 101   8             DarkGoldenrod4)]TJ
+T*[(432:)-600(255 193 193             RosyBrown1)]TJ
+T*[(433:)-600(238 180 180             RosyBrown2)]TJ
+T*[(434:)-600(205 155 155             RosyBrown3)]TJ
+T*[(435:)-600(139 105 105             RosyBrown4)]TJ
+T*[(436:)-600(255 106 106             IndianRed1)]TJ
+T*[(437:)-600(238  99  99             IndianRed2)]TJ
+T*[(438:)-600(205  85  85             IndianRed3)]TJ
+T*[(439:)-600(139  58  58             IndianRed4)]TJ
+T*[(440:)-600(255 130  71             sienna1)]TJ
+T*[(441:)-600(238 121  66             sienna2)]TJ
+T*[(442:)-600(205 104  57             sienna3)]TJ
+T*[(443:)-600(139  71  38             sienna4)]TJ
+T*[(444:)-600(255 211 155             burlywood1)]TJ
+T*[(445:)-600(238 197 145             burlywood2)]TJ
+T*[(446:)-600(205 170 125             burlywood3)]TJ
+T*[(447:)-600(139 115  85             burlywood4)]TJ
+T*[(448:)-600(255 231 186             wheat1)]TJ
+T*[(449:)-600(238 216 174             wheat2)]TJ
+T*[(450:)-600(205 186 150             wheat3)]TJ
+T*[(451:)-600(139 126 102             wheat4)]TJ
+T*[(452:)-600(255 165  79             tan1)]TJ
+T*[(453:)-600(238 154  73             tan2)]TJ
+T*[(454:)-600(205 133  63             tan3)]TJ
+T*[(455:)-600(139  90  43             tan4)]TJ
+T*[(456:)-600(255 127  36             chocolate1)]TJ
+T*[(457:)-600(238 118  33             chocolate2)]TJ
+T*[(458:)-600(205 102  29             chocolate3)]TJ
+T*[(459:)-600(139  69  19             chocolate4)]TJ
+T*[(460:)-600(255  48  48             firebrick1)]TJ
+T*[(461:)-600(238  44  44             firebrick2)]TJ
+T*[(462:)-600(205  38  38             firebrick3)]TJ
+T*[(463:)-600(139  26  26             firebrick4)]TJ
+T*[(464:)-600(255  64  64             brown1)]TJ
+ET
+Q
+Q
+endstream
+endobj
+50 0 obj
+3585
+endobj
+54 0 obj
+<</Length 55 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 513.484 739.2 Tm
+(9)Tj
+/R10 18 Tf
+16.0129 0 Td
+(/14)Tj
+/R12 14 Tf
+-287.13 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(465:)-600(238  59  59             brown2)]TJ
+12 TL
+T*[(466:)-600(205  51  51             brown3)]TJ
+T*[(467:)-600(139  35  35             brown4)]TJ
+T*[(468:)-600(255 140 105             salmon1)]TJ
+T*[(469:)-600(238 130  98             salmon2)]TJ
+T*[(470:)-600(205 112  84             salmon3)]TJ
+T*[(471:)-600(139  76  57             salmon4)]TJ
+T*[(472:)-600(255 160 122             LightSalmon1)]TJ
+T*[(473:)-600(238 149 114             LightSalmon2)]TJ
+T*[(474:)-600(205 129  98             LightSalmon3)]TJ
+T*[(475:)-600(139  87  66             LightSalmon4)]TJ
+T*[(476:)-600(255 165   0             orange1)]TJ
+T*[(477:)-600(238 154   0             orange2)]TJ
+T*[(478:)-600(205 133   0             orange3)]TJ
+T*[(479:)-600(139  90   0             orange4)]TJ
+T*[(480:)-600(255 127   0             DarkOrange1)]TJ
+T*[(481:)-600(238 118   0             DarkOrange2)]TJ
+T*[(482:)-600(205 102   0             DarkOrange3)]TJ
+T*[(483:)-600(139  69   0             DarkOrange4)]TJ
+T*[(484:)-600(255 114  86             coral1)]TJ
+T*[(485:)-600(238 106  80             coral2)]TJ
+T*[(486:)-600(205  91  69             coral3)]TJ
+T*[(487:)-600(139  62  47             coral4)]TJ
+T*[(488:)-600(255  99  71             tomato1)]TJ
+T*[(489:)-600(238  92  66             tomato2)]TJ
+T*[(490:)-600(205  79  57             tomato3)]TJ
+T*[(491:)-600(139  54  38             tomato4)]TJ
+T*[(492:)-600(255  69   0             OrangeRed1)]TJ
+T*[(493:)-600(238  64   0             OrangeRed2)]TJ
+T*[(494:)-600(205  55   0             OrangeRed3)]TJ
+T*[(495:)-600(139  37   0             OrangeRed4)]TJ
+T*[(496:)-600(255   0   0             red1)]TJ
+T*[(497:)-600(238   0   0             red2)]TJ
+T*[(498:)-600(205   0   0             red3)]TJ
+T*[(499:)-600(139   0   0             red4)]TJ
+T*[(500:)-600(255  20 147             DeepPink1)]TJ
+T*[(501:)-600(238  18 137             DeepPink2)]TJ
+T*[(502:)-600(205  16 118             DeepPink3)]TJ
+T*[(503:)-600(139  10  80             DeepPink4)]TJ
+T*[(504:)-600(255 110 180             HotPink1)]TJ
+T*[(505:)-600(238 106 167             HotPink2)]TJ
+T*[(506:)-600(205  96 144             HotPink3)]TJ
+T*[(507:)-600(139  58  98             HotPink4)]TJ
+T*[(508:)-600(255 181 197             pink1)]TJ
+T*[(509:)-600(238 169 184             pink2)]TJ
+T*[(510:)-600(205 145 158             pink3)]TJ
+T*[(511:)-600(139  99 108             pink4)]TJ
+T*[(512:)-600(255 174 185             LightPink1)]TJ
+T*[(513:)-600(238 162 173             LightPink2)]TJ
+T*[(514:)-600(205 140 149             LightPink3)]TJ
+T*[(515:)-600(139  95 101             LightPink4)]TJ
+T*[(516:)-600(255 130 171             PaleVioletRed1)]TJ
+T*[(517:)-600(238 121 159             PaleVioletRed2)]TJ
+T*[(518:)-600(205 104 137             PaleVioletRed3)]TJ
+T*[(519:)-600(139  71  93             PaleVioletRed4)]TJ
+T*[(520:)-600(255  52 179             maroon1)]TJ
+T*[(521:)-600(238  48 167             maroon2)]TJ
+T*[(522:)-600(205  41 144             maroon3)]TJ
+ET
+Q
+Q
+endstream
+endobj
+55 0 obj
+3532
+endobj
+59 0 obj
+<</Length 60 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 505.478 739.2 Tm
+(10)Tj
+/R10 18 Tf
+32.0258 0 Td
+(/14)Tj
+/R12 14 Tf
+-295.137 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(523:)-600(139  28  98             maroon4)]TJ
+12 TL
+T*[(524:)-600(255  62 150             VioletRed1)]TJ
+T*[(525:)-600(238  58 140             VioletRed2)]TJ
+T*[(526:)-600(205  50 120             VioletRed3)]TJ
+T*[(527:)-600(139  34  82             VioletRed4)]TJ
+T*[(528:)-600(255   0 255             magenta1)]TJ
+T*[(529:)-600(238   0 238             magenta2)]TJ
+T*[(530:)-600(205   0 205             magenta3)]TJ
+T*[(531:)-600(139   0 139             magenta4)]TJ
+T*[(532:)-600(255 131 250             orchid1)]TJ
+T*[(533:)-600(238 122 233             orchid2)]TJ
+T*[(534:)-600(205 105 201             orchid3)]TJ
+T*[(535:)-600(139  71 137             orchid4)]TJ
+T*[(536:)-600(255 187 255             plum1)]TJ
+T*[(537:)-600(238 174 238             plum2)]TJ
+T*[(538:)-600(205 150 205             plum3)]TJ
+T*[(539:)-600(139 102 139             plum4)]TJ
+T*[(540:)-600(224 102 255             MediumOrchid1)]TJ
+T*[(541:)-600(209  95 238             MediumOrchid2)]TJ
+T*[(542:)-600(180  82 205             MediumOrchid3)]TJ
+T*[(543:)-600(122  55 139             MediumOrchid4)]TJ
+T*[(544:)-600(191  62 255             DarkOrchid1)]TJ
+T*[(545:)-600(178  58 238             DarkOrchid2)]TJ
+T*[(546:)-600(154  50 205             DarkOrchid3)]TJ
+T*[(547:)-600(104  34 139             DarkOrchid4)]TJ
+T*[(548:)-600(155  48 255             purple1)]TJ
+T*[(549:)-600(145  44 238             purple2)]TJ
+T*[(550:)-600(125  38 205             purple3)]TJ
+T*[(551:)-600( 85  26 139             purple4)]TJ
+T*[(552:)-600(171 130 255             MediumPurple1)]TJ
+T*[(553:)-600(159 121 238             MediumPurple2)]TJ
+T*[(554:)-600(137 104 205             MediumPurple3)]TJ
+T*[(555:)-600( 93  71 139             MediumPurple4)]TJ
+T*[(556:)-600(255 225 255             thistle1)]TJ
+T*[(557:)-600(238 210 238             thistle2)]TJ
+T*[(558:)-600(205 181 205             thistle3)]TJ
+T*[(559:)-600(139 123 139             thistle4)]TJ
+T*[(560:)-600(  0   0   0             gray0)]TJ
+T*[(561:)-600(  0   0   0             grey0)]TJ
+T*[(562:)-600(  3   3   3             gray1)]TJ
+T*[(563:)-600(  3   3   3             grey1)]TJ
+T*[(564:)-600(  5   5   5             gray2)]TJ
+T*[(565:)-600(  5   5   5             grey2)]TJ
+T*[(566:)-600(  8   8   8             gray3)]TJ
+T*[(567:)-600(  8   8   8             grey3)]TJ
+T*[(568:)-600( 10  10  10             gray4)]TJ
+T*[(569:)-600( 10  10  10             grey4)]TJ
+T*[(570:)-600( 13  13  13             gray5)]TJ
+T*[(571:)-600( 13  13  13             grey5)]TJ
+T*[(572:)-600( 15  15  15             gray6)]TJ
+T*[(573:)-600( 15  15  15             grey6)]TJ
+T*[(574:)-600( 18  18  18             gray7)]TJ
+T*[(575:)-600( 18  18  18             grey7)]TJ
+T*[(576:)-600( 20  20  20             gray8)]TJ
+T*[(577:)-600( 20  20  20             grey8)]TJ
+T*[(578:)-600( 23  23  23             gray9)]TJ
+T*[(579:)-600( 23  23  23             grey9)]TJ
+T*[(580:)-600( 26  26  26             gray10)]TJ
+ET
+Q
+Q
+endstream
+endobj
+60 0 obj
+3496
+endobj
+64 0 obj
+<</Length 65 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 505.478 739.2 Tm
+(11)Tj
+/R10 18 Tf
+32.0258 0 Td
+(/14)Tj
+/R12 14 Tf
+-295.137 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(581:)-600( 26  26  26             grey10)]TJ
+12 TL
+T*[(582:)-600( 28  28  28             gray11)]TJ
+T*[(583:)-600( 28  28  28             grey11)]TJ
+T*[(584:)-600( 31  31  31             gray12)]TJ
+T*[(585:)-600( 31  31  31             grey12)]TJ
+T*[(586:)-600( 33  33  33             gray13)]TJ
+T*[(587:)-600( 33  33  33             grey13)]TJ
+T*[(588:)-600( 36  36  36             gray14)]TJ
+T*[(589:)-600( 36  36  36             grey14)]TJ
+T*[(590:)-600( 38  38  38             gray15)]TJ
+T*[(591:)-600( 38  38  38             grey15)]TJ
+T*[(592:)-600( 41  41  41             gray16)]TJ
+T*[(593:)-600( 41  41  41             grey16)]TJ
+T*[(594:)-600( 43  43  43             gray17)]TJ
+T*[(595:)-600( 43  43  43             grey17)]TJ
+T*[(596:)-600( 46  46  46             gray18)]TJ
+T*[(597:)-600( 46  46  46             grey18)]TJ
+T*[(598:)-600( 48  48  48             gray19)]TJ
+T*[(599:)-600( 48  48  48             grey19)]TJ
+T*[(600:)-600( 51  51  51             gray20)]TJ
+T*[(601:)-600( 51  51  51             grey20)]TJ
+T*[(602:)-600( 54  54  54             gray21)]TJ
+T*[(603:)-600( 54  54  54             grey21)]TJ
+T*[(604:)-600( 56  56  56             gray22)]TJ
+T*[(605:)-600( 56  56  56             grey22)]TJ
+T*[(606:)-600( 59  59  59             gray23)]TJ
+T*[(607:)-600( 59  59  59             grey23)]TJ
+T*[(608:)-600( 61  61  61             gray24)]TJ
+T*[(609:)-600( 61  61  61             grey24)]TJ
+T*[(610:)-600( 64  64  64             gray25)]TJ
+T*[(611:)-600( 64  64  64             grey25)]TJ
+T*[(612:)-600( 66  66  66             gray26)]TJ
+T*[(613:)-600( 66  66  66             grey26)]TJ
+T*[(614:)-600( 69  69  69             gray27)]TJ
+T*[(615:)-600( 69  69  69             grey27)]TJ
+T*[(616:)-600( 71  71  71             gray28)]TJ
+T*[(617:)-600( 71  71  71             grey28)]TJ
+T*[(618:)-600( 74  74  74             gray29)]TJ
+T*[(619:)-600( 74  74  74             grey29)]TJ
+T*[(620:)-600( 77  77  77             gray30)]TJ
+T*[(621:)-600( 77  77  77             grey30)]TJ
+T*[(622:)-600( 79  79  79             gray31)]TJ
+T*[(623:)-600( 79  79  79             grey31)]TJ
+T*[(624:)-600( 82  82  82             gray32)]TJ
+T*[(625:)-600( 82  82  82             grey32)]TJ
+T*[(626:)-600( 84  84  84             gray33)]TJ
+T*[(627:)-600( 84  84  84             grey33)]TJ
+T*[(628:)-600( 87  87  87             gray34)]TJ
+T*[(629:)-600( 87  87  87             grey34)]TJ
+T*[(630:)-600( 89  89  89             gray35)]TJ
+T*[(631:)-600( 89  89  89             grey35)]TJ
+T*[(632:)-600( 92  92  92             gray36)]TJ
+T*[(633:)-600( 92  92  92             grey36)]TJ
+T*[(634:)-600( 94  94  94             gray37)]TJ
+T*[(635:)-600( 94  94  94             grey37)]TJ
+T*[(636:)-600( 97  97  97             gray38)]TJ
+T*[(637:)-600( 97  97  97             grey38)]TJ
+T*[(638:)-600( 99  99  99             gray39)]TJ
+ET
+Q
+Q
+endstream
+endobj
+65 0 obj
+3403
+endobj
+69 0 obj
+<</Length 70 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 505.478 739.2 Tm
+(12)Tj
+/R10 18 Tf
+32.0258 0 Td
+(/14)Tj
+/R12 14 Tf
+-295.137 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(639:)-600( 99  99  99             grey39)]TJ
+12 TL
+T*[(640:)-600(102 102 102             gray40)]TJ
+T*[(641:)-600(102 102 102             grey40)]TJ
+T*[(642:)-600(105 105 105             gray41)]TJ
+T*[(643:)-600(105 105 105             grey41)]TJ
+T*[(644:)-600(107 107 107             gray42)]TJ
+T*[(645:)-600(107 107 107             grey42)]TJ
+T*[(646:)-600(110 110 110             gray43)]TJ
+T*[(647:)-600(110 110 110             grey43)]TJ
+T*[(648:)-600(112 112 112             gray44)]TJ
+T*[(649:)-600(112 112 112             grey44)]TJ
+T*[(650:)-600(115 115 115             gray45)]TJ
+T*[(651:)-600(115 115 115             grey45)]TJ
+T*[(652:)-600(117 117 117             gray46)]TJ
+T*[(653:)-600(117 117 117             grey46)]TJ
+T*[(654:)-600(120 120 120             gray47)]TJ
+T*[(655:)-600(120 120 120             grey47)]TJ
+T*[(656:)-600(122 122 122             gray48)]TJ
+T*[(657:)-600(122 122 122             grey48)]TJ
+T*[(658:)-600(125 125 125             gray49)]TJ
+T*[(659:)-600(125 125 125             grey49)]TJ
+T*[(660:)-600(127 127 127             gray50)]TJ
+T*[(661:)-600(127 127 127             grey50)]TJ
+T*[(662:)-600(130 130 130             gray51)]TJ
+T*[(663:)-600(130 130 130             grey51)]TJ
+T*[(664:)-600(133 133 133             gray52)]TJ
+T*[(665:)-600(133 133 133             grey52)]TJ
+T*[(666:)-600(135 135 135             gray53)]TJ
+T*[(667:)-600(135 135 135             grey53)]TJ
+T*[(668:)-600(138 138 138             gray54)]TJ
+T*[(669:)-600(138 138 138             grey54)]TJ
+T*[(670:)-600(140 140 140             gray55)]TJ
+T*[(671:)-600(140 140 140             grey55)]TJ
+T*[(672:)-600(143 143 143             gray56)]TJ
+T*[(673:)-600(143 143 143             grey56)]TJ
+T*[(674:)-600(145 145 145             gray57)]TJ
+T*[(675:)-600(145 145 145             grey57)]TJ
+T*[(676:)-600(148 148 148             gray58)]TJ
+T*[(677:)-600(148 148 148             grey58)]TJ
+T*[(678:)-600(150 150 150             gray59)]TJ
+T*[(679:)-600(150 150 150             grey59)]TJ
+T*[(680:)-600(153 153 153             gray60)]TJ
+T*[(681:)-600(153 153 153             grey60)]TJ
+T*[(682:)-600(156 156 156             gray61)]TJ
+T*[(683:)-600(156 156 156             grey61)]TJ
+T*[(684:)-600(158 158 158             gray62)]TJ
+T*[(685:)-600(158 158 158             grey62)]TJ
+T*[(686:)-600(161 161 161             gray63)]TJ
+T*[(687:)-600(161 161 161             grey63)]TJ
+T*[(688:)-600(163 163 163             gray64)]TJ
+T*[(689:)-600(163 163 163             grey64)]TJ
+T*[(690:)-600(166 166 166             gray65)]TJ
+T*[(691:)-600(166 166 166             grey65)]TJ
+T*[(692:)-600(168 168 168             gray66)]TJ
+T*[(693:)-600(168 168 168             grey66)]TJ
+T*[(694:)-600(171 171 171             gray67)]TJ
+T*[(695:)-600(171 171 171             grey67)]TJ
+T*[(696:)-600(173 173 173             gray68)]TJ
+ET
+Q
+Q
+endstream
+endobj
+70 0 obj
+3403
+endobj
+74 0 obj
+<</Length 75 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 505.478 739.2 Tm
+(13)Tj
+/R10 18 Tf
+32.0258 0 Td
+(/14)Tj
+/R12 14 Tf
+-295.137 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(697:)-600(173 173 173             grey68)]TJ
+12 TL
+T*[(698:)-600(176 176 176             gray69)]TJ
+T*[(699:)-600(176 176 176             grey69)]TJ
+T*[(700:)-600(179 179 179             gray70)]TJ
+T*[(701:)-600(179 179 179             grey70)]TJ
+T*[(702:)-600(181 181 181             gray71)]TJ
+T*[(703:)-600(181 181 181             grey71)]TJ
+T*[(704:)-600(184 184 184             gray72)]TJ
+T*[(705:)-600(184 184 184             grey72)]TJ
+T*[(706:)-600(186 186 186             gray73)]TJ
+T*[(707:)-600(186 186 186             grey73)]TJ
+T*[(708:)-600(189 189 189             gray74)]TJ
+T*[(709:)-600(189 189 189             grey74)]TJ
+T*[(710:)-600(191 191 191             gray75)]TJ
+T*[(711:)-600(191 191 191             grey75)]TJ
+T*[(712:)-600(194 194 194             gray76)]TJ
+T*[(713:)-600(194 194 194             grey76)]TJ
+T*[(714:)-600(196 196 196             gray77)]TJ
+T*[(715:)-600(196 196 196             grey77)]TJ
+T*[(716:)-600(199 199 199             gray78)]TJ
+T*[(717:)-600(199 199 199             grey78)]TJ
+T*[(718:)-600(201 201 201             gray79)]TJ
+T*[(719:)-600(201 201 201             grey79)]TJ
+T*[(720:)-600(204 204 204             gray80)]TJ
+T*[(721:)-600(204 204 204             grey80)]TJ
+T*[(722:)-600(207 207 207             gray81)]TJ
+T*[(723:)-600(207 207 207             grey81)]TJ
+T*[(724:)-600(209 209 209             gray82)]TJ
+T*[(725:)-600(209 209 209             grey82)]TJ
+T*[(726:)-600(212 212 212             gray83)]TJ
+T*[(727:)-600(212 212 212             grey83)]TJ
+T*[(728:)-600(214 214 214             gray84)]TJ
+T*[(729:)-600(214 214 214             grey84)]TJ
+T*[(730:)-600(217 217 217             gray85)]TJ
+T*[(731:)-600(217 217 217             grey85)]TJ
+T*[(732:)-600(219 219 219             gray86)]TJ
+T*[(733:)-600(219 219 219             grey86)]TJ
+T*[(734:)-600(222 222 222             gray87)]TJ
+T*[(735:)-600(222 222 222             grey87)]TJ
+T*[(736:)-600(224 224 224             gray88)]TJ
+T*[(737:)-600(224 224 224             grey88)]TJ
+T*[(738:)-600(227 227 227             gray89)]TJ
+T*[(739:)-600(227 227 227             grey89)]TJ
+T*[(740:)-600(229 229 229             gray90)]TJ
+T*[(741:)-600(229 229 229             grey90)]TJ
+T*[(742:)-600(232 232 232             gray91)]TJ
+T*[(743:)-600(232 232 232             grey91)]TJ
+T*[(744:)-600(235 235 235             gray92)]TJ
+T*[(745:)-600(235 235 235             grey92)]TJ
+T*[(746:)-600(237 237 237             gray93)]TJ
+T*[(747:)-600(237 237 237             grey93)]TJ
+T*[(748:)-600(240 240 240             gray94)]TJ
+T*[(749:)-600(240 240 240             grey94)]TJ
+T*[(750:)-600(242 242 242             gray95)]TJ
+T*[(751:)-600(242 242 242             grey95)]TJ
+T*[(752:)-600(245 245 245             gray96)]TJ
+T*[(753:)-600(245 245 245             grey96)]TJ
+T*[(754:)-600(247 247 247             gray97)]TJ
+ET
+Q
+Q
+endstream
+endobj
+75 0 obj
+3403
+endobj
+79 0 obj
+<</Length 80 0 R>>
+stream
+q 0.1 0 0 0.1 0 0 cm
+/R7 gs
+0 G
+380 240 5360 7080 re
+S
+5 w
+0 0 0 RG
+380 7320 m
+5700 7320 l
+380 7320 m
+1100 7320 l
+1100 7680 l
+380 7680 l
+h
+S
+0 0 0 rg
+q
+10 0 0 10 0 0 cm BT
+/R8 12 Tf
+1 0 0 1 52.6641 752 Tm
+(08/11/17)Tj
+-0.659766 -12.8 Td
+(11:43:08)Tj
+ET
+Q
+4980 7320 720 360 re
+S
+q
+10 0 0 10 0 0 cm BT
+/R10 28.8 Tf
+1 0 0 1 505.478 739.2 Tm
+(14)Tj
+/R10 18 Tf
+32.0258 0 Td
+(/14)Tj
+/R12 14 Tf
+-295.137 -2.7 Td
+(/usr/share/X11/rgb.txt)Tj
+-59.2957 18 Td
+($cmps109-wm/Examples/opengl-examples)Tj
+ET
+Q
+0 g
+q
+10 0 0 10 0 0 cm BT
+/R14 11 Tf
+1 0 0 1 57.2 718 Tm
+[(755:)-600(247 247 247             grey97)]TJ
+12 TL
+T*[(756:)-600(250 250 250             gray98)]TJ
+T*[(757:)-600(250 250 250             grey98)]TJ
+T*[(758:)-600(252 252 252             gray99)]TJ
+T*[(759:)-600(252 252 252             grey99)]TJ
+T*[(760:)-600(255 255 255             gray100)]TJ
+T*[(761:)-600(255 255 255             grey100)]TJ
+T*[(762:)-600(169 169 169             dark grey)]TJ
+T*[(763:)-600(169 169 169             DarkGrey)]TJ
+T*[(764:)-600(169 169 169             dark gray)]TJ
+T*[(765:)-600(169 169 169             DarkGray)]TJ
+T*[(766:)-600(0     0 139             dark blue)]TJ
+T*[(767:)-600(0     0 139             DarkBlue)]TJ
+T*[(768:)-600(0   139 139             dark cyan)]TJ
+T*[(769:)-600(0   139 139             DarkCyan)]TJ
+T*[(770:)-600(139   0 139             dark magenta)]TJ
+T*[(771:)-600(139   0 139             DarkMagenta)]TJ
+T*[(772:)-600(139   0   0             dark red)]TJ
+T*[(773:)-600(139   0   0             DarkRed)]TJ
+T*[(774:)-600(144 238 144             light green)]TJ
+T*[(775:)-600(144 238 144             LightGreen)]TJ
+T*[(776:)-600(220  20  60             crimson)]TJ
+T*[(777:)-600( 75   0 130             indigo)]TJ
+T*[(778:)-600(128 128   0             olive)]TJ
+T*[(779:)-600(102  51 153             rebecca purple)]TJ
+T*[(780:)-600(102  51 153             RebeccaPurple)]TJ
+T*[(781:)-600(192 192 192             silver)]TJ
+T*[(782:)-600(  0 128 128             teal)]TJ
+ET
+Q
+Q
+endstream
+endobj
+80 0 obj
+1991
+endobj
+4 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 16 0 R
+/Font 17 0 R
+>>
+/Contents 5 0 R
+>>
+endobj
+18 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 21 0 R
+/Font 22 0 R
+>>
+/Contents 19 0 R
+>>
+endobj
+23 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 26 0 R
+/Font 27 0 R
+>>
+/Contents 24 0 R
+>>
+endobj
+28 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 31 0 R
+/Font 32 0 R
+>>
+/Contents 29 0 R
+>>
+endobj
+33 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 36 0 R
+/Font 37 0 R
+>>
+/Contents 34 0 R
+>>
+endobj
+38 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 41 0 R
+/Font 42 0 R
+>>
+/Contents 39 0 R
+>>
+endobj
+43 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 46 0 R
+/Font 47 0 R
+>>
+/Contents 44 0 R
+>>
+endobj
+48 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 51 0 R
+/Font 52 0 R
+>>
+/Contents 49 0 R
+>>
+endobj
+53 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 56 0 R
+/Font 57 0 R
+>>
+/Contents 54 0 R
+>>
+endobj
+58 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 61 0 R
+/Font 62 0 R
+>>
+/Contents 59 0 R
+>>
+endobj
+63 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 66 0 R
+/Font 67 0 R
+>>
+/Contents 64 0 R
+>>
+endobj
+68 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 71 0 R
+/Font 72 0 R
+>>
+/Contents 69 0 R
+>>
+endobj
+73 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 76 0 R
+/Font 77 0 R
+>>
+/Contents 74 0 R
+>>
+endobj
+78 0 obj
+<</Type/Page/MediaBox [0 0 612 792]
+/Parent 3 0 R
+/Resources<</ProcSet[/PDF /Text]
+/ExtGState 81 0 R
+/Font 82 0 R
+>>
+/Contents 79 0 R
+>>
+endobj
+3 0 obj
+<< /Type /Pages /Kids [
+4 0 R
+18 0 R
+23 0 R
+28 0 R
+33 0 R
+38 0 R
+43 0 R
+48 0 R
+53 0 R
+58 0 R
+63 0 R
+68 0 R
+73 0 R
+78 0 R
+] /Count 14
+>>
+endobj
+1 0 obj
+<</Type /Catalog /Pages 3 0 R
+/Metadata 87 0 R
+>>
+endobj
+7 0 obj
+<</Type/ExtGState
+/OPM 1>>endobj
+16 0 obj
+<</R7
+7 0 R>>
+endobj
+17 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+21 0 obj
+<</R7
+7 0 R>>
+endobj
+22 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+26 0 obj
+<</R7
+7 0 R>>
+endobj
+27 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+31 0 obj
+<</R7
+7 0 R>>
+endobj
+32 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+36 0 obj
+<</R7
+7 0 R>>
+endobj
+37 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+41 0 obj
+<</R7
+7 0 R>>
+endobj
+42 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+46 0 obj
+<</R7
+7 0 R>>
+endobj
+47 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+51 0 obj
+<</R7
+7 0 R>>
+endobj
+52 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+56 0 obj
+<</R7
+7 0 R>>
+endobj
+57 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+61 0 obj
+<</R7
+7 0 R>>
+endobj
+62 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+66 0 obj
+<</R7
+7 0 R>>
+endobj
+67 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+71 0 obj
+<</R7
+7 0 R>>
+endobj
+72 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+76 0 obj
+<</R7
+7 0 R>>
+endobj
+77 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+81 0 obj
+<</R7
+7 0 R>>
+endobj
+82 0 obj
+<</R14
+14 0 R/R8
+8 0 R/R12
+12 0 R/R10
+10 0 R>>
+endobj
+14 0 obj
+<</BaseFont/BFTKJV+Courier-Bold/FontDescriptor 15 0 R/Type/Font
+/FirstChar 32/LastChar 122/Widths[
+600 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+600 600 600 600 600 600 600 600 600 600 600 0 0 0 0 0
+0 600 600 600 600 0 600 600 600 600 0 600 600 600 600 600
+600 0 600 600 600 0 600 600 600 600 0 0 0 0 0 0
+0 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600
+600 600 600 600 600 600 600 600 600 600 600]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+8 0 obj
+<</BaseFont/JQYQZA+Times-Bold/FontDescriptor 9 0 R/Type/Font
+/FirstChar 47/LastChar 58/Widths[ 278
+500 500 0 500 500 0 0 500 500 0 333]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+12 0 obj
+<</BaseFont/ICSAGV+Times-Roman/FontDescriptor 13 0 R/Type/Font
+/FirstChar 36/LastChar 120/Widths[ 500 0 0 0 0 0 0 0 0 333 250 278
+500 500 0 0 0 0 0 0 0 500 0 0 0 0 0 0
+0 0 0 0 0 611 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 722 0 0 0 0 0 0 0
+0 444 500 444 0 444 0 500 500 0 0 0 278 778 500 500
+500 0 333 389 278 500 0 722 500]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+10 0 obj
+<</BaseFont/FXAAYL+Helvetica-Bold/FontDescriptor 11 0 R/Type/Font
+/FirstChar 47/LastChar 57/Widths[ 278
+556 556 556 556 556 556 556 556 556 556]
+/Encoding/WinAnsiEncoding/Subtype/Type1>>
+endobj
+15 0 obj
+<</Type/FontDescriptor/FontName/BFTKJV+Courier-Bold/FontBBox[-21 -205 623 638]/Flags 33
+/Ascent 638
+/CapHeight 597
+/Descent -205
+/ItalicAngle 0
+/StemV 93
+/AvgWidth 600
+/MaxWidth 600
+/MissingWidth 600
+/XHeight 451
+/CharSet(/A/B/C/D/F/G/H/I/K/L/M/N/O/P/R/S/T/V/W/X/Y/a/b/c/colon/d/e/eight/f/five/four/g/h/i/j/k/l/m/n/nine/o/one/p/q/r/s/seven/six/space/t/three/two/u/v/w/x/y/z/zero)/FontFile3 83 0 R>>
+endobj
+83 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 7444>>stream
+Gatm=Bin<ceij[dEiN/Ei_aYc5c`HJeCpt*]kXrW&Q)Ck5ci$D!e_FX_N5)C%1\I"JO#Sg#m-hF
+.V]u>[B4:_YO/a2rT^LPVdjRjpZ]/tch$Nt&-dLMO7.XTiT-NBf3W7+ms<SH*5Zt8_;T@)?R&-8
+(.BQ'GZ,4k@D:[A:>rEU8$UO5dS\X=:4KcmV\-XC0$b>ojaaU2@'"G:e/?kD=O.fBl1%UD!o_)V
+AF;*T,>"+HMkX]Zh-]%,+#moi]_MY2(+in-gjP75re^O+a:qKnK)7+s7s\^9,V_J<+n^!P2>HUL
+3)R24FIY0B-H/,!+sJeZr)c3d>bp$.>8/GW9U)?b^V"0=qdM4^718UGV1,064_ZA5)^Pe'G@,Rc
+&I)Ma#ibO-#s7"."Kb7#S!<91Z7bh;[.WZ$@2gurpe&F_AjuJ`DMm-f*TJg,)S8]`(D%\P[:o)n
+=-gScrg.3>?R(Bk`$SqR0n\+P]LKP%Ca!C'rkqiH2R/6dRFk9Y+TdJ16m/aeGa"Lj";,F*"[k&L
+Q<6\2&8r/PKK%jYX<SJmD\MGn-%lg!$F,.a9)'#<M8'UN`%p=@_M-n]'*t%o85(3eKIc"N9I?VJ
+.r]#)BAt1Lc`!1"?#npbST<T0FlLQb`T3r0.a%e%M9g=(4u1-!N+qVtA)DW^cT(B5ruPPA_SR*Q
+IkefO^.Src56&M,02KZb(XSKrDOWJ*dc[dfh'TZI9Qlp'`K[j/HotCbD;qp]Bm0_""TK%9'jbn[
+X8?XUL&8VJ1-@VM+31WN!p1s7<uF^@LOB=YVX([0;op;XhQPGMQ-(Y>"_8qMEhufB[]^`K:e9/f
+ntM:7'j@^?(dOpt,"J[^;&2_'$=P_q;&l!;I9*&+fq)4-e@L6$5eTr;cTZe5:u[PlXD:b>[9;;e
+kVdfcSYB4dPR+3eZL01Y"u.r<7",HOEQn\,iR^c)dH,]ZMO@'6dkHkh:G3hjTE+$f,j`^;Jj^`a
+brWS264+/T)5mn,q6m'>94VU+Sa@iNp0Dgpas"B3TF]/ZHi?^>TkDN-k1!c^o&`B:8]B?;e&$SE
+ZBf6"X,7HR+!.qXGr#:gD#Ksr?!nT_a[8BDMm7)bOi%g9Q\LEkhm(&P.WElH<2qISm@,[Odsu8,
+8tD_VaabA,l#N6!(F"n*I)p$LCWf#GgOO,R5^AK,YTMr[:E!Rbm3mLCd7.40)@GUrV.IYLS1`<+
+XN,E$m+`g'<MH3pi)nSYBP^@.L(qS<=bAEh^8'pmObK)70Q9&T4W'O+%*W/XZ,_?@bg:Ac`=g5m
+a-J5KeG=T9GfR-9*<#!D+5Rh,XD&LAg$Z:`;pXOnQ[Oh&!d*)g>ddO=Inl\;QPMCXWe+cC#7Whh
+)t3aNPjm&X\2?Uk7JSd1%]AekJl[#HSDsS"-o3-F9TBl[f*S[(1'Uc8S<FAobrEP_C]KH$7bh.f
+'hsAB9@3T*5(sXnNQ>IhLN*90qV0bo=0M2OZ?WYKe^+8=qoT#7jbR`_OTQ-P-(_sT)D6Y7D@q/1
+DfZpYC(6H6=D881-^j=GlI9iWP@=Q]MF08/Z*^S6e6,,'MaM'dI5+L>JP]5'3p?qO>`P%R1t.5H
+3!.+B/J61COf169HuLJRE:A9HCi2/KH86\>M[@G@MquN^Vtme@\&FR7:-f98BJ^44,$`G]oAL(u
+$3'VHO/cBq"`<q_NM);H9!(b1aj&/T'-p0MaO;EX_c=;KKuX,b(*gK6qsC`%^U1C!j\:=BR4dZ!
+b/';dFc!+dV:Ura8l/BZ.kfHhQ%B5*+$@oS^I4inpg+\-R8u?p$fl&CUulbb@1;3O:sErC@pgt`
+kaN[@(W*dqf?E=GoDopBknu]0pPiUeY[HF(7.G4[$ih"=U!1duQ$n+e_-(CL<2if!Z3@s6eq,X^
+po5oP;A:DXC't@2YT`WF?rAmp[%pbnJQV3>NBp4(q"9*a>2@S(,A8p&ZmUD^]ii(geeZ9i1PUo`
+Q&708/@7oW2u,&8??bg(ce8.6i!sma#8\OrpcOuk5V]'E&1MV$oXKG9j3oP$NoF=IS['Ip/Y^C3
+^eQAD#Bo1H8E/XIZ+6@>?pC%rGb/naf1`*Oi8Z9o<;k)jcGnr@N8lspR>gg>,jR_[+9q65'N)K`
+i0.T7^A(Lu)=u3C2#aHj'OEk,fl]T:k/%W)TC2rc'k]u`U^<5@7>`c1#"6&`l@dm8G$kBKlLpOt
+`bL_*K[!e!_(9#"m_[?(3;ma4UR6GV'J^&,maIO4Qh>!teStM7a,jcRi/2!;@BGM@HCpbq8-ijl
+I'53;n#UGuU'J:-MB)P&^)g*FF`kr/lEYMa0Wn8X('B.SACg(9C^/2[):K<*e!1]H?NAkSJ"n>V
+C/Nh2V)I)$0RsLG.dMu!TS\8*F"S8EFNOrY(7Pfp.RfA$=c`lO.J9a/NO1clQA8I$H)8qsa+:Cl
+`;K,;4u$tXZ0WjF55q2%UmNtK3I$%tAs<2Cp(379@Q;Me>l\fjASHH:p(jSXd?S,RFJ+c]i:Y0N
+@_#C-W=hTum3r?"_g/6]lRT,l6[-*1>trRMK=XNPSdf_=e:<JegV_/Q'*QH&149cn-sNgp<[eB?
+R%7]3+JhVS8?%eQWiA<E-ok,(mE.Pp\:RGO+(+oF-gB,Botkr@Gj-^6#-FaVqiL0K64:/"eQKfc
+P9sj1ZbXFPf^J?rV#D2YobmN_h-?[5J-LABZf^<e9Ve\^oOgl8`g_q2MGT!,?P$0[C5H`M4q=_n
+2gM(JfP<5_4aO^11:RF4dr[;jE<$tZQRE+&WC0fi%%=.KGb?,,P>5s$BdQZTE`9hiJkNS*jhN6(
++>=o\DDbNfXlY,C)V1J3I4j`QKV-$ri'PCIcVRZ_+(jGA>S0Ms5dBf?)QpQEcQQ>7f(+gOh^:]7
+c606p,0Q9<b$=:4"\>AR`:/Lo^(&N2OI1FgP5n-[psMu_:=*]'.gP`HF*_,$T"71T-.nJ$Or"*B
+JYY97>Z4n#"Z9=H!L"@fCuf""'?ccl6:2t.3H&#k.I7,oq%;,AXe'6/5&!&S>m4C9V;JB5dD;W[
+23W%aRZ:k9oEqlFBT'5BXZ>J$KPIK#+4\E@.'^UK^_W79M1l]pQU;9>(316sSN.J)kJS-?.;(WG
+[!'LdOFc/LF+OD"8Q'b-#`mt#1YAX\e0@DYKs$^9:9_9TG?90-b/p1&i"B_RpR\'F^?7LK6`\/k
+Y8(*/^h1qhL6/QjVF-])CM5d]4R(nP)TIO7$MtIh?#),s(),D&RmgMGU^'Z:95kl13)Ig^1a;$c
+S;(:jTiJLMG<H7>8)J<9`P:>Tgl^oWFce-!?:<sad(=6[r<ZZRI7X>>4tm_>PK@Z<#T&ZgNr%=M
+=A+K(-H"445Id)mK\V4r8&,9;TEJKZVUmjE3QinD2D$5[b2*8r[&r7*oYC.)N@LJ@hI'S`rXRIS
+b]SbR>pmMPE*DLaMFT.R1:W6i[/(CR+1+'V.n#JMBb7(=#rQGA>(+daK:o-Dj,aRD2d>>e@4H1k
+ESLRL=:Dj+Fp4]fb%![V[JHKPce#>a)pSfc^D0(JHCJS`eoj=GN]#=0hDk4+>K:&mQ`r\c*a8tK
+"F^7HH^QhUSj>0fi2C)Nhqrj<a\^(5ppFHZ>RM@XSuBKY?oD<C?QAF4;C2P[OK-L,;'Bkb^_P-T
+`Z#iAITW>Tcd'W3:oNM?gXMUA6suX>))QGhUY62;jFAh.?B3EsJ?7b#l5[P]=2/g2;S6V,)lUP"
+`/Wi6Tf+\4S:E[F1_WRp%IR@Q<ncgRjcVCXSbG>B9304l6)kl1hlN>%TGegH4M=eIhZ-N>;?a**
+<9bRN1no`JblKQ168jc;#8iC\7UCo=b..^?".*eL\pI3(?NIXO#:W_A]0j3>euSqB^eWR#&I%>#
+d:Ya\DMt;S\O$F.JLF`eS1I5Gjm3-"'#.(HRe3J3#%;SZWU-.-4G@)Wk(?j]3`h&%[QbZYp=V17
+d`;)(Ts(rER#QaQ8?@HN)QglZK.nY%<b^KK`&t)2AZIQFo+04&&Aao#S0.)+N4$o$C=NsQHkL%r
+IO9E)=M(X5\.A6$eoh@Z74F%G.@l/Mf#HBOV+%m-G3J`J<RRXhWIEgu0!5m/li\6MUY,3$A\(>B
+@1:QZ@kZ)r4r_c9WsRts(S2#FOo?Sk'0"*0(f/Z22.Al%N-h@*j^+3MOHc?O2cGp7g63V=T6bDH
+M6Au5m>[+Bk*?MUH-d#SQ&QV,LQr+@LXM&:-(5HHKk$lg<bM-g1=PH=Hdk-ERI7rVX;_U=UP%>,
+,]nVC\`i*nOY?dLM0AAKPTlF>)kh#A;'_T^HBA4$EY4)fT.\p6*u%Dj"mLC*pW4.BF&:n6e^uY%
+YXGS-c_1S\AF6;c*)UTSrZ&G/Tj\,SEprZQ5TI*c<a]&^2[i^+=u_:moVe.hN:jp2F4<_M5akge
+1B9[EqpT?bTS"J"K)pd7+Et<^XP<qZK!":2mtAE=Z3C#Rp%A;I]6`>ESGkOY#*,$WCo:_b22h\D
+Gb7A/i'Fs+!l9V%I4U0Y@QO][5R7pd9:D"_ZV@)%R.P5)%;$lWF[4q,#*r^@Y%@ho/F*sgIqCLX
+Y*u@k$OlFq)GPT;%Zd=4,V!B'EY7b9$(:_[,%Nc:N3s#L^],=l_4l8kI@LNGB[d\P#L,T\1Qa2V
+$9@^Nk9n#D),CY*92"rnLo"^#U,'2c?`q1#-$aDW=98Pm;m0+)maDp>?>I<.@<"0%EZ8S^3,iUL
+pqQUj(YQhc>)6KQe'JHo#/n:869$(XiAA(2LUat1f7a7=5##tU6KS.:h\RIX)RXtOgc;Q$Jm@Me
+n'OotHS57-cDD/ch?C7$Si;T^#$>_K#AIqQ]Q3X\^8=V$<hS2s(f62L[4QNA6Xm;sXS".T_fq)C
+mI)K_$6<i`U+.\/r]B_DqU!(8F[VPB$35g3)_?uFoQP@>hb!i94p&EPmW5MNWm6,9$9Bd8!q?FB
+Hap`c02$0KZV0]/,g1CdUWM7<A,Nfj`HVd<B[TMq&*u8:JoS/ZSOl>=64?tTTZK!&,<+][bA906
+_PrF$*oT"`?rX5B!40QK'4)W#4-PcteX+#Yi?+?2`XtZi&h^#qG]32R285P]Y2"9hZTC+KrCprI
+ce>rD(t`1r#7k5`b,U193hdX.?(<JRDKo2QbTkgNjHWBGAS8eU:n;OG2ImoR"X4;U1cH>=h&Icg
+p+l"tXO65rOTtZFbh<Ri!dA5B$+Ge?30&P_/b)TE`&jCdJNPB2Ldq'_V7mofW(JUJMXu^g!L6$,
+I2LM@o>I3&@qWXTe8L95TSW`7o)C,QEX,t_PF^Z1kfgZl,MjHJ1&<R%kdpMX$VZ)GQf=2"#^7f/
+A+IVT%.CaMbSGSW'PQ:.eH,Sf(cDTF3KE/ba_$Mh)Ef+$mN55F^A8Q[rp%Gefk)//Iu-Xqd[SoS
+""70,jI"YF8pB3+?WagYQN,?_o*N97Brg5ohFG,AHY`1eF7gDQNUP^:]6_//9=mN`C'$Y+XOQAP
+b-hY@*%Xe-".Jnq?'XZp.Z4fU%>&Xm(N\HP[SD2EnZN`a:P?1aiu0-7Y>h[Qk8.^ndRrVD\:Hio
+CO6$#fu.j3TNDUfZ":AC*uG9KJ7dPPNqK`'n0T+gB(dA5MFe0R@=sW)9aNihZ2<KIRc3l4hh5eo
+\hl`V[nju7^jY]3NQ+YIA'"Z/Eg$57"$%2V^L3T;3=AD_H*p>J##.)8p:bRSrRp<,dD,PQ4sOp*
+98P[%Z=idQqYjsm@Y-ep+eKT(UT=#_]lJ2f.R:F:I#l:34js3@%*hrf]`L@TkT@=ZG-sB0Am'))
+S8m!?RE(k!Uh1]JQ=X"mDcZXRiHNkhnAne'J(m8Kis3f;A50KLKl*Z&r`in#eBJ]g4YXC4!@a*F
+bOthEhm['.mLOp,TBEqrr<^Mk?%t#[kU$"c><Qd\1=/t3%GiL#T4-)[pQb)(!k>9a_t@XTL9VUR
+TX[gF^s-h#DZn'GXYaq^LOum,;5u5tBED-rl0rTW"9Y4=himiuTEb]$_?"AA$'IPYXgHRTHAiZ.
+2ItTkT,^&jJ71S>]s]09V+jl,FEnKB](pU?I,nsEFeni9[e<<FN_cENO^P`A4NP;g6jfW@p\EC`
+X7hA2U,YHO.CLu5bJ4NtN.`,=haMdCIY<`#EG'ZibrBab:^*9l^J7(YT$<rFaV`O3&uK__O=O1S
+1i2*A`F7+&),])Mb5D^91G9D4.V2-DhSB-2%4*o'cEKSCkA0\T/kfXadGTT:?I/jQHUtP/n-:,)
+U?J78a_S\MRa2(Bc*-dE[RHh5]E56dZdip[]bd.+JHlncp)!SWSrZ)2UhAKl>]=sE6J&>F)u@sc
+f$\#'9c"_eC^X>*jFRND"Cl2AmQfa)C;IB%gqErurhM!Qo^&*<AP7Lp/-KVG4i/*5rnjmP2DtF1
+?%"*1Kf+b>f4`rOs,?/\JLE-"(l5/e]!S?'l8$7#6"t+COfkdonQ83rTPjEllk!a)c1Ve<g63u'
+>#.[`B7mIVY:n8bgVeIZO@f18;g,(LYk+5@/<%uno',qVoRt0J/5q,h<'bdqNUfbT9+6UXWHlTg
+ZG_tUKf@WaiX[CSA@fHC\U]j=V+GiX-%b0l]r3l4$[^Ts08$=`AlS6A%Lho4`u@)m9a2u@h;Y2l
+`riBo"3UT(J1ZVcWD36[_cj1HoiQ;",s^9MQ*<%q/1T:U#Wo;h)'$VtIuL+Ae<-VH-?g>DLl<<;
+0C<tdX8Ra*!sCZ1?%k-?ct`Mtp-^a(KQCQcf5bi/@Xc2kN+$*.G.<4-VW"Zi7Si`'nKl[NMJH*n
+["jPLQO?R=G*eTsp#5/neLNt\B)'<21rKd`Aa0BNJ4`L09AKA_2]V_iWpso7Yl/h>"`T`Y',E`#
+cR4N*H-l]ZrfIW]GfjIHiS>a:?+LN+IsD!;TEU,EQgV!*kR+\IC9FUQ5/+An/^NNebMO*'fT<HQ
+/-]mihIm>^>kaiRC[`K,=5D``ekpQ2>bN;7eVDUt6tYim&a0deDE?D(IL8p?SdO<5',g6('A`2\
+h!AAF^#-m4F/%VLUUbdlo<Sd'5j=S6T@VLo?J]!@J4iuNpZK9"QIoLr=A.1A:g%q6h3p4Jq[%Y6
+EVZ'n@UL2T0o>oT]*s-\?gh_n"YNZr_L&eFTKHSN):6%nHFSM*F@1:hi5Wn,pYUW;i5GM:r[$M&
+#]@Ref[*'\Yu!dEm#DPag(j#@];to.q<msG6N0p5m/4]qn/Xg2;<ud:GF\-8fQGYZ^AKGP0`-l_
+H.%QBJJ[NL1u<;1#>g$M_RtN,_hoWacH=X98]7$mNurgnnuE:TkAN98"o#h\d_@0#M>YGuD&IR;
+"D:2ZMk["/J3Sathg#.WgKAt(X?Zf3FCK2coPQp2hq`AH<bL%]\([T`WNb`*AA*pAGXG5M['Xps
+,d]rGV.=[qI!#"Cpi^'\5/$c<BE.WQbOoim7WuHW\epDro#^)C@igno*W'C6o*"T5U+ZXc~>
+endstream
+endobj
+9 0 obj
+<</Type/FontDescriptor/FontName/JQYQZA+Times-Bold/FontBBox[-24 -19 476 691]/Flags 65568
+/Ascent 691
+/CapHeight 691
+/Descent -19
+/ItalicAngle 0
+/StemV 71
+/MissingWidth 500
+/CharSet(/colon/eight/four/one/seven/slash/three/zero)/FontFile3 84 0 R>>
+endobj
+84 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 1136>>stream
+Gar?-?VF[H'ZY^4V70N1OL8=r@C.tR5@m+2ef!ZWMX*1=Y`996g"(b>?HS!$K,3%hNM(W$FraGX
+BI%O+A[4S/(<hpVV[I$GN^U<d%nj>^Cge3mBRDnNr\3l&`;&96aZ87"cKC^f6_GtJ+p^Ncb5'[d
+eU`8&rB/j[()#UZR91^F7DrT25uE<(-5>.G>0a1TVZ&'n_"\C!rt::O+uqqW5*"A!_<:m^km9/c
+[[(Fb'c!#6.;#X2b.+2GAse3eM"CD0;TTec]n)i;onR<#RoJeJEa=XE)\)LoQqk,[F['ekVpii_
+0o%bB(CUM&(o+4'Z'\5I.`o>8kBsGK&CV9]Fnuu&^reJg7p%]/kkfi2+[k]TR:"cO?*bWH>dOTI
+:`c@Y:8C72kQU2X-qeTTkW3,uhBuoHeM==Q/dGu56H12\Y`rjpbp4A+qh3r8R3S:BT#p2.LcALE
+(Kf`PRQ3pRbr9gUCjiF<<I>70?,,ASciO(Rb/"CE4]$]DrRt:2br;8sq]IlXJ+$'uViF8J^hA7s
+&h55H/H-b3_.@qLcH!msQStYEFth(tNWdBE@7&AFr,hSjkid`(5F_Z5$_Ee.)fuq*BI.R['f2GZ
+6D>s41gPocakrl3?^)2cbVaD-JHh96=q>/XG5[.Dd&ELkWLnG#epLOt@o#mscOa#=oI"*>NmcdU
+ohVre/?lD)US5c]>d*!Imi2#k'H7I#D)XURTb_eQ$)L^!?h&V](lH?tn!]oVl`9W@QWFM8fmbP-
+efQP_h;2Lh>`akU5m%1Qi8(V!?i-a7Jr@!\W)hUL3mPXNNI-^elEC=R`5P@9-Bpdc/Wc1KoeL,N
+@,[P`Rj3q\&L$j\C?VdJA-X/P9Tt[@nZS7'$G&dpfLdWBgO@1J-L\6P#-tKBBX!'hlTg^g@1U7=
+\g7t1mN:p'::#<Q<O1H]=tjdL#PI,$IqI:(g:P\F=nmHR@,m5XXMT[W6a,^]Rsb0$lQ=@cW.1_G
+Y;hmDALa6EVO-K"lPsQT]cHri9[Q*FM"gFX;K)6>g?bEs)bX\I$S2&nGVfhO:^2%Flj"3kADQW#
+PMPKBe9>!Cm(C49\$MSUgO:@"]pMQk,VA+3jI?k$:'$@]AE$$c</H93%Et%t)kh`]k@';T~>
+endstream
+endobj
+13 0 obj
+<</Type/FontDescriptor/FontName/ICSAGV+Times-Roman/FontBBox[-9 -218 775 727]/Flags 32
+/Ascent 727
+/CapHeight 662
+/Descent -218
+/ItalicAngle 0
+/StemV 116
+/MissingWidth 500
+/XHeight 460
+/CharSet(/E/X/a/b/c/dollar/e/g/h/hyphen/l/m/n/nine/o/one/p/period/r/s/slash/t/u/w/x/zero)/FontFile3 85 0 R>>
+endobj
+85 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 3872>>stream
+Gar>GH$!!JQ%)-/^(2nEZ)Sr*+K8)Ycif.JU#6?D:psnR#[T6oM&3hHaHjJCZ6W)O,VN6U,g2Kb
+g%)j1?t4fi`rV-%P"pNA)Ftf7B:8s:44@nU^?>)BkKHkGk0+ogc9(L-p[7nG^#/;XG`:MeL<&<X
+6n,Fjo!_#cZBK?Wn!i!<*rG40Fp#LLjt*tnTD%0XKXLF'5QDl-r&S0o3#b9R^J$]?'(\a)T>rIe
+p[2+^20k(<bQ@U;k_S7`J)cO5s7^)/BP=>,7J"8,q15o#77N;b,PP$!VGsP$drGfp;8/[O<[ni^
+j;CRL3\t-7S=5n4l8+>i<i2FR+&XL%C:1'4^1mVnjkE-h[Vau@4,ter;[W-XJ'VAK<#$knP=ME[
+'Io=<rkF+pR.WJE.eUWjr.;fFjH>a+Bc3>]ln)H!%+uEm;hk+0$"],OiQOb<P)3YBR2@9:q%[t&
+g!:XG%PdE,mkZ%>8!uVS/b9VH1)%U-BDe0*Y'u<O;oDn`Ms(%f7HTIHr/^VSr3lLYo[!+.?>rRl
+L_0D$8)_IQqc61i<3NB.q;&'[<ctSE"^;__<e6`GJ!KcY&im27De"8@C92L1RK3pUl/H7'L*4@3
+O0->]P3GH@ostp+^gmjZ]$St_$M\Y&npMBM6P*kVT("2*\ku^"=USKS7"_'X?JB[%WBG9(q?WL)
+j"q*Q<2h-^3?>cU/%iOVYiXJ*[(JeGV7On["e[YdE\aRXQ&:bAO$:j]JM%7Rh2Y@eJ5+fbYEkj-
+WnMTFVD?#`Di<j<)SQ*if#lW;8I<dgT^[8e"1l>9mQE@!<g-8;B2h&5f<,+E">lr%785'FCW^C2
+$(:*E0o\5,dWHHsqSctiq5;O[H<WS8QZ/cT%C"RlG_:JkXafDq3]9Pt?O;"18nmd=)bCSIHN'O)
+9%L]ON;c@[:l1JRhk1pes$qk%9hk)E.[$dn9CK_\r9WFFHW&-*c1Yi*2'gp5_?Sj&HE]dET<&]0
+S(J1E-CZ$E!0>f-$*kA8#`]j`a"1?&;+mu]pea,!f4J]NgR)eEj&nOBBu"90\&=@*N4a9%?XJjf
+b_o5\I>KM_d7'IX.'808riTqug;N@VbBk\8r4$tF-U^W:E>]>O-ojY,cB5!1,oo:$q<L(M!W/,J
+&ZGm\.$Klk?N[AF`'JErfl!pmD?^Uu5dmEEKA5><KtE2E5[[?de/@o`Xf<QG0\o@l"9XXCrDF7Z
++TB`ao5)=XJh$>[s,-o/crPbd>?lJ6LgM,hE)<b8PnaZ;Pd"ds+F1iKfH)^7[nD*1]3`ujf48Xt
+gtPes.&1nj:709rb.-+Z]@#RuXW&$0.7>C:F8_(m<`??3:#Bc,!UarS#"FN`MWC:Z"*(VbOgR*E
+0Z.k2K^5,Ge5bXB[sAKh5p+u.Tm,)p2j;S05Dq#5X8YRSF`k7*L?lUm!iB.2!u?2&Kn]31_7Lq$
+pIC76H5nTMSi'j@aTnXfn['cHTlbFB8;hf;]+#.XP_Q[NG%Z4TQ`i*E$!OCA\P@E$"9"MP_-_Y;
+rU*qik_Bg,b'^4(e+H&BA86?sG%!qH]iuCGL/%8U^dsQF=Qp&`l\(=UK8gHLmqa7Oi2ioa8Bp7^
+EjI2H.Oi*=&dod#bndX.4]L+7l`.5Zc6r7A@-:A7ioRL0o:o2NF&AO[<!\Y/?2naZR7+p4s"<e8
+m.CW;qi42()K]nS*9*];f_dal<H-C=4=_Z&l#n<leY68J/LEH.Bc-u;<Ne?]$^G;VJ5]7):!822
+nq_25UJ"Uh3]Mt1"58/Pp,?V2g\UfD1Gf$BO>*cMHHnV"r,Je+m-;:NDD.(LSGO$A)DaJ"TEUl4
+hl,C$o>E^^JT_e/>S?78[U6CO2bheq1R0O]Dm[3r?IGbYU%.,:Up\WRm0'<i3a3S6opjT[3n.I&
+0Qk?t@/<RPP3pUT63B2P/UcF4S&O8]@r$D(V%FtrBP;.Mif;u)`9l#r%:1Xi$=o3c(*]ofigufY
+?^"4!>:7)!*rWK;X"UgE!#M#,ccaCL"S:21>u0EI;TCN->P?$i'mPYKHTJiGoed19G$/rdN<AOW
+J#$lFEdpikoI-G<5L<FVV%jd3'p+-'Z!lf/Dk92F3IasWF<,:5000n3`oTF6Q4qY)^D;CK>$b0o
+Y?-u*!R=Z(c,f/^/=r=RCX-E3b'MaMgcR@i$9@>d.&".FH(P"k`/;;V!?M,+D'LrqRr6iOTk^J/
+oMARhR&@;pau"i^]iV;(er5.f>$^hF)cs+>\gB6:D2.#&Vt?lr.\NKg.40+:Pse,kk!lAV#$7SU
+mIJC@OgX(CH+g'*!Yu7Lc';G^^.^LO>()laB8I?&$_M6<hBT>W-L9.r#mNsrKmtOd[+0dLn5N>3
+ZKt"!;EiD&MMV:)<fkqSg:^;^iFmI*>d6-*Dt;o+r56'.1m%:gO+\SSW4Q-rlbaO?rueN>90W4d
+&gE2tR#rHk398.^"T?BkHbZ%h):P.^`^5H\?.0+C^93LaCBlN\N/K:58<KH6<#p_LR(i-)/)aj&
+C)`b+p@iO&=i<M=G=^!b5ncA(1YF(3hj]jO"<nt&0P<[mei[,a'9eo;MU+tKGpCuU-TdC,#tWF=
+.2#P.#9X^ZkncDeHM1a/0[iqrODG[i59)b+'5g-tb4W3H,W'.b]]CI*H:c[u_Z4W5/h-b)It5jW
+Z!u,A02XIflAFt_%^F`eDTE!oFl31[Yl;":B?<b&)QguIQ")4s@OPt?4'-gf\2k#GEQl>=B+H'W
+:!ZJY%XU\'/DNjbhH*39NT->Z]I%:on*##2UT)7>;[4>nY*qg>"&nXHrm:c@36]43[9GkIWVOMZ
+dAZjkb@SKHN#FIgpSLjg\&&BrGM?EPF0Z#@SS3"NI!3"qS)#E.cYPTJWAlX\oAk\KT08P?Yh=Z4
+n:%]3N\9kD2Y(*04Zh_m"?b;*EDT-b&0*SG_C\!Rp1UAC!I$5S8)G\$H08:MreDktA-#j!'P2P)
+Oei\uD`6ltFkj7?1QI><fo+<!b$3$+.l_mP)hg5>=u^j=ot\iLo+JfJR4i:h1tu2M%_s;a4h']s
+&Obpo@91[hkXK"RAPTamfr(dSp:*$*F@aTk9*^gSL3_X>,nf@Pp`1=rERd'sI&*sF1gWWjI6Mb8
+24T^i2i=Tb28^[dis9B?::n3KHc@iOpj?-ipOCj%,)sSJ+"JdZUBm@7"1Ksu5XR?&mB_<Zg=<fG
+1kXgI'c#\>:.aP:\[C+uL3ArKO;()`V;CuYG\h8BZrFB)k`:Hd;!E1Xi<L?fM(R\bN)%5A2A1)#
+2b@cZPJemW,;ls@AQNO:o#T#S-HaWW<T`r9%1`.*%M%[qA]qU;ke5/;:-,eq9D"g+CB"*ls5uQ[
+fCpj%p$m@"'A%:hZ#dc18CjYNL.A+<"EYqdhC)ZT1%J#ta8+?GA!ld[N*j>GQ=(hN0M)`t5GmbB
+<Onj#$QOReUM5SU*BOo6MklN[$\\OJp;8/'dX$t4XE_T0kICTb]b#ZVC2%@aYHMfPHg7/P4.C>i
+AM6e$aJpX:/_?9RX-.mB*d"15[SeJX_X*mSW3%8@):i_V2tS\OYu!jd>ZX!N^\kRuhBX`T$-"7_
+9sTq>kj%OSBeU"oiZ5m@SSgO`M)9qSUjP2YS;YK5=Va;CA\#'NQ(Ms8!5(8i!Em+_G,)B>k4/.'
+%g)aJKcP9E0CS`6IiBVa7soIj>9tJ@U_lXCmr[RDMD,`V<g@=Z.b)G8+:/\718iP*<F*1_V_B,]
+>AQ#1o=r=,qMO3#qQt7A$GSat#B[^l\7K,gFJ.Y6>_95<M)'#+3OP3V\Vj#g=u'ASpA>!@pU?$'
+>q>>s=h$LNG,H(9dm&]'$h%'4#Om13qApXe/G?A(?4u?7%'=igHH6[0n@1Vh%E&)Sq8rmV~>
+endstream
+endobj
+11 0 obj
+<</Type/FontDescriptor/FontName/FXAAYL+Helvetica-Bold/FontBBox[0 -24 528 724]/Flags 65568
+/Ascent 724
+/CapHeight 724
+/Descent -24
+/ItalicAngle 0
+/StemV 79
+/MissingWidth 500
+/CharSet(/eight/five/four/nine/one/seven/six/slash/three/two/zero)/FontFile3 86 0 R>>
+endobj
+86 0 obj
+<</Filter[/ASCII85Decode
+/FlateDecode]
+/Subtype/Type1C/Length 1552>>stream
+Gaqc4HV@@>(dFA8b8lmX@2H.5HSn"&$3M!9!cn\M.M,sCO$OkpPWLOa87`RSgjDfYE@t0dVE=nc
+nsG&e'Nc+U\n&OPpqglFgu=hb9pX_mGKF:8DN0S-5NePakPN!bH[LT8hHl#4./uuA:i:FFKr1ff
+G/</El,6Cj%.b+LA[kDr0jZCA7p36\rNJVC(#H'$Epj",;o-NRi1,a:'X_fXd8YIlEsln:G&S&(
+X7@HW\iHr=Z$O*T1HYWKiR4f=]PTG`;`^.I"aas?FgE<L99lddJM6)#K!VhoN&+Tf<f<klX\#a7
+imN+'0.jSuEtPC6>[0rrCm;<FkO9e[X_$:&e)iD<Mt=aa?N_N/l)g?*\@M4jk9hP?&XnYX-iaFF
+2\Ct":bW5B;ihnH,TVt*$:VAd/2`,B7c!Qkp?M8gQ'KGYMu/ac;;"3cA\<O>k'mO0<>s*AJm9`7
+3^=i0!BJ[7**@`T6-FL-]+?XMA6`PLZRlBFE(j6=EF7l%Ae&$8nW3HC8)O&(6Of)1KO>)>rd[4G
+\sD3DL`%E2m_Wi0f+rd3E]=6K`lYiU5-f)cPrK+j&[p:mFB,d<)So5=ki'/(D9(K"brqGV!+6,b
+:=$g>`Cb<J'"IK)d6:bJ()r)C1XSCX$rDdUTW-BO$MdSs=9U1?%+9:$`eNZ#_#Iip&:VbeGglg.
+8S5rf,I@.&>mERCJ@^U:\U39*7@,_\AW&f_LeL/MqP((I,a]1el.>8(i!")\%H)g?LS4jRZes]@
+rQT]'rh/)+o9a>]6-`AtldfAO$)8#mBoh:^#%g-plo3:Mg4kbcCBK(^iCn%e'fGd3*?jAL1@0:?
+)LLuZ)fZY""+kn1\.7(3WiPCJX?V?*o:>f:1p\c2]7YRS*l<K%i.?_c4g_GO`(Zo'ajGre3Uqf@
+&hEbjHeX=g#7O82Bul&#YAAi'OSo>49(_`)<fX@r-iE51$*>0Kk[RtBf"3YX_n@ZddBIL[%c?g4
+4tY1/T9@;l&jR\8TC_t@7)=i75=t@V`B+4/[L"/=0^q[KVu\Q=/r`:IBL%(s1@[0*TA;Z7ZcUlu
+FEUgagNY>G[2@@dknV=-Ya?i"/aQY`B'F0UIAutjV_9/2_@iFOj[r07^-R*b"QRh_CG,@kcJsB/
+m&V^F,0=Tn9(0?UL&#MiQQ$-!Id.l`U4"JHGelc4KSRl[U4O2g0n2AqmF`GUDi*=?FAdIs"rt,1
+*CpA:o*TEt+-7`CfI5FoJ3V]%:YI*VT8?ES&DLH2jNs%S[anV@*ah71]1[`ILi*7`c8]ONb\I:#
+oEIK<5u#j=d1?Tr@uipX$%.Kro0`@<L8\N2HdQ\9PA@D`A/e:9)fiPCB`lC>+fEt$GQ+<F6U=1r
+Z2a[F^4E=+#%\F;&7D/;)VL=;F=tqH#7:&O$'b4/4RD@HfmTjiD[\HDX15WQYi*fiT)$h'R5TBr
+M'+U(SHT%"VlGe:C29gZ=#IB>,h/9N]Rb"gh5>NHY%4a/Y"_SEj=O_FGkUR=So68sQ&[2r])beJ
+2E&t@lO-W=JT$f?!E6$6IL,l[F>d<X~>
+endstream
+endobj
+87 0 obj
+<</Type/Metadata
+/Subtype/XML/Length 1344>>stream
+<?xpacket begin='﻿' id='W5M0MpCehiHzreSzNTczkc9d'?>
+<?adobe-xap-filters esc="CRLF"?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+<rdf:Description rdf:about='uuid:55cf84e9-73cc-11f4-0000-4b291ff6527c' xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 9.07'/>
+<rdf:Description rdf:about='uuid:55cf84e9-73cc-11f4-0000-4b291ff6527c' xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2019-02-28T15:22:59-08:00</xmp:ModifyDate>
+<xmp:CreateDate>2019-02-28T15:22:59-08:00</xmp:CreateDate>
+<xmp:CreatorTool>UnknownApplication</xmp:CreatorTool></rdf:Description>
+<rdf:Description rdf:about='uuid:55cf84e9-73cc-11f4-0000-4b291ff6527c' xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:55cf84e9-73cc-11f4-0000-4b291ff6527c'/>
+<rdf:Description rdf:about='uuid:55cf84e9-73cc-11f4-0000-4b291ff6527c' xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>Untitled</rdf:li></rdf:Alt></dc:title></rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+                                                                        
+                                                                        
+<?xpacket end='w'?>
+endstream
+endobj
+2 0 obj
+<</Producer(GPL Ghostscript 9.07)
+/CreationDate(D:20190228152259-08'00')
+/ModDate(D:20190228152259-08'00')>>endobj
+xref
+0 88
+0000000000 65535 f 
+0000051525 00000 n 
+0000071258 00000 n 
+0000051374 00000 n 
+0000049234 00000 n 
+0000000009 00000 n 
+0000003633 00000 n 
+0000051590 00000 n 
+0000053391 00000 n 
+0000062127 00000 n 
+0000053963 00000 n 
+0000067908 00000 n 
+0000053584 00000 n 
+0000063625 00000 n 
+0000052933 00000 n 
+0000054166 00000 n 
+0000051631 00000 n 
+0000051661 00000 n 
+0000049385 00000 n 
+0000003653 00000 n 
+0000007334 00000 n 
+0000051724 00000 n 
+0000051754 00000 n 
+0000049538 00000 n 
+0000007355 00000 n 
+0000011112 00000 n 
+0000051817 00000 n 
+0000051847 00000 n 
+0000049691 00000 n 
+0000011133 00000 n 
+0000014754 00000 n 
+0000051910 00000 n 
+0000051940 00000 n 
+0000049844 00000 n 
+0000014775 00000 n 
+0000018445 00000 n 
+0000052003 00000 n 
+0000052033 00000 n 
+0000049997 00000 n 
+0000018466 00000 n 
+0000022159 00000 n 
+0000052096 00000 n 
+0000052126 00000 n 
+0000050150 00000 n 
+0000022180 00000 n 
+0000025889 00000 n 
+0000052189 00000 n 
+0000052219 00000 n 
+0000050303 00000 n 
+0000025910 00000 n 
+0000029547 00000 n 
+0000052282 00000 n 
+0000052312 00000 n 
+0000050456 00000 n 
+0000029568 00000 n 
+0000033152 00000 n 
+0000052375 00000 n 
+0000052405 00000 n 
+0000050609 00000 n 
+0000033173 00000 n 
+0000036721 00000 n 
+0000052468 00000 n 
+0000052498 00000 n 
+0000050762 00000 n 
+0000036742 00000 n 
+0000040197 00000 n 
+0000052561 00000 n 
+0000052591 00000 n 
+0000050915 00000 n 
+0000040218 00000 n 
+0000043673 00000 n 
+0000052654 00000 n 
+0000052684 00000 n 
+0000051068 00000 n 
+0000043694 00000 n 
+0000047149 00000 n 
+0000052747 00000 n 
+0000052777 00000 n 
+0000051221 00000 n 
+0000047170 00000 n 
+0000049213 00000 n 
+0000052840 00000 n 
+0000052870 00000 n 
+0000054581 00000 n 
+0000062387 00000 n 
+0000063934 00000 n 
+0000068183 00000 n 
+0000069837 00000 n 
+trailer
+<< /Size 88 /Root 1 0 R /Info 2 0 R
+/ID [<097A3D0658541786AA04D70B951B54D1><097A3D0658541786AA04D70B951B54D1>]
+>>
+startxref
+71381
+%%EOF

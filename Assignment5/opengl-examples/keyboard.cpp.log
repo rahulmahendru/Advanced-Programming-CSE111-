@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting keyboard.cpp
+checksource keyboard.cpp
+ident keyboard.cpp
+keyboard.cpp:
+     $Id: keyboard.cpp,v 1.23 2019-02-22 17:40:15-08 - - $
+cpplint.py.perl keyboard.cpp
+Done processing keyboard.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast keyboard.cpp -o keyboard -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f keyboard.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished keyboard.cpp

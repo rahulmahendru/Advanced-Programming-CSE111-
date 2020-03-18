@@ -1,0 +1,747 @@
+head	1.23;
+access;
+symbols;
+locks;
+comment	@// @;
+
+
+1.23
+date	2019.02.23.01.40.15;	author -;	state -;
+branches;
+next	1.22;
+
+1.22
+date	2019.02.23.01.38.41;	author -;	state -;
+branches;
+next	1.21;
+
+1.21
+date	2019.02.23.01.30.48;	author -;	state -;
+branches;
+next	1.20;
+
+1.20
+date	2018.08.13.21.55.26;	author -;	state -;
+branches;
+next	1.19;
+
+1.19
+date	2018.08.13.21.50.47;	author -;	state -;
+branches;
+next	1.18;
+
+1.18
+date	2018.08.13.21.50.15;	author -;	state -;
+branches;
+next	1.17;
+
+1.17
+date	2018.08.13.21.48.22;	author -;	state -;
+branches;
+next	1.16;
+
+1.16
+date	2018.08.06.22.10.20;	author -;	state -;
+branches;
+next	1.15;
+
+1.15
+date	2018.03.01.00.21.59;	author -;	state -;
+branches;
+next	1.14;
+
+1.14
+date	2016.07.21.03.26.13;	author -;	state -;
+branches;
+next	1.13;
+
+1.13
+date	2016.07.21.03.22.10;	author -;	state -;
+branches;
+next	1.12;
+
+1.12
+date	2014.07.22.23.38.08;	author -;	state -;
+branches;
+next	1.11;
+
+1.11
+date	2014.05.09.02.31.40;	author -;	state -;
+branches;
+next	1.10;
+
+1.10
+date	2014.05.08.22.00.37;	author -;	state -;
+branches;
+next	1.9;
+
+1.9
+date	2014.05.08.04.21.39;	author -;	state -;
+branches;
+next	1.8;
+
+1.8
+date	2014.05.08.04.20.40;	author -;	state -;
+branches;
+next	1.7;
+
+1.7
+date	2014.05.08.04.18.43;	author -;	state -;
+branches;
+next	1.6;
+
+1.6
+date	2014.05.08.04.01.36;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2014.05.08.03.59.12;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2014.05.08.01.48.30;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2014.05.08.01.48.07;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2014.05.08.01.47.59;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2014.05.08.01.47.22;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.23
+log
+@-
+@
+text
+@// $Id: keyboard.cpp,v 1.22 2019-02-22 17:38:41-08 - - $
+
+// Respond to keystrokes.
+
+#include <iostream>
+#include <string>
+#include <unordered_map>
+using namespace std;
+
+#include <GL/freeglut.h>
+#include <libgen.h>
+
+unordered_map<int,string> special_keys {
+   {GLUT_KEY_F1            , "GLUT_KEY_F1"            },
+   {GLUT_KEY_F2            , "GLUT_KEY_F2"            },
+   {GLUT_KEY_F3            , "GLUT_KEY_F3"            },
+   {GLUT_KEY_F4            , "GLUT_KEY_F4"            },
+   {GLUT_KEY_F5            , "GLUT_KEY_F5"            },
+   {GLUT_KEY_F6            , "GLUT_KEY_F6"            },
+   {GLUT_KEY_F7            , "GLUT_KEY_F7"            },
+   {GLUT_KEY_F8            , "GLUT_KEY_F8"            },
+   {GLUT_KEY_F9            , "GLUT_KEY_F9"            },
+   {GLUT_KEY_F10           , "GLUT_KEY_F10"           },
+   {GLUT_KEY_F11           , "GLUT_KEY_F11"           },
+   {GLUT_KEY_F12           , "GLUT_KEY_F12"           },
+   {GLUT_KEY_LEFT          , "GLUT_KEY_LEFT"          },
+   {GLUT_KEY_UP            , "GLUT_KEY_UP"            },
+   {GLUT_KEY_RIGHT         , "GLUT_KEY_RIGHT"         },
+   {GLUT_KEY_DOWN          , "GLUT_KEY_DOWN"          },
+   {GLUT_KEY_PAGE_UP       , "GLUT_KEY_PAGE_UP"       },
+   {GLUT_KEY_PAGE_DOWN     , "GLUT_KEY_PAGE_DOWN"     },
+   {GLUT_KEY_HOME          , "GLUT_KEY_HOME"          },
+   {GLUT_KEY_END           , "GLUT_KEY_END"           },
+   {GLUT_KEY_INSERT        , "GLUT_KEY_INSERT"        },
+   {GLUT_KEY_REPEAT_OFF    , "GLUT_KEY_REPEAT_OFF"    },
+   {GLUT_KEY_REPEAT_ON     , "GLUT_KEY_REPEAT_ON"     },
+   {GLUT_KEY_REPEAT_DEFAULT, "GLUT_KEY_REPEAT_DEFAULT"},
+   {GLUT_KEY_NUM_LOCK      , "GLUT_KEY_NUM_LOCK"      },
+   {GLUT_KEY_BEGIN         , "GLUT_KEY_BEGIN"         },
+   {GLUT_KEY_DELETE        , "GLUT_KEY_DELETE"        },
+   {GLUT_KEY_SHIFT_L       , "GLUT_KEY_SHIFT_L"       },
+   {GLUT_KEY_SHIFT_R       , "GLUT_KEY_SHIFT_R"       },
+   {GLUT_KEY_CTRL_L        , "GLUT_KEY_CTRL_L"        },
+   {GLUT_KEY_CTRL_R        , "GLUT_KEY_CTRL_R"        },
+   {GLUT_KEY_ALT_L         , "GLUT_KEY_ALT_L"         },
+   {GLUT_KEY_ALT_R         , "GLUT_KEY_ALT_R"         },
+};
+
+
+unordered_map<int,string> control_chars {
+   {  0, "NUL"}, {  1, "SOH"}, {  2, "STX"}, {  3, "ETX"},
+   {  4, "EOT"}, {  5, "ENQ"}, {  6, "ACK"}, {  7, "BEL"},
+   {  8, "BS" }, {  9, "HT" }, { 10, "LF" }, { 11, "VT" },
+   { 12, "FF" }, { 13, "CR" }, { 14, "SO" }, { 15, "SI" },
+   { 16, "DLE"}, { 17, "DC1"}, { 18, "DC2"}, { 19, "DC3"},
+   { 20, "DC4"}, { 21, "NAK"}, { 22, "SYN"}, { 23, "ETB"},
+   { 24, "CAN"}, { 25, "EM" }, { 26, "SUB"}, { 27, "ESC"},
+   { 28, "FS" }, { 29, "GS" }, { 30, "RS" }, { 31, "US" },
+   {127, "DEL"},
+};
+
+// Characteristics of the window.
+struct window {
+   string name;
+   int width {256};
+   int height {192};
+} window;
+
+// Called by glutMainLoop to display window contents.
+void display() {
+   cout << __PRETTY_FUNCTION__ << "()" << endl;
+   glClearColor (0.25, 0.25, 0.25, 1.0);
+   glClear (GL_COLOR_BUFFER_BIT);
+   glutSwapBuffers();
+}
+
+void print_special_key (int key) {
+   cout << key << "(";
+   const auto& keyname = special_keys.find (key);
+   if (keyname == special_keys.end()) cout << "Unknown GLUT_KEY";
+                                 else cout << keyname->second;
+   cout << ")";
+}
+
+void print_keyboard_key (int key) {
+   cout << key << "(";
+   if (isgraph (key)) cout << "'" << GLubyte (key) << "'";
+   else {
+      const auto& control = control_chars.find (key);
+      if (control != control_chars.end()) cout << control->second;
+   }
+   cout << ")";
+}
+
+
+void special (int key, int x, int y) {
+   cout << __PRETTY_FUNCTION__ << ": ";
+   print_special_key (key);
+   cout << ", " << x << ", " << y << endl;
+}
+
+void specialup (int key, int x, int y) {
+   cout << __PRETTY_FUNCTION__ << ": ";
+   print_special_key (key);
+   cout << ", " << x << ", " << y << endl;
+}
+
+void keyboard (GLubyte key, int x, int y) {
+   cout << __PRETTY_FUNCTION__ << ": ";
+   print_keyboard_key (key);
+   cout << ", " << x << ", " << y << endl;
+}
+
+void keyboardup (GLubyte key, int x, int y) {
+   cout << __PRETTY_FUNCTION__ << ": ";
+   print_keyboard_key (key);
+   cout << ", " << x << ", " << y << endl;
+}
+
+
+void reshape (int width, int height) {
+   cout << __PRETTY_FUNCTION__ << ": "
+        << width << ", " << height << endl;
+   window.width = width;
+   window.height = height;
+   glMatrixMode (GL_PROJECTION);
+   glLoadIdentity();
+   gluOrtho2D (0, window.width, 0, window.height);
+   glMatrixMode (GL_MODELVIEW);
+   glViewport (0, 0, window.width, window.height);
+   glutPostRedisplay();
+}
+
+int main (int argc, char** argv) {
+   window.name = basename (argv[0]);
+   glutInit (&argc, argv);
+   glutInitDisplayMode (GLUT_RGBA | GLUT_DOUBLE);
+   glutInitWindowSize (window.width, window.height);
+   glutCreateWindow (window.name.c_str());
+   glutDisplayFunc (display);
+   glutReshapeFunc (reshape);
+   glutKeyboardFunc (keyboard);
+   glutKeyboardUpFunc (keyboardup);
+   glutSpecialFunc (special);
+   glutSpecialUpFunc (specialup);
+   glutMainLoop();
+   return 0;
+}
+
+//TEST// mkpspdf keyboard.ps keyboard.cpp*
+
+@
+
+
+1.22
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.21 2019-02-22 17:30:48-08 - - $
+d49 1
+a61 1
+
+d95 1
+@
+
+
+1.21
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.20 2018-08-13 14:55:26-07 - - $
+d149 2
+a150 1
+//TEST// mkpspdf keyboard.ps keyboard.cpp keyboard.cpp.log
+@
+
+
+1.20
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.19 2018-08-13 14:50:47-07 - - $
+d149 1
+@
+
+
+1.19
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.18 2018-08-13 14:50:15-07 - - $
+d78 1
+d82 1
+d86 1
+d92 1
+d96 1
+a96 2
+   cout << __PRETTY_FUNCTION__ << ": "
+        << key << ", " << x << ", " << y << ", ";
+d98 1
+a98 1
+   cout << endl;
+d102 1
+a102 2
+   cout << __PRETTY_FUNCTION__ << ": "
+        << key << ", " << x << ", " << y << ", ";
+d104 1
+a104 1
+   cout << endl;
+d108 1
+a108 2
+   cout << __PRETTY_FUNCTION__ << ": "
+        << int(key) << ", " << x << ", " << y << ", ";
+d110 1
+a110 1
+   cout << endl;
+d114 1
+a114 2
+   cout << __PRETTY_FUNCTION__ << ": "
+        << int(key) << ", " << x << ", " << y << ", ";
+d116 1
+a116 1
+   cout << endl;
+@
+
+
+1.18
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.17 2018-08-13 14:48:22-07 - - $
+d93 1
+a93 1
+        << key << "," << x << "," << y << ", ";
+d100 1
+a100 1
+        << key << "," << x << "," << y << ", ";
+d107 1
+a107 1
+        << int(key) << "," << x << "," << y << ", ";
+d114 1
+a114 1
+        << int(key) << "," << x << "," << y << ", ";
+@
+
+
+1.17
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.16 2018-08-06 15:10:20-07 - - $
+d71 1
+a71 1
+   cout << __PRETTY_FUNC__ << "()" << endl;
+d92 2
+a93 1
+   cout << __PRETTY_FUNC__ << "(" << key << "," << x << "," << y << "): ";
+d99 2
+a100 1
+   cout << __PRETTY_FUNC__ << "(" << key << "," << x << "," << y << "): ";
+d106 2
+a107 1
+   cout << __PRETTY_FUNC__ << "(" << int(key) << "," << x << "," << y << "): ";
+d113 2
+a114 1
+   cout << __PRETTY_FUNC__ << "(" << int(key) << "," << x << "," << y << "): ";
+d121 2
+a122 1
+   cout << __PRETTY_FUNC__ << ": " << width << ", " << height << endl;
+@
+
+
+1.16
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.15 2018-02-28 16:21:59-08 - - $
+d71 1
+a71 1
+   cout << __func__ << "()" << endl;
+d92 1
+a92 1
+   cout << __func__ << "(" << key << "," << x << "," << y << "): ";
+d98 1
+a98 1
+   cout << __func__ << "(" << key << "," << x << "," << y << "): ";
+d104 1
+a104 1
+   cout << __func__ << "(" << int(key) << "," << x << "," << y << "): ";
+d110 1
+a110 1
+   cout << __func__ << "(" << int(key) << "," << x << "," << y << "): ";
+d117 1
+a117 1
+   cout << __func__ << "(" << width << "," << height << ")" << endl;
+a127 14
+void close() {
+   cout << __func__ << "()" << endl;
+}
+
+void entry (int state) {
+   cout << __func__ << "(";
+   switch (state) {
+      case GLUT_LEFT: cout << "GLUT_LEFT"; break;
+      case GLUT_ENTERED: cout << "GLUT_ENTERED"; break;
+      default: cout << state; break;
+   }
+   cout << ")" << endl;
+}
+
+a135 2
+   glutEntryFunc (entry);
+   glutCloseFunc (close);
+@
+
+
+1.15
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.14 2016-07-20 20:26:13-07 - - $
+d122 1
+a122 1
+   glOrtho (0, window.width, 0, window.height, -1, +1);
+@
+
+
+1.14
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.13 2016-07-20 20:22:10-07 - - $
+d104 1
+a104 1
+   cout << __func__ << "(" << (int)key << "," << x << "," << y << "): ";
+d110 1
+a110 1
+   cout << __func__ << "(" << (int)key << "," << x << "," << y << "): ";
+@
+
+
+1.13
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.12 2014-07-22 16:38:08-07 - - $
+d14 33
+a46 21
+   {GLUT_KEY_F1       , "GLUT_KEY_F1"       },
+   {GLUT_KEY_F2       , "GLUT_KEY_F2"       },
+   {GLUT_KEY_F3       , "GLUT_KEY_F3"       },
+   {GLUT_KEY_F4       , "GLUT_KEY_F4"       },
+   {GLUT_KEY_F5       , "GLUT_KEY_F5"       },
+   {GLUT_KEY_F6       , "GLUT_KEY_F6"       },
+   {GLUT_KEY_F7       , "GLUT_KEY_F7"       },
+   {GLUT_KEY_F8       , "GLUT_KEY_F8"       },
+   {GLUT_KEY_F9       , "GLUT_KEY_F9"       },
+   {GLUT_KEY_F10      , "GLUT_KEY_F10"      },
+   {GLUT_KEY_F11      , "GLUT_KEY_F11"      },
+   {GLUT_KEY_F12      , "GLUT_KEY_F12"      },
+   {GLUT_KEY_LEFT     , "GLUT_KEY_LEFT"     },
+   {GLUT_KEY_UP       , "GLUT_KEY_UP"       },
+   {GLUT_KEY_RIGHT    , "GLUT_KEY_RIGHT"    },
+   {GLUT_KEY_DOWN     , "GLUT_KEY_DOWN"     },
+   {GLUT_KEY_PAGE_UP  , "GLUT_KEY_PAGE_UP"  },
+   {GLUT_KEY_PAGE_DOWN, "GLUT_KEY_PAGE_DOWN"},
+   {GLUT_KEY_HOME     , "GLUT_KEY_HOME"     },
+   {GLUT_KEY_END      , "GLUT_KEY_END"      },
+   {GLUT_KEY_INSERT   , "GLUT_KEY_INSERT "  },
+@
+
+
+1.12
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.11 2014-05-08 19:31:40-07 - - $
+a49 2
+using uchar = unsigned char;
+
+d72 1
+a72 1
+   if (isgraph (key)) cout << "'" << (uchar)key << "'";
+d91 1
+a91 1
+void keyboard (uchar key, int x, int y) {
+d97 1
+a97 1
+void keyboardup (uchar key, int x, int y) {
+@
+
+
+1.11
+log
+@-
+@
+text
+@d1 3
+a3 1
+// $Id: keyboard.cpp,v 1.10 2014-05-08 15:00:37-07 - - $
+d50 1
+a50 1
+typedef unsigned char uchar;
+@
+
+
+1.10
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.9 2014-05-07 21:21:39-07 - - $
+a10 17
+typedef unsigned char uchar;
+
+// Characteristics of the window.
+struct window {
+   string name;
+   int width {256};
+   int height {192};
+} window;
+
+// Called by glutMainLoop to display window contents.
+void display() {
+   cout << __func__ << "()" << endl;
+   glClearColor (0.25, 0.25, 0.25, 1.0);
+   glClear (GL_COLOR_BUFFER_BIT);
+   glutSwapBuffers();
+}
+
+d47 18
+d103 1
+@
+
+
+1.9
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.8 2014-05-07 21:20:40-07 - - $
+a145 1
+//TEST// mkpspdf hello-gl.ps hello-gl.cpp*
+@
+
+
+1.8
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.7 2014-05-07 21:18:43-07 - - $
+d71 1
+a71 1
+   if (isgraph (key)) cout << "'" << key << "'";
+@
+
+
+1.7
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.6 2014-05-07 21:01:36-07 - - $
+d80 1
+d86 1
+a86 3
+   const auto& keyname = special_keys.find (key);
+   if (keyname == special_keys.end()) cout << "Unknown GLUT_KEY";
+                                 else cout << keyname->second;
+@
+
+
+1.6
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.5 2014-05-07 20:59:12-07 - - $
+d52 13
+a64 2
+void special (int key, int x, int y) {
+   cout << __func__ << "(" << key << "," << x << "," << y << "): ";
+d68 12
+d93 1
+a93 1
+   if (isprint (key)) cout << "'" << key << "'";
+d99 1
+a99 1
+   if (isprint (key)) cout << "'" << key << "'";
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.2 2014-05-07 18:47:59-07 - - $
+d68 3
+a70 3
+void keyboard (unsigned char key, int x, int y) {
+   cout << __func__ << "(" << key << "," << x << "," << y << "): ";
+   if (isprint (key)) cout << "'" << (char) key << "'";
+d74 3
+a76 3
+void keyboardup (unsigned char key, int x, int y) {
+   cout << __func__ << "(" << key << "," << x << "," << y << "): ";
+   if (isprint (key)) cout << "'" << (char) key << "'";
+@
+
+
+1.4
+log
+@-
+@
+text
+@d68 1
+a68 1
+void keyboard (int key, int x, int y) {
+d74 1
+a74 1
+void keyboardup (int key, int x, int y) {
+@
+
+
+1.3
+log
+@-
+@
+text
+@d52 1
+a52 1
+void special (int key, int, int) {
+d60 1
+a60 1
+void specialup (int key, int, int) {
+d68 1
+a68 1
+void keyboard (int key, int, int) {
+d74 1
+a74 1
+void keyboardup (int key, int, int) {
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: keyboard.cpp,v 1.1 2014-05-07 18:47:22-07 - - $
+d50 1
+a50 1
+}
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: hello-gl.cpp,v 1.24 2014-05-07 17:36:39-07 - - $
+d5 1
+@
