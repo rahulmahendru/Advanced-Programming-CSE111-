@@ -1,0 +1,9 @@
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/Makefile
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/animate.c
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/chess
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/chess.c
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/chess.h
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/chess.inp
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/main.c
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/pathplan.c
+wget http://mi.eng.cam.ac.uk/~gmt11/3g4/glut/demos/chess/texture.c

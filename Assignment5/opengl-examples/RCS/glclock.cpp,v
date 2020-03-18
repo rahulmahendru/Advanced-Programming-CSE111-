@@ -1,0 +1,254 @@
+head	1.6;
+access;
+symbols;
+locks;
+comment	@// @;
+
+
+1.6
+date	2019.03.22.00.00.11;	author -;	state -;
+branches;
+next	1.5;
+
+1.5
+date	2019.03.21.23.59.33;	author -;	state -;
+branches;
+next	1.4;
+
+1.4
+date	2019.03.21.23.58.50;	author -;	state -;
+branches;
+next	1.3;
+
+1.3
+date	2019.03.21.23.56.44;	author -;	state -;
+branches;
+next	1.2;
+
+1.2
+date	2019.03.21.23.56.08;	author -;	state -;
+branches;
+next	1.1;
+
+1.1
+date	2019.03.21.23.53.14;	author -;	state -;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@-
+@
+text
+@// $Id: glclock.cpp,v 1.5 2019-03-21 16:59:33-07 - - $
+
+// Show a real-time analog clock.
+
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+#include <GL/freeglut.h>
+#include <libgen.h>
+#include <time.h>
+
+struct {
+   int width = 256;
+   int height = 256;
+} window;
+
+string program_name;
+static const float RADIUS = 0.9;
+static const GLubyte FOREGROUND[] {0x00, 0x00, 0xFF};
+
+struct calend {
+   time_t clock;
+   struct tm localtime;
+   char sdate[64];
+   char stime[64];
+   void set() {
+      clock = time (nullptr);
+      localtime_r (&clock, &localtime);
+      strftime (sdate, sizeof sdate, "%a %b %e", &localtime);
+      strftime (stime, sizeof stime, "%I:%M:%S %p", &localtime);
+      if (stime[0] == '0') stime[0] = ' ';
+      for (char* chr = stime; *chr != '\0'; ++chr) {
+         if (isupper(*chr)) *chr = tolower (*chr);
+      }
+   }
+} calend;
+
+const GLubyte* to_ubytes (const char* cstring) {
+   return reinterpret_cast<const GLubyte*> (cstring);
+}
+
+void show_time() {
+   void* font = GLUT_BITMAP_HELVETICA_18;
+   glRasterPos2f (-0.95, -0.95);
+   glutBitmapString (font, to_ubytes (calend.sdate));
+   float timewidth = glutBitmapLength (font, to_ubytes (calend.stime));
+   float timexpos = 0.95 - 2 * timewidth / window.width;
+   glRasterPos2f (timexpos, -.95);
+   glutBitmapString (font, to_ubytes (calend.stime));
+}
+
+
+void draw_dots (int points, int count) {
+   glEnable (GL_POINT_SMOOTH);
+   glPointSize (points);
+   glBegin(GL_POINTS);
+   glColor3ubv (FOREGROUND);
+   for (float theta = 0; theta < 2 * M_PI; theta += 2 * M_PI / count) {
+      float xdot = 0.9 * RADIUS * cos (theta);
+      float ydot = 0.9 * RADIUS * sin (theta);
+      glVertex2f (xdot, ydot);
+   }
+   glEnd();
+}
+
+void draw_hand (GLfloat width, GLfloat length, GLfloat clock) {
+   glEnable (GL_LINE_SMOOTH);
+   glEnable (GL_POLYGON_SMOOTH);
+   glPushMatrix();
+   glRotatef (-clock * 6, 0, 0, 1);
+   glColor3ubv (FOREGROUND);
+   glBegin (GL_POLYGON);
+   glVertex2f (-width / 2 * RADIUS, 0);
+   glVertex2f (+width / 2 * RADIUS, 0);
+   glVertex2f (+width / 8, length * RADIUS);
+   glVertex2f (-width / 8, length * RADIUS);
+   glEnd();
+   glPopMatrix();
+}
+
+void display() {
+   glClear (GL_COLOR_BUFFER_BIT);
+   glColor3ubv (FOREGROUND);
+   draw_dots (4, 60);
+   draw_dots (8, 12);
+   calend.set();
+   float second = calend.localtime.tm_sec;
+   float minute = calend.localtime.tm_min + second / 60;
+   float hour = calend.localtime.tm_hour + minute / 60;
+   draw_hand (0.1, 0.6, hour * 5);
+   draw_hand (0.075, 0.8, minute);
+   draw_hand (0.05, 1.0, second);
+   show_time();
+   glutSwapBuffers();
+}
+
+const float frequency_msec = 500;
+void timer (int) {
+   glutTimerFunc (frequency_msec, timer, 100);
+   glutPostRedisplay();
+}
+
+
+void reshape (int width, int height) {
+   cout << "reshape(width=" << width << ", height=" << height << endl;
+   window.width = width;
+   window.height = height;
+   glMatrixMode (GL_PROJECTION);
+   glLoadIdentity();
+   gluOrtho2D (-1, +1, -1, +1);
+   glMatrixMode (GL_MODELVIEW);
+   glHint (GL_POINT_SMOOTH_HINT, GL_NICEST);
+   glHint (GL_LINE_SMOOTH_HINT, GL_NICEST);
+   glHint (GL_POLYGON_SMOOTH_HINT, GL_NICEST);
+   glViewport (0, 0, window.width, window.height);
+   glClearColor (0xFFp0/255, 0xFFp0/255, 0x0Fp0/255, 1.0);
+}
+
+int main (int argc, char** argv) {
+   program_name = basename (argv[0]);
+   glutInit (&argc, argv);
+   glutInitDisplayMode (GLUT_RGBA | GLUT_DOUBLE);
+   glutInitWindowSize (window.width, window.height);
+   glutCreateWindow (program_name.c_str());
+   glutDisplayFunc (display);
+   glutReshapeFunc (reshape);
+   glutTimerFunc (frequency_msec, timer, 100);
+   glutMainLoop();
+   return 0;
+}
+
+//TEST// mkpspdf glclock.ps glclock.cpp*
+
+@
+
+
+1.5
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: glclock.cpp,v 1.3 2019-03-21 16:56:44-07 - - $
+d74 2
+a75 2
+   glVertex2f (-width / 2 * RADIUS, -2);
+   glVertex2f (+width / 2 * RADIUS, -2);
+@
+
+
+1.4
+log
+@-
+@
+text
+@d74 4
+a77 3
+   glVertex2f (-width / 2 * RADIUS, 0);
+   glVertex2f (+width / 2 * RADIUS, 0);
+   glVertex2f (0, length * RADIUS);
+@
+
+
+1.3
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: glclock.cpp,v 1.2 2019-03-21 16:56:08-07 - - $
+d76 1
+a76 2
+   glVertex2f (+width / 8, length * RADIUS);
+   glVertex2f (-width / 8, length * RADIUS);
+@
+
+
+1.2
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: glclock.cpp,v 1.1 2019-03-21 16:53:14-07 - - $
+d91 2
+a92 2
+   draw_hand (0.1, 0.5, hour * 5);
+   draw_hand (0.075, 0.75, minute);
+@
+
+
+1.1
+log
+@-
+@
+text
+@d1 1
+a1 1
+// $Id: glclock.cpp,v 1.21 2019-03-20 13:14:35-07 - - $
+d93 1
+a93 1
+   draw_hand (0.05, 0.95, second);
+@

@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting squares.cpp
+checksource squares.cpp
+ident squares.cpp
+squares.cpp:
+     $Id: squares.cpp,v 1.17 2019-02-22 17:38:45-08 - - $
+cpplint.py.perl squares.cpp
+Done processing squares.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast squares.cpp -o squares -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f squares.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished squares.cpp

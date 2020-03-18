@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting coordinates.cpp
+checksource coordinates.cpp
+ident coordinates.cpp
+coordinates.cpp:
+     $Id: coordinates.cpp,v 1.42 2019-02-22 19:12:48-08 - - $
+cpplint.py.perl coordinates.cpp
+Done processing coordinates.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast coordinates.cpp -o coordinates -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f coordinates.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished coordinates.cpp

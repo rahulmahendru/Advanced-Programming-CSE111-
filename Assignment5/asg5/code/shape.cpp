@@ -2,10 +2,12 @@
 
 #include <typeinfo>
 #include <unordered_map>
+#include <cmath>
 using namespace std;
 
 #include "shape.h"
 #include "util.h"
+#include "graphics.h"
 
 static unordered_map<void*,string> fontname {
    {GLUT_BITMAP_8_BY_13       , "Fixed-8x13"    },
@@ -17,7 +19,7 @@ static unordered_map<void*,string> fontname {
    {GLUT_BITMAP_TIMES_ROMAN_24, "Times-Roman-24"},
 };
 
-static unordered_map<string,void*> fontcode {
+unordered_map<string,void*> fontcode {
    {"Fixed-8x13"    , GLUT_BITMAP_8_BY_13       },
    {"Fixed-9x15"    , GLUT_BITMAP_9_BY_15       },
    {"Helvetica-10"  , GLUT_BITMAP_HELVETICA_10  },
@@ -26,6 +28,9 @@ static unordered_map<string,void*> fontcode {
    {"Times-Roman-10", GLUT_BITMAP_TIMES_ROMAN_10},
    {"Times-Roman-24", GLUT_BITMAP_TIMES_ROMAN_24},
 };
+
+rgbcolor shape::borderColor = rgbcolor(255,0,0);
+GLfloat shape::borderWidth = 4;
 
 ostream& operator<< (ostream& out, const vertex& where) {
    out << "(" << where.xpos << "," << where.ypos << ")";
@@ -56,7 +61,8 @@ polygon::polygon (const vertex_list& vertices_): vertices(vertices_) {
 }
 
 rectangle::rectangle (GLfloat width, GLfloat height):
-            polygon({}) {
+            polygon({{0, 0}, {0, height}, 
+            {width, height}, {width, 0}}) {
    DEBUGF ('c', this << "(" << width << "," << height << ")");
 }
 
@@ -64,16 +70,122 @@ square::square (GLfloat width): rectangle (width, width) {
    DEBUGF ('c', this);
 }
 
-void text::draw (const vertex& center, const rgbcolor& color) const {
-   DEBUGF ('d', this << "(" << center << "," << color << ")");
+diamond::diamond (GLfloat width, GLfloat height): 
+            polygon({{-width/2, 0}, {0, -height/2},
+            {width/2, 0}, {0, height/2}}) {
+   DEBUGF ('c', this << "(" << width << "," << height << ")");
 }
 
-void ellipse::draw (const vertex& center, const rgbcolor& color) const {
-   DEBUGF ('d', this << "(" << center << "," << color << ")");
+triangle::triangle (const vertex_list& vertices_): polygon(vertices_){
+   DEBUGF ('c', this);
 }
 
-void polygon::draw (const vertex& center, const rgbcolor& color) const {
-   DEBUGF ('d', this << "(" << center << "," << color << ")");
+equilateral::equilateral (GLfloat width): 
+            triangle({{0,0},{width,0}, 
+            {width/2, (width/2) * static_cast<float>(sqrt(3))} }) {
+   DEBUGF ('c', this);
+}
+
+void text::draw (const vertex& center, const rgbcolor& color,
+               const int position) const {
+   DEBUGF ('d', this << "(" << center << "," << color <<
+              "," << position << ")");
+
+   // To draw the text
+   const GLubyte* data =
+         reinterpret_cast<const GLubyte*> (textdata.c_str());
+   glColor3ubv(color.ubvec);
+   glRasterPos2f (center.xpos, center.ypos);
+   glutBitmapString (glut_bitmap_font, data);
+
+   // To draw the text border if it is selected
+   if (window::isSelected) {
+      GLfloat width = glutBitmapLength(glut_bitmap_font, data);
+      GLfloat height = glutBitmapHeight(glut_bitmap_font);
+      vertex_list borderVer {{0, 0}, {0, height}, 
+                 {width, height}, {width, 0}};
+      glClear (GL_COLOR_BUFFER_BIT);
+      glLineWidth(shape::borderWidth);
+      glBegin(GL_LINE_LOOP);
+      glColor3ubv(rgbcolor(shape::borderColor).ubvec);
+      for (auto itor = borderVer.begin(); 
+           itor != borderVer.end(); ++itor){
+         glVertex2f(itor->xpos + center.xpos, itor->ypos + center.ypos);
+      }
+   }
+   glEnd();
+}
+
+void ellipse::draw (const vertex& center, const rgbcolor& color,
+                  const int position) const {
+   DEBUGF ('d', this << "(" << center << "," << color <<
+              "," << position << ")");
+
+   // To draw the ellipse
+   glBegin(GL_POLYGON) ;
+   glColor3ubv(color.ubvec) ;
+   const GLfloat delta = 2 * M_PI / 64;
+   const GLfloat width = dimension.xpos;
+   const GLfloat height = dimension.ypos;
+   for (GLfloat theta = 0; theta < 2 * M_PI; theta += delta) {
+      GLfloat xpos = width * cos (theta) + center.xpos;
+      GLfloat ypos = height * sin (theta) + center.ypos;
+      glVertex2f (xpos, ypos);
+   }
+   glEnd();
+
+   const GLubyte* pos =
+      reinterpret_cast<const GLubyte*> 
+      (to_string(position).c_str());
+   glColor3f(0.5f, 0.0f, 1.0f);
+   glRasterPos2f (center.xpos, center.ypos);
+   glutBitmapString (GLUT_BITMAP_HELVETICA_10, pos);
+
+   // To draw the ellipse outline if it is selected
+   if (window::isSelected) {
+      glLineWidth (shape::borderWidth);
+      glBegin (GL_LINE_LOOP);
+      glColor3ubv (rgbcolor(shape::borderColor).ubvec);
+      for (GLfloat theta = 0; theta < 2 * M_PI; theta += delta) {
+         GLfloat xpos = width * cos (theta) + center.xpos;
+         GLfloat ypos = height * sin (theta) + center.ypos;
+         glVertex2f (xpos, ypos);
+      }
+      glEnd();
+   }
+}
+
+void polygon::draw (const vertex& center, const rgbcolor& color,
+                   const int position) const {
+   DEBUGF ('d', this << "(" << center << "," << color <<
+              "," << position << ")");
+
+   // To draw the polygon
+   glBegin(GL_POLYGON);
+   glColor3ubv(color.ubvec);
+   for (auto itor = vertices.begin(); itor != vertices.end(); ++itor){
+      glVertex2f(itor->xpos + center.xpos, itor->ypos + center.ypos);
+   }
+   glEnd();
+
+   const GLubyte* pos =
+      reinterpret_cast<const GLubyte*> 
+      (to_string(position).c_str());
+   glColor3f(0.5f, 0.0f, 1.0f);
+   glRasterPos2f (center.xpos, center.ypos);
+   glutBitmapString (GLUT_BITMAP_HELVETICA_10, pos);
+
+   // To draw the polygon outline if it is selected
+   if (window::isSelected) {
+      glLineWidth (shape::borderWidth);
+      glBegin (GL_LINE_LOOP);
+      glColor3ubv (rgbcolor(shape::borderColor).ubvec);
+      for (auto itor = vertices.begin(); 
+           itor != vertices.end(); ++itor){
+         glVertex2f(itor->xpos + center.xpos, itor->ypos + center.ypos);
+      }
+      glEnd();
+   }
 }
 
 void shape::show (ostream& out) const {

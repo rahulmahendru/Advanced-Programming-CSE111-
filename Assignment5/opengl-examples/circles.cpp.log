@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting circles.cpp
+checksource circles.cpp
+ident circles.cpp
+circles.cpp:
+     $Id: circles.cpp,v 1.52 2019-02-22 19:16:41-08 - - $
+cpplint.py.perl circles.cpp
+Done processing circles.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast circles.cpp -o circles -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f circles.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished circles.cpp

@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting glclock.cpp
+checksource glclock.cpp
+ident glclock.cpp
+glclock.cpp:
+     $Id: glclock.cpp,v 1.10 2019-02-22 15:37:17-08 - - $
+cpplint.py.perl glclock.cpp
+Done processing glclock.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast glclock.cpp -o glclock -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f glclock.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished glclock.cpp

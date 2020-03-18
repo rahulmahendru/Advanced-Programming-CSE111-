@@ -13,6 +13,8 @@ int window::height = 480; // in pixels
 vector<object> window::objects;
 size_t window::selected_obj = 0;
 mouse window::mus;
+int window::moveByPixels = 4;  // default move pixels
+bool window::isSelected = false; // default check value
 
 // Implementation of object functions.
 object::object (shared_ptr<shape> pshape_, vertex center_,
@@ -20,13 +22,19 @@ object::object (shared_ptr<shape> pshape_, vertex center_,
       pshape(pshape_), center(center_), color(color_) {
 }
 
-void object::draw() {
-   pshape->draw (center, color);
+void object::draw(int objectPosition) {
+   pshape->draw (center, color, objectPosition);
 }
 
 void object::move (GLfloat delta_x, GLfloat delta_y) {
    center.xpos += delta_x;
    center.ypos += delta_y;
+
+   // Check to keep object in bounds
+   center.xpos = center.xpos == 0 ? window::getwidth() : 
+               static_cast<int>(center.xpos) % window::getwidth();
+   center.ypos = center.ypos == 0 ? window::getheight() : 
+               static_cast<int>(center.ypos) % window::getheight();
 }
 
 // Implementation of mouse functions.
@@ -77,7 +85,19 @@ void window::entry (int mouse_entered) {
 // Called to display the objects in the window.
 void window::display() {
    glClear (GL_COLOR_BUFFER_BIT);
-   for (auto& object: window::objects) object.draw();
+   size_t selectCheck = 0;  // Counter to track objects
+   size_t counter = 0;
+   for (auto& object: window::objects){
+      if (selectCheck++ == selected_obj){
+         ++counter;
+         continue;
+      } 
+      object.draw(counter++);
+   }
+   isSelected = true;
+   if (objects.size() >=1) 
+      window::objects[selected_obj].draw(selected_obj);
+   isSelected = false;
    mus.draw();
    glutSwapBuffers();
 }
@@ -107,24 +127,34 @@ void window::keyboard (GLubyte key, int x, int y) {
          window::close();
          break;
       case 'H': case 'h':
-         //move_selected_object (
+         //move_selected_object left
+         objects[selected_obj].move(-1 * moveByPixels, 0);
          break;
       case 'J': case 'j':
-         //move_selected_object (
+         //move_selected_object down
+         objects[selected_obj].move(0, -1 * moveByPixels);
          break;
       case 'K': case 'k':
-         //move_selected_object (
+         //move_selected_object up
+         objects[selected_obj].move(0, moveByPixels);
          break;
       case 'L': case 'l':
-         //move_selected_object (
+         //move_selected_object right
+         objects[selected_obj].move(moveByPixels, 0);
          break;
       case 'N': case 'n': case SPACE: case TAB:
+         if (++selected_obj == objects.size()) selected_obj = 0;
          break;
       case 'P': case 'p': case BS:
+         if (selected_obj == 0) selected_obj = objects.size() - 1;
+         else --selected_obj;
          break;
       case '0': case '1': case '2': case '3': case '4':
       case '5': case '6': case '7': case '8': case '9':
          //select_object (key - '0');
+         if (unsigned(key - '0') < objects.size()) 
+         selected_obj = key - '0';
+         else cerr << unsigned (key) << ": invalid keystroke" << endl;
          break;
       default:
          cerr << unsigned (key) << ": invalid keystroke" << endl;
@@ -140,21 +170,77 @@ void window::special (int key, int x, int y) {
    window::mus.set (x, y);
    switch (key) {
       case GLUT_KEY_LEFT: //move_selected_object (-1, 0); break;
+         objects[selected_obj].move(-1 * moveByPixels, 0);
+         break;
       case GLUT_KEY_DOWN: //move_selected_object (0, -1); break;
+         objects[selected_obj].move(0, -1 * moveByPixels);
+         break;
       case GLUT_KEY_UP: //move_selected_object (0, +1); break;
+         objects[selected_obj].move(0, moveByPixels);
+         break;
       case GLUT_KEY_RIGHT: //move_selected_object (+1, 0); break;
+         objects[selected_obj].move(moveByPixels, 0);
+         break;
       case GLUT_KEY_F1: //select_object (1); break;
+         if (objects.size() > 0) selected_obj = 0;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F2: //select_object (2); break;
+         if (objects.size() > 1) selected_obj = 1;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F3: //select_object (3); break;
+         if (objects.size() > 2) selected_obj = 2;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F4: //select_object (4); break;
+         if (objects.size() > 3) selected_obj = 3;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F5: //select_object (5); break;
+         if (objects.size() > 4) selected_obj = 4;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F6: //select_object (6); break;
+         if (objects.size() > 5) selected_obj = 5;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F7: //select_object (7); break;
+         if (objects.size() > 6) selected_obj = 6;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F8: //select_object (8); break;
+         if (objects.size() > 7) selected_obj = 7;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F9: //select_object (9); break;
+         if (objects.size() > 8) selected_obj = 8;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F10: //select_object (10); break;
+         if (objects.size() > 9) selected_obj = 9;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F11: //select_object (11); break;
+         if (objects.size() > 10) selected_obj = 10;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       case GLUT_KEY_F12: //select_object (12); break;
+         if (objects.size() > 11) selected_obj = 11;
+         else cerr << unsigned (key) 
+                   << ": invalid function key" << endl;
+         break;
       default:
          cerr << unsigned (key) << ": invalid function key" << endl;
          break;

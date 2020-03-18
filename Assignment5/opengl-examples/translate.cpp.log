@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting translate.cpp
+checksource translate.cpp
+ident translate.cpp
+translate.cpp:
+     $Id: translate.cpp,v 1.43 2019-02-22 17:45:37-08 - - $
+cpplint.py.perl translate.cpp
+Done processing translate.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast translate.cpp -o translate -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f translate.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished translate.cpp

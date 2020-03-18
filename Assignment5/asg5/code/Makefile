@@ -7,7 +7,7 @@ NEEDINCL   = ${filter ${NOINCL}, ${MAKECMDGOALS}}
 GMAKE      = ${MAKE} --no-print-directory
 
 GPPWARN    = -Wall -Wextra -Wpedantic -Wshadow -Wold-style-cast
-GPPOPTS    = ${GPPWARN} -fdiagnostics-color=never
+GPPOPTS    = ${GPPWARN}
 COMPILECPP = g++ -std=gnu++17 -g -O0 ${GPPOPTS}
 MAKEDEPCPP = g++ -std=gnu++17 -MM ${GPPOPTS}
 MESALIB    = /usr/local/android-sdk/emulator/lib64/gles_mesa
@@ -68,6 +68,9 @@ ${DEPFILE} :
 
 again :
 	${GMAKE} spotless dep ci all lis
+
+submit : ${ALLSOURCES} README
+	submit cse111-wm.w20 asg5 $^
 
 ifeq (${NEEDINCL}, )
 include ${DEPFILE}

@@ -1,0 +1,10 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: starting menus.cpp
+checksource menus.cpp
+ident menus.cpp
+menus.cpp:
+     $Id: menus.cpp,v 1.8 2019-02-22 17:38:42-08 - - $
+cpplint.py.perl menus.cpp
+Done processing menus.cpp
+g++ -g -O0 -Wall -Wextra -Werror -Wpedantic -Wshadow -fdiagnostics-color=never -std=gnu++17 -Wold-style-cast menus.cpp -o menus -lm -lglut -lGLU -lGL -lX11 -ldrm -lm
+rm -f menus.o
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ mkc: finished menus.cpp
